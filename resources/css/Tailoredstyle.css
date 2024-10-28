@@ -1,0 +1,161 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo span {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #999;
+    margin-left: 5px;
+}
+.row{
+    display: flex;
+    height: 45px;
+}
+/* Main head container */
+.main-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* đặt logo ở giữa */
+.main-head .middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-head .left, .main-head .right {
+    width: 200px;
+}
+
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+}
+
+.dropdown li {
+    padding: 5px 20px;
+}
+
+.dropdown li a {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.dropdown li a:hover {
+    color: #000;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+/* Main Content */
+main .content {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+}
+
+.footer-links a:hover {
+    color: #000;
+}
