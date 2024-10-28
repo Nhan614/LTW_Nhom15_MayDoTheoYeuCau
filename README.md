@@ -6,7 +6,7 @@ Thành viên:
 
 Nguyễn Trọng Nhân - 22130193 - Nhan614
 
-Hoàng Đức Nghĩa - 22130183
+Hoàng Đức Nghĩa - 22130183 - nghia22130183
 
 Lai Nhân Nghĩa - 22130185
 
