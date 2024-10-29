@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-/* Body với navbar*/
+/* Body with navbar styling */
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -13,14 +13,13 @@ body {
     background-color: #001F3F;
     font-size: 0.9rem;
     color: #fff;
-
 }
 
 .logo {
     font-size: 40px;
     font-family: 'Italiana', serif;
 }
-.logo a{
+.logo a {
     text-decoration: none;
     color: #201f1f;
 }
@@ -37,21 +36,40 @@ body {
     font-size: 1.2rem;
 }
 
-
+/* Navbar styling */
 .navbar-nav .nav-link {
     color: #333;
     font-size: 1rem;
+    position: relative;
+    text-decoration: none;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #000;
+/* Center underline hover effect */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    left: 50%;
+    bottom: -1px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Dropdown menu */
 .dropdown-menu {
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateY(-10px);
-    display: block; /* Allows us to control visibility with opacity */
+    display: block;
     visibility: hidden;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -59,6 +77,118 @@ body {
     transform: translateY(0);
     visibility: visible;
 }
+
+.dropdown-item {
+    color: #333;
+    text-decoration: none; /* Remove underline from dropdown items */
+}
+
+.dropdown-item:hover {
+    color: #000;
+}
+.hero-section {
+    background-image: url('../images/heroImageHome2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: #fff;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    margin-top: 50vh;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-family: 'Italiana', serif;
+}
+
+.hero-section .btn-primary {
+    color: black;
+    background-color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 15%;
+}
+
+.hero-section .btn-primary:hover {
+    width: 16%;
+    background-color: #fff;
+}
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+/* Category Section */
+.category-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+.row a {
+    text-decoration-color: black;
+    color: inherit;
+}
+
+.category-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.category-box {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category-box h3 {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.category-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Footer */
 footer {
