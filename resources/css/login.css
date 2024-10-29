@@ -1,0 +1,157 @@
+html{
+    margin: 0px;
+    font-family: sans-serif, TAHOMA;
+    overflow-y: scroll;
+}
+
+/* ---------------- NAV -------------------- */
+.top-bar {
+    background-color: #001F3F;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.navbar{
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.navbar-expand-lg{
+    justify-content:space-between
+}
+
+.navbar-brand{
+    font-family: "Italiana", serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #001F3F;
+}
+
+.navbar-nav{
+    gap: 25px;
+}
+.nav-link{
+    color: rgba(0, 11, 66, 0.68);
+
+}
+
+/* --------------------- Home --------------------------- */
+#sec1{
+margin-top: 65px;
+}
+
+.home-hero{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-image: url('../images/HomeHero.jpg');
+}
+
+.home-hero .herotext{
+    margin-bottom: 170px;
+}
+
+.home-hero .herolink{
+    color: #fff;
+    text-decoration: none;
+    margin: 15px 20px;
+    font-size: 20px; 
+}
+/* -----------------login------------- */
+.adress-form {
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 ,0,0,0.6);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.adress-form-content{
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.adress-form-content h2 {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+}
+.adress-form-content form{
+    display: flex;
+    flex-direction: column;
+}
+.adress-form-content input[type="email"],
+.adress-form-content input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.adress-form-content button {
+    padding: 10px;
+    background-color: #0a0a5b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.adress-form-content button:hover {
+    color: red;
+    background-color: #00004d;
+}
+.adress-form-content .forgot-password,
+.adress-form-content .create-account {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.adress-form-content .forgot-password a:hover{
+    color: red;
+
+}
+.adress-form-content .create-account a {
+    color: #0a0a5b;
+    text-decoration: none;
+    border: 1px solid #0a0a5b;
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.adress-form-content .create-account a:hover {   
+    color: rgb(248, 110, 110);
+    border: solid 1px rgb(248, 110, 110);
+}
+.adress-form-content .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #1a1abd;
+    cursor: pointer;
+    color: #fff;    
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 10px; */
+    border-bottom-left-radius: 20px;
+
+}
