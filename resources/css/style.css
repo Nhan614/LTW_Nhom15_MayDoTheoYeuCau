@@ -81,7 +81,51 @@ html{
 .dropdown-item:hover {
     color: #000;
 }
+.hero-section {
+    background-image: url('../images/HomeHero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: #fff;
+    position: relative;
+}
 
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    margin-top: 50vh;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-family: 'Italiana', serif;
+}
+
+.hero-section .btn-primary {
+    color: black;
+    background-color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 15%;
+}
+
+.hero-section .btn-primary:hover {
+    width: 16%;
+    background-color: #fff;
+}
 /* --------------------- Home --------------------------- */
 #sec1{
 margin-top: 65px;
