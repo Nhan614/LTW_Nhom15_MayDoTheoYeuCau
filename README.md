@@ -1,8 +1,8 @@
 Đồ án lập trình web nhóm 15
 
-Đề tài Đặt may quần áo theo yêu cầu
+Đề tài: Đặt may quần áo theo yêu cầu
 
-Đi đến website: [Tại đây](https://nhan614.github.io/LTW_Nhom15_MayDoTheoYeuCau/)
+Đi đến website: [Tại đây](https://nhan614.github.io/LTW_Nhom15_MayDoTheoYeuCau/) {:target="_blank"}
 
 Thành viên:
 
