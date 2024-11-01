@@ -84,8 +84,14 @@ html{
 .dropdown-item:hover {
     color: #000;
 }
+
+/* --------------------- Home --------------------------- */
+#sec1{
+margin-top: 65px;
+}
+
 .hero-section {
-    background-image: url('../images/HomeHero.jpg');
+    background-image: url('../images/heroImageHome2.jpg');
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -129,28 +135,24 @@ html{
     width: 16%;
     background-color: #fff;
 }
-/* --------------------- Home --------------------------- */
-#sec1{
-margin-top: 65px;
+/* Welcome Section Styling */
+.welcome-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 10px;
 }
 
-.home-hero{
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    background-image: url('../images/HomeHero.jpg');
+.welcome-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
-.home-hero .herotext{
-    margin-bottom: 170px;
-}
-
-.home-hero .herolink{
-    color: #fff;
-    text-decoration: none;
-    margin: 15px 20px;
-    font-size: 20px;
+.welcome-section p:last-child {
+    font-weight: 600;
+    font-style: normal;
 }
 /* Category Section */
 .category-section {
@@ -164,6 +166,10 @@ margin-top: 65px;
 .row a:hover {
     text-decoration: underline;
     text-decoration-color: black;
+}
+.category-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
 }
 
 .category-section h2 {
@@ -242,7 +248,174 @@ margin-top: 65px;
     transform: scale(1.05);
     background-color: #fff;
 }
+.carousel{
+    background-color: #f7f6f4FF;
+    padding: 10px;
+}
+.carousel-title {
+    font-family: 'Italiana', serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.carousel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px;
+}
+
+.carousel-image {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.carousel-text {
+    width: 45%;
+    color: #333;
+    padding-left: 20px;
+}
+
+.carousel-text h3 {
+    font-size: 30px;
+    font-family: 'Arial', serif;
+}
+
+.carousel-text h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.carousel-text p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.get-started {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    transition: color 0.3s ease;
+}
+
+.get-started:hover {
+    color: #555;
+}
+.carousel-control-prev-icon ,.carousel-control-next-icon {
+    background-color: #333;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #555;
+}
+
+.carousel-control-prev ,.carousel-control-next {
+    opacity: 1;
+    filter: invert(50 %);
+}
 /* Footer */
-footer {
-    font-size: 0.9rem;
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 32px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+}
+
+.social-icons a:hover {
+    filter: brightness(1);
+    color: #666666;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+    font-size: 1em;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e0e0e0;
+    color: #000;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.list-inline a {
+    text-decoration: none;
+    color: white;
+}
+.list-inline a:hover {
+    text-decoration: underline;
 }
