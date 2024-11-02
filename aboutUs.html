@@ -100,13 +100,52 @@
     <h1 class="display-4 text-white">and Italy Design Made In VietNam</h1>
   </div>
 </section>
-<div class="welcome-section text-center">
-  <p>
-    N3Tailored stems from a renewed perspective on made-to-measure, key to a sustainable approach
-    that transforms the heritage of Italian tailoring into a compelling vision for the future,
-    with excellence and innovation at heart.
-  </p>
+<div class="welcome-section text-center" id="typing-container"></div>
 
-</div>
+<script>
+  // Mảng câu văn bản
+  const sentences = [
+    "N3Tailored stems from a renewed perspective on made-to-measure,",
+    "key to a sustainable approach that transforms the heritage of Italian tailoring",
+    "into a compelling vision for the future, with excellence and innovation at heart."
+  ];
+
+  const typingSpeed = 30;    // Tốc độ gõ
+  const sentenceDelay = 400; // Khoảng cách giữa các câu
+
+  let sentenceIndex = 0;
+  let charIndex = 0;
+
+  function typeEffect() {
+    const container = document.getElementById("typing-container");
+
+    // Nếu đang ở câu mới, tạo <p> cho câu đó
+    if (charIndex === 0) {
+      const newParagraph = document.createElement("p");
+      container.appendChild(newParagraph);
+    }
+
+    const currentSentence = sentences[sentenceIndex];
+    const paragraph = container.lastElementChild;
+
+    // Thêm từng ký tự vào câu hiện tại
+    if (charIndex < currentSentence.length) {
+      paragraph.innerHTML += currentSentence.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeEffect, typingSpeed); // Gọi lại `typeEffect` để tiếp tục
+    } else {
+      // Nếu câu hiện tại hoàn tất, chuyển sang câu tiếp theo sau khoảng delay
+      sentenceIndex++;
+      charIndex = 0;
+
+      if (sentenceIndex < sentences.length) {
+        setTimeout(typeEffect, sentenceDelay);
+      }
+    }
+  }
+
+  // Bắt đầu hiệu ứng typing khi page được tải
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
 </body>
 </html>

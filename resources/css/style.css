@@ -83,7 +83,7 @@ html{
 
 .dropdown-item {
     color: #333;
-    text-decoration: none; /* Remove underline from dropdown items */
+    text-decoration: none;
     padding: 10px;
 }
 
@@ -92,16 +92,16 @@ html{
 }
 .mega-menu .dropdown-menu {
     position: fixed;
-    min-width: 800px; /* Chiều rộng tối thiểu */
+    min-width: 800px;
     align-items: center;
-    width: 100vw; /* Thay đổi từ 50vw thành 100vw để làm cho mega menu rộng hơn */
-    left: -676%; /* Đặt lại vị trí bên trái */
-    top: 100%; /* Vẫn giữ menu ở dưới cùng của navbar */
-    padding: 20px; /* Giữ padding */
-    background-color: #f8f9fa; /* Màu nền */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    border: none; /* Không viền */
-    z-index: 1000; /* Đảm bảo menu nằm trên các thành phần khác */
+    width: 100vw;
+    left: -676%;
+    top: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    z-index: 1000;
 }
 
 .mega-menu h6 {
@@ -243,7 +243,7 @@ margin-top: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: url('../images/bannerWinter.webp'); /* Replace with your image path */
+    background-image: url('../images/bannerWinter.webp');
     background-size: cover;
     background-position: center;
     height: 400px;
