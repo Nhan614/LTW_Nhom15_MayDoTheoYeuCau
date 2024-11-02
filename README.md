@@ -2,7 +2,7 @@
 
 Đề tài: Đặt may quần áo theo yêu cầu
 
-Đi đến website: [Tại đây](https://nhan614.github.io/LTW_Nhom15_MayDoTheoYeuCau/){:target="_blank"}
+Đi đến website: [Tại đây](https://nhan614.github.io/LTW_Nhom15_MayDoTheoYeuCau/)
 
 Thành viên:
 
