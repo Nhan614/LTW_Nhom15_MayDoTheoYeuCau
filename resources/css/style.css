@@ -83,40 +83,11 @@ html{
 
 .dropdown-item {
     color: #333;
-    text-decoration: none;
-    padding: 10px;
+    text-decoration: none; /* Remove underline from dropdown items */
 }
 
 .dropdown-item:hover {
     color: #000;
-}
-.mega-menu .dropdown-menu {
-    position: fixed;
-    min-width: 800px;
-    align-items: center;
-    width: 100vw;
-    left: -676%;
-    top: 100%;
-    padding: 20px;
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: none;
-    z-index: 1000;
-}
-
-.mega-menu h6 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-.mega-menu .dropdown-item {
-    color: #333;
-    text-decoration: none;
-}
-.mega-menu .dropdown-item:hover {
-    color: #000;
-    text-decoration: underline;
 }
 
 /* --------------------- Home --------------------------- */
@@ -169,6 +140,183 @@ margin-top: 65px;
     width: 16%;
     background-color: #fff;
 }
+/* -----------------login------------- */
+.adress-form {
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 ,0,0,0.6);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.adress-form-content{
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.adress-form-content h2 {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+}
+.adress-form-content form{
+    display: flex;
+    flex-direction: column;
+}
+.adress-form-content input[type="email"],
+.adress-form-content input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.adress-form-content button {
+    padding: 10px;
+    background-color: #0a0a5b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.adress-form-content button:hover {
+    color: red;
+    background-color: #00004d;
+}
+.adress-form-content .forgot-password,
+.adress-form-content .create-account {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.adress-form-content .forgot-password a:hover{
+    color: red;
+
+}
+.adress-form-content .create-account a {
+    color: #0a0a5b;
+    text-decoration: none;
+    border: 1px solid #0a0a5b;
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.adress-form-content .create-account a:hover {   
+    color: rgb(248, 110, 110);
+    border: solid 1px rgb(248, 110, 110);
+}
+.adress-form-content .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #1a1abd;
+    cursor: pointer;
+    color: #fff;    
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+
+}
+/* ----shop------------------------- */
+.shop-address {
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 ,0,0,0.6);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: right;
+    text-align: right;;
+    display: none;
+}
+.shop-address-form{
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 440px;  
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.buy-icon{
+    display: flex;
+    width: 440px;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #1a1abd;
+}
+.buy-icon .title{
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #110d6a;
+    
+}
+.buy-icon .title i {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    
+} 
+.buy-icon .close-button{
+    font-size: 20px;
+    justify-content: right;
+    cursor: pointer;
+    color: #150f87;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5em;
+    display: flex;
+
+}  
+.btn-shop{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 300px;   
+    
+}
+.btn-shop p {
+    color: #888;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+.btn-shop button{
+    padding: 10px;
+    background-color: #0a0a5b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-shop button:hover {
+    background-color: #2626ea;
+}
+
 /* Welcome Section Styling */
 .welcome-section {
     max-width: 700px;
@@ -188,7 +336,6 @@ margin-top: 65px;
     font-weight: 600;
     font-style: normal;
 }
-
 /* Category Section */
 .category-section {
     padding: 50px 0;
@@ -243,7 +390,7 @@ margin-top: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: url('../images/bannerWinter.webp');
+    background-image: url('../images/bannerWinter.webp'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -274,7 +421,7 @@ margin-top: 65px;
     font-size: 1.1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 50%;
+    width: 40%;
     display: inline-block;
     text-align: center;
 }
@@ -307,11 +454,6 @@ margin-top: 65px;
     width: 50%;
     border-radius: 5px;
 }
-
-.carousel-text {
-    height: 400px;
-}
-
 .carousel-text {
     width: 45%;
     color: #333;
@@ -361,20 +503,8 @@ margin-top: 65px;
 
 .carousel-control-prev ,.carousel-control-next {
     opacity: 1;
-    
+    filter: invert(50%);
 }
-
-/* --------------------- Collection --------------------------- */
-.collection-banner-suit{
-    width: 100%;
-    fill: #000;
-}
-
-.collection-banner-suit{
-    background-image: url('../images/collection_suit.webp');
-}
-
-
 /* Footer */
 .footer {
     background-color: #333;
@@ -470,5 +600,3 @@ margin-top: 65px;
 .list-inline a:hover {
     text-decoration: underline;
 }
-
-
