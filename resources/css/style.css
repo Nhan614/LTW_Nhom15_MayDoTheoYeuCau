@@ -276,7 +276,6 @@ margin-top: 65px;
     display: flex;
     justify-content: right;
     text-align: right;
-    display: none;
 }
 .nav-item{
     cursor: pointer;   
@@ -316,10 +315,8 @@ margin-top: 65px;
     position: absolute;
     top: 25px;
     right: 20px;
-    cursor: pointer;
     width: 30px;
     height: 30px;
-    font-size: 1.5em;
     display: flex;
 }
 .btn-shop{
