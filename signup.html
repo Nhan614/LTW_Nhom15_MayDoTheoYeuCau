@@ -61,11 +61,10 @@
         <ul class="navbar-nav">
             <li class="nav-item"> <i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
             <!-- ------------login ------------- -->
-            <li class="nav-item dropdown" id="adress-form" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false"><i class="fa-regular fa-user fa-xl"></i>
+            <li class="nav-item dropdown"  ><i class="fa-regular fa-user fa-xl"></i>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" id="adress-form" href="#">Login</a></li>
-                    <li><a class="dropdown-item" href="#">Sign up</a></li>
+                    <li><a class="dropdown-item" href="signup.html">Sign up</a></li>
 
                 </ul>
             </li>
@@ -115,42 +114,43 @@
     <div id="sec1">
         <div class="top-bar text-center py-2">
             <span>GIAM GIA 25%</span>
-        </div>       
+        </div>
     </div>
 
-<!----------------- sign up------------ -->
-<div class="registration-wrapper">
-    <h1>Create A New Account</h1>
-    <p>For faster checkout, save your designs and track your orders.</p>
-    <div class="signup-form-area">
-        <h2>WELCOME TO INSTITCHU</h2>
-        <form>
+    <!----------------- sign up------------ -->
+
+    <div class="sigin-up">
+        <div class="registration-form">
+            <h2>WELCOME TO INSTITCHU</h2>
             <input type="text" placeholder="First Name" required>
             <input type="text" placeholder="Last Name" required>
-            <div>
-                <p class="gender-label">Gender</p>
-                <label><input type="radio" name="gender" value="male"> Male</label>
-                <label><input type="radio" name="gender" value="female"> Female</label>
-                <label><input type="radio" name="gender" value="other"> Other</label>
+            <div class="sigin-gender">
+                <p class="sigin-gender-label">Gender</p>
+                <div class="sigin-gender-options">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                    <label><input type="radio" name="gender"> Other</label>
+                </div>
             </div>
             <input type="email" placeholder="Email" required>
             <input type="password" placeholder="Password" required>
             <input type="password" placeholder="Verify password" required>
-            <select required>
+            <select>
                 <option value="" disabled selected>How did you hear about us?</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="option1">Facebook</option>
+                <option value="option2">Instagram</option>
+                <option value="option3">Google Search</option>
+                <option value="option4">Television</option>
+                <option value="option5">Newspaper</option>
             </select>
-            <button type="submit" disabled>CREATE ACCOUNT</button>
-        </form>
-        <div class="redirect-login">
-            <p>ALREADY HAVE AN ACCOUNT?</p>
-            <a href="#">LOG IN</a>
+            <button class="create-account" disabled>CREATE ACCOUNT</button>
+            <div class="login">
+                <p>ALREADY HAVE AN ACCOUNT?</p>
+                <a href="#">LOG IN</a>
+            </div>
         </div>
-    </div>
-</div>
 
+    </div>
 
     <!-- Footer -->
     <footer class="footer text-center py-4">
