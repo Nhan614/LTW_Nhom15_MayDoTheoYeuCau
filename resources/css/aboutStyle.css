@@ -55,7 +55,7 @@ html{
     width: 0;
     height: 1px;
     bottom: 5px;
-    left: 50%;
+    left: 0;
     background-color: black;
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
@@ -92,16 +92,18 @@ html{
 }
 .mega-menu .dropdown-menu {
     position: fixed;
-    min-width: 800px;
     align-items: center;
-    width: 100vw;
-    left: -676%;
+    width: 50vw;
+    left: -50%;
     top: 100%;
     padding: 20px;
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;
     z-index: 1000;
+}
+.omega{
+    width: 1500px;
 }
 
 .mega-menu h6 {

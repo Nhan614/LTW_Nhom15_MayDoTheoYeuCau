@@ -20,7 +20,7 @@
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">CLOTHING</a>
       <div class="dropdown-menu">
         <div class="container-fluid">
-          <div class="row">
+          <div class="row alpha">
             <div class="col-md-3">
               <h6>Suits</h6>
               <a href="#" class="dropdown-item">Business Suits</a>
@@ -55,7 +55,7 @@
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">ACCESSORIES</a>
       <div class="dropdown-menu">
         <div class="container-fluid">
-          <div class="row">
+          <div class="row omega">
             <div class="col-md-3">
               <h6>Browse all Accessories</h6>
               <a href="#" class="dropdown-item">Neckties</a>
@@ -73,7 +73,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link">ABOUT US</a>
+      <a href="aboutUs.html" class="nav-link">ABOUT US</a>
     </li>
 
     <li class="nav-item">
@@ -83,11 +83,56 @@
   </ul>
   <ul class="navbar-nav">
     <li class="nav-item"> <i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
-    <li class="nav-item"><i class="fa-regular fa-user fa-xl"></i></li>
-    <li class="nav-item"><i class="fa-solid fa-cart-shopping fa-xl"></i></li>
-  </ul>
+    <!-- ------------login ------------- -->
+    <li class="nav-item dropdown" id="adress-form" href="#" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false"><i class="fa-regular fa-user fa-xl"></i>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" id="adress-form" href="#">Login</a></li>
+        <li><a class="dropdown-item" href="#">Sign up</a></li>
 
+      </ul>
+    </li>
+    <div class="adress-form">
+      <div class="adress-form-content">
+        <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+        <h2>Welcome Back.<br>Log in to your N3TAILORED account.</h2>
+        <form>
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Password">
+          <button type="submit">LOG IN</button>
+        </form>
+        <div class="forgot-password">
+          <a href="#">Forgot your password?</a>
+        </div>
+        <hr>
+        <div class="create-account">
+          <p>Don't have an account yet?</p>
+          <a href="#">CREATE A NEW ACCOUNT</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- shop -->
+    <li class="nav-item" id="shop-address"><i class="fa-solid fa-cart-shopping fa-xl"></i></li>
+    <div class="shop-address">
+      <div class="shop-address-form">
+        <div class="buy-icon">
+          <div class="title">
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+            <span>Your Cart</span>
+          </div>
+          <span class="close-button"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="btn-shop">
+          <p>Your cart is empty.</p>
+          <button type="submit">SHOP NOW</button>
+        </div>
+
+      </div>
+    </div>
+  </ul>
 </div>
+
 <section id="sec1">
   <div class="top-bar text-center py-2">
     <span>GIAM GIA 25%</span>
@@ -147,5 +192,6 @@
   // Bắt đầu hiệu ứng typing khi page được tải
   document.addEventListener("DOMContentLoaded", typeEffect);
 </script>
+<script src="resources/js/login.js"></script>
 </body>
 </html>
