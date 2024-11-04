@@ -55,7 +55,7 @@ html{
     width: 0;
     height: 1px;
     bottom: 5px;
-    left: 0;
+    left: 50%;
     background-color: black;
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
@@ -131,7 +131,6 @@ html{
     background-size: cover;
     background-position: center;
     height: 90vh;
-    color: #fff;
     position: relative;
 }
 
@@ -342,4 +341,55 @@ html{
     font-family: "Italiana", serif;
     font-style: italic;
     font-weight: lighter;
+}
+/*text section*/
+.custom-section {
+    padding-top: 80px; /* Adjust top padding for fixed navbar spacing */
+}
+
+.text-section h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    font-family: 'Italiana', serif;
+    color: #7d7c7c;
+}
+
+.text-section p {
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.text-section .btn-link {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.text-section .btn-link:hover {
+    text-decoration: underline;
+}
+
+.image-section .d-flex {
+    display: flex;
+    align-items: flex-start; /* Aligns the images to the top */
+}
+
+.small-image-wrapper {
+    flex: 0 0 50%; /* Width of the small image */
+    margin-right: 15px; /* Adds space between the small and large images */
+    position: relative;
+    top: -50px;
+}
+
+.large-image-wrapper {
+    flex: 0 0 50%; /* Allows the large image to take up the remaining space */
+    position: relative;
+    top: 50px;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
