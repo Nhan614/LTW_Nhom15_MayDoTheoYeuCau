@@ -330,7 +330,7 @@ body {
 
 .carousel-control-prev ,.carousel-control-next {
     opacity: 1;
-    filter: invert(50 %);
+    filter: invert(50%);
 }
 /* Footer */
 .footer {
