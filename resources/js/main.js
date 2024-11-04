@@ -16,3 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 
+// active navbar
+
+document.addEventListener("DOMContentLoaded", function() {
+    var navLink = document.querySelectorAll(".nav-link");
+    console.log(navLink)
+    if (navLink) {
+        console.log("Đã tìm thấy: " + navLink.textContent);
+    } else {
+        console.log("Không tìm thấy phần tử nào.");
+    }
+});
+

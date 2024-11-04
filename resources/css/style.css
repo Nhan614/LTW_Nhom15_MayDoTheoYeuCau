@@ -65,6 +65,12 @@ html{
     width: 100%;
     left: 50%;
 }
+
+.navbar-nav .nav-link.active::before{
+    width: 100%;
+    left: 50%;
+}
+
 .dropdown-menu {
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
@@ -557,11 +563,13 @@ margin-top: 65px;
 width: 100%;
 height: 500px;
 overflow: hidden;
+
 }
 
 .collection-banner-img>img{
     width: 100%;
    object-position: center;
+   filter: brightness(0.7)
 }
 
 .shop-btn{
@@ -585,12 +593,27 @@ overflow: hidden;
     height: 100%;
     justify-content: center;
     position: absolute;
+    top: 0;
 }
 .collection-text-costume{
     font-size: 1.2rem;
     line-height: 1.6;
     color: #fff;
 }
+
+.collection-banner{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 /* Footer */
 .footer {
     background-color: #333;
