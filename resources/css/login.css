@@ -374,7 +374,7 @@ margin-top: 65px;
 .btn-shop button:hover {
     background-color: #2626ea;
 }
-
+/* -------------trang login--------- */
 .login-container{
     margin: 0;
     padding: 0;
@@ -399,25 +399,29 @@ margin-top: 65px;
 
 .right {
     flex: 1;
-    background: url('https://placehold.co/1500x1500') no-repeat center center;
+    background: url('../images/login.jpg') no-repeat center center;
     background-size: cover;
 }
 
-h1 {
-    font-size: 24px;
+.left h1 {
+    font-size: 2.5em;
     margin-bottom: 10px;
-    color: #333;
+    color: #321be3;
+    text-align: center;
 }
 
-h2 {
+.left h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #1c13c1;
 }
 .subtitle {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #666;
+    color: #0cb77b;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 .form-group {
     margin-bottom: 20px;
@@ -452,7 +456,7 @@ h2 {
 .forgot-password {
     display: block;
     margin-top: 10px;
-    color: #666;
+    color: 4da6ff;
     text-decoration: none;
 }
 

@@ -306,7 +306,7 @@ html {
     align-items: center;
     height: 100%;
 }
-h1 {
+.sigin-up-form h1 {
     font-size: 2.5em;
     color: #3a3a3a;
     margin-bottom: 10px;
@@ -338,7 +338,7 @@ h1 {
 
 .registration-form h2 {
     text-align: center;
-    color: #4a4a4a;
+    color: #0cc398;
     font-size: 18px;
     margin-bottom: 20px;
 }
