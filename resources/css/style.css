@@ -126,7 +126,6 @@ html{
     color: #000;
     text-decoration: underline;
 }
-
 /* --------------------- Home --------------------------- */
 #sec1{
 margin-top: 65px;
@@ -468,7 +467,6 @@ margin-top: 65px;
 }
 .carousel-title {
     font-family: 'Italiana', serif;
-    font-weight: bold;
     font-size: 2rem;
     margin-top: 20px;
     margin-left: 20px;
@@ -476,10 +474,11 @@ margin-top: 65px;
 }
 
 .carousel-content {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 120px;
+    padding: 80px;
 }
 
 .carousel-image {
