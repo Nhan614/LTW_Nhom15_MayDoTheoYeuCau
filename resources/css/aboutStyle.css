@@ -373,6 +373,7 @@ html{
 .image-section .d-flex {
     display: flex;
     align-items: flex-start; /* Aligns the images to the top */
+    gap:15px;
 }
 
 .small-image-wrapper {
@@ -388,8 +389,26 @@ html{
     top: 50px;
 }
 
+.small-image-wrapper2 {
+    width: 40%;
+    flex: 0 0 45%; /* Width of the small image */
+    position: relative;
+    top: 300px; /* Moves the small image higher */
+}
+
+.large-image-wrapper2 {
+    margin-left: 270px;
+    width: 55%;
+    flex: 0 0 55%; /* Width of the large image */
+    position: relative;
+    top: -300px; /* Moves the large image slightly lower */
+}
 .image-section img {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.txt-right{
+    text-align: right;
 }
