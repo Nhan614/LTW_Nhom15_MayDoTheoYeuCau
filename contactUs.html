@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="venders/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/contactUs.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="menubar"></div>
+    
+    <!-- section 1 -->
+    <div id="sec1">
+        <div class="top-bar text-center py-2">
+            <span>GIẢM GIÁ 25%</span>
+            <button type="button" class="btn-close position-absolute end-0" style="margin-right:10px;filter: brightness(0) invert(1); "aria-label="Close"></button>
+        </div>
+    </div>
+
+    <!----------------- contact us------------ -->
+    <div class="contact">
+        <div class="left-col">
+            <img class="logo" src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/logo.png" />
+        </div>
+        <div class="right-col">
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" class="theme-checkbox" />
+                    <div class="slider round"></div>
+                </label>
+                <div class="description">Dark Mode</div>
+            </div>
+    
+            <h1 class="contact-heading">Contact us</h1>
+    
+            <form id="contact-form" method="post" class="contact-form">
+                <label class="label-contact" for="name">Full name</label>
+                <input type="text" id="name" name="name" class="input-field" placeholder="Your Full Name" required>
+    
+                <label class="label-contact" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="input-field" placeholder="Your Email Address" required>
+    
+                <label class="label-contact" for="message">Message</label>
+                <textarea rows="6" class="textarea-field" placeholder="Your Message" id="message" name="message" required></textarea>
+    
+                <button type="submit" id="submit" class="submit-btn" name="submit">Send</button>
+            </form>
+            <div id="error" class="error-msg"></div>
+            <div id="success-msg" class="success-msg"></div>
+        </div>
+    </div>
+    
+    
+      
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="resources/js/main.js"></script>
+    <script src="resources/js/quit.js"></script>
+
+</body>
+
+
+</html>
