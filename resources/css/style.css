@@ -11,6 +11,10 @@ a{
     text-decoration: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* ---------------- NAV -------------------- */
 .top-bar {
     background-color: #001F3F;
@@ -671,6 +675,7 @@ overflow: hidden;
     height: 100%;
 }
 
+/* ------------------------------ Footer -----------------------------*/
 /* ------------------------------ Footer -----------------------------*/
 .footer {
     background-color: #333;
