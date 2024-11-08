@@ -8,7 +8,7 @@
   
   [data-theme="dark"] {
     --primary-color: #CCFF99;
-    --secondary-color: #bbbbbb;
+    --secondary-color: #e7e4e4;
     --bg-color: #201f1f;
     --button-color: #818386;
     --h1-color: #F9F400;
@@ -192,7 +192,7 @@
     font-family: 'Jost';
     color: var(--secondary-color);
   }
-  
+
   #success-msg {
     transition-delay: 3s;
   }
