@@ -2,29 +2,29 @@
     --primary-color: #010712;
     --secondary-color: #818386;
     --bg-color: #FCFDFD;
-    --button-color: #3B3636;
+    --button-color: #818386;
     --h1-color: #3F444C;
   }
   
   [data-theme="dark"] {
-    --primary-color: #FCFDFD;
-    --secondary-color: #818386;
-    --bg-color: #010712;
+    --primary-color: #CCFF99;
+    --secondary-color: #bbbbbb;
+    --bg-color: #201f1f;
     --button-color: #818386;
-    --h1-color: #FCFDFD;
+    --h1-color: #F9F400;
   }
   
-  /* * {
+  * {
     margin: 0;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
-  } */
+  }
   
   .contact {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background: #FCFDFD;
+    background: var(--bg-color);
   }
   
   .left-col {
@@ -41,24 +41,26 @@
   }
   
   .right-col {
-    background: #FCFDFD;
+    background: var(--bg-color);
     width: 50vw;
     height: 100vh;
-    padding: 5rem 3.5rem;
+    /* padding: 5rem 3.5rem; */
+    padding: 30px 50px ;
   }
   
   .contact-heading {
-    color: #3F444C;
+    color: var(--h1-color);
     text-transform: uppercase;
     font-size: 2.5rem;
     /* letter-spacing: 0.5rem; */
     text-align: center;
-    font-weight: 500;
-    margin-bottom: 2rem;
+    font-weight: 400;
+    padding-top: 40px;
+    margin-bottom:0;
   }
   
   .label-contact {
-    color: #010712;
+    color:var(--primary-color);
     text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 0.5rem;
@@ -80,15 +82,15 @@
     padding: 0.5rem 0;
     margin-bottom: 1rem;
     border: none;
-    border-bottom: 1px solid #818386;
-    background: #FCFDFD;
-    color: #adadad;
+    border-bottom: 1px solid var(--button-color);
+    background: var(--bg-color);
+    color: var(--secondary-color);
     font-weight: 500;
     outline: none;
   }
   
   .input-field::placeholder, .textarea-field::placeholder {
-    color: #adadad;
+    color: var(--secondary-color);
   }
   
   textarea.textarea-field {
@@ -97,11 +99,12 @@
   
   .submit-btn {
     text-transform: uppercase;
-    font-weight: 300;
-    background: #2046d0;
-    color: #FCFDFD;
+    font-weight: 500;
+    font-size: 20px;
+    background: var(--primary-color);
+    color: var(--bg-color);
     width: 40vw;
-    height: 2.25rem;
+    height: 2.5rem;
     border: none;
     border-radius: 2px;
     outline: none;
@@ -123,8 +126,8 @@
     text-align: center;
     width: 160px;
     position: absolute;
-    top: 0.5rem;
-    right: 0;
+    padding-top: 0;
+    right: 10px;
   }
   
   .description {
@@ -185,6 +188,7 @@
     margin: 0.125rem 0;
     font-size: 0.75rem;
     text-transform: uppercase;
+    visibility: hidden;  /* an chu */
     font-family: 'Jost';
     color: var(--secondary-color);
   }
