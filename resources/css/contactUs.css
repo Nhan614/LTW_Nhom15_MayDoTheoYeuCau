@@ -249,4 +249,71 @@
       border-radius: 50%;
     }
   }
+
+  /* -------------them dia chi lien he--------- */
+  .total-container {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Bố cục của danh sách liên hệ */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
+}
+
+/* Mỗi phần tử liên hệ */
+.contact-item {
+    text-align: left;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Thiết kế icon */
+.contact-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #007BFF; /* Màu sắc cho icon */
+}
+
+/* Tiêu đề liên hệ */
+.contact-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Định dạng cho các đoạn văn bản liên hệ */
+.contact-detail {
+    font-size: 14px;
+    margin: 5px 0;
+    padding-left: 10px; /* Căn chỉnh văn bản với icon */
+}
+
+/* Phần divider phân cách các mục */
+.divider {
+    border-left: 1px solid #ccc;
+    height: 50px;
+}
+
+/* Các hiệu ứng cho các phần tử khi hover */
+.contact-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-title:hover {
+    color: #007BFF; /* Màu sắc thay đổi khi hover vào tiêu đề */
+}
+
+.contact-detail:hover {
+    color: #555;
+}
   
