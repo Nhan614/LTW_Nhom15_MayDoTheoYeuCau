@@ -27,43 +27,41 @@
 
     <!----------------- sign up------------ -->
 
-    <div class="sigin-up">
-        <div class="sigin-up-form">
-            <h1>Tạo tài khoản mới</h1>
-            <div class="checkout-container">
-                <p class="checkout">Để thanh toán nhanh hơn, hãy lưu thiết kế và theo dõi đơn hàng của bạn.</p>
-            </div>
-            <div class="registration-form">
-                <h2>CHÀO MỪNG ĐẾN VỚI N3TAILORED</h2>
-                <input type="text" placeholder="Tên" required>
-                <input type="text" placeholder="Họ" required>
-                <div class="sigin-gender">
-                    <p class="sigin-gender-label">Giới tính</p>
-                    <div class="sigin-gender-options">
-                        <label><input type="radio" name="gender"> Nam</label>
-                        <label><input type="radio" name="gender"> Nữ</label>
-                        <label><input type="radio" name="gender"> Khác</label>
+    <div class="signup">
+        <div class="wrapper">
+            <span class="bg-animate"></span>
+            <span class="bg-animate2"></span>
+
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label>Username</label>
+                        <i class="fa-solid fa-user"></i>
                     </div>
-                </div>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mật khẩu" required>
-                <input type="password" placeholder="Xác minh mật khẩu" required>
-                <select>
-                    <option value="" disabled selected>Bạn biết đến chúng tôi như thế nào?</option>
-                    <option value="option1">Facebook</option>
-                    <option value="option2">Instagram</option>
-                    <option value="option3">Tìm kiếm Google</option>
-                    <option value="option4">Tivi</option>
-                    <option value="option5">Báo chí</option>
-                </select>
-                <button class="create-account" disabled>TẠO TÀI KHOẢN</button>
-                <div class="login">
-                    <p>BẠN ĐÃ CÓ TÀI KHOẢN?</p>
-                    <a href="#">ĐĂNG NHẬP</a>
-                </div>
+
+                    <div class="input-box">
+                        <input type="password" required>
+                        <label>Password</label>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <p><a href="#" class="forgot-password-link">Forgot your password?</a></p>
+                    <button type="submit" class="btn">Login </button>
+                    <div class="logreg-link">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                        
+                    </div>
+                </form>
+                
+            </div>
+            <div class="info-text login">
+                <h2>Welcome back!</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
             </div>
         </div>
-
+   
     </div>
 
     <!-- Footer -->
