@@ -19,6 +19,20 @@
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
   }
+
+  /*user*/
+.user-box, .cart-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+  position: relative;
+}
   
   .contact {
     display: flex;

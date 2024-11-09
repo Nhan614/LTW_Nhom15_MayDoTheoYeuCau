@@ -150,7 +150,7 @@ html{
     text-decoration: none;
 }
 /*user*/
-.user-box {
+.user-box, .cart-box{
     display: flex;
     align-items: center;
     justify-content: center;
