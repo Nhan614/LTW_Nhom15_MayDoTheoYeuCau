@@ -66,13 +66,12 @@ html{
     left: 50%;
 }
 .dropdown-menu {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-    display: block;
-    visibility: hidden;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 30px;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -120,7 +119,49 @@ html{
     color: #000;
     text-decoration: underline;
 }
+/*search*/
+.box{
+    height: 35px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.4s ease;
+}
 
+.box-input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 200;
+    transition: width 0.4s ease;
+    background: transparent;
+    color: #333;
+}
+.box:hover .box-input,
+.box-input:focus {
+    width: 150px; /* Expanded width */
+}
+.box a {
+    color: #333333;
+    text-decoration: none;
+}
+/*user*/
+.user-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    cursor: pointer;
+    position: relative;
+}
 /* --------------------- Home --------------------------- */
 #sec1{
     margin-top: 65px;
