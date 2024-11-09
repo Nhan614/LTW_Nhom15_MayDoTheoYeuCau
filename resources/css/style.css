@@ -78,14 +78,7 @@ a{
     width: 100%;
     left: 50%;
 }
-.dropdown-menu {
-    position: absolute;
-    top: 30px;
-    transform: translateX(-50%);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 5px;
-}
+
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
@@ -102,18 +95,7 @@ a{
 .dropdown-item:hover {
     color: #000;
 }
-.mega-menu .dropdown-menu {
-    position: fixed;
-    align-items: center;
-    width: 50vw;
-    left: -50%;
-    top: 100%;
-    padding: 20px;
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: none;
-    z-index: 1000;
-}
+
 .omega{
     width: 1500px;
 }
