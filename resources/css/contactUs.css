@@ -30,14 +30,15 @@
   .left-col {
     width: 45vw;
     height: 100%;
-    background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-image: url("resources/images/contactus.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
   
   .logo {
-    width: 10rem;
-    padding: 1.5rem;
+    width: 100vh;
+    height: 100vh;
+    /* padding: 1.5rem; */
   }
   
   .right-col {
@@ -261,14 +262,14 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 30px;
     flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
 }
 
 /* Mỗi phần tử liên hệ */
 .contact-item {
-    text-align: left;
-    max-width: 200px;
+    text-align:left;
+    max-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,7 +278,7 @@
 /* Thiết kế icon */
 .contact-item i {
     font-size: 24px;
-    margin-right: 10px;
+    margin-right: 20px;
     color: #007BFF; /* Màu sắc cho icon */
 }
 
@@ -294,13 +295,13 @@
 .contact-detail {
     font-size: 14px;
     margin: 5px 0;
-    padding-left: 10px; /* Căn chỉnh văn bản với icon */
+    padding-left: 10px; 
 }
 
 /* Phần divider phân cách các mục */
 .divider {
     border-left: 1px solid #ccc;
-    height: 50px;
+    height: 80px;
 }
 
 /* Các hiệu ứng cho các phần tử khi hover */
