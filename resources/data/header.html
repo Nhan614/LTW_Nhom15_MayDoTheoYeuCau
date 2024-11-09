@@ -35,7 +35,7 @@
                                     <a href="#" class="dropdown-item">Blazers</a>
                                 </div>
                                 <div class="col-md-3">
-                                    <h6>Quần</h6>
+                                    <h6>Quần Dài</h6>
                                     <a href="#" class="dropdown-item">Quần Âu</a>
                                     <a href="#" class="dropdown-item">Quần Chino</a>
                                 </div>
@@ -81,15 +81,26 @@
     
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item"> <i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
+                <li class="nav-item">
+                    <div class="box">
+                        <input type="text" class="box-input" placeholder="Search..." id="search-bar">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        </a>
+                    </div>
+                </li>
                 <!-- ------------login ------------- -->
-                <li class="nav-item dropdown"><i class="fa-regular fa-user fa-xl"></i>
-                    <ul class="dropdown-menu">
+                <li class="nav-item dropdown">
+                    <div class="user-box">
+                    <i class="fa-regular fa-user fa-xl"></i>
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a  id="adress-form" href="login.html" class="dropdown-item">Đăng Nhập</a></li>
                         <li><a class="dropdown-item" href="signup.html">Đăng Ký</a></li>
     
                     </ul>
+                </div>
                 </li>
+
                 <div class="adress-form">
                     <div class="adress-form-content">
                         <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
@@ -109,10 +120,11 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- shop -->
+                <div class="cart-box">
                 <li class="nav-item" id="shop-address"><i class="fa-solid fa-cart-shopping fa-xl"></i></li>
-                
+                </div>
             </ul>
         </div>
     </div>
