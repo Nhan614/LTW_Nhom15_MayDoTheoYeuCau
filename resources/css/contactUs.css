@@ -201,11 +201,12 @@
   #error, #success-msg {
     width: 40vw;
     margin: 0.125rem 0;
-    font-size: 0.75rem;
+    font-size: 14px;
     text-transform: uppercase;
-    visibility: hidden;  /* an chu */
+     /* an chu */
     font-family: 'Jost';
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
+    color: rgb(247, 86, 86);
   }
 
   #success-msg {
