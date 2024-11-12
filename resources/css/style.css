@@ -848,7 +848,9 @@ overflow: hidden;
 .section-products .single-product:hover .part-1::before {
     transform: scale(1.05);
 }
+
 /*vest cong so*/
+
 .section-products #vestCongSo-1 .part-1::before {
     background: url("../images/vestCongSo1.jpg") no-repeat center;
     background-size: cover;
@@ -889,50 +891,49 @@ overflow: hidden;
     background: url("../images/vestCongSo8.jpg") no-repeat center;
     background-size: cover;
 }
+
 /*vest thuong ngay*/
-.section-products #vestCongSo-1 .part-1::before {
-    background: url("../images/vestCongSo1.jpg") no-repeat center;
+
+.section-products #vestThuongNgay-1 .part-1::before {
+    background: url("../images/vestThuongNgay1.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
-.section-products #vestCongSo-2 .part-1::before {
-    background: url("../images/vestCongSo2.jpg") no-repeat center;
+.section-products #vestThuongNgay-2 .part-1::before {
+    background: url("../images/vestThuongNgay2.jpg") no-repeat center;
     background-size: cover;
 }
 
-.section-products #vestCongSo-3 .part-1::before {
-    background: url("../images/vestCongSo3.jpg") no-repeat center;
+.section-products #vestThuongNgay-3 .part-1::before {
+    background: url("../images/vestThuongNgay3.jpg") no-repeat center;
     background-size: cover;
 }
 
-.section-products #vestCongSo-4 .part-1::before {
-    background: url("../images/vestCongSo4.jpg") no-repeat center;
+.section-products #vestThuongNgay-4 .part-1::before {
+    background: url("../images/vestThuongNgay4.jpg") no-repeat center;
     background-size: cover;
 }
-.section-products #vestCongSo-5 .part-1::before {
-    background: url("../images/vestCongSo5.jpg") no-repeat center;
+.section-products #vestThuongNgay-5 .part-1::before {
+    background: url("../images/vestThuongNgay5.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
-.section-products #vestCongSo-6 .part-1::before {
-    background: url("../images/vestCongSo6.jpg") no-repeat center;
+.section-products #vestThuongNgay-6 .part-1::before {
+    background: url("../images/vestThuongNgay6.jpg") no-repeat center;
     background-size: cover;
 }
 
-.section-products #vestCongSo-7 .part-1::before {
-    background: url("../images/vestCongSo7.jpg") no-repeat center;
+.section-products #vestThuongNgay-7 .part-1::before {
+    background: url("../images/vestThuongNgay7.jpg") no-repeat center;
     background-size: cover;
 }
 
-.section-products #vestCongSo-8 .part-1::before {
-    background: url("../images/vestCongSo8.jpg") no-repeat center;
+.section-products #vestThuongNgay-8 .part-1::before {
+    background: url("../images/vestThuongNgay8.jpg") no-repeat center;
     background-size: cover;
 }
-
-
-
 
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
@@ -990,6 +991,18 @@ overflow: hidden;
 
 .section-products .single-product .part-2 .product-title {
     font-size: 1rem;
+}
+.section-products .single-product .part-2 .product-season {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+    color: #808080;
+}
+.section-products .single-product .part-2 .product-maker {
+    font-size: 0.7rem;
+    text-transform: capitalize;
+    display: block;
+    color: #808080;
 }
 
 .section-products .single-product .part-2 h4 {
