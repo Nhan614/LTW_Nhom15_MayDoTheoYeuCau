@@ -1137,6 +1137,48 @@ a:hover {
     background-size: cover;
     transition: all 0.3s;
 }
+/*vest xam*/
+.section-products #vestXam-1 .part-1::before {
+    background: url("../images/vestIconGreySharkskin.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestXam-2 .part-1::before {
+    background: url("../images/vestGreyPrinceOfWales.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #vestXam-3 .part-1::before {
+    background: url("../images/vestIconLightGrey.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #vestXam-4 .part-1::before {
+    background: url("../images/vestIconCharcoalGrey.jpg") no-repeat center;
+    background-size: cover;
+}
+.section-products #vestXam-5 .part-1::before {
+    background: url("../images/vestJaquardCamouflage.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestXam-6 .part-1::before {
+    background: url("../images/vestGreyAuthentic.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #vestXam-7 .part-1::before {
+    background: url("../images/vestCharcoalGrey.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #vestXam-8 .part-1::before {
+    background: url("../images/vestGreyPlainWeaveCashmereFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
