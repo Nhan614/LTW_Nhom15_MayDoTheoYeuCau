@@ -17,4 +17,7 @@ Tiến trình làm việc:
   Tuần 1: tìm kiếm ý tưởng và thiết kế trên Figma
 
   Tuần 2: xây dựng các trang cần thiết
+
+  Tuần 3: tiếp tục xây dựng các trang cần thiết
   
+  Tuần 4: Hiệu chỉnh lại trang web cho chuẩn yêu cầu đề tài hơn
