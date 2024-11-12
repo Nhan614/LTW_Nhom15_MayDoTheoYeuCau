@@ -2,102 +2,157 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - N3TAILORED</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - N3TAILORED</title>
 
-    <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
-    <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
+  <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
 <body>
-    <!-- header -->
-    <div id="menubar"></div>
+  <!-- header -->
+  <div id="menubar"></div>
 
-    <!-- section 1 -->
-    <div id="sec1">
-        <div class="top-bar text-center py-2">
-            <span>GIẢM GIÁ 25%</span>
-            <button type="button" class="btn-close position-absolute end-0"
-                style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
-        </div>
-
-        <div class="container">
-            <div class="banner-text-left">
-                <h3>THU ĐÔNG 2024</h3>
-                <div class="container mt-5">
-                    <h2>Giỏ Hàng</h2>
-                
-                    <!-- Giỏ hàng -->
-                    <div class="cart">
-                      <div class="cart-item row">
-                        <div class="col-md-2">
-                          <img src="https://via.placeholder.com/80" alt="Product 1">
-                        </div>
-                        <div class="col-md-4">
-                          <p><strong>Sản phẩm 1</strong></p>
-                        </div>
-                        <div class="col-md-2">
-                          <input type="number" class="form-control" value="1">
-                        </div>
-                        <div class="col-md-2">
-                          <p><strong>100,000 VND</strong></p>
-                        </div>
-                        <div class="col-md-2 text-center">
-                          <button class="btn btn-danger btn-sm">Xóa</button>
-                        </div>
-                      </div>
-                
-                      <div class="cart-item row">
-                        <div class="col-md-2">
-                          <img src="https://via.placeholder.com/80" alt="Product 2">
-                        </div>
-                        <div class="col-md-4">
-                          <p><strong>Sản phẩm 2</strong></p>
-                        </div>
-                        <div class="col-md-2">
-                          <input type="number" class="form-control" value="2">
-                        </div>
-                        <div class="col-md-2">
-                          <p><strong>150,000 VND</strong></p>
-                        </div>
-                        <div class="col-md-2 text-center">
-                          <button class="btn btn-danger btn-sm">Xóa</button>
-                        </div>
-                      </div>
-                
-                      <!-- Tổng cộng -->
-                      <div class="cart-footer row">
-                        <div class="col-md-8"></div>
-                        <div class="col-md-4">
-                          <h4>Tổng cộng: <span>400,000 VND</span></h4>
-                        </div>
-                      </div>
-                
-                      <!-- Nút thanh toán -->
-                      <div class="row mt-4">
-                        <div class="col-md-12 text-center">
-                          <button class="btn btn-success btn-lg">Thanh Toán</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-
+  <!-- section 1 -->
+  <div id="sec1">
+    <div class="top-bar text-center py-2">
+      <span>GIẢM GIÁ 25%</span>
+      <button type="button" class="btn-close position-absolute end-0"
+        style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
     </div>
 
+    <div class="container">
+      <div class="container mt-5">
+        <h1><strong>Giỏ Hàng Của Bạn (5 Sản Phẩm)</strong></h1>
 
+        <!-- Giỏ hàng -->
+        <div class="cart mt-5 mb-5">
+          <div class="row">
+            <!-- col left -->
+            <div class="col-9">
 
-    <!-- footer -->
-    <div id="footer"></div>
+              <div class="cart-item row">
+                <div class="col-md-2 ">
+                  <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
+                </div>
+                <div class="col-md-4">
+                  <p><strong>Sản phẩm 1</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" value="1" min="1">
+                </div>
+                <div class="col-md-2">
+                  <p class="strikethrough"><strong>300,000 VND</strong></p>
+                  <p><strong>100,000 VND</strong></p>
+                </div>
+                <div class="col-md-2 text-center">
+                  <button class="btn btn-danger btn-sm">Xóa</button>
+                </div>
+              </div>
+              <div class="cart-item row mt-3">
+                <div class="col-md-2 ">
+                  <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
+                </div>
+                <div class="col-md-4">
+                  <p><strong>Sản phẩm 2</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" value="1" min="1">
+                </div>
+                <div class="col-md-2">
+                  <p><strong>100,000 VND</strong></p>
+                </div>
+                <div class="col-md-2 text-center">
+                  <button class="btn btn-danger btn-sm">Xóa</button>
+                </div>
+              </div>
+              <div class="cart-item row mt-3">
+                <div class="col-md-2 ">
+                  <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
+                </div>
+                <div class="col-md-4">
+                  <p><strong>Sản phẩm 3</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" value="1" min="1">
+                </div>
+                <div class="col-md-2">
+                  <p class="strikethrough"><strong>200,000 VND</strong></p>
+                  <p><strong>100,000 VND</strong></p>
+                </div>
+                <div class="col-md-2 text-center">
+                  <button class="btn btn-danger btn-sm">Xóa</button>
+                </div>
+              </div>
+              <div class="cart-item row mt-3">
+                <div class="col-md-2 ">
+                  <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
+                </div>
+                <div class="col-md-4">
+                  <p><strong>Sản phẩm 4</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" value="1" min="1">
+                </div>
+                <div class="col-md-2">
+                  <p><strong>100,000 VND</strong></p>
+                </div>
+                <div class="col-md-2 text-center">
+                  <button class="btn btn-danger btn-sm">Xóa</button>
+                </div>
+              </div>
+              <div class="cart-item row mt-3">
+                <div class="col-md-2 ">
+                  <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
+                </div>
+                <div class="col-md-4">
+                  <p><strong>Sản phẩm 5</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" value="1" min="1">
+                </div>
+                <div class="col-md-2">
+                  <p><strong>100,000 VND</strong></p>
+                </div>
+                <div class="col-md-2 text-center">
+                  <button class="btn btn-danger btn-sm">Xóa</button>
+                </div>
+              </div>
 
-    <!-- js -->
-    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="venders/js/jquery-3.7.1.min.js"></script>
-    <script src="resources/js/main.js"></script>
-    <script src="resources/js/quit.js"></script>
+            </div>
+
+            <!-- col right -->
+            <div class="col-3 border">
+              <!-- Tổng cộng -->
+              <div class="cart-footer">
+                  <!-- Mã giảm giá -->                     
+                <div class="cart-discount">
+                  <label for="discountCode">Mã Giảm Giá</label><br>
+                    <input type="text" class="form-control" id="discountCode" placeholder="Nhập mã giảm giá">
+                </div>
+                <hr>
+                <div class="col cart-total">
+                  <h4>Tổng cộng: <span>500,000 VND</span></h4>             
+                  <button class="btn btn-lg">Thanh Toán</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <!-- js -->
+  <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+  <script src="venders/js/jquery-3.7.1.min.js"></script>
+  <script src="resources/js/main.js"></script>
+  <script src="resources/js/quit.js"></script>
 </body>
 
 </html>
