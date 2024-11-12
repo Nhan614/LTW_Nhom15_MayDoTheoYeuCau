@@ -852,89 +852,135 @@ overflow: hidden;
 /*vest cong so*/
 
 .section-products #vestCongSo-1 .part-1::before {
-    background: url("../images/vestCongSo1.jpg") no-repeat center;
+    background: url("../images/vestIconGreySharkskin.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vestCongSo-2 .part-1::before {
-    background: url("../images/vestCongSo2.jpg") no-repeat center;
+    background: url("../images/vestGreyPrinceOfWales.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestCongSo-3 .part-1::before {
-    background: url("../images/vestCongSo3.jpg") no-repeat center;
+    background: url("../images/vestIconLightGrey.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestCongSo-4 .part-1::before {
-    background: url("../images/vestCongSo4.jpg") no-repeat center;
+    background: url("../images/vestBlueTwill.jpg") no-repeat center;
     background-size: cover;
 }
 .section-products #vestCongSo-5 .part-1::before {
-    background: url("../images/vestCongSo5.jpg") no-repeat center;
+    background: url("../images/vestCobaltBlueBiella.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vestCongSo-6 .part-1::before {
-    background: url("../images/vestCongSo6.jpg") no-repeat center;
+    background: url("../images/vestIconBlueBirdEye.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestCongSo-7 .part-1::before {
-    background: url("../images/vestCongSo7.jpg") no-repeat center;
+    background: url("../images/vestIconCharcoalGrey.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestCongSo-8 .part-1::before {
-    background: url("../images/vestCongSo8.jpg") no-repeat center;
+    background: url("../images/vestIconBluePrinceOfWales.jpg") no-repeat center;
     background-size: cover;
 }
 
 /*vest thuong ngay*/
 
 .section-products #vestThuongNgay-1 .part-1::before {
-    background: url("../images/vestThuongNgay1.jpg") no-repeat center;
+    background: url("../images/vestBlueWoolCottonSeersucker.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vestThuongNgay-2 .part-1::before {
-    background: url("../images/vestThuongNgay2.jpg") no-repeat center;
+    background: url("../images/vestGreySeersuckerWoolCotton.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestThuongNgay-3 .part-1::before {
-    background: url("../images/vestThuongNgay3.jpg") no-repeat center;
+    background: url("../images/vestPurpleStretchWoolFannel.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestThuongNgay-4 .part-1::before {
-    background: url("../images/vestThuongNgay4.jpg") no-repeat center;
+    background: url("../images/vestGreenStretchWoolFlannel.jpg") no-repeat center;
     background-size: cover;
 }
 .section-products #vestThuongNgay-5 .part-1::before {
-    background: url("../images/vestThuongNgay5.jpg") no-repeat center;
+    background: url("../images/vestBeigeStretchWoolFlannel.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vestThuongNgay-6 .part-1::before {
-    background: url("../images/vestThuongNgay6.jpg") no-repeat center;
+    background: url("../images/vestRedWoolCashmereFlannel.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestThuongNgay-7 .part-1::before {
-    background: url("../images/vestThuongNgay7.jpg") no-repeat center;
+    background: url("../images/vestBrownLinen.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vestThuongNgay-8 .part-1::before {
-    background: url("../images/vestThuongNgay8.jpg") no-repeat center;
+    background: url("../images/vestBlueSilkCotton.jpg") no-repeat center;
     background-size: cover;
 }
+/*vest xanh*/
+.section-products #vestXanh-1 .part-1::before {
+    background: url("../images/vestIconMidnightBlue.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
 
+.section-products #vestXanh-2 .part-1::before {
+    background: url("../images/vestIconBlueBirdEye.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+
+}.section-products #vestXanh-3 .part-1::before {
+     background: url("../images/vestCobaltBlueBiella.jpg") no-repeat center;
+     background-size: cover;
+     transition: all 0.3s;
+ }
+
+.section-products #vestXanh-4 .part-1::before {
+      background: url("../images/vestBlueTwill.jpg") no-repeat center;
+      background-size: cover;
+      transition: all 0.3s;
+  }
+
+.section-products #vestXanh-5 .part-1::before {
+       background: url("../images/vestCeremonyStriped.jpg") no-repeat center;
+       background-size: cover;
+       transition: all 0.3s;
+   }
+
+.section-products #vestXanh-6 .part-1::before {
+        background: url("../images/vestIconBluePrinceOfWales.jpg") no-repeat center;
+        background-size: cover;
+        transition: all 0.3s;
+    }
+
+.section-products #vestXanh-7 .part-1::before {
+         background: url("../images/vestDarkBlueFlannel.jpg") no-repeat center;
+         background-size: cover;
+         transition: all 0.3s;
+     }
+
+.section-products #vestXanh-8 .part-1::before {
+          background: url("../images/vestOptmBlue.jpg") no-repeat center;
+          background-size: cover;
+          transition: all 0.3s;
+      }
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
