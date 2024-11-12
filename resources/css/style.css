@@ -11,10 +11,11 @@ a{
     text-decoration: none;
 }
 
-a{
+a,
+a:hover {
     text-decoration: none;
+    color: inherit;
 }
-
 /* ---------------- NAV -------------------- */
 .top-bar {
     background-color: #001F3F;
@@ -799,18 +800,7 @@ overflow: hidden;
 }
 
 /* --------------------- Vest --------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-body {
-    font-family: "Poppins", sans-serif;
-    color: #444444;
-}
-
-a,
-a:hover {
-    text-decoration: none;
-    color: inherit;
-}
 
 .section-products {
     padding: 80px 0 54px;
@@ -838,8 +828,8 @@ a:hover {
 
 .section-products .single-product .part-1 {
     position: relative;
-    height: 290px;
-    max-height: 290px;
+    height: 600px;
+    max-height: 700px;
     margin-bottom: 20px;
     overflow: hidden;
 }
@@ -856,47 +846,47 @@ a:hover {
 }
 
 .section-products .single-product:hover .part-1::before {
-    transform: scale(1.2,1.2) rotate(5deg);
+    transform: scale(1.05);
 }
 
 .section-products #vest-1 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../images/vestCongSo1.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vest-2 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../images/vestCongSo2.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vest-3 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../images/vestCongSo3.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vest-4 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../images/vestCongSo4.jpg") no-repeat center;
     background-size: cover;
 }
 .section-products #vest-5 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../images/vestCongSo5.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #vest-6 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../images/vestCongSo6.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vest-7 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../images/vestCongSo7.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #vest-8 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../images/vestCongSo8.jpg") no-repeat center;
     background-size: cover;
 }
 
