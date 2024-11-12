@@ -981,6 +981,54 @@ overflow: hidden;
           background-size: cover;
           transition: all 0.3s;
       }
+/*vest nau*/
+.section-products #vestNau-1 .part-1::before {
+    background: url("../images/vestBrownWoolCashmereCanvas.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-2 .part-1::before {
+    background: url("../images/vestBrownWoolCashmereTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-3 .part-1::before {
+    background: url("../images/vestOrangeLinenWoolTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-4 .part-1::before {
+    background: url("../images/vestGunMetalLinenWoolTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-5 .part-1::before {
+    background: url("../images/vestDoveGreyPlainStretchWool.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-6 .part-1::before {
+    background: url("../images/vestOrchePlainLinen.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-7 .part-1::before {
+    background: url("../images/vestGunMetalWoolTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #vestNau-8 .part-1::before {
+    background: url("../images/vestCamelWoolFlannel.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
