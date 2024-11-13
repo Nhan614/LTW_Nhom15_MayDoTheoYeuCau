@@ -1180,7 +1180,6 @@ a:hover {
 }
 
 /*ca vat*/
-/*vest xam*/
 .section-products #caVat-1 .part-1::before {
     background: url("../images/tieSilkBluePinkMedallion.jpg") no-repeat center;
     background-size: cover;
@@ -1218,6 +1217,47 @@ a:hover {
 }
 
 .section-products #caVat-8 .part-1::before {
+    background: url("../images/tieSilkBrownMendallion.jpg") no-repeat center;
+    background-size: cover;
+}
+/*khan choang*/
+.section-products #khanChoang-1 .part-1::before {
+    background: url("../images/scarfBlueWool.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #khanChoang-2 .part-1::before {
+    background: url("../images/scarfGreyCashmere.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #khanChoang-3 .part-1::before {
+    background: url("../images/scarfLightGreyWool.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #khanChoang-4 .part-1::before {
+    background: url("../images/scarfBrownWool.jpg") no-repeat center;
+    background-size: cover;
+}
+.section-products #khanChoang-5 .part-1::before {
+    background: url("../images/scarfNavyWool.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #khanChoang-6 .part-1::before {
+    background: url("../images/scarfBottleGreen.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #khanChoang-7 .part-1::before {
+    background: url("../images/scarfBeige.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #khanChoang-8 .part-1::before {
     background: url("../images/tieSilkBrownMendallion.jpg") no-repeat center;
     background-size: cover;
 }
