@@ -1179,6 +1179,48 @@ a:hover {
     background-size: cover;
 }
 
+/*ca vat*/
+/*vest xam*/
+.section-products #caVat-1 .part-1::before {
+    background: url("../images/tieSilkBluePinkMedallion.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #caVat-2 .part-1::before {
+    background: url("../images/tieSilkYellowMedallion.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #caVat-3 .part-1::before {
+    background: url("../images/tieSilkBurgundyCircle.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #caVat-4 .part-1::before {
+    background: url("../images/tieSilkPinkSatin.jpg") no-repeat center;
+    background-size: cover;
+}
+.section-products #caVat-5 .part-1::before {
+    background: url("../images/tieSilkSageSatin.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #caVat-6 .part-1::before {
+    background: url("../images/tieSilkJacquardPearlPaisley.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #caVat-7 .part-1::before {
+    background: url("../images/tieSilkJacquardPearlFloral.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #caVat-8 .part-1::before {
+    background: url("../images/tieSilkBrownMendallion.jpg") no-repeat center;
+    background-size: cover;
+}
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
