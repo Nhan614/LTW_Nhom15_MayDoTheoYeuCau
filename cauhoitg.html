@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi thường gặp</title>
+    <script src="venders/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/footer/cauhoitg.css">
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var content = this.nextElementSibling;
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="menubar"></div>
+
+    <section id="sec1">
+        <!--Top Bar-->
+        <div class="top-bar text-center py-2">
+            <span>GIẢM GIÁ 25%</span>
+            <button type="button" class="btn-close position-absolute end-0"
+                style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
+        </div>
+    </section>
+
+
+    <div class="header-afk">
+        <img src="https://placehold.co/800x200 " alt="Header Image">
+        <div class="text-overlay">
+            <h2>How can we help?</h2>
+            <p>If you can't find the answer, please contact us.</p>
+        </div>
+    </div>
+    <div class="font-afk">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="afk-container">
+    <div class="faq-item">
+        <h2>About Us</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>We are a company dedicated to providing the best custom tailored garments.</p>
+    </div>
+    <div class="faq-item">
+        <h2>What Does Custom, Tailored Mean?</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Custom tailored means that each garment is made to fit your specific measurements and preferences.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Our Natural Fabrics - Only The Best</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>We use only the finest natural fabrics to ensure the highest quality and comfort.</p>
+    </div>
+    <div class="faq-item">
+        <h2>How Is Your One Of A Kind Garment Created?</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Each garment is created through a meticulous process that involves precise measurements, high-quality fabrics, and expert craftsmanship.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Where Is Your One Of A Kind Garment Made?</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Our garments are made in our state-of-the-art facilities by skilled artisans.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Garment Care</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Proper care instructions for your garment will be provided to ensure its longevity and quality.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Showroom Events And N3TAILORED Partnerships</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>We host various events and have partnerships with other brands to provide a unique shopping experience.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Shipping And Tracking My Order</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>You can track your order through our website using the tracking number provided in your confirmation email.</p>
+    </div>
+    <div class="faq-item">
+        <h2>I'm Shopping Online And Need Some Help</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Our customer service team is available to assist you with any questions or concerns you may have while shopping online.</p>
+    </div>
+    <div class="faq-item">
+        <h2>The N3TAILORED Showroom Experience</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>How To Get Measured - Five Convenient Options</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>I Love My Garments - How Do I Re-order?</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>N3TAILORED Weddings</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Corporate Office Bookings</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Purchasing My Garment</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>Does N3TAILORED Sell Gift Cards?</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>G&K Collection by N3TAILORED</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+    <div class="faq-item">
+        <h2>I Have Another Question</h2>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="faq-content">
+        <p>Visit our showroom to experience our custom tailoring process in person and receive personalized service.</p>
+    </div>
+</div>
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- js -->
+    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+    <script src="resources/js/login.js"></script>
+    <script src="resources/js/search.js"></script>
+    <script src="resources/js/main.js"></script>
+    <script src="resources/js/quit.js"></script>
+</body>
+
+
+</html>
