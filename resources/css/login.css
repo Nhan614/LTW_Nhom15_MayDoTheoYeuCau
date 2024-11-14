@@ -24,7 +24,7 @@ html{
 
 /* Brand logo style */
 .navbar-brand {
-    font-family: "Italiana", serif;
+    font-family: "Montserrat",sans-serif;
     font-size: 30px;
     color: #001F3F;
     text-decoration: none;
@@ -198,7 +198,7 @@ margin-top: 65px;
 
 .hero-section h1 {
     font-size: 3rem;
-    font-family: 'Italiana', serif;
+    font-family: 'Montserrsans-serif;
 }
 
 .hero-section .btn-primary {
