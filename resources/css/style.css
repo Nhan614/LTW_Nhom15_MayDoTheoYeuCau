@@ -1261,6 +1261,35 @@ a:hover {
     background: url("../images/scarfBottleGreen.jpg") no-repeat center;
     background-size: cover;
 }
+
+/*that lung*/
+.section-products #thatLung-1 .part-1::before {
+    background: url("../images/beltBlackBrushedCalf.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #thatLung-2 .part-1::before {
+    background: url("../images/beltDarkBrownBrushedCalf.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #thatLung-3 .part-1::before {
+    background: url("../images/beltBlueCalfLeather.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #thatLung-4 .part-1::before {
+    background: url("../images/beltDarkBrownSuedeCalf.jpg") no-repeat center;
+    background-size: cover;
+}
+.section-products #thatLung-5 .part-1::before {
+    background: url("../images/beltTanHammeredCalf.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
