@@ -94,18 +94,19 @@ html{
 .mega-menu .dropdown-menu {
     position: fixed;
     align-items: center;
-    width: 50vw;
     left: -50%;
     top: 90%;
-    gap:15px;
     padding: 20px;
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;
     z-index: 1000;
 }
+.alpha{
+    width: 50vw;
+}
 .omega{
-    width: 1500px;
+    width: 40vw;
 }
 
 .mega-menu h6 {
