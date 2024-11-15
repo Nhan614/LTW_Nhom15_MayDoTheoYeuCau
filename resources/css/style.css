@@ -509,6 +509,7 @@ a:hover {
 /* Banner Section Styling */
 .banner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background-image: url('../images/bannerWinter.webp');
@@ -782,6 +783,7 @@ a:hover {
     height: 80px;
 }
 
+
 .cart-item {
     border: 1px solid #000;
     align-items: center;
@@ -790,7 +792,6 @@ a:hover {
 .cart-footer {
     display: flex;
     height: 100%;
-    align-items: end;
     flex-direction: column;
 }
 

@@ -22,15 +22,15 @@
       <button type="button" class="btn-close position-absolute end-0"
         style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
     </div>
-
-    <div class="container ">
+      <hr>
+    <div class="container border">
       <h1><strong>Giỏ Hàng Của Bạn (5 Sản Phẩm)</strong></h1>
 
       <!-- Giỏ hàng -->
-      <div class="cart mt-5 mb-5">
+      <div class="cart mt-2 mb-5">
         <div class="row">
           <!-- col left -->
-          <div class="col-lg-9 col-md-12">
+          <div class="col-lg-9 col-md-12 mt-3">
 
             <div class="cart-item row">
               <div class="col-md-2 ">
@@ -42,14 +42,14 @@
               <div class="col-md-1">
                 <i class="fa-regular fa-pen-to-square fa-xl"></i>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="number" class="form-control" value="3" min="1" max="99">
               </div>
               <div class="col-md-2">
                 <p class="text-decoration-line-through"><strong>300,000 VND</strong></p>
                 <p><strong>100,000 VND</strong></p>
               </div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-1 text-center">
                 <i class="fa-solid fa-trash fa-xl"></i>
               </div>
             </div>
@@ -63,13 +63,13 @@
               <div class="col-md-1">
                 <i class="fa-regular fa-pen-to-square fa-xl"></i>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="number" class="form-control" value="1" min="1" max="99">
               </div>
               <div class="col-md-2">
                 <p><strong>100,000 VND</strong></p>
               </div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-1 text-center">
                 <i class="fa-solid fa-trash fa-xl"></i>
               </div>
             </div>
@@ -83,14 +83,14 @@
               <div class="col-md-1">
                 <i class="fa-regular fa-pen-to-square fa-xl"></i>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="number" class="form-control" value="2" min="1" max="99">
               </div>
               <div class="col-md-2">
                 <p class="text-decoration-line-through"><strong>200,000 VND</strong></p>
                 <p><strong>100,000 VND</strong></p>
               </div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-1 text-center">
                 <i class="fa-solid fa-trash fa-xl"></i>
               </div>
             </div>
@@ -104,42 +104,22 @@
               <div class="col-md-1">
                 <i class="fa-regular fa-pen-to-square fa-xl"></i>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="number" class="form-control" value="1" min="1" max="99">
               </div>
               <div class="col-md-2">
                 <p><strong>100,000 VND</strong></p>
               </div>
-              <div class="col-md-2 text-center">
+              <div class="col-md-1 text-center">
                 <i class="fa-solid fa-trash fa-xl"></i>
               </div>
             </div>
-            <div class="cart-item row mt-3">
-              <div class="col-md-2 ">
-                <img src="./resources/images/collection-jacket-3.jpg" alt="Product 1" class="img-cart">
-              </div>
-              <div class="col-md-4">
-                <p><strong>Sản phẩm 5</strong></p>
-              </div>
-              <div class="col-md-1">
-                <i class="fa-regular fa-pen-to-square fa-xl"></i>
-              </div>
-              <div class="col-md-1">
-                <input type="number" class="form-control" value="1" min="1" max="99">
-              </div>
-              <div class="col-md-2">
-                <p><strong>100,000 VND</strong></p>
-              </div>
-              <div class="col-md-2 text-center">
-                <i class="fa-solid fa-trash fa-xl"></i>
-              </div>
-            </div>
+
 
           </div>
 
           <!-- col right -->
-          <div class="col-lg-3 col-md-12 border bg-body-secondary">
-            <!-- Tổng cộng -->
+          <div class="col-lg-3 col-md-12 border bg-body-secondary  mt-3">
             <div class="cart-footer">
               <!-- Mã giảm giá -->
               <div class="cart-discount">
@@ -147,6 +127,13 @@
                 <input type="text" class="form-control" id="discountCode" placeholder="Nhập mã giảm giá">
               </div>
               <hr>
+              <!-- nhap ghi chu -->
+              <div class="mb-3"> <label for="cartTextarea" class="form-label">Ghi chú</label> <textarea
+                  class="form-control" id="cartTextarea" rows="3"
+                  placeholder="Nhập ghi chú của bạn ở đây..."></textarea>
+              </div>
+              <hr>
+              <!-- Tổng cộng -->
               <div class="col cart-total">
                 <h4>Tổng cộng: <span>500,000 VND</span></h4>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
