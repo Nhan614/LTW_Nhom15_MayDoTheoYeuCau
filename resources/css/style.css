@@ -1550,6 +1550,49 @@ a:hover {
     background-size: cover;
 }
 
+/*jogger*/
+.section-products #jogger-1 .part-1::before {
+    background: url("../images/joggerNavyCottonVelvet.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #jogger-2 .part-1::before {
+    background: url("../images/joggerDoveGreyFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #jogger-3 .part-1::before {
+    background: url("../images/joggerBlueDenim.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #jogger-4 .part-1::before {
+    background: url("../images/joggerGreenLyocellTwill.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #jogger-5 .part-1::before {
+    background: url("../images/joggerWhiteCottonTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #jogger-6 .part-1::before {
+    background: url("../images/joggerBeigeCottonVelvet.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #jogger-7 .part-1::before {
+    background: url("../images/joggerNavyCottonTwill.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #jogger-8 .part-1::before {
+    background: url("../images/joggerGrayTwillCotton.jpg") no-repeat center;
+    background-size: cover;
+}
+
 
 
 .section-products .single-product .part-1 .discount,
