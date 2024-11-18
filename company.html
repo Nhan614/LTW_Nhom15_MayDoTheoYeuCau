@@ -10,6 +10,88 @@
     <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
 
+    <style>
+        .company h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #151515;
+            text-align: center;
+            margin: 60px;
+        }
+
+        .company-info {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 1000px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .company-info h4 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #090909;
+        }
+
+        .company-info p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .company-info strong {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .company-info ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .company-info ul li {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .company-info ul li:before {
+            content: "•";
+            color: #1e3d58;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .company-info .culture p {
+            margin-top: 20px;
+        }
+
+        .company-info h4+p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .company-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .company-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 
 </head>
 
@@ -27,63 +109,95 @@
     </section>
     <!--lam viec voi chung toi  -->
 
-  
-    <div class="company-info-container">
-        <h4>Thông Tin Công Ty – Thương Hiệu Đặt May Đồ Việt</h4>
-    
-        <p><strong>Công Ty TNHH Thời Trang ABC</strong></p>
-        <p>Website: <a href="http://www.abcfashion.com">www.abcfashion.com</a></p>
-        <p>Email: <a href="mailto:contact@abcfashion.com">contact@abcfashion.com</a></p>
-        <p>Hotline: 1900 123 456</p>
-    
-        <h4>Thông Tin Đăng Ký Doanh Nghiệp</h4>
-        <p><strong>Mã số thuế (MST):</strong> 0101234567</p>
-        <p><strong>Số ĐKKD:</strong> 0101234567 cấp ngày 01/01/2020 tại Sở Kế hoạch và Đầu tư TP. Hà Nội</p>
-    
-        <h4>Địa Chỉ Công Ty</h4>
-        <p><strong>Địa chỉ trụ sở chính:</strong> Số 25, đường Lê Văn Lương, Quận Cầu Giấy, TP. Hà Nội, Việt Nam</p>
-        <p><strong>Chi nhánh:</strong></p>
-        <ul>
-            <li><strong>Hồ Chí Minh:</strong> Số 10, đường Nguyễn Văn Cừ, Quận 1, TP. Hồ Chí Minh, Việt Nam</li>
-            <li><strong>Đà Nẵng:</strong> Số 50, đường Nguyễn Hoàng, Quận Hải Châu, TP. Đà Nẵng, Việt Nam</li>
-        </ul>
-    
-        <h4>Văn Phòng Quốc Tế</h4>
-        <ul>
-            <li><strong>Singapore:</strong> 45B, Orchard Road, Singapore</li>
-            <li><strong>Thái Lan:</strong> 123 Sukhumvit Road, Bangkok, Thái Lan</li>
-        </ul>
-    
-        <h4>Giới Thiệu Về Công Ty</h4>
-        <p>Công Ty TNHH Thời Trang ABC chuyên cung cấp các dịch vụ đặt may theo yêu cầu, thiết kế và sản xuất trang phục cao cấp cho cá nhân và doanh nghiệp. Với đội ngũ thiết kế tài năng và nhà máy sản xuất đạt tiêu chuẩn quốc tế, chúng tôi cam kết mang lại sản phẩm hoàn hảo, vừa vặn với từng khách hàng.</p>
-        <p>Chúng tôi cung cấp các dịch vụ may đo cho các dòng sản phẩm như áo sơ mi, vest, váy, quần âu, đồng phục doanh nghiệp và trang phục sự kiện. Mỗi sản phẩm đều được chế tác từ chất liệu vải cao cấp, giúp khách hàng tự tin và thoải mái trong mọi hoàn cảnh.</p>
-    
-        <h4>Các Dịch Vụ Cung Cấp</h4>
-        <ul>
-            <li><strong>May đo riêng:</strong> Dịch vụ may đo theo yêu cầu, từ chất liệu, kiểu dáng cho đến chi tiết hoàn thiện.</li>
-            <li><strong>Đồng phục công ty:</strong> Thiết kế và may đo đồng phục công ty chuyên nghiệp, thể hiện phong cách và bản sắc doanh nghiệp.</li>
-            <li><strong>Trang phục sự kiện:</strong> May đo và thiết kế trang phục cho các sự kiện đặc biệt, từ hội nghị, hội thảo đến tiệc cưới, sự kiện lớn.</li>
-            <li><strong>Sửa chữa, điều chỉnh trang phục:</strong> Dịch vụ sửa chữa, điều chỉnh trang phục đã có để phù hợp hơn với nhu cầu sử dụng.</li>
-        </ul>
-    
-        <h4>Cam Kết Chất Lượng</h4>
-        <p>Với tiêu chí "Chất Lượng Là Tôn Chỉ", chúng tôi luôn lựa chọn những chất liệu vải tốt nhất và áp dụng quy trình may đo chính xác để sản phẩm không chỉ đẹp mà còn bền lâu. Đội ngũ nhân viên của ABC Fashion luôn đặt sự hài lòng của khách hàng lên hàng đầu, đảm bảo mỗi sản phẩm đều đáp ứng các yêu cầu về thiết kế, chất liệu và sự vừa vặn.</p>
-    
-        <h4>Tầm Nhìn và Sứ Mệnh</h4>
-        <p><strong>Tầm nhìn:</strong> Trở thành thương hiệu may đo hàng đầu tại Việt Nam và quốc tế, mang đến những sản phẩm thời trang tinh tế, chất lượng cho mọi khách hàng.</p>
-        <p><strong>Sứ mệnh:</strong> Mang đến cho khách hàng những trải nghiệm thời trang đẳng cấp, thể hiện phong cách cá nhân và sự tự tin trong mọi hoạt động.</p>
-    
-        <h4>Thông Tin Liên Hệ</h4>
-        <p>Để biết thêm chi tiết về các dịch vụ và sản phẩm của chúng tôi, vui lòng liên hệ qua các kênh sau:</p>
-        <ul>
-            <li><strong>Website:</strong> <a href="http://127.0.0.1:5500/home.html">www.abcfashion.com</a></li>
-            <li><strong>Email:</strong> <a href="mailto:contact@abcfashion.com">contact@abcfashion.com</a></li>
-            <li><strong>Điện thoại:</strong> 1900 123 456</li>
-            <li><strong>Facebook:</strong> <a href="https://facebook.com/abcfashion">ABC Fashion</a></li>
-            <li><strong>Instagram:</strong> @abcfashion_vn</li>
-        </ul>
+
+    <div class="container">
+        <div class="company">
+            <h1>Dữ Liệu Công Ty</h1>
+            <div class="company-info">
+                <h4>Công Ty TNHH Thời Trang ABC</h4>
+                <ul>
+
+                    <li><strong>Website:</strong> <a href="http://www.abcfashion.com">www.abcfashion.com</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contact@abcfashion.com">contact@abcfashion.com</a></li>
+                    <li><strong>Hotline:</strong> 1900 123 456</li>
+                </ul>
+
+                <h4>Thông Tin Đăng Ký Doanh Nghiệp</h4>
+                <p><strong>Mã số thuế (MST):</strong> 0101234567</p>
+                <p><strong>Số ĐKKD:</strong> 0101234567 cấp ngày 01/01/2020 tại Sở Kế hoạch và Đầu tư TP. Hà Nội</p>
+
+                <h4>Địa Chỉ Công Ty</h4>
+                <p><strong>Địa chỉ trụ sở chính:</strong> Số 25, đường Lê Văn Lương, Quận Cầu Giấy, TP. Hà Nội, Việt Nam
+                </p>
+                <p><strong>Chi nhánh:</strong></p>
+                <ul>
+                    <li><strong>Hồ Chí Minh:</strong> Số 10, đường Nguyễn Văn Cừ, Quận 1, TP. Hồ Chí Minh, Việt Nam</li>
+                    <li><strong>Đà Nẵng:</strong> Số 50, đường Nguyễn Hoàng, Quận Hải Châu, TP. Đà Nẵng, Việt Nam</li>
+                </ul>
+
+                <h4>Văn Phòng Quốc Tế</h4>
+                <ul>
+                    <li><strong>Singapore:</strong> 45B, Orchard Road, Singapore</li>
+                    <li><strong>Thái Lan:</strong> 123 Sukhumvit Road, Bangkok, Thái Lan</li>
+                </ul>
+
+                <h4>Giới Thiệu Về Công Ty</h4>
+                <p>Công Ty TNHH Thời Trang ABC chuyên cung cấp các dịch vụ đặt may theo yêu cầu, thiết kế và sản xuất
+                    trang
+                    phục cao cấp cho cá nhân và doanh nghiệp. Với đội ngũ thiết kế tài năng và nhà máy sản xuất đạt tiêu
+                    chuẩn quốc tế, chúng tôi cam kết mang lại sản phẩm hoàn hảo, vừa vặn với từng khách hàng.</p>
+                <p>Chúng tôi cung cấp các dịch vụ may đo cho các dòng sản phẩm như áo sơ mi, vest, váy, quần âu, đồng
+                    phục
+                    doanh nghiệp và trang phục sự kiện. Mỗi sản phẩm đều được chế tác từ chất liệu vải cao cấp, giúp
+                    khách
+                    hàng tự tin và thoải mái trong mọi hoàn cảnh.</p>
+
+                <h4>Các Dịch Vụ Cung Cấp</h4>
+                <ul>
+                    <li><strong>May đo riêng:</strong> Dịch vụ may đo theo yêu cầu, từ chất liệu, kiểu dáng cho đến chi
+                        tiết
+                        hoàn thiện.</li>
+                    <li><strong>Đồng phục công ty:</strong> Thiết kế và may đo đồng phục công ty chuyên nghiệp, thể hiện
+                        phong cách và bản sắc doanh nghiệp.</li>
+                    <li><strong>Trang phục sự kiện:</strong> May đo và thiết kế trang phục cho các sự kiện đặc biệt, từ
+                        hội
+                        nghị, hội thảo đến tiệc cưới, sự kiện lớn.</li>
+                    <li><strong>Sửa chữa, điều chỉnh trang phục:</strong> Dịch vụ sửa chữa, điều chỉnh trang phục đã có
+                        để
+                        phù hợp hơn với nhu cầu sử dụng.</li>
+                </ul>
+
+                <h4>Cam Kết Chất Lượng</h4>
+                <p>Với tiêu chí "Chất Lượng Là Tôn Chỉ", chúng tôi luôn lựa chọn những chất liệu vải tốt nhất và áp dụng
+                    quy
+                    trình may đo chính xác để sản phẩm không chỉ đẹp mà còn bền lâu. Đội ngũ nhân viên của ABC Fashion
+                    luôn
+                    đặt sự hài lòng của khách hàng lên hàng đầu, đảm bảo mỗi sản phẩm đều đáp ứng các yêu cầu về thiết
+                    kế,
+                    chất liệu và sự vừa vặn.</p>
+
+                <h4>Tầm Nhìn và Sứ Mệnh</h4>
+                <p><strong>Tầm nhìn:</strong> Trở thành thương hiệu may đo hàng đầu tại Việt Nam và quốc tế, mang đến
+                    những
+                    sản phẩm thời trang tinh tế, chất lượng cho mọi khách hàng.</p>
+                <p><strong>Sứ mệnh:</strong> Mang đến cho khách hàng những trải nghiệm thời trang đẳng cấp, thể hiện
+                    phong
+                    cách cá nhân và sự tự tin trong mọi hoạt động.</p>
+
+                <h4>Thông Tin Liên Hệ</h4>
+                <p>Để biết thêm chi tiết về các dịch vụ và sản phẩm của chúng tôi, vui lòng liên hệ qua các kênh sau:
+                </p>
+                <ul>
+                    <li><strong>Website:</strong> <a href="http://127.0.0.1:5500/home.html">www.abcfashion.com</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contact@abcfashion.com">contact@abcfashion.com</a></li>
+                    <li><strong>Điện thoại:</strong> 1900 123 456</li>
+                    <li><strong>Facebook:</strong> <a href="https://facebook.com/abcfashion">ABC Fashion</a></li>
+                    <li><strong>Instagram:</strong> @abcfashion_vn</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    
+
 
 
     <!-- Footer -->
