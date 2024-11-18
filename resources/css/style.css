@@ -1421,6 +1421,48 @@ a:hover {
     background: url("../images/overshirtRoyalBlueCottonVelvet.jpg") no-repeat center;
     background-size: cover;
 }
+/*blazer*/
+.section-products #blazer-1 .part-1::before {
+    background: url("../images/blazerBrownSmoothVelvet.webp") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #blazer-2 .part-1::before {
+    background: url("../images/blazerLightGreyMelangeFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #blazer-3 .part-1::before {
+    background: url("../images/blazerAnthraciteGray.webp") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #blazer-4 .part-1::before {
+    background: url("../images/blazerPurplePrinceOfWales.webp") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #blazer-5 .part-1::before {
+    background: url("../images/blazerPurplePinstripe.webp") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #blazer-6 .part-1::before {
+    background: url("../images/blazerPowderBlueFlannel.webp") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #blazer-7 .part-1::before {
+    background: url("../images/blazerNavyMicro.webp") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #blazer-8 .part-1::before {
+    background: url("../images/blazerGrayPinStripeFlannel.webp") no-repeat center;
+    background-size: cover;
+}
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
