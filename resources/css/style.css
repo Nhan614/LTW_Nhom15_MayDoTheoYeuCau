@@ -1463,6 +1463,52 @@ a:hover {
     background: url("../images/blazerGrayPinStripeFlannel.webp") no-repeat center;
     background-size: cover;
 }
+
+/*trouser*/
+.section-products #trouser-1 .part-1::before {
+    background: url("../images/trouserAirForceBlueFlannel.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #trouser-2 .part-1::before {
+    background: url("../images/trouserCamelFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #trouser-3 .part-1::before {
+    background: url("../images/trouserDarkBlueGreenFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #trouser-4 .part-1::before {
+    background: url("../images/trouserBlueKnickerbocker.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #trouser-5 .part-1::before {
+    background: url("../images/trouserRedFlannel.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #trouser-6 .part-1::before {
+    background: url("../images/trouserSaltPepper.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #trouser-7 .part-1::before {
+    background: url("../images/trouserGunMetalTwill.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #trouser-8 .part-1::before {
+    background: url("../images/trouserGreyBluePrinceOfWalesFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+
+
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
