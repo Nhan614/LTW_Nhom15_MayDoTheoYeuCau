@@ -1507,6 +1507,49 @@ a:hover {
     background-size: cover;
 }
 
+/*chino*/
+.section-products #chino-1 .part-1::before {
+    background: url("../images/chinoBeigeCottonTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #chino-2 .part-1::before {
+    background: url("../images/chinoPetrolGreenTwill.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #chino-3 .part-1::before {
+    background: url("../images/chinoPetroleumBlueTwill.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #chino-4 .part-1::before {
+    background: url("../images/chinoEffettoDenimCotton.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #chino-5 .part-1::before {
+    background: url("../images/chinoCottonTwill.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #chino-6 .part-1::before {
+    background: url("../images/chinoDarkBlueDenim.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #chino-7 .part-1::before {
+    background: url("../images/chinoGarnetCottonCashmere.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #chino-8 .part-1::before {
+    background: url("../images/chinoSolidWhiteLinen.jpg") no-repeat center;
+    background-size: cover;
+}
+
 
 
 .section-products .single-product .part-1 .discount,
