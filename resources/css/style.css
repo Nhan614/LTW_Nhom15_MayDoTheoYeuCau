@@ -1379,7 +1379,48 @@ a:hover {
     background: url("../images/poloBlue.webp") no-repeat center;
     background-size: cover;
 }
+/*overshirt*/
+.section-products #overshirt-1 .part-1::before {
+    background: url("../images/overshirtNavyStretchCottonVelvet.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
 
+.section-products #overshirt-2 .part-1::before {
+    background: url("../images/overshirtDarkGrayGreenFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #overshirt-3 .part-1::before {
+    background: url("../images/overshirtSandStretchFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #overshirt-4 .part-1::before {
+    background: url("../images/overshirtBeigeCottonVelvet.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #overshirt-5 .part-1::before {
+    background: url("../images/overshirtShetlandHerringboneBeigeRed.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #overshirt-6 .part-1::before {
+    background: url("../images/overshirtGrayMicro.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #overshirt-7 .part-1::before {
+    background: url("../images/overshirtBrownFlannel.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #overshirt-8 .part-1::before {
+    background: url("../images/overshirtRoyalBlueCottonVelvet.jpg") no-repeat center;
+    background-size: cover;
+}
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
