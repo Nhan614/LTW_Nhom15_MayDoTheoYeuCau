@@ -23,37 +23,79 @@
                 style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
         </div>
 
-
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card"> <img src="resources/images/profile.jpg" class="card-img-top" alt="Profile Picture">
+            <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation"> <button class="nav-link active" id="orders-tab"
+                        data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders"
+                        aria-selected="true">Đơn hàng</button> </li>
+                <li class="nav-item" role="presentation"> <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false">Hồ sơ</button> </li>
+                <li class="nav-item" role="presentation"> <button class="nav-link" id="settings-tab"
+                        data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab"
+                        aria-controls="settings" aria-selected="false">Cài đặt</button> </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                    <div class="card mt-3">
                         <div class="card-body">
-                            <h5 class="card-title">Nguyễn Trọng Nhân</h5>
-                            <hr>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Email: your.email@example.com</li>
-                                <li class="list-group-item">Điện thoại: 0123456789</li>
-                                <li class="list-group-item">Địa chỉ: Số 6, đường số 6, khu phố 6, phường Linh Trung, thành phố Thủ Đức, thành phố Hồ Chí Minh</li>
-                            </ul> <button href="#" class="btn-custumize btn-lg">Cập nhật thông tin</button>
+                            <h5 class="card-title">Đơn hàng của bạn</h5>
+                            <p class="card-text">Danh sách các đơn hàng sẽ được hiển thị ở đây.</p>
                         </div>
                     </div>
                 </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Hồ sơ của bạn</h5>
 
-                <div class="col">
-                    
+                            <!-- profile -->
+                            <div class="container mt-5">
+                                <div class="row ">
+                                    <div class="col-lg-6 mx-auto">
+                                        <div class="card"> <img src="resources/images/profile.jpg" class="card-img-top"
+                                                alt="Profile Picture">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nguyễn Trọng Nhân</h5>
+                                                <hr>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">Email: your.email@example.com</li>
+                                                    <li class="list-group-item">Điện thoại: 0123456789</li>
+                                                    <li class="list-group-item">Địa chỉ: Số 6, đường số 6, khu phố 6,
+                                                        phường Linh Trung, thành phố Thủ Đức, thành phố Hồ Chí Minh</li>
+                                                </ul> <button href="#" class="btn-custumize btn-lg">Cập nhật thông
+                                                    tin</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Cài đặt</h5>
+                        <p class="card-text">Các tùy chọn cài đặt sẽ được hiển thị ở đây.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- footer -->
-        <div id="footer"></div>
 
-        <!-- js -->
-        <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-        <script src="venders/js/jquery-3.7.1.min.js"></script>
-        <script src="resources/js/main.js"></script>
-        <script src="resources/js/quit.js"></script>
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- js -->
+    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+    <script src="venders/js/jquery-3.7.1.min.js"></script>
+    <script src="resources/js/main.js"></script>
+    <script src="resources/js/quit.js"></script>
 </body>
 
 </html>
