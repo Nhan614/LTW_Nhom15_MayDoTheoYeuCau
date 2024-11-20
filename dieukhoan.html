@@ -10,7 +10,87 @@
     <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
 
+    <style>
+    .terms h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #151515;
+        text-align: center;
+        margin: 60px;
+    }
+    .terms-and-conditions{
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        max-width: 1000px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
+    .terms-and-conditions h4 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #090909;
+    }
+
+    .terms-and-conditions p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .terms-and-conditions strong {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .terms-and-conditions ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .terms-and-conditions ul li {
+        font-size: 16px;
+        margin-bottom: 15px;
+        line-height: 1.7;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .terms-and-conditions ul li:before {
+        content: "•";
+        color: #1e3d58;
+        font-size: 24px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .terms-and-conditions .culture p {
+        margin-top: 20px;
+    }
+
+    .terms-and-conditions h4+p {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .terms-and-conditions a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    .terms-and-conditions a:hover {
+        text-decoration: underline;
+    }
+</style>
 </head>
 
 <body>
@@ -26,17 +106,22 @@
         </div>
     </section>
     <div class="container">
-        <div class="terms-and-conditions-container">
-            <h4>Điều Khoản và Điều Kiện Bán Hàng</h4>
+        <div class="terms">
+            <h1>Điều Khoản và Điều Kiện </h1>
+            <div class="terms-and-conditions">
 
             <h4>1. ĐỊNH NGHĨA VÀ ĐỐI TƯỢNG CỦA HỢP ĐỒNG</h4>
 
-            <p>1.1 Hợp đồng này (sau đây gọi là “Hợp Đồng”), là hợp đồng từ xa, được điều chỉnh bởi Điều 50 của Nghị
+            <p>1.1 Hợp đồng này (sau đây gọi là “Hợp Đồng”), là một hợp đồng từ xa, được điều chỉnh bởi Điều 50 của Nghị
                 định 6 tháng 9 năm 2005, số 206 (“Luật Người Tiêu Dùng”). Hợp đồng này có đối tượng là việc bán các sản
-                phẩm cá nhân giữa công ty [Tên công ty], [Địa chỉ công ty], mã số thuế [Mã số thuế] (“Thương Hiệu”) và
-                khách hàng (gọi là “Khách Hàng”). Hợp đồng được coi là đã ký kết khi Thương Hiệu chấp nhận đề nghị mua
-                hàng của Khách Hàng qua điện thoại hoặc qua trang web www.[tênwebsite].com (“Website”) và/hoặc qua các
-                hệ thống bán hàng từ xa khác của Thương Hiệu, dựa trên các thủ tục mô tả trong Điều 3 dưới đây.</p>
+                phẩm cá nhân giữa công ty <strong>[N3TAILORED]</strong>, <strong>[Tại số 10, đường Nguyễn Văn Cừ, Quận
+                    1, TP. Hồ Chí Minh, Việt Nam]</strong>, mã số thuế
+                <strong>[0101234567]</strong> (“N3TAILORED”) và khách hàng (gọi là “Khách Hàng A”). Hợp đồng sẽ được coi
+                là đã ký kết khi Thương Hiệu chấp nhận đề nghị mua hàng của Khách Hàng qua điện thoại hoặc thông qua
+                trang web <a href="http://127.0.0.1:5500/home.html">www.n3tailored.com</a> và/hoặc các hệ thống bán hàng
+                từ xa khác của Thương Hiệu,
+                theo các thủ tục được mô tả trong Điều 3 dưới đây.
+            </p>
 
             <p>1.2 Các Điều Khoản Bán Hàng này (“Điều Khoản Bán Hàng”) và, đặc biệt là các thông tin liên quan đến Điều
                 59 của Luật Người Tiêu Dùng, như đã cung cấp bởi Thương Hiệu trong quá trình bán hàng, được nhắc lại qua
@@ -104,7 +189,8 @@
                 ảnh sản phẩm trên mạng có thể không hoàn toàn chính xác. Khi thực hiện giao dịch, Khách Hàng đồng ý với
                 khả năng có sự sai khác nhỏ này.</p>
 
-            <p>4.6 Mọi khiếu nại có thể gửi đến địa chỉ: [Địa chỉ của công ty] – [Mã số thuế].</p>
+            <p>4.6 Mọi khiếu nại có thể gửi đến địa chỉ: <strong>[ Số 10, đường Nguyễn Văn Cừ, Quận 1, TP. Hồ Chí
+                    Minh, Việt Nam]</strong> – <strong>[0101234567]</strong>.</p>
 
             <h4>5. NGHĨA VỤ CỦA KHÁCH HÀNG</h4>
 
@@ -129,30 +215,27 @@
                     nhanh kèm theo 3 ảnh chụp sản phẩm mặc vào (chụp từ trước, bên hông và sau lưng) để chứng minh lỗi.
                 </li>
                 <li>Đơn khiếu nại sẽ được xem xét và phê duyệt bởi nhân viên của Thương Hiệu.</li>
-                <li>Sản phẩm cần được gửi lại trong bao bì gốc, gửi bằng phương thức có thể theo dõi tới địa chỉ: [Địa
-                    chỉ của công ty].</li>
+                <li>Sản phẩm cần được gửi lại trong bao bì gốc, gửi bằng phương thức có thể theo dõi, và gửi đến địa chỉ
+                    Thương Hiệu yêu cầu.</li>
             </ul>
 
-            <p>6.3 Sản phẩm gửi lại không tuân thủ các hướng dẫn trên sẽ không được chấp nhận và sẽ được gửi lại cho
-                Khách Hàng mà không hoàn tiền.</p>
+            <p>6.3 Những sản phẩm không gửi theo hướng dẫn trên sẽ không được chấp nhận và sẽ được gửi lại cho Khách
+                Hàng mà không có hoàn tiền.</p>
 
-            <p>6.4 Sản phẩm phải còn nguyên vẹn (chưa sử dụng, bao gồm tất cả bao bì và phụ kiện gốc) và kèm theo mẫu
-                đơn hoàn tiền đã được phê duyệt.</p>
+            <p>6.4 Sản phẩm phải còn nguyên vẹn (chưa sử dụng...)</p>
 
-            <p>6.5 Nếu đủ điều kiện, Khách Hàng sẽ nhận lại toàn bộ số tiền đã thanh toán trừ phí vận chuyển. Mã giảm
-                giá sẽ được cấp lại để sử dụng cho các lần mua hàng tiếp theo.</p>
+            <h4>7. ĐIỀU KHOẢN PHÁP LÝ</h4>
 
-            <h4>7. ĐỊA ĐIỂM XÉT XỬ</h4>
-
-            <p>7.1 Hợp đồng này chịu sự điều chỉnh của pháp luật Việt Nam.</p>
+            <p>7.1 Hợp đồng này được điều chỉnh bởi pháp luật Ý.</p>
 
             <p>7.2 Mọi tranh chấp liên quan đến việc áp dụng, thực hiện, giải thích và vi phạm hợp đồng sẽ được giải
-                quyết tại Tòa án nơi Khách Hàng cư trú nếu trong lãnh thổ Việt Nam, hoặc tại Tòa án Thành phố Hồ Chí
-                Minh nếu Khách Hàng cư trú ngoài lãnh thổ Việt Nam.</p>
+                quyết tại tòa án nơi Khách Hàng cư trú nếu ở trong lãnh thổ Ý, hoặc tại Tòa án Milan nếu Khách Hàng cư
+                trú ngoài lãnh thổ Ý.</p>
+                
+            </div>
+            
         </div>
-
-    </div>
-
+        </div>
     <!-- Footer -->
     <div id="footer"></div>
 
