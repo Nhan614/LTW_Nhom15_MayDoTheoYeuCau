@@ -819,10 +819,7 @@ a:hover {
     font-weight: 600;
 }
 
-.btn-customize-area {
-    display: flex;
-    justify-content: center;
-}
+
 
 .btn-custumize {
     background-color: #1D1D1D;
@@ -838,8 +835,16 @@ a:hover {
 
 }
 
-/* ------------------------------ Profile -----------------------------*/
-
+/* ------------------------------ Profile và ProfileEdit -----------------------------*/
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-bottom: 20px;
+}
 
 
 /* ------------------------------ Footer -----------------------------*/
