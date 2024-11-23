@@ -16,15 +16,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 
-// chart doanh thu
 
-new Chartist.Line('.line-chart-filled', {
-    labels: [1, 2, 3, 4, 5, 6, 7, 8],
-    series: [
-      [5, 9, 7, 8, 5, 3, 5, 4]
-    ]
-  }, {
-    low: 0,
-    showArea: true
-  });
+// admin sidebar
+
+$(document).ready( function(e){
+  $('.admin-sidebar-1').click(function(e) {
+    $('section').addClass('admin-hide')
+    $('#admin-dashboard').removeClass('admin-hide')
+
+  })
+
+  $('.admin-sidebar-2').click(function(e) {
+    $('section').addClass('admin-hide')
+    $('#admin-products').removeClass('admin-hide')
+  })
+  
+  if (window.location.hash === '#admin-dashboard') {
+    $('#admin-dashboard').removeClass('admin-hide')
+  }
+  if (window.location.hash === '#admin-products') {
+    $('#admin-products').removeClass('admin-hide')
+  }
+})
 
