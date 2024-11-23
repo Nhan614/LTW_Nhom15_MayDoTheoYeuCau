@@ -9,7 +9,10 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #595959;
+    /* background: #F3ECDB; */
+    background: linear-gradient(to right, #0250c5 , #d43f8d);
+    
+
 }
 .signup .container{
     text-align: center;
@@ -22,9 +25,9 @@
     width: 800px;
     height: 530px;
     /* background: transparent; */
-    background: #081b29;
-    border: 2px solid #0ef;
-    box-shadow: 0 0 25px #0ef;
+    background: #06422a;
+    border: 2px solid rgb(185, 30, 149);
+    box-shadow: 0 0 25px rgb(47, 217, 78);
     overflow: hidden;
 }
 .wrapper .form-box{
@@ -156,7 +159,7 @@
     width: 100%;
     height: 45px;
     background: transparent;
-    border: 2px solid #0ef;
+    border: 2px solid #0be6c1;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
@@ -173,7 +176,7 @@
     left: 0;
     width: 100%;
    height: 300%;
-   background: linear-gradient(#081b29 ,#0ef, #081b29, #0ef);
+   background: linear-gradient(#06422a ,#0be6c1, #06422a, #0be6c1);
    z-index: -1;
    transition: .5s;
 }
@@ -282,7 +285,7 @@
     right: 0;
     width: 850px;
     height: 720px;
-    background: linear-gradient(45deg, #081b29, #0ef);  
+    background: linear-gradient(45deg, #06422a, #0ef);  
     border-bottom: 3px solid #0ef; 
     transform:rotate(10deg) skewY(40deg);
     transform-origin: bottom right;
@@ -303,7 +306,7 @@
     left: 250px;
     width: 850px;
     height:900px;
-    background: #081b29;  
+    background: #06422a;  
     border-top: 3px solid #0ef; 
     transform:rotate(0) skewY(0);
     transform-origin: bottom left;

@@ -1,10 +1,24 @@
 #checkout-container {
-    background-color: #F4F6F0;
+    /* background-color: #F4F6F0; */
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
+.badge-secondary {
+    color: #fff;
+    background-color: #6e6f6f;
+    border-radius: 30px;
+    font-size: 14px;
+}
+.list-group .list-group-item{
+    margin: 0px;
+    padding-left:   10px;
+}
+.list-group-item span{
+    padding-left: 50px;
 
+}
 /* Địa chỉ Thanh toán */
 .form-control {
     border-radius: 5px;
@@ -17,11 +31,12 @@
     color: #dc3545;
 }
 
-.custom-select, .form-control {
+.custom-select,
+.form-control {
     height: 40px;
 }
 
-h4 {
+.row h4 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -30,31 +45,45 @@ h4 {
     margin-bottom: 1.5rem;
 }
 
+.mb-3 .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .45rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+
+    border-radius: 0px ;
+}
+
 .mb-3 label {
     display: inline-block;
     margin-bottom: .2rem;
 }
+
 .mb-3 label i {
-margin-right: 5px;
+    margin-right: 5px;
 }
+
 /* Payment Section */
 .custom-control-label {
     font-size: 1rem;
 }
 
 .d-block .custom-control {
-    border-radius: 5px; 
+    /* border-radius: 5px;  */
     padding: 5px;
 
 }
 
 .d-block .custom-control .custom-control-label {
-    margin-left: 10px; 
-    background-color: transparent; 
+    margin-left: 10px;
+    background-color: transparent;
 }
 
 
-.custom-control-input:checked ~ .custom-control-label::before {
+.custom-control-input:checked~.custom-control-label::before {
     border-color: #007bff;
     background-color: #007bff;
 }
@@ -63,16 +92,15 @@ margin-right: 5px;
     display: inline-block;
     font-size: 1rem;
     padding: 12px 25px;
-    background-color: #28a745;
+    background-color: #2f5644;
+    font-weight: 600;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 35px;
     cursor: pointer;
     width: 100%;
 }
 
 .btn-t:hover {
-    background-color: #218838;
+    background-color: #2fb04b;
 }
-
-
