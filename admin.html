@@ -22,60 +22,122 @@
 
             <!-- sidebar -->
             <ul class="sidebar">
-                <li class="sidebar-active">                 
-                    <a href="#dashboard">
-                        <i class="fas fa-tachometer"></i>
-                       <span>Dashboard</span> 
+                <li>
+                    <a href="#admin-dashboard ">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Dữ liệu</span>
                     </a>
                 </li>
-                <li>                 
-                    <a href="#orders">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                       <span>Orders</span> 
-                    </a>
-                </li>
-                <li>                 
-                    <a href="#products">
+                <li>
+                    <a href="#admin-products">
                         <i class="fa-brands fa-product-hunt"></i>
-                       <span>Products</span> 
+                        <span>Quản lý sản phẩm</span>
                     </a>
                 </li>
-                <li>                 
-                    <a href="#customers">
+                <li>
+                    <a href="#admin-orders">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#admin-customers">
+                        <i class="fa-solid fa-wrench"></i>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#admin-ủe">
                         <i class="fa-regular fa-user"></i>
-                       <span>Customers</span> 
+                        <span>Quản lý khách hàng</span>
                     </a>
                 </li>
-                <li>                 
-                    <a href="#reports">
+                <li>
+                    <a href="#admin-categories">
+                        <i class="fa-solid fa-list"></i>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#admin-notification">
                         <i class="fa-regular fa-note-sticky"></i>
-                       <span>Reports</span> 
+                        <span>Quản lý thông báo</span>
                     </a>
                 </li>
-                <li>                 
-                    <a href="#settings">
+                <li>
+                    <a href="#admin-reports">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Hỗ trợ khách hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#admin-settings">
                         <i class="fa-solid fa-gear"></i>
-                       <span>Settings</span> 
+                        <span>Cài đặt</span>
                     </a>
                 </li>
-                <li>                 
-                    <a href="#settings" class="admin-logout">
+                <li>
+                    <a href="#admin-settings" class="admin-logout">
                         <i class="fa-solid fa-right-to-bracket"></i>
-                       <span>Logout</span> 
+                        <span>Logout</span>
                     </a>
                 </li>
-                
+
             </ul>
 
         </div>
+
+        <!-- content -->
         <div class="admin-content">
+
             <!-- Dash Board -->
             <div id="admin-dashboard">
-                <h2>Admin Dashboard</h2>
+                <h2>Dữ liệu</h2>
+
+                <!-- doanh thu hom nay -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu hôm nay </div>
+                            <div class="card-body">
+                                <h5 class="card-title">100,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng hôm nay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tuần này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">500,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng tuần này.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tháng này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">1,000,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng tháng này.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- chart -->
+                 <h3 class="mt-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
+                <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
             </div>
-            
-            <p>Welcome to the admin dashboard. Here you can manage all aspects of your e-commerce site.</p>
-            <!-- Add your admin content here -->
+
+            <!-- Dash Board -->
+            <div id="admin-products">
+                <h2>Admin Products</h2>
+            </div>
+
+
         </div>
     </div>
     </div>
@@ -88,6 +150,35 @@
     <script src="venders/js/jquery-3.7.1.min.js"></script>
     <script src="resources/js/main.js"></script>
     <script src="resources/js/quit.js"></script>
+
+    <!-- CDN chart and script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script>
+        const xValues = [1,2,3,4,5,6,7,8,9,10,11,12];
+        const yValues = [200,150,170,100,210,220,250,300,400,300,600,1000];
+        
+        new Chart("chartDashBoard", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              fill: true,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,0.3)",
+              borderColor: "rgba(0,0,255,1.0)",
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              yAxes: [{ticks: {min: 0, max:1000}}],
+            }
+          }
+        });
+        </script>
+
 </body>
 
 </html>

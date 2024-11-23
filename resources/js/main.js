@@ -16,15 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 
-// active navbar
+// chart doanh thu
 
-document.addEventListener("DOMContentLoaded", function() {
-    var navLink = document.querySelectorAll(".nav-link");
-    console.log(navLink)
-    if (navLink) {
-        console.log("Đã tìm thấy: " + navLink.textContent);
-    } else {
-        console.log("Không tìm thấy phần tử nào.");
-    }
-});
+new Chartist.Line('.line-chart-filled', {
+    labels: [1, 2, 3, 4, 5, 6, 7, 8],
+    series: [
+      [5, 9, 7, 8, 5, 3, 5, 4]
+    ]
+  }, {
+    low: 0,
+    showArea: true
+  });
 
