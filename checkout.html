@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/checkout.css">
 
 
-   
+
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
         </div>
     </section>
-   
+
 
     <main id="main" role="main">
         <section id="checkout-container">
@@ -48,7 +49,7 @@
                                 </div>
                                 <span class="text-muted">$12</span>
                             </li>
-                            
+
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">Sản phẩm thứ hai</h6>
@@ -76,58 +77,62 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="col-md-7 order-md-1">
                         <h4 class="mb-3">Địa chỉ thanh toán</h4>
                         <form class="needs-validation" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="lastName">Họ</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                    <label for="lastName"><i class="fas fa-id-card"></i>Họ</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value=""
+                                        required>
                                     <div class="invalid-feedback">
                                         Cần nhập họ hợp lệ.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="firstName">Tên</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                    <label for="firstName"><i class="fas fa-id-card"></i>Tên</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                        required>
                                     <div class="invalid-feedback">
                                         Cần nhập tên hợp lệ.
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="mb-3">
-                                <label for="username">Số điện thoại</label> 
-                                <div class="input-group"> 
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">+84</span>
-                                </div>                                  
-                                    <input type="text" class="form-control" id="username" placeholder="Tên người dùng" required>
+                                <label for="username"><i class="fas fa-phone"></i>Số điện thoại</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">+84</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" placeholder="Số điện thoại"
+                                        required>
                                     <div class="invalid-feedback" style="width: 100%;">
                                         Tên người dùng là bắt buộc.
                                     </div>
+                                </div>
                             </div>
-                            </div>
-    
+
                             <div class="mb-3">
-                                <label for="email">Email
+                                <label for="email"><i class="fas fa-envelope"></i>Email
                                     <span class="text-muted">(Tùy chọn)</span>
                                 </label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                <input type="email" class="form-control" id="email" placeholder="E-mail">
                                 <div class="invalid-feedback">
                                     Vui lòng nhập địa chỉ email hợp lệ để nhận thông báo giao hàng.
                                 </div>
                             </div>
-    
+
                             <div class="mb-3">
-                                <label for="address">Địa chỉ</label>
-                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <label for="address"><i class="fas fa-map-marker-alt"></i>Địa chỉ</label>
+                                <input type="text" class="form-control" id="address" placeholder="Số nhà"
+                                    required>
                                 <div class="invalid-feedback">
                                     Vui lòng nhập địa chỉ giao hàng.
                                 </div>
                             </div>
-    
+
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <label for="country">Quốc gia</label>
@@ -139,9 +144,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="state">Thành Phố</label>
-                                                   
-                                    <select class="custom-select d-block w-100" id="city  " required >
+                                    <label for="state">Tỉnh/Thành Phố</label>
+
+                                    <select class="custom-select d-block w-100" id="city  " required>
                                         <option value="">Chọn...</option>
                                         <option>An Giang</option>
                                         <option>Bà Rịa - Vũng Tàu</option>
@@ -207,7 +212,7 @@
                                         Vui lòng chọn thành phố hợp lệ.
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-4 mb-3">
                                     <label for="zip">Địa chỉ khác (không bắt buộc)</label>
                                     <input type="text" class="form-control" id="zip" placeholder="" required>
@@ -217,36 +222,46 @@
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Địa chỉ giao hàng giống địa chỉ thanh toán của tôi</label>
-                            </div>
+                           
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">Lưu thông tin này cho lần sau</label>
+                                <label class="custom-control-label" for="save-info">Lưu thông tin này cho lần
+                                    sau</label>
                             </div>
                             <hr class="mb-4">
-    
+
                             <h4 class="mb-3">Thanh toán</h4>
-    
+
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                    <img src="resources/images/zalopay.png" alt="zalopay logo" width="40" height="40">
                                     <label class="custom-control-label" for="credit">Thẻ tín dụng</label>
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        checked required>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                    <label class="custom-control-label" for="debit">Thẻ ghi nợ</label>
+                                    <img src="resources/images/MoMo_Logo.png" alt="Momo logo" width="40" height="40">
+                                    <label class="custom-control-label" for="debit">Momo</label>
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                    <img src="resources/images/cod.png" alt="Cod logo" width="40" height="40">
+                                    <label class="custom-control-label" for="debit">Thanh toán khi nhận hàng (COD)</label>
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <img src="resources/images/visa.jpg" alt="visa logo" width="40" height="40">
+                                    <label class="custom-control-label" for="paypal">Thẻ tín dụng/Thẻ ghi nợ</label>
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-name">Tên trên thẻ</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="Họ tên" required>
                                     <small class="text-muted">Họ và tên như hiển thị trên thẻ</small>
                                     <div class="invalid-feedback">
                                         Tên trên thẻ là bắt buộc
@@ -254,7 +269,8 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-number">Số thẻ tín dụng</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="Nhập số thẻ"
+                                        required>
                                     <div class="invalid-feedback">
                                         Số thẻ tín dụng là bắt buộc
                                     </div>
@@ -263,31 +279,33 @@
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Ngày hết hạn</label>
-                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                    <input type="text" class="form-control" id="cc-expiration"
+                                        placeholder="Ngày hết hạn" required>
                                     <div class="invalid-feedback">
                                         Ngày hết hạn là bắt buộc
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <label for="cc-expiration">CVV</label>
-                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                    <label for="cc-expiration">Mã bảo mật</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="CVV/CVC" required>
                                     <div class="invalid-feedback">
                                         Mã bảo mật là bắt buộc
                                     </div>
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn-t btn-primary btn-lg btn-block" type="submit">Tiếp tục thanh toán</button>
+                            <button class="btn-t btn-primary btn-lg btn-block" type="submit">Tiếp tục thanh
+                                toán</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn-t btn-primary scrollUp">
-                <i class="fa fa-arrow-circle-o-up"></i>
-            </a>
+            <!-- <a href="#" class="btn-t btn-primary scrollUp">
+                <i class="fa fa-arrow-circle-o-up">quay về</i>
+            </a> -->
         </section>
     </main>
-    
+
 
     <!-- Footer -->
     <div id="footer"></div>
