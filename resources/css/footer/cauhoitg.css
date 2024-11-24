@@ -91,7 +91,10 @@
 .faq-item i {
     color: #4a4a4a;
 }
-
+.faq-content a {
+    color: #007BFF;
+    text-decoration: none;
+}
 .faq-content {
     display: none;
     padding: 10px 15px;
