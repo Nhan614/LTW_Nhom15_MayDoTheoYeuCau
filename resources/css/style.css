@@ -873,7 +873,7 @@ a:hover {
 .admin-logout{
     width: 100%;
     position: absolute;
-    bottom: 70px;
+    bottom: 20px;
 }
 .admin-content {
     display: flex;

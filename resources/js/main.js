@@ -35,6 +35,11 @@ $(document).ready( function(e){
     $('section').addClass('admin-hide')
     $('#admin-user').removeClass('admin-hide')
   })
+
+  $('.admin-sidebar-3').click(function(e) {
+    $('section').addClass('admin-hide')
+    $('#admin-orders').removeClass('admin-hide')
+  })
   
   if (window.location.hash === '#admin-dashboard') {
     $('#admin-dashboard').removeClass('admin-hide')

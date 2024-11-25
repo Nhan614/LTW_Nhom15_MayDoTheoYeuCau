@@ -227,6 +227,55 @@
                 </table>
             </div>
         </section>
+
+        <!-- Đơn hàng  -->
+        <section id="admin-orders" class="admin-hide">
+            <!-- <br><br><br> -->
+            <!--  -->
+            <div class="container">
+                <h1 class="">Quản Lý Đơn Hàng</h1>
+                <form id="orderForm">
+                    <div class="form-group"> <label for="orderCode">Mã Đơn Hàng</label> <input type="text"
+                            class="form-control" id="orderCode" placeholder="Nhập mã đơn hàng" required> </div>
+                    <div class="form-group"> <label for="customerName">Tên Khách Hàng</label> <input type="text"
+                            class="form-control" id="customerName" placeholder="Nhập tên khách hàng" required>
+                    </div>
+                    <div class="form-group"> <label for="product">Sản Phẩm</label> <input type="text"
+                            class="form-control" id="product" placeholder="Nhập sản phẩm" required> </div>
+                    <div class="form-group"> <label for="quantity">Số Lượng</label> <input type="number"
+                            class="form-control" id="quantity" placeholder="Nhập số lượng" required> </div>
+                    <div class="form-group"> <label for="price">Giá</label> <input type="number" class="form-control"
+                            id="price" placeholder="Nhập giá" required> </div>
+                    <div class="form-group"> <label for="status">Trạng Thái</label> <select class="form-control"
+                            id="status" required>
+                            <option value="">Chọn trạng thái</option>
+                            <option>Đang xử lý</option>
+                            <option>Đã giao</option>
+                            <option>Đã hủy</option>
+                        </select> </div> <button type="submit" class="btn btn-primary">Thêm Đơn Hàng</button>
+                </form>
+                <hr>
+                <h3 class="text-center">Danh Sách Đơn Hàng</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Trạng Thái</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderList"> <!-- Danh sách đơn hàng sẽ được thêm vào đây --> </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
     </div>
     <!-- </div>
     </div> -->
@@ -317,6 +366,33 @@
                 $('#userRole').val(row.find('td:eq(3)').text());
                 row.remove();
             });
+        });
+
+        // đon hàng
+        $('#orderForm').on('submit', function (e) {
+            e.preventDefault();
+            let orderCode = $('#orderCode').val();
+            let customerName = $('#customerName').val();
+            let product = $('#product').val();
+            let quantity = $('#quantity').val();
+            let price = $('#price').val();
+            let status = $('#status').val();
+            let orderRow = `<tr> <td>${orderCode}</td> <td>${customerName}</td> <td>${product}</td> <td>${quantity}</td> <td>${price}</td> <td>${status}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
+            $('#orderList').append(orderRow);
+            $('#orderForm')[0].reset();
+        });
+        $(document).on('click', '.deleteBtn', function () {
+            $(this).closest('tr').remove();
+        });
+        $(document).on('click', '.editBtn', function () {
+            let row = $(this).closest('tr');
+            $('#orderCode').val(row.find('td:eq(0)').text());
+            $('#customerName').val(row.find('td:eq(1)').text());
+            $('#product').val(row.find('td:eq(2)').text());
+            $('#quantity').val(row.find('td:eq(3)').text());
+            $('#price').val(row.find('td:eq(4)').text());
+            $('#status').val(row.find('td:eq(5)').text());
+            row.remove();
         });
     </script>
 
