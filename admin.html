@@ -13,87 +13,88 @@
 <body>
 
     <!-- menu -->
-    <div id="menubar"></div>
+    <!-- <div id="menubar"></div> -->
 
     <!-- sec1 -->
-    <div id="sec1">
+    <!-- <div id="sec1"> -->
 
-        <div class="container">
+    <div class="container">
 
-            <!-- sidebar -->
-            <ul class="sidebar">
-                <li class="admin-sidebar-1">
-                    <a href="#admin-dashboard">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span>Dữ liệu</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-2">
-                    <a href="#admin-products">
-                        <i class="fa-brands fa-product-hunt"></i>
-                        <span>Quản lý sản phẩm</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-3">
-                    <a href="#admin-orders">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span>Quản lý đơn hàng</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-4">
-                    <a href="#admin-customers">
-                        <i class="fa-solid fa-wrench"></i>
-                        <span>Quản lý tài khoản</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-5">
-                    <a href="#admin-ủe">
-                        <i class="fa-regular fa-user"></i>
-                        <span>Quản lý khách hàng</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-6">
-                    <a href="#admin-categories">
-                        <i class="fa-solid fa-list"></i>
-                        <span>Quản lý danh mục</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-7">
-                    <a href="#admin-notification">
-                        <i class="fa-regular fa-note-sticky"></i>
-                        <span>Quản lý thông báo</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-8">
-                    <a href="#admin-reports">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Hỗ trợ khách hàng</span>
-                    </a>
-                </li>
-                <li class="admin-sidebar-9">
-                    <a href="#admin-settings">
-                        <i class="fa-solid fa-gear"></i>
-                        <span>Cài đặt</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#admin-settings" class="admin-logout">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
+        <!-- sidebar -->
+        <ul class="sidebar">
+            <li class="admin-sidebar-1">
+                <a href="#admin-dashboard">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>Dữ liệu</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-2">
+                <a href="#admin-products">
+                    <i class="fa-brands fa-product-hunt"></i>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-3">
+                <a href="#admin-orders">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Quản lý đơn hàng</span>
+                </a>
+            </li>
+            <!-- <li class="admin-sidebar-4">
+                <a href="#admin-customers">
+                    <i class="fa-solid fa-wrench"></i>
+                    <span>Quản lý khách hàng</span>
+                </a>
+            </li> -->
+            <li class="admin-sidebar-5">
+                <a href="#admin-user">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Quản lý người dùng</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-6">
+                <a href="#admin-categories">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Quản lý danh mục</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-7">
+                <a href="#admin-notification">
+                    <i class="fa-regular fa-note-sticky"></i>
+                    <span>Quản lý thông báo</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-8">
+                <a href="#admin-reports">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Hỗ trợ khách hàng</span>
+                </a>
+            </li>
+            <li class="admin-sidebar-9">
+                <a href="#admin-settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Cài đặt</span>
+                </a>
+            </li>
+            <li>
+                <a href="#admin-settings" class="admin-logout">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
 
-            </ul>
+        </ul>
 
-        </div>
+    </div>
 
-        <!-- content -->
-        <div class="admin-content">
-            <!-- Dash Board -->
-            <section id="admin-dashboard" class="admin-hide">
+    <!-- content -->
+    <div class="admin-content">
+        <!-- Dash Board -->
+        <section id="admin-dashboard" class="admin-hide">
+            <!-- <br>
                 <br>
-                <br>
-                <br>
+                <br> -->
+            <div class="container">
                 <h1>Dữ liệu</h1>
                 <!-- doanh thu hom nay -->
                 <div class="row">
@@ -131,67 +132,104 @@
                 <!-- chart -->
                 <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
                 <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
-            </section>
+            </div>
+        </section>
 
-            <!-- Dash Board -->
-            <section id="admin-products" class="admin-hide">
-                <br>
-                <!--  -->
-                <div class="container mt-5">
-                    <h2 class="text-center">Quản Lý Sản Phẩm</h2>
-                    <form id="productForm">
-                        <div class="form-group"> <label for="productName">Tên Sản Phẩm</label> <input type="text"
-                                class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required> </div>
-                        <div class="form-group"> <label for="productCode">Mã Sản Phẩm</label> <input type="text"
-                                class="form-control" id="productCode" placeholder="Nhập mã sản phẩm" required> </div>
-                        <div class="form-group"> <label for="productCode">Số Lượng</label> 
-                            <input type="number" id="num" class="form-control" value="1" min="1" max="99"> </div>
-                        <div class="form-group"> <label for="season">Mùa</label> <select class="form-control"
-                                id="season">
-                                <option>Xuân</option>
-                                <option>Hạ</option>
-                                <option>Thu</option>
-                                <option>Đông</option>
-                                <option>4 Mùa</option>
-                            </select> </div>
-                        <div class="form-group"> <label for="material">Chất Liệu</label> <input type="text"
-                                class="form-control" id="material" placeholder="Nhập chất liệu" required> </div>
-                        <div class="form-group"> <label for="manufacturer">Nhà Sản Xuất</label> <input type="text"
-                                class="form-control" id="manufacturer" placeholder="Nhập nhà sản xuất" required> </div>
-                                <div class="form-group"> <label for="category">Loại Sản Phẩm</label> <select class="form-control"
-                                    id="category">
-                                    <option>Vest Công Sở</option>
-                                    <option>Vest Thường Ngày</option>
-                                    <option>Vest Xanh</option>
-                                    <option>Vest Nâu</option>
-                                    <option>Vest Xám</option>
-                                </select> </div>
-                        <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Sản Phẩm</button>
-                    </form>
-                    <hr>
-                    <h3 class="text-center">Danh Sách Sản Phẩm</h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Tên Sản Phẩm</th>
-                                <th>Mã Sản Phẩm</th>
-                                <th>Số Lượng</th>
-                                <th>Mùa</th>
-                                <th>Chất Liệu</th>
-                                <th>Nhà Sản Xuất</th>
-                                <th>Loại Sản Phẩm</th>
-                                <th>Hành Động</th>
-                            </tr>
-                        </thead>
-                        <tbody id="productList"> <!-- Danh sách sản phẩm sẽ được thêm vào đây --> </tbody>
-                    </table>
-                </div>
-            </section>
+        <!-- Product -->
+        <section id="admin-products" class="admin-hide">
+            <!-- <br><br><br> -->
             <!--  -->
+            <div class="container">
+                <h1 class="">Quản Lý Sản Phẩm</h1>
+                <form id="productForm">
+                    <div class="form-group"> <label for="productName">Tên Sản Phẩm</label> <input type="text"
+                            class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required> </div>
+                    <div class="form-group"> <label for="productCode">Mã Sản Phẩm</label> <input type="text"
+                            class="form-control" id="productCode" placeholder="Nhập mã sản phẩm" required> </div>
+                    <div class="form-group"> <label for="productCode">Số Lượng</label>
+                        <input type="number" id="num" class="form-control" value="1" min="1" max="99">
+                    </div>
+                    <div class="form-group"> <label for="season">Mùa</label> <select class="form-control" id="season">
+                            <option>Xuân</option>
+                            <option>Hạ</option>
+                            <option>Thu</option>
+                            <option>Đông</option>
+                            <option>4 Mùa</option>
+                        </select> </div>
+                    <div class="form-group"> <label for="material">Chất Liệu</label> <input type="text"
+                            class="form-control" id="material" placeholder="Nhập chất liệu" required> </div>
+                    <div class="form-group"> <label for="manufacturer">Nhà Sản Xuất</label> <input type="text"
+                            class="form-control" id="manufacturer" placeholder="Nhập nhà sản xuất" required> </div>
+                    <div class="form-group"> <label for="category">Loại Sản Phẩm</label> <select class="form-control"
+                            id="category">
+                            <option>Vest Công Sở</option>
+                            <option>Vest Thường Ngày</option>
+                            <option>Vest Xanh</option>
+                            <option>Vest Nâu</option>
+                            <option>Vest Xám</option>
+                        </select> </div>
+                    <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Sản Phẩm</button>
+                </form>
+                <hr>
+                <h3 class="text-center">Danh Sách Sản Phẩm</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Mùa</th>
+                            <th>Chất Liệu</th>
+                            <th>Nhà Sản Xuất</th>
+                            <th>Loại Sản Phẩm</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList"> <!-- Danh sách sản phẩm sẽ được thêm vào đây --> </tbody>
+                </table>
+            </div>
+        </section>
 
-        </div>
+        <!-- User  -->
+        <section id="admin-user" class="admin-hide">
+            <!-- <br><br><br> -->
+            <!--  -->
+            <div class="container">
+                <h1 class="">Quản Lý Người Dùng</h1>
+                <form id="userForm">
+                    <div class="form-group"> <label for="userName">Tên Người Dùng</label> <input type="text"
+                            class="form-control" id="userName" placeholder="Nhập tên người dùng" required> </div>
+                    <div class="form-group"> <label for="userEmail">Email</label> <input type="email"
+                            class="form-control" id="userEmail" placeholder="Nhập email" required> </div>
+                    <div class="form-group"> <label for="userPhone">Số Điện Thoại</label> <input type="number"
+                            class="form-control" id="userPhone" placeholder="Nhập số điện thoại" required> </div>
+                    <div class="form-group"> <label for="userRole">Vai Trò</label> <select class="form-control"
+                            id="userRole" required>
+                            <option value="">Chọn vai trò</option>
+                            <option>Admin</option>
+                            <option>Người Dùng</option>
+                        </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Người
+                        Dùng</button>
+                </form>
+                <hr>
+                <h3 class="text-center">Danh Sách Người Dùng</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tên Người Dùng</th>
+                            <th>Email</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Vai Trò</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây --> </tbody>
+                </table>
+            </div>
+        </section>
     </div>
-    </div>
+    <!-- </div>
+    </div> -->
 
     <!-- footer -->
     <!-- <div id="footer"></div> -->
@@ -203,8 +241,7 @@
     <script src="resources/js/quit.js"></script>
 
     <!-- CDN chart and script  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
         const xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         const yValues = [200, 150, 170, 100, 210, 220, 250, 300, 400, 300, 600, 1000];
@@ -231,31 +268,54 @@
 
 
         // product
+
+        $('#productForm').on('submit', function (e) {
+            e.preventDefault(); let productName = $('#productName').val();
+            let productCode = $('#productCode').val();
+            let num = $('#num').val();
+            let season = $('#season').val();
+            let material = $('#material').val();
+            let manufacturer = $('#manufacturer').val();
+            let category = $('#category').val();
+            let productRow = `<tr> <td>${productName}</td> <td>${productCode}</td> <td>${num}</td>  <td>${season}</td> <td>${material}</td> <td>${manufacturer}</td> <td>${category}</td> <td> <button class="btn-custumize btn-lg editBtn">Sửa</button> <button class="btn-custumize btn-lg bg-danger deleteBtn">Xóa</button> </td> </tr>`;
+            $('#productList').append(productRow);
+            $('#productForm')[0].reset();
+        });
+        $(document).on('click', '.deleteBtn', function () {
+            $(this).closest('tr').remove();
+        });
+        $(document).on('click', '.editBtn', function () {
+            let row = $(this).closest('tr'); $('#productName').val(row.find('td:eq(0)').text());
+            $('#productCode').val(row.find('td:eq(1)').text());
+            $('#num').val(row.find('td:eq(2)').text());
+            $('#season').val(row.find('td:eq(3)').text());
+            $('#material').val(row.find('td:eq(4)').text());
+            $('#manufacturer').val(row.find('td:eq(5)').text());
+            $('#category').val(row.find('td:eq(6)').text());
+
+        });
+
+        // user
         $(document).ready(function () {
-            $('#productForm').on('submit', function (e) {
-                e.preventDefault(); let productName = $('#productName').val();
-                let productCode = $('#productCode').val();
-                let num = $('#num').val();
-                let season = $('#season').val();
-                let material = $('#material').val();
-                let manufacturer = $('#manufacturer').val();
-                let category = $('#category').val();
-                let productRow = `<tr> <td>${productName}</td> <td>${productCode}</td> <td>${num}</td>  <td>${season}</td> <td>${material}</td> <td>${manufacturer}</td> <td>${category}</td> <td> <button class="btn-custumize btn-lg editBtn">Sửa</button> <button class="btn-custumize btn-lg bg-danger deleteBtn">Xóa</button> </td> </tr>`;
-                $('#productList').append(productRow);
-                $('#productForm')[0].reset();
+            $('#userForm').on('submit', function (e) {
+                e.preventDefault();
+                let userName = $('#userName').val();
+                let userEmail = $('#userEmail').val();
+                let userPhone = $('#userPhone').val();
+                let userRole = $('#userRole').val();
+                let userRow = `<tr> <td>${userName}</td> <td>${userEmail}</td> <td>${userPhone}</td> <td>${userRole}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
+                $('#userList').append(userRow);
+                $('#userForm')[0].reset();
             });
             $(document).on('click', '.deleteBtn', function () {
                 $(this).closest('tr').remove();
-            });
-            $(document).on('click', '.editBtn', function () {
-                let row = $(this).closest('tr'); $('#productName').val(row.find('td:eq(0)').text());
-                $('#productCode').val(row.find('td:eq(1)').text());
-                $('#num').val(row.find('td:eq(2)').text());
-                $('#season').val(row.find('td:eq(3)').text());
-                $('#material').val(row.find('td:eq(4)').text());
-                $('#manufacturer').val(row.find('td:eq(5)').text());
-                $('#category').val(row.find('td:eq(6)').text());
-
+            }); $(document).on('click', '.editBtn', function () {
+                let row = $(this).closest('tr');
+                $('#userName').val(row.find('td:eq(0)').text());
+                $('#userEmail').val(row.find('td:eq(1)').text());
+                $('#userPhone').val(row.find('td:eq(2)').text());
+                $('#userRole').val(row.find('td:eq(3)').text());
+                row.remove();
             });
         });
     </script>
