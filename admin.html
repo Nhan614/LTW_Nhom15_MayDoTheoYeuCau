@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li>
-                <a href="#admin-settings" class="admin-logout">
+                <a href="home.html" class="admin-logout">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Logout</span>
                 </a>
@@ -232,28 +232,49 @@
         <section id="admin-orders" class="admin-hide">
             <!-- <br><br><br> -->
             <!--  -->
-            <div class="container">
-                <h1 class="">Quản Lý Đơn Hàng</h1>
-                <form id="orderForm">
-                    <div class="form-group"> <label for="orderCode">Mã Đơn Hàng</label> <input type="text"
-                            class="form-control" id="orderCode" placeholder="Nhập mã đơn hàng" required> </div>
-                    <div class="form-group"> <label for="customerName">Tên Khách Hàng</label> <input type="text"
-                            class="form-control" id="customerName" placeholder="Nhập tên khách hàng" required>
+            <div class="container mt-5">
+                <h2 class="text-center">Quản Lý Đơn Hàng</h2> <!-- Button to Open the Modal --> <button type="submit"
+                    class="btn-custumize btn-lg mt-2" data-toggle="modal" data-target="#orderModal"> Thêm Đơn Hàng
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="orderModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Thêm Đơn Hàng</h4> <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button>
+                            </div> <!-- Modal Body -->
+                            <div class="modal-body">
+                                <form id="orderForm">
+                                    <div class="form-group"> <label for="orderCode">Mã Đơn Hàng</label> <input
+                                            type="text" class="form-control" id="orderCode"
+                                            placeholder="Nhập mã đơn hàng" required> </div>
+                                    <div class="form-group"> <label for="customerName">Tên Khách Hàng</label> <input
+                                            type="text" class="form-control" id="customerName"
+                                            placeholder="Nhập tên khách hàng" required> </div>
+                                    <div class="form-group"> <label for="product">Sản Phẩm</label> <input type="text"
+                                            class="form-control" id="product" placeholder="Nhập sản phẩm" required>
+                                    </div>
+                                    <div class="form-group"> <label for="quantity">Số Lượng</label> <input type="number"
+                                            class="form-control" id="quantity" placeholder="Nhập số lượng" required>
+                                    </div>
+                                    <div class="form-group"> <label for="price">Giá</label> <input type="number"
+                                            class="form-control" id="price" placeholder="Nhập giá" required> </div>
+                                    <div class="form-group"> <label for="status">Trạng Thái</label> <select
+                                            class="form-control" id="status" required>
+                                            <option value="">Chọn trạng thái</option>
+                                            <option>Đang xử lý</option>
+                                            <option>Đã giao</option>
+                                            <option>Đã hủy</option>
+                                        </select> </div> <button type="submit" class="btn btn-primary">Thêm Đơn
+                                        Hàng</button>
+                                </form>
+                            </div> <!-- Modal Footer -->
+                            <div class="modal-footer"> <button type="button" class="btn btn-danger"
+                                    data-dismiss="modal">Đóng</button> </div>
+                        </div>
                     </div>
-                    <div class="form-group"> <label for="product">Sản Phẩm</label> <input type="text"
-                            class="form-control" id="product" placeholder="Nhập sản phẩm" required> </div>
-                    <div class="form-group"> <label for="quantity">Số Lượng</label> <input type="number"
-                            class="form-control" id="quantity" placeholder="Nhập số lượng" required> </div>
-                    <div class="form-group"> <label for="price">Giá</label> <input type="number" class="form-control"
-                            id="price" placeholder="Nhập giá" required> </div>
-                    <div class="form-group"> <label for="status">Trạng Thái</label> <select class="form-control"
-                            id="status" required>
-                            <option value="">Chọn trạng thái</option>
-                            <option>Đang xử lý</option>
-                            <option>Đã giao</option>
-                            <option>Đã hủy</option>
-                        </select> </div> <button type="submit" class="btn btn-primary">Thêm Đơn Hàng</button>
-                </form>
+                </div>
                 <hr>
                 <h3 class="text-center">Danh Sách Đơn Hàng</h3>
                 <table class="table table-bordered">
@@ -379,21 +400,24 @@
             let status = $('#status').val();
             let orderRow = `<tr> <td>${orderCode}</td> <td>${customerName}</td> <td>${product}</td> <td>${quantity}</td> <td>${price}</td> <td>${status}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
             $('#orderList').append(orderRow);
+            $('#orderModal').modal('hide');
             $('#orderForm')[0].reset();
         });
         $(document).on('click', '.deleteBtn', function () {
             $(this).closest('tr').remove();
         });
         $(document).on('click', '.editBtn', function () {
-            let row = $(this).closest('tr');
-            $('#orderCode').val(row.find('td:eq(0)').text());
+            let row = $(this).closest('tr'); $('#orderCode').val(row.find('td:eq(0)').text());
             $('#customerName').val(row.find('td:eq(1)').text());
             $('#product').val(row.find('td:eq(2)').text());
             $('#quantity').val(row.find('td:eq(3)').text());
             $('#price').val(row.find('td:eq(4)').text());
             $('#status').val(row.find('td:eq(5)').text());
             row.remove();
+            $('#orderModal').modal('show');
         });
+
+
     </script>
 
 </body>

@@ -878,7 +878,7 @@ a:hover {
 .admin-content {
     display: flex;
     margin-left: 250px;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
 }
 
 .admin-hide{
