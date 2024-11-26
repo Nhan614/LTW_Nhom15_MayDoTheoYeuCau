@@ -71,5 +71,23 @@
     margin: 10px 0;
 
 }
+/* =================================== */
+.list-group-item {
+    transition: all 0.3s ease;
+}
 
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.02);
+}
+
+.list-group-item h6 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.list-group-item small {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
 
