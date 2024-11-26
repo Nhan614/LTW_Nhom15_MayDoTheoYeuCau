@@ -47,6 +47,12 @@ $(document).ready( function(e){
     $('.sidebar li').removeClass('sidebar-active')
     $(this).addClass('sidebar-active')
   })
+  $('.admin-sidebar-6').click(function(e) {
+    $('section').addClass('admin-hide')
+    $('#admin-categories').removeClass('admin-hide')
+    $('.sidebar li').removeClass('sidebar-active')
+    $(this).addClass('sidebar-active')
+  })
   // onload sidebar
   if (window.location.hash === '#admin-dashboard') {
     $('#admin-dashboard').removeClass('admin-hide')
@@ -63,6 +69,10 @@ $(document).ready( function(e){
   if (window.location.hash === '#admin-orders') {
     $('#admin-orders').removeClass('admin-hide')
     $('.admin-sidebar-3').addClass('sidebar-active')
+  }
+  if (window.location.hash === '#admin-categories') {
+    $('#admin-categories').removeClass('admin-hide')
+    $('.admin-sidebar-6').addClass('sidebar-active')
   }
 })
 

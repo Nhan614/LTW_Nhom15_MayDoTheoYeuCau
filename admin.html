@@ -165,7 +165,8 @@
                                         <input type="number" id="productPrice" class="form-control" min="0">
                                     </div>
                                     <div class="form-group"> <label for="productNum">Số Lượng</label>
-                                        <input type="number" id="productNum" class="form-control" value="1" min="1" max="99">
+                                        <input type="number" id="productNum" class="form-control" value="1" min="1"
+                                            max="99">
                                     </div>
                                     <div class="form-group"> <label for="season">Mùa</label> <select
                                             class="form-control" id="season" required>
@@ -246,7 +247,7 @@
                             <td>nguyenvana@example.com</td>
                             <td>0123456789</td>
                             <td>Admin</td>
-                            <td> <button class="btn btn-warning btn-sm user-editBtn">Sửa</button> <button
+                            <td> <button class="btn btn-primary btn-sm user-editBtn">Sửa</button> <button
                                     class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
                         </tr>
                     </tbody>
@@ -315,7 +316,7 @@
                             <td>10</td>
                             <td>100000</td>
                             <td>Đang xử lý</td>
-                            <td> <button class="btn btn-warning btn-sm order-editBtn">Sửa</button> <button
+                            <td> <button class="btn btn-primary btn-sm order-editBtn">Sửa</button> <button
                                     class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
                         </tr>
                     </tbody>
@@ -364,6 +365,105 @@
         </section>
 
 
+        <!-- Danh mục  -->
+        <section id="admin-categories" class="admin-hide">
+            <!-- <br><br><br> -->
+            <!--  -->
+            <div class="container">
+                <h1 class="mb-4">Quản Lý Danh Mục</h1>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Danh Sách Danh Mục</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên Danh Mục</th>
+                                    <th>Loại</th>
+                                    <th>Danh Mục Cha</th>
+                                    <th>Mô Tả</th>
+                                    <th>Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Trang Phục</td>
+                                    <td>Trang Phục</td>
+                                    <td>Không Có</td>
+                                    <td>Không Có</td>
+                                    <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
+                                            class="btn btn-danger btn-sm">Xóa</button> </td>
+                                </tr> 
+                                <tr>
+                                    <td>2</td>
+                                    <td>Phụ Kiện</td>
+                                    <td>Phụ Kiện</td>
+                                    <td>Không Có</td>
+                                    <td>Không Có</td>
+                                    <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
+                                            class="btn btn-danger btn-sm">Xóa</button> </td>
+                                </tr> 
+                                <tr>
+                                    <td>3</td>
+                                    <td>Áo Sơ Mi</td>
+                                    <td>Trang Phục</td>
+                                    <td>Áo</td>
+                                    <td>Loại vải tốt nhất</td>
+                                    <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
+                                            class="btn btn-danger btn-sm">Xóa</button> </td>
+                                </tr> 
+                                <tr>
+                                    <td>4</td>
+                                    <td>Quần Âu</td>
+                                    <td>Trang Phục</td>
+                                    <td>Quần Dài</td>
+                                    <td>Chất lượng hàng đầu</td>
+                                    <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
+                                            class="btn btn-danger btn-sm">Xóa</button> </td>
+                                </tr> 
+                                <!-- Thêm các hàng khác tại đây -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h2>Thêm Danh Mục Mới</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3"> <label for="categoryName" class="form-label">Tên Danh Mục</label> <input
+                                    type="text" class="form-control" id="categoryName" placeholder="Nhập tên danh mục" required>
+                            </div>
+
+                            <div class="form-group"> <label for="loaiDanhMuc">Loại Danh Mục</label> <select
+                                class="form-control" id="loaiDanhMuc" required>
+                                <option value="">Loại</option>
+                                <option>Trang Phục</option>
+                                <option>Phụ Kiện</option>
+                            </select> </div>
+
+                            <div class="form-group"> <label for="DanhMucCha">Danh Mục Cha</label> <select
+                                class="form-control" id="DanhMucCha" required>
+                                <option value="">Danh Mục Cha</option>
+                                <option>Vest</option>
+                                <option>Áo</option>
+                                <option>Quần Dài</option>
+                            </select> </div>
+                            <div class="mb-3"> <label for="categoryDescription" class="form-label">Mô Tả</label>
+                                <textarea class="form-control" id="categoryDescription" rows="3"
+                                    placeholder="Nhập mô tả"></textarea> </div> <button type="submit"
+                                class="btn-custumize btn-lg">Thêm Danh Mục</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
 
     </div>
@@ -377,8 +477,8 @@
     <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="venders/js/jquery-3.7.1.min.js"></script>
     <script src="resources/js/main.js"></script>
-    
-    
+
+
     <!-- CDN chart and demo script  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="resources/js/adminDemo.js"></script>
