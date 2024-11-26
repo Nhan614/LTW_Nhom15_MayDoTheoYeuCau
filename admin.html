@@ -138,38 +138,69 @@
         <!-- Product -->
         <section id="admin-products" class="admin-hide">
             <!-- <br><br><br> -->
-            <!--  -->
+
             <div class="container">
                 <h1 class="">Quản Lý Sản Phẩm</h1>
-                <form id="productForm">
-                    <div class="form-group"> <label for="productName">Tên Sản Phẩm</label> <input type="text"
-                            class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required> </div>
-                    <div class="form-group"> <label for="productCode">Mã Sản Phẩm</label> <input type="text"
-                            class="form-control" id="productCode" placeholder="Nhập mã sản phẩm" required> </div>
-                    <div class="form-group"> <label for="productCode">Số Lượng</label>
-                        <input type="number" id="num" class="form-control" value="1" min="1" max="99">
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn-custumize btn-lg admin-addProduct mt-3" data-toggle="modal"
+                    data-target="#productModal"> Thêm Sản Phẩm </button>
+                <!-- The Modal -->
+                <div class="modal" id="productModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Thêm/Sửa Sản Phẩm</h4>
+                                <!-- <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button> -->
+                            </div> <!-- Modal Body -->
+                            <div class="modal-body">
+                                <form id="productForm">
+                                    <div class="form-group"> <label for="productName">Tên Sản Phẩm</label> <input
+                                            type="text" class="form-control" id="productName"
+                                            placeholder="Nhập tên sản phẩm" required> </div>
+                                    <div class="form-group"> <label for="productCode">Mã Sản Phẩm</label> <input
+                                            type="text" class="form-control" id="productCode"
+                                            placeholder="Nhập mã sản phẩm" required> </div>
+                                    <div class="form-group"> <label for="productPrice">Giá</label>
+                                        <input type="number" id="productPrice" class="form-control" min="0">
+                                    </div>
+                                    <div class="form-group"> <label for="productNum">Số Lượng</label>
+                                        <input type="number" id="productNum" class="form-control" value="1" min="1" max="99">
+                                    </div>
+                                    <div class="form-group"> <label for="season">Mùa</label> <select
+                                            class="form-control" id="season" required>
+                                            <option value="">Chọn mùa</option>
+                                            <option>Xuân</option>
+                                            <option>Hạ</option>
+                                            <option>Thu</option>
+                                            <option>Đông</option>
+                                            <option>4 Mùa</option>
+                                        </select> </div>
+                                    <div class="form-group"> <label for="material">Chất Liệu</label> <input type="text"
+                                            class="form-control" id="material" placeholder="Nhập chất liệu" required>
+                                    </div>
+                                    <div class="form-group"> <label for="manufacturer">Nhà Sản Xuất</label> <input
+                                            type="text" class="form-control" id="manufacturer"
+                                            placeholder="Nhập nhà sản xuất" required> </div>
+                                    <div class="form-group"> <label for="category">Loại Sản Phẩm</label> <select
+                                            class="form-control" id="category">
+                                            <option>Vest Công Sở</option>
+                                            <option>Vest Thường Ngày</option>
+                                            <option>Vest Xanh</option>
+                                            <option>Vest Nâu</option>
+                                            <option>Vest Xám</option>
+                                        </select> </div>
+                                    <label for="admin-product-mota">Mô Tả</label>
+                                    <textarea name="" id="admin-product-mota"
+                                        style="width: 100%; min-height: 100px;"></textarea>
+                                    <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Sản Phẩm</button>
+                                </form>
+                            </div> <!-- Modal Footer -->
+                            <div class="modal-footer"> <button type="button" class="btn btn-danger"
+                                    data-dismiss="modal">Đóng</button> </div>
+                        </div>
                     </div>
-                    <div class="form-group"> <label for="season">Mùa</label> <select class="form-control" id="season">
-                            <option>Xuân</option>
-                            <option>Hạ</option>
-                            <option>Thu</option>
-                            <option>Đông</option>
-                            <option>4 Mùa</option>
-                        </select> </div>
-                    <div class="form-group"> <label for="material">Chất Liệu</label> <input type="text"
-                            class="form-control" id="material" placeholder="Nhập chất liệu" required> </div>
-                    <div class="form-group"> <label for="manufacturer">Nhà Sản Xuất</label> <input type="text"
-                            class="form-control" id="manufacturer" placeholder="Nhập nhà sản xuất" required> </div>
-                    <div class="form-group"> <label for="category">Loại Sản Phẩm</label> <select class="form-control"
-                            id="category">
-                            <option>Vest Công Sở</option>
-                            <option>Vest Thường Ngày</option>
-                            <option>Vest Xanh</option>
-                            <option>Vest Nâu</option>
-                            <option>Vest Xám</option>
-                        </select> </div>
-                    <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Sản Phẩm</button>
-                </form>
+                </div>
                 <hr>
                 <h3 class="text-center">Danh Sách Sản Phẩm</h3>
                 <table class="table table-bordered">
@@ -177,6 +208,7 @@
                         <tr>
                             <th>Tên Sản Phẩm</th>
                             <th>Mã Sản Phẩm</th>
+                            <th>Giá</th>
                             <th>Số Lượng</th>
                             <th>Mùa</th>
                             <th>Chất Liệu</th>
@@ -196,21 +228,6 @@
             <!--  -->
             <div class="container">
                 <h1 class="">Quản Lý Người Dùng</h1>
-                <form id="userForm">
-                    <div class="form-group"> <label for="userName">Tên Người Dùng</label> <input type="text"
-                            class="form-control" id="userName" placeholder="Nhập tên người dùng" required> </div>
-                    <div class="form-group"> <label for="userEmail">Email</label> <input type="email"
-                            class="form-control" id="userEmail" placeholder="Nhập email" required> </div>
-                    <div class="form-group"> <label for="userPhone">Số Điện Thoại</label> <input type="number"
-                            class="form-control" id="userPhone" placeholder="Nhập số điện thoại" required> </div>
-                    <div class="form-group"> <label for="userRole">Vai Trò</label> <select class="form-control"
-                            id="userRole" required>
-                            <option value="">Chọn vai trò</option>
-                            <option>Admin</option>
-                            <option>Người Dùng</option>
-                        </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Thêm Người
-                        Dùng</button>
-                </form>
                 <hr>
                 <h3 class="text-center">Danh Sách Người Dùng</h3>
                 <table class="table table-bordered">
@@ -223,26 +240,93 @@
                             <th>Hành Động</th>
                         </tr>
                     </thead>
-                    <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây --> </tbody>
-                </table>
-            </div>
+                    <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây -->
+                        <tr>
+                            <td>Nguyễn Văn A</td>
+                            <td>nguyenvana@example.com</td>
+                            <td>0123456789</td>
+                            <td>Admin</td>
+                            <td> <button class="btn btn-warning btn-sm user-editBtn">Sửa</button> <button
+                                    class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
+                        </tr>
+                    </tbody>
+                </table> <!-- The Modal -->
+                <div class="modal" id="userModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Sửa Người Dùng</h4>
+                                <!-- <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button> -->
+                            </div> <!-- Modal Body -->
+                            <div class="modal-body">
+                                <form id="userForm">
+                                    <div class="form-group"> <label for="userName">Tên Người Dùng</label> <input
+                                            type="text" class="form-control" id="userName"
+                                            placeholder="Nhập tên người dùng" required> </div>
+                                    <div class="form-group"> <label for="userEmail">Email</label> <input type="email"
+                                            class="form-control" id="userEmail" placeholder="Nhập email" required>
+                                    </div>
+                                    <div class="form-group"> <label for="userPhone">Số Điện Thoại</label> <input
+                                            type="number" class="form-control" id="userPhone"
+                                            placeholder="Nhập số điện thoại" required> </div>
+                                    <div class="form-group"> <label for="userRole">Vai Trò</label> <select
+                                            class="form-control" id="userRole" required>
+                                            <option value="">Chọn vai trò</option>
+                                            <option>Admin</option>
+                                            <option>Người Dùng</option>
+                                        </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
+                                        Thay
+                                        Đổi</button>
+                                </form>
+                            </div> <!-- Modal Footer -->
+                            <!-- <div class="modal-footer"> <button type="button" class="btn btn-danger"
+                                    data-dismiss="modal">Đóng</button> </div> -->
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <!-- Đơn hàng  -->
         <section id="admin-orders" class="admin-hide">
             <!-- <br><br><br> -->
             <!--  -->
-            <div class="container mt-5">
-                <h2 class="text-center">Quản Lý Đơn Hàng</h2> <!-- Button to Open the Modal --> <button type="submit"
-                    class="btn-custumize btn-lg mt-2" data-toggle="modal" data-target="#orderModal"> Thêm Đơn Hàng
-                </button>
+            <div class="container">
+                <h1 class="">Quản Lý Đơn Hàng</h1>
+                <hr>
+                <h3 class="text-center">Danh Sách Đơn Hàng</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Trạng Thái</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderList"> <!-- Danh sách đơn hàng sẽ được thêm vào đây -->
+                        <tr>
+                            <td>001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Sản phẩm 1</td>
+                            <td>10</td>
+                            <td>100000</td>
+                            <td>Đang xử lý</td>
+                            <td> <button class="btn btn-warning btn-sm order-editBtn">Sửa</button> <button
+                                    class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <!-- The Modal -->
                 <div class="modal" id="orderModal">
                     <div class="modal-dialog">
                         <div class="modal-content"> <!-- Modal Header -->
                             <div class="modal-header">
-                                <h4 class="modal-title">Thêm Đơn Hàng</h4> <button type="button" class="close"
-                                    data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Sửa Đơn Hàng</h4>
+                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                             </div> <!-- Modal Body -->
                             <div class="modal-body">
                                 <form id="orderForm">
@@ -266,31 +350,16 @@
                                             <option>Đang xử lý</option>
                                             <option>Đã giao</option>
                                             <option>Đã hủy</option>
-                                        </select> </div> <button type="submit" class="btn btn-primary">Thêm Đơn
-                                        Hàng</button>
+                                        </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
+                                        Thay
+                                        Đổi</button>
                                 </form>
                             </div> <!-- Modal Footer -->
-                            <div class="modal-footer"> <button type="button" class="btn btn-danger"
-                                    data-dismiss="modal">Đóng</button> </div>
+                            <!-- <div class="modal-footer"> <button type="button" class="btn btn-danger"
+                                    data-dismiss="modal">Đóng</button> </div> -->
                         </div>
                     </div>
                 </div>
-                <hr>
-                <h3 class="text-center">Danh Sách Đơn Hàng</h3>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Mã Đơn Hàng</th>
-                            <th>Tên Khách Hàng</th>
-                            <th>Sản Phẩm</th>
-                            <th>Số Lượng</th>
-                            <th>Giá</th>
-                            <th>Trạng Thái</th>
-                            <th>Hành Động</th>
-                        </tr>
-                    </thead>
-                    <tbody id="orderList"> <!-- Danh sách đơn hàng sẽ được thêm vào đây --> </tbody>
-                </table>
             </div>
         </section>
 
@@ -308,7 +377,7 @@
     <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="venders/js/jquery-3.7.1.min.js"></script>
     <script src="resources/js/main.js"></script>
-    <script src="resources/js/quit.js"></script>
+
 
     <!-- CDN chart and script  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -339,57 +408,78 @@
 
         // product
 
+        $(document).on('click', '.admin-addProduct', function () {
+            $('#productModal').modal('show');
+        });
+
         $('#productForm').on('submit', function (e) {
-            e.preventDefault(); let productName = $('#productName').val();
+            e.preventDefault();
+            let productName = $('#productName').val();
             let productCode = $('#productCode').val();
-            let num = $('#num').val();
+            let productPrice = $('#productPrice').val();
+            let productNum= $('#productNum').val();
             let season = $('#season').val();
             let material = $('#material').val();
             let manufacturer = $('#manufacturer').val();
             let category = $('#category').val();
-            let productRow = `<tr> <td>${productName}</td> <td>${productCode}</td> <td>${num}</td>  <td>${season}</td> <td>${material}</td> <td>${manufacturer}</td> <td>${category}</td> <td> <button class="btn-custumize btn-lg editBtn">Sửa</button> <button class="btn-custumize btn-lg bg-danger deleteBtn">Xóa</button> </td> </tr>`;
+            let productRow = `<tr> <td>${productName}</td> <td>${productCode}</td> <td>${productPrice}</td> <td>${productNum}</td> <td>${season}</td> <td>${material}</td> <td>${manufacturer}</td> <td>${category}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
             $('#productList').append(productRow);
+            $('#productModal').modal('hide');
             $('#productForm')[0].reset();
         });
         $(document).on('click', '.deleteBtn', function () {
             $(this).closest('tr').remove();
         });
         $(document).on('click', '.editBtn', function () {
-            let row = $(this).closest('tr'); $('#productName').val(row.find('td:eq(0)').text());
+            let row = $(this).closest('tr');
+            $('#productName').val(row.find('td:eq(0)').text());
             $('#productCode').val(row.find('td:eq(1)').text());
-            $('#num').val(row.find('td:eq(2)').text());
-            $('#season').val(row.find('td:eq(3)').text());
-            $('#material').val(row.find('td:eq(4)').text());
+            $('#productNum').val(row.find('td:eq(2)').text());
+            $('#season').val(row.find('td:eq(4)').text());
+            $('#material').val(row.find('td:eq(5)').text());
             $('#manufacturer').val(row.find('td:eq(5)').text());
             $('#category').val(row.find('td:eq(6)').text());
-
+            row.remove();
+            $('#productModal').modal('show');
         });
 
         // user
-        $(document).ready(function () {
-            $('#userForm').on('submit', function (e) {
-                e.preventDefault();
-                let userName = $('#userName').val();
-                let userEmail = $('#userEmail').val();
-                let userPhone = $('#userPhone').val();
-                let userRole = $('#userRole').val();
-                let userRow = `<tr> <td>${userName}</td> <td>${userEmail}</td> <td>${userPhone}</td> <td>${userRole}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
-                $('#userList').append(userRow);
-                $('#userForm')[0].reset();
-            });
-            $(document).on('click', '.deleteBtn', function () {
-                $(this).closest('tr').remove();
-            }); $(document).on('click', '.editBtn', function () {
-                let row = $(this).closest('tr');
-                $('#userName').val(row.find('td:eq(0)').text());
-                $('#userEmail').val(row.find('td:eq(1)').text());
-                $('#userPhone').val(row.find('td:eq(2)').text());
-                $('#userRole').val(row.find('td:eq(3)').text());
-                row.remove();
-            });
+        $(document).on('click', '.user-editBtn', function () {
+            let row = $(this).closest('tr')
+            $('#userName').val(row.find('td:eq(0)').text());
+            $('#userEmail').val(row.find('td:eq(1)').text());
+            $('#userPhone').val(row.find('td:eq(2)').text());
+            $('#userRole').val(row.find('td:eq(3)').text());
+            $('#userModal').modal('show');
+            $(this).closest('tr').remove();
+        });
+        $('#userForm').on('submit', function (e) {
+            e.preventDefault();
+            let userName = $('#userName').val();
+            let userEmail = $('#userEmail').val();
+            let userPhone = $('#userPhone').val();
+            let userRole = $('#userRole').val();
+            let userRow = `<tr> <td>${userName}</td> <td>${userEmail}</td> <td>${userPhone}</td> <td>${userRole}</td> <td> <button class="btn btn-warning btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
+            $('#userList').append(userRow);
+            $('#userModal').modal('hide');
+            $('#userForm')[0].reset();
+        });
+        $(document).on('click', '.deleteBtn', function () {
+            $(this).closest('tr').remove();
         });
 
         // đon hàng
+
+        $(document).on('click', '.order-editBtn', function () {
+            let row = $(this).closest('tr');
+            $('#orderCode').val(row.find('td:eq(0)').text());
+            $('#customerName').val(row.find('td:eq(1)').text());
+            $('#product').val(row.find('td:eq(2)').text());
+            $('#quantity').val(row.find('td:eq(3)').text());
+            $('#price').val(row.find('td:eq(4)').text());
+            $('#status').val(row.find('td:eq(5)').text());
+            $('#orderModal').modal('show');
+        });
         $('#orderForm').on('submit', function (e) {
             e.preventDefault();
             let orderCode = $('#orderCode').val();
@@ -406,16 +496,7 @@
         $(document).on('click', '.deleteBtn', function () {
             $(this).closest('tr').remove();
         });
-        $(document).on('click', '.editBtn', function () {
-            let row = $(this).closest('tr'); $('#orderCode').val(row.find('td:eq(0)').text());
-            $('#customerName').val(row.find('td:eq(1)').text());
-            $('#product').val(row.find('td:eq(2)').text());
-            $('#quantity').val(row.find('td:eq(3)').text());
-            $('#price').val(row.find('td:eq(4)').text());
-            $('#status').val(row.find('td:eq(5)').text());
-            row.remove();
-            $('#orderModal').modal('show');
-        });
+
 
 
     </script>
