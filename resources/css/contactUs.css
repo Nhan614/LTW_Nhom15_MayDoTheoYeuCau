@@ -271,7 +271,6 @@
     text-align: center;
 }
 
-/* Bố cục của danh sách liên hệ */
 .contact-info {
     display: flex;
     justify-content: center;
@@ -280,7 +279,7 @@
     flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
 }
 
-/* Mỗi phần tử liên hệ */
+
 .contact-item {
     text-align:left;
     max-width: 180px;
@@ -289,11 +288,10 @@
     align-items: center;
 }
 
-/* Thiết kế icon */
 .contact-item i {
     font-size: 24px;
     margin-right: 20px;
-    color: #007BFF; /* Màu sắc cho icon */
+    color: #007BFF; 
 }
 
 /* Tiêu đề liên hệ */
@@ -305,30 +303,68 @@
     align-items: center;
 }
 
-/* Định dạng cho các đoạn văn bản liên hệ */
 .contact-detail {
     font-size: 14px;
     margin: 5px 0;
     padding-left: 10px; 
 }
 
-/* Phần divider phân cách các mục */
 .divider {
     border-left: 1px solid #ccc;
     height: 80px;
 }
 
-/* Các hiệu ứng cho các phần tử khi hover */
 .contact-item:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
 .contact-title:hover {
-    color: #007BFF; /* Màu sắc thay đổi khi hover vào tiêu đề */
+    color: #007BFF; 
 }
 
 .contact-detail:hover {
     color: #555;
 }
-  
+/* bảo hành */
+.feature-box {
+  background-color: #e0e0e0;
+  border: 1px solid #d1d1d1;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  justify-items: center;
+  text-align: center;
+  padding-left: 60px;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: #333;
+  padding-bottom: 5px;
+}
+
+.feature-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.custom-container {
+  margin: 0 auto;
+}
+
+.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.custom-row>[class*="col-"] {
+  padding-right: 1px;
+  padding-left: 1px;
+} 
