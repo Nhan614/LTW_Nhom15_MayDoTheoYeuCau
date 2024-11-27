@@ -3,7 +3,9 @@
     border: none;
     border-radius: 8px;
     overflow: hidden;
-    padding: 20px;
+    /* padding: 20px; */
+    /* margin-bottom: 20px; */
+
 }
 
 .news-card .row {
@@ -71,6 +73,62 @@
     margin: 10px 0;
 
 }
+
+/* ==================================== */
+/* Tất cả bài viết */
+
+.card-body {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 220px;
+    width: 100%;
+}
+
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.row {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.row h2 {
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-body h6 {
+    font-size: 16px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
 /* =================================== */
 .list-group-item {
     transition: all 0.3s ease;
@@ -82,8 +140,16 @@
 }
 
 .list-group-item h6 {
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 600;
+    padding-top: 5px;
+}
+
+.list-group-item .text-muted {
+    font-size: .7rem;
+    color: #6c757d;
+    font-weight: 100;
+
 }
 
 .list-group-item small {
