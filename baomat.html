@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="resources/css/style.css">
 
     <style>
-         .privacy h1 {
+        .privacy h1 {
             font-size: 40px;
             font-weight: bold;
             color: #151515;
             text-align: center;
             margin: 60px;
         }
+
         .privacy-policy {
             margin: 30px auto;
             padding: 20px;
@@ -89,6 +90,49 @@
 
         .privacy-policy a:hover {
             text-decoration: underline;
+        }
+
+        /* bảo hành */
+        .feature-box {
+            background-color: #e0e0e0;
+            border: 1px solid #d1d1d1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            justify-items: center;
+            text-align: center;
+            padding-left: 60px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            color: #333;
+            padding-bottom: 5px;
+        }
+
+        .feature-text {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .custom-container {
+            margin: 0 auto;
+        }
+
+        .custom-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .custom-row>[class*="col-"] {
+            padding-right: 1px;
+            padding-left: 1px;
         }
     </style>
 
@@ -217,12 +261,65 @@
                 <h4>Kết Luận</h4>
                 <p>
                     Nếu bạn có bất kỳ thắc mắc nào về Chính Sách Bảo Mật, hoặc muốn rút lại sự đồng ý đã cung cấp, vui
-                    lòng liên hệ với chúng tôi qua mục <a href="contactUs.html">"Liên Hệ"</a> trên Trang Web. Chúng tôi luôn sẵn sàng hỗ trợ bạn.
+                    lòng liên hệ với chúng tôi qua mục <a href="contactUs.html">"Liên Hệ"</a> trên Trang Web. Chúng tôi
+                    luôn sẵn sàng hỗ trợ bạn.
                 </p>
             </div>
         </div>
     </div>
-
+    <!-- bảo hành -->
+    <div class="custom-container">
+        <div class="custom-row text-center">
+            <!-- Feature 1 -->
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="feature-text"> <!-- Thêm class bao quanh -->
+                        <h5>Free trà và cafe</h5>
+                        <p>Tại showroom</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-md-3 ">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="feature-text"> <!-- Thêm class bao quanh -->
+                        <h5>Giao hàng</h5>
+                        <p>Free ship đơn >800k</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-money-check-dollar"></i>
+                    </div>
+                    <div class="feature-text"> <!-- Thêm class bao quanh -->
+                        <h5>Thanh toán</h5>
+                        <p>Bảo mật an toàn</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text"> <!-- Thêm class bao quanh -->
+                        <h5>Bảo hành</h5>
+                        <p>Lên đến 180 ngày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <div id="footer"></div>
 
