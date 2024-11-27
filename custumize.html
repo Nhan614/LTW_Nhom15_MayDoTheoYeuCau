@@ -305,35 +305,81 @@
                     <!--  -->
 
                 </div>
+
+                <div class="tab-pane fade" id="custumize-sum" role="tabpanel" aria-labelledby="custumize-sum-tab">
+                    <!--  -->
+                    <div class="container mt-5">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Tổng Kết</h2>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sản Phẩm</th>
+                                            <th>Số Lượng</th>
+                                            <th>Giá</th>
+                                            <th>Tổng</th>
+                                            <th>Hành Động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Áo Vest Cobalt Blue</td>
+                                            <td>1</td>
+                                            <td>1,200,000 VND</td>
+                                            <td>1,200,000 VND</td>                                          
+                                            <td> <i class="fa-regular fa-pen-to-square fa-xl mx-4"></i> 
+                                                <i class="fa-solid fa-trash fa-xl"></i>
+                                        </tr>
+                                        <tr>
+                                            <td>Quần Vest Light Blue</td>
+                                            <td>1</td>
+                                            <td>1,000,000 VND</td>
+                                            <td>1,000,000 VND</td>
+                                            <td> <i class="fa-regular fa-pen-to-square fa-xl mx-4" ></i> 
+                                                <i class="fa-solid fa-trash fa-xl"></i>
+                                        </tr> <!-- Thêm các hàng khác tại đây -->
+                                    </tbody>
+                                </table>
+                                <div class="d-flex justify-content-end">
+                                    <h3>Tổng Cộng: 2,500,000 VND</h3>
+                                </div>
+                                <div class="d-flex justify-content-end mt-3"> <button class="btn-custumize">Lưu Lại</button> 
+                                    <button class="btn-custumize bg-danger ms-2">Thêm Vào Giỏ Hàng</button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- footer -->
-    <div id="footer"></div>
+        <!-- footer -->
+        <div id="footer"></div>
 
-    <!-- js -->
-    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="venders/js/jquery-3.7.1.min.js"></script>
-    <script src="resources/js/main.js"></script>
-    <script src="resources/js/quit.js"></script>
-    <script src="resources/js/backtotop.js"></script>
+        <!-- js -->
+        <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+        <script src="venders/js/jquery-3.7.1.min.js"></script>
+        <script src="resources/js/main.js"></script>
+        <script src="resources/js/quit.js"></script>
+        <script src="resources/js/backtotop.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(function (item) {
-                item.addEventListener('click', function () {
-                    var content = this.nextElementSibling;
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                    } else {
-                        content.style.display = 'block';
-                    }
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        var content = this.nextElementSibling;
+                        if (content.style.display === 'block') {
+                            content.style.display = 'none';
+                        } else {
+                            content.style.display = 'block';
+                        }
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 
 </body>
 
