@@ -1841,7 +1841,7 @@ a:hover {
     display: block;
 }
 
-.contact-item {
+.contact-item-ak {
     display: flex;
     align-items: center;
     padding: 10px 15px;
@@ -1851,16 +1851,16 @@ a:hover {
     cursor: pointer;
 }
 
-.contact-item:last-child {
+.contact-item-ak:last-child {
     border-bottom: none;
 }
 
-.contact-item i {
+.contact-item-ak i {
     font-size: 18px;
     margin-right: 10px;
 }
 
-.contact-item:hover {
+.contact-item-ak:hover {
     background-color: #f5f5f5;
 }
 
