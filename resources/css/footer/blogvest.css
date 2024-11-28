@@ -1,0 +1,110 @@
+
+.fixed-sidebar h4{
+    padding-left: 10px;
+    font-weight: 600;
+
+    
+}
+.list-group li{
+    background-color: #f1f1f1;
+}
+.list-group >li:hover{
+    background-color: #ffffff;
+
+}
+ .col-md-4{
+    padding-left: 60px;
+    padding-top: 50px;
+}
+
+.list-blog{
+    padding-left: 15px;
+
+}
+/* bài viết liên quan */
+
+.list-group-item {
+    transition: all 0.3s ease;
+    background-color: #ffffffe1;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+.list-group-item h6 {
+    font-size: .9rem;
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+.list-group-item .text-muted {
+    font-size: .7rem;
+    color: #6c757d;
+    font-weight: 100;
+
+}
+
+.list-group-item small {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* bao hanh */
+.feature-box {
+    background-color: #e0e0e0;
+    border: 1px solid #d1d1d1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    justify-items: center;
+    text-align: center;
+    padding-left: 60px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.feature-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.custom-container {
+    margin: 0 auto;
+}
+
+.custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.custom-row>[class*="col-"] {
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
