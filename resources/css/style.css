@@ -22,23 +22,21 @@ a:hover {
 .top-bar {
     background-color: #001F3F;
     text-align: center;
-    padding: 5px 0;
+
     font-size: 0.9rem;
     color: #fff;
 }
 
 /* Navbar general styling */
 .navbar {
+    height: 60px;
     padding: 0 30px;
     justify-content: space-between;
 }
 
 /* Brand logo style */
 .navbar-brand {
-    font-family: "Montserrat", sans-serif;
-    font-size: 30px;
-    color: #001F3F;
-    text-decoration: none;
+    padding: 0px;
 }
 
 /* Navbar links */
@@ -96,6 +94,16 @@ a:hover {
     justify-content: flex-end;
 }
 
+.dropdown-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    top: 30px;
+    transform: translateY(-10px);
+    display: block;
+    visibility: hidden;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
@@ -111,6 +119,25 @@ a:hover {
 
 .dropdown-item:hover {
     color: #000;
+}
+
+.mega-menu .dropdown-menu {
+    position: fixed;
+    align-items: center;
+    left: -50%;
+    top: 90%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    z-index: 1000;
+}
+
+.alpha{
+    width: 50vw;
+}
+.omega{
+    width: 40vw;
 }
 
 .mega-menu h6 {
@@ -182,7 +209,7 @@ a:hover {
 
 /* --------------------- Home --------------------------- */
 #sec1 {
-    margin-top: 54px;
+    margin-top: 60px;
 }
 
 .hero-section {
