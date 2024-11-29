@@ -8,10 +8,6 @@ html {
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
 a,
 a:hover {
     text-decoration: none;
@@ -133,10 +129,11 @@ a:hover {
     z-index: 1000;
 }
 
-.alpha{
+.alpha {
     width: 50vw;
 }
-.omega{
+
+.omega {
     width: 40vw;
 }
 
@@ -869,7 +866,7 @@ a:hover {
     object-fit: cover;
     border-radius: 50%;
     margin-left: auto;
-    margin-right: auto ;
+    margin-right: auto;
     margin-bottom: 20px;
 }
 
@@ -879,13 +876,15 @@ a:hover {
     position: fixed;
     height: 100vh;
     left: 0;
-    width: 250px;   
+    width: 250px;
     background-color: #001F3F;
     padding-top: 20px;
 }
-.sidebar-active{
+
+.sidebar-active {
     background-color: #666666;
 }
+
 .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
@@ -893,50 +892,53 @@ a:hover {
     color: #ddd;
     display: block;
 }
+
 .sidebar a:hover {
     background-color: #575d63;
     color: #fff;
 }
-.admin-logout{
+
+.admin-logout {
     width: 100%;
     position: absolute;
     bottom: 20px;
 }
+
 .admin-content {
     display: flex;
     margin-left: 250px;
     padding: 0px 20px 20px 20px;
 }
 
-.admin-hide{
+.admin-hide {
     display: none;
 }
 
-.admin-content section{
+.admin-content section {
     width: 100%;
     height: 100vh;
 }
 
 /* ------------------------------------------Custumize --------------------------- */
 
-.custumize-img{
+.custumize-img {
     width: 100%;
     height: 200px;
 }
 
-.custumize-card-body{
+.custumize-card-body {
     display: flex;
     flex-direction: column;
 }
 
-.custumize-card{
+.custumize-card {
     cursor: pointer;
     border: #fff 2px solid;
     transition: 0.5ms;
 }
 
-.custumize-card:hover{
-   border: #0a0a5b 2px solid;
+.custumize-card:hover {
+    border: #0a0a5b 2px solid;
 }
 
 /* ------------------------------ Footer -----------------------------*/
@@ -1817,6 +1819,7 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
+
 /* ========================== */
 /* Liên Hệ */
 .contact-btn {
@@ -1855,15 +1858,19 @@ a:hover {
     0% {
         transform: rotate(0deg);
     }
+
     25% {
         transform: rotate(-10deg);
     }
+
     50% {
         transform: rotate(10deg);
     }
+
     75% {
         transform: rotate(-10deg);
     }
+
     100% {
         transform: rotate(0deg);
     }
@@ -1873,16 +1880,17 @@ a:hover {
     background-color: #575656;
     cursor: pointer;
 }
+
 /*  */
 .contact-menu {
     position: fixed;
-    bottom: 130px; 
+    bottom: 130px;
     right: 50px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    display: none; 
+    display: none;
     z-index: 999;
 }
 
@@ -1950,6 +1958,7 @@ a:hover {
     0% {
         right: -60px;
     }
+
     100% {
         right: 20px;
     }
