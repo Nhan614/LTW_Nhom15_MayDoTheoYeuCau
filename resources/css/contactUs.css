@@ -1,27 +1,28 @@
 :root {
-    --primary-color: #010712;
-    --secondary-color: #818386;
-    --bg-color: #FCFDFD;
-    --button-color: #818386;
-    --h1-color: #3F444C;
-  }
-  
-  [data-theme="dark"] {
-    --primary-color: #CCFF99;
-    --secondary-color: #e7e4e4;
-    --bg-color: #201f1f;
-    --button-color: #818386;
-    --h1-color: #F9F400;
-  }
-  
-  * {
-    margin: 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
-  }
+  --primary-color: #010712;
+  --secondary-color: #818386;
+  --bg-color: #FCFDFD;
+  --button-color: #818386;
+  --h1-color: #3F444C;
+}
 
-  /*user*/
-.user-box, .cart-box{
+[data-theme="dark"] {
+  --primary-color: #CCFF99;
+  --secondary-color: #e7e4e4;
+  --bg-color: #201f1f;
+  --button-color: #818386;
+  --h1-color: #F9F400;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/*user*/
+.user-box,
+.cart-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,303 +30,314 @@
   height: 40px;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   position: relative;
 }
-  
-  .contact {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background: var(--bg-color);
-  }
-  
-  .left-col {
-    width: 45vw;
-    height: 100%;
-    background-image: url("resources/images/contactus.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .logo {
-    width: 100vh;
-    height: 100vh;
-    /* padding: 1.5rem; */
-  }
-  
-  .right-col {
-    background: var(--bg-color);
-    width: 50vw;
-    height: 100vh;
-    /* padding: 5rem 3.5rem; */
-    padding: 30px 50px ;
-  }
-  
+
+.contact {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-color);
+  justify-content: space-between;
+}
+
+.left-col {
+
+  height: 100%;
+  background-image: url("resources/images/contactus.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  height: 100%;
+  width: 45vw
+}
+
+.right-col {
+  background: var(--bg-color);
+  width: 50vw;
+  height: 100vh;
+
+}
+
+.contact-heading {
+  color: var(--h1-color);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  /* letter-spacing: 0.5rem; */
+  text-align: center;
+  font-weight: 400;
+  padding-top: 40px;
+  margin-bottom: 0;
+}
+
+.label-contact {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.contact-form {
+  width: 31.25rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.input-field,
+.textarea-field {
+  width: 40vw;
+  display: block;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--button-color);
+  background: var(--bg-color);
+  color: var(--secondary-color);
+  font-weight: 500;
+  outline: none;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: var(--secondary-color);
+}
+
+textarea.textarea-field {
+  resize: none;
+}
+
+.submit-btn {
+  font-weight: 500;
+  font-size: 20px;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  width: 40vw;
+  height: 2.5rem;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  cursor: pointer;
+}
+
+.input-field:hover,
+.textarea-field:hover,
+.submit-btn:hover {
+  opacity: 0.5;
+}
+
+.submit-btn:active {
+  opacity: 0.8;
+}
+
+/* -----------công tắc chuyển dổi ---------------*/
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 160px;
+  position: absolute;
+  padding-top: 0;
+  right: 10px;
+}
+
+.description {
+  margin-left: 1.25rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-checkbox {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 0.25rem;
+  content: "";
+  width: 26px;
+  height: 26px;
+  left: 0.25rem;
+  position: absolute;
+  transition: .4s;
+}
+
+.theme-checkbox:checked+.slider {
+  background-color: var(--button-color);
+}
+
+.theme-checkbox:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#error,
+#success-msg {
+  width: 40vw;
+  margin: 0.125rem 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  /* an chu */
+  font-family: 'Jost';
+  /* color: var(--secondary-color); */
+  color: rgb(247, 86, 86);
+}
+
+#success-msg {
+  transition-delay: 3s;
+}
+
+/* @media only screen and (max-width: 950px) {
+
   .contact-heading {
-    color: var(--h1-color);
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    /* letter-spacing: 0.5rem; */
-    text-align: center;
-    font-weight: 400;
-    padding-top: 40px;
-    margin-bottom:0;
+    font-size: 1.75rem;
   }
-  
-  .label-contact {
-    color:var(--primary-color);
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 0.5rem;
-    display: block;
-    font-weight: 500;
-    letter-spacing: 0.05rem;
-  }
-  
-  .contact-form {
-    width: 31.25rem;
-    position: relative;
-    margin-top: 2rem;
-    padding: 1rem 0;
-  }
-  
-  .input-field, .textarea-field {
-    width: 40vw;
-    display: block;
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
-    border: none;
-    border-bottom: 1px solid var(--button-color);
-    background: var(--bg-color);
-    color: var(--secondary-color);
-    font-weight: 500;
-    outline: none;
-  }
-  
-  .input-field::placeholder, .textarea-field::placeholder {
-    color: var(--secondary-color);
-  }
-  
-  textarea.textarea-field {
-    resize: none;
-  }
-  
+
+  .input-field,
+  .textarea-field,
   .submit-btn {
-    font-weight: 500;
-    font-size: 20px;
-    background: var(--primary-color);
-    color: var(--bg-color);
-    width: 40vw;
-    height: 2.5rem;
-    border: none;
-    border-radius: 40px;
-    outline: none;
-    cursor: pointer;
+    font-size: 0.65rem;
   }
-  
-  .input-field:hover, .textarea-field:hover, .submit-btn:hover {
-    opacity: 0.5;
-  }
-  
-  .submit-btn:active {
-    opacity: 0.8;
-  }
-  /* -----------công tắc chuyển dổi ---------------*/
-  
-  .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 160px;
-    position: absolute;
-    padding-top: 0;
-    right: 10px;
-  }
-  
+
   .description {
-    margin-left: 1.25rem;
+    font-size: 0.3rem;
+    margin-left: 0.4rem;
   }
-  
+
+  .submit-btn {
+    width: 7rem;
+  }
+
+  .theme-switch-wrapper {
+    width: 120px;
+  }
+
   .theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
+    height: 28px;
+    width: 50px;
   }
-  
+
   .theme-checkbox {
     display: none;
   }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-  
+
   .slider:before {
     background-color: #fff;
     bottom: 0.25rem;
     content: "";
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     left: 0.25rem;
     position: absolute;
     transition: .4s;
   }
-  
-  .theme-checkbox:checked + .slider {
-    background-color: var(--button-color);
+
+  .theme-checkbox:checked+.slider:before {
+    transform: translateX(16px);
   }
-  
-  .theme-checkbox:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
+
   .slider.round {
-    border-radius: 34px;
+    border-radius: 15px;
   }
-  
+
   .slider.round:before {
     border-radius: 50%;
   }
-  
-  #error, #success-msg {
-    width: 40vw;
-    margin: 0.125rem 0;
-    font-size: 14px;
-    text-transform: uppercase;
-     /* an chu */
-    font-family: 'Jost';
-    /* color: var(--secondary-color); */
-    color: rgb(247, 86, 86);
-  }
+} */
 
-  #success-msg {
-    transition-delay: 3s;
-  }
-  
-  @media only screen and (max-width: 950px) {
-    .logo {
-      width: 8rem;
-    }
-    .contact-heading {
-      font-size: 1.75rem;
-    }
-    .input-field, .textarea-field, .submit-btn {
-      font-size: 0.65rem;
-    }
-    .description {
-      font-size: 0.3rem;
-      margin-left: 0.4rem;
-    }
-    .submit-btn {
-      width: 7rem;
-    }
-    .theme-switch-wrapper {
-      width: 120px;
-    }
-    .theme-switch {
-      height: 28px;
-      width: 50px;
-    }
-  
-    .theme-checkbox {
-      display: none;
-    }
-  
-    .slider:before {
-      background-color: #fff;
-      bottom: 0.25rem;
-      content: "";
-      width: 20px;
-      height: 20px;
-      left: 0.25rem;
-      position: absolute;
-      transition: .4s;
-    }
-  
-    .theme-checkbox:checked + .slider:before {
-      transform: translateX(16px);
-    }
-  
-    .slider.round {
-      border-radius: 15px;
-    }
-  
-    .slider.round:before {
-      border-radius: 50%;
-    }
-  }
-
-  /* -------------them dia chi lien he--------- */
-  .total-container {
-    padding: 50px 20px;
-    text-align: center;
+/* -------------them dia chi lien he--------- */
+.total-container {
+  padding: 50px 20px;
+  text-align: center;
 }
 
 .contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  /* Cho phép các phần tử tự động xuống dòng khi không đủ chỗ */
 }
 
 
 .contact-item {
-    text-align:left;
-    max-width: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: left;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-item i {
-    font-size: 24px;
-    margin-right: 20px;
-    color: #007BFF; 
+  font-size: 24px;
+  margin-right: 20px;
+  color: #007BFF;
 }
 
 /* Tiêu đề liên hệ */
 .contact-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-    display: flex;
-    align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .contact-detail {
-    font-size: 14px;
-    margin: 5px 0;
-    padding-left: 10px; 
+  font-size: 14px;
+  margin: 5px 0;
+  padding-left: 10px;
 }
 
 .divider {
-    border-left: 1px solid #ccc;
-    height: 80px;
+  border-left: 1px solid #ccc;
+  height: 80px;
 }
 
 .contact-item:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .contact-title:hover {
-    color: #007BFF; 
+  color: #007BFF;
 }
 
 .contact-detail:hover {
-    color: #555;
+  color: #555;
 }
+
 /* bảo hành */
 .feature-box {
   background-color: #e0e0e0;
@@ -360,11 +372,10 @@
 .custom-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+
 }
 
 .custom-row>[class*="col-"] {
   padding-right: 1px;
   padding-left: 1px;
-} 
+}

@@ -611,6 +611,7 @@ a:hover {
 }
 
 .carousel-image {
+    height: 335.625px;
     width: 50%;
     border-radius: 5px;
 }
