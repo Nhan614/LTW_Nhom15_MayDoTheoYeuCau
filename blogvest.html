@@ -15,7 +15,10 @@
 
 
     <style>
-
+        .media{
+            display: flex;
+            gap: 20px;
+        }
     </style>
 </head>
 
@@ -42,7 +45,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="home.html">Trang chủ</a></li>
                         <li class="breadcrumb-item"><a href="blog.html">Tin tức</a></li>
-                        
+
                     </ol>
                 </nav>
                 <h1>Top 8 bộ vest nam thanh niên yêu thích nhất 2024</h1>
@@ -51,7 +54,8 @@
                     Vest là một trong những trang phục kinh điển được nhiều người lựa chọn sử dụng trong những dịp quan
                     trọng hay
                     trong những môi trường đòi hỏi tính chuyên nghiệp, nghiêm túc như dự tiệc, đi làm, hội họp...
-                    Tuy nhiên, nhiều chàng trai trẻ tương đối e ngại khi mặc vest vì có thể khiến mình trông già hơn so với lứa tuổi. 
+                    Tuy nhiên, nhiều chàng trai trẻ tương đối e ngại khi mặc vest vì có thể khiến mình trông già hơn so
+                    với lứa tuổi.
                 </p>
                 <p>
                     Hiểu được điều đó, ngày hôm nay <strong>THREEN TAILORED</strong> đã tổng hợp cho các bạn những
@@ -322,157 +326,222 @@
                         mẫu ưng ý để có ngay ngoại hình vừa trẻ trung, hiện đại mà vẫn thật sang trọng và lịch lãm nhé.
                     </p>
                     <p>
-                        <strong >THREEN TAILORED</strong> - Thời trang cho nam giới!
+                        <strong>THREEN TAILORED</strong> - Thời trang cho nam giới!
                     </p>
+                </div>
+
+                <div class=" container-fluid bg-body-secondary m-5 p-3">
+                    <!-- Form để thêm bình luận mới -->
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Thêm bình luận</label>
+                            <textarea class="form-control" id="comment" rows="4"
+                                placeholder="Nhập bình luận của bạn..."></textarea>
+                        </div>
+                        <button type="" class="btn-custumize">Gửi Bình luận</button>
+                    </form>
+
+                    <hr>
+
+                    <!-- Danh sách bình luận -->
+                    <!-- Danh sách bình luận -->
+                    <div class="comments-section mt-4">
+                        <h2>Các bình luận</h2>
+                        <hr>
+
+                        <!-- Bình luận 1 -->
+                        <div class="media mb-4">
+                            <!-- Hình ảnh người bình luận -->
+                            <img src="resources/images/profile.jpg" alt="Avatar" class="mr-3 rounded-circle"
+                                style="width: 50px; height: 50px; object-fit: cover;">
+                            <div class="media-body">
+                                <h5 class="mt-0">Nguyễn Trọng Nhân</h5>
+                                <small class="text-muted">1 giờ trước</small>
+                                <p>Đây là một bài viết rất hay, tôi rất thích chủ đề này!</p>
+                            </div>
+                        </div>
+
+                        <!-- Bình luận 2 -->
+                        <div class="media mb-4">
+                            <!-- Hình ảnh người bình luận -->
+                            <img src="resources/images/profile.jpg" alt="Avatar" class="mr-3 rounded-circle"
+                                style="width: 50px; height: 50px; object-fit: cover;">
+                            <div class="media-body">
+                                <h5 class="mt-0">Lai Nhân Nghĩa</h5>
+                                <small class="text-muted">2 giờ trước</small>
+                                <p>Cảm ơn tác giả đã chia sẻ thông tin hữu ích này!</p>
+                            </div>
+                        </div>
+
+                        <!-- Bình luận 3 -->
+                        <div class="media mb-4">
+                            <!-- Hình ảnh người bình luận -->
+                            <img src="resources/images/profile.jpg" alt="Avatar" class="mr-3 rounded-circle"
+                                style="width: 50px; height: 50px; object-fit: cover;">
+                            <div class="media-body">
+                                <h5 class="mt-0">Hoàng Đức Nghĩa</h5>
+                                <small class="text-muted">3 giờ trước</small>
+                                <p>Chủ đề này rất thú vị, tôi muốn tìm hiểu thêm về các chi tiết.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Sidebar Mục lục -->
-            <div class="alk col-md-4">
-                <div class="fixed-sidebar">
-                    <h4>Mục lục</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#overview">Tổng hợp những bộ vest nam cho thanh niên đẹp
-                                được yêu thích hàng đầu hiện nay</a></li>
-                        <li class="list-group-item"><a href="#1">#1: Bộ vest nam Hugo Boss họa tiết kẻ sọc</a></li>
-                        <li class="list-group-item"><a href="#2">#2: Bộ vest nam Mon Amie màu xanh nhạt</a></li>
-                        <li class="list-group-item"><a href="#3">#3: Bộ vest nam Zara form oversize</a></li>
-                        <li class="list-group-item"><a href="#4">#4: Bộ vest nam Merriman dáng truyền thống</a></li>
-                        <li class="list-group-item"><a href="#5">#5: Bộ vest nam The Suits House tông nâu</a></li>
-                        <li class="list-group-item"><a href="#6">#6: Bộ vest nam Santino họa tiết caro</a></li>
-                        <li class="list-group-item"><a href="#7">#7: Bộ vest nam IVY Moda màu xanh than</a></li>
-                        <li class="list-group-item"><a href="#8">#8: Bộ vest nam Adam Store màu be</a></li>
-                        <li class="list-group-item"><a href="#summary">Tổng kết</a></li>
-                    </ul>
-                </div>
 
-                <!-- Bài viết liên quan -->
-                <div class="col-md-9">
-                    <div class="row list-blog">
-                        <h4 class="mt-5 mb-3">Bài viết liên quan</h4>
-                        <div class="list-group">
-                            <!-- Bài viết 1 -->
-                            <a href="blog.html" class="list-group-item list-group-item-action d-flex align-items-start">
-                                <img src="resources/images/blog6.jpg" alt="Post 1" class="me-3 img-thumbnail"
-                                    style="width: 80px; height: 80px;">
-                                <div>
-                                    <h6 class="mb-1">5 mẫu áo vest nam không bao giờ lỗi thời nên lựa chọn</br>
-                                        <small class="text-muted">19.11.2024</small>
-                                    </h6>
-                                </div>
-                            </a>
-                            <!-- Bài viết 2 -->
-                            <a href="blog.html" class="list-group-item list-group-item-action d-flex align-items-start">
-                                <img src="resources/images/blog2.jpg" alt="Post 2" class="me-3 img-thumbnail"
-                                    style="width: 80px; height: 80px;">
-                                <div>
-                                    <h6 class="mb-1">Chọn vest nam giản dị cho đàn ông tuổi trung niên</br>
-                                        <small class="text-muted">23.11.2024</small>
-                                    </h6>
-                                </div>
-                            </a>
-                         
-                            <a href="blog.html" class="list-group-item list-group-item-action d-flex align-items-start">
-                                <img src="resources/images/blog10.jpg" alt="Post 1" class="me-3 img-thumbnail"
-                                    style="width: 80px; height: 80px;">
-                                <div>
-                                    <h6 class="mb-1">THREEN TAILORED: Biểu Tượng của Phong Cách và Lịch Lãm</br>
-                                        <small class="text-muted">22.10.2024</small>
-                                    </h6>
-                                </div>
-                            </a>
-                            <!-- Bài viết 5 -->
-                            <a href="blog.html" class="list-group-item list-group-item-action d-flex align-items-start">
-                                <img src="resources/images/blog7.jpg" alt="Post 2" class="me-3 img-thumbnail"
-                                    style="width: 80px; height: 80px;">
-                                <div>
-                                    <h6 class="mb-1">Chất Liệu Vest Nam: Yếu Tố Quyết Định Sự Đẳng Cấp</br>
-                                        <small class="text-muted">2.10.2024</small>
-                                    </h6>
-                                </div>
-                            </a>
-                            <!-- Bài viết 6 -->
-                            <a href="blog.html" class="list-group-item list-group-item-action d-flex align-items-start">
-                                <img src="resources/images/blog3.jpg" alt="Post 3" class="me-3 img-thumbnail"
-                                    style="width: 80px; height: 80px;">
-                                <div>
-                                    <h6 class="mb-1">Giá may áo vest nam gồm phụ thuộc vào yếu tố nào?</br>
-                                        <small class="text-muted">17.10.2024</small>
-                                    </h6>
-                                </div>
-                            </a>
+                <!-- Sidebar Mục lục -->
+                <div class="alk col-md-4">
+                    <div class="fixed-sidebar">
+                        <h4>Mục lục</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="#overview">Tổng hợp những bộ vest nam cho thanh niên
+                                    đẹp
+                                    được yêu thích hàng đầu hiện nay</a></li>
+                            <li class="list-group-item"><a href="#1">#1: Bộ vest nam Hugo Boss họa tiết kẻ sọc</a></li>
+                            <li class="list-group-item"><a href="#2">#2: Bộ vest nam Mon Amie màu xanh nhạt</a></li>
+                            <li class="list-group-item"><a href="#3">#3: Bộ vest nam Zara form oversize</a></li>
+                            <li class="list-group-item"><a href="#4">#4: Bộ vest nam Merriman dáng truyền thống</a></li>
+                            <li class="list-group-item"><a href="#5">#5: Bộ vest nam The Suits House tông nâu</a></li>
+                            <li class="list-group-item"><a href="#6">#6: Bộ vest nam Santino họa tiết caro</a></li>
+                            <li class="list-group-item"><a href="#7">#7: Bộ vest nam IVY Moda màu xanh than</a></li>
+                            <li class="list-group-item"><a href="#8">#8: Bộ vest nam Adam Store màu be</a></li>
+                            <li class="list-group-item"><a href="#summary">Tổng kết</a></li>
+                        </ul>
+                    </div>
 
+
+                    <!-- Bài viết liên quan -->
+                    <div class="col-md-9">
+                        <div class="row list-blog">
+                            <h4 class="mt-5 mb-3">Bài viết liên quan</h4>
+                            <div class="list-group">
+                                <!-- Bài viết 1 -->
+                                <a href="blog.html"
+                                    class="list-group-item list-group-item-action d-flex align-items-start">
+                                    <img src="resources/images/blog6.jpg" alt="Post 1" class="me-3 img-thumbnail"
+                                        style="width: 80px; height: 80px;">
+                                    <div>
+                                        <h6 class="mb-1">5 mẫu áo vest nam không bao giờ lỗi thời nên lựa chọn</br>
+                                            <small class="text-muted">19.11.2024</small>
+                                        </h6>
+                                    </div>
+                                </a>
+                                <!-- Bài viết 2 -->
+                                <a href="blog.html"
+                                    class="list-group-item list-group-item-action d-flex align-items-start">
+                                    <img src="resources/images/blog2.jpg" alt="Post 2" class="me-3 img-thumbnail"
+                                        style="width: 80px; height: 80px;">
+                                    <div>
+                                        <h6 class="mb-1">Chọn vest nam giản dị cho đàn ông tuổi trung niên</br>
+                                            <small class="text-muted">23.11.2024</small>
+                                        </h6>
+                                    </div>
+                                </a>
+
+                                <a href="blog.html"
+                                    class="list-group-item list-group-item-action d-flex align-items-start">
+                                    <img src="resources/images/blog10.jpg" alt="Post 1" class="me-3 img-thumbnail"
+                                        style="width: 80px; height: 80px;">
+                                    <div>
+                                        <h6 class="mb-1">THREEN TAILORED: Biểu Tượng của Phong Cách và Lịch Lãm</br>
+                                            <small class="text-muted">22.10.2024</small>
+                                        </h6>
+                                    </div>
+                                </a>
+                                <!-- Bài viết 5 -->
+                                <a href="blog.html"
+                                    class="list-group-item list-group-item-action d-flex align-items-start">
+                                    <img src="resources/images/blog7.jpg" alt="Post 2" class="me-3 img-thumbnail"
+                                        style="width: 80px; height: 80px;">
+                                    <div>
+                                        <h6 class="mb-1">Chất Liệu Vest Nam: Yếu Tố Quyết Định Sự Đẳng Cấp</br>
+                                            <small class="text-muted">2.10.2024</small>
+                                        </h6>
+                                    </div>
+                                </a>
+                                <!-- Bài viết 6 -->
+                                <a href="blog.html"
+                                    class="list-group-item list-group-item-action d-flex align-items-start">
+                                    <img src="resources/images/blog3.jpg" alt="Post 3" class="me-3 img-thumbnail"
+                                        style="width: 80px; height: 80px;">
+                                    <div>
+                                        <h6 class="mb-1">Giá may áo vest nam gồm phụ thuộc vào yếu tố nào?</br>
+                                            <small class="text-muted">17.10.2024</small>
+                                        </h6>
+                                    </div>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- bảo hành -->
-    <div class="custom-container">
-        <div class="custom-row text-center">
-            <!-- Feature 1 -->
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
-                    <div class="feature-text"> <!-- Thêm class bao quanh -->
-                        <h5>Free trà và cafe</h5>
-                        <p>Tại showroom</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Feature 2 -->
-            <div class="col-md-3 ">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <div class="feature-text"> <!-- Thêm class bao quanh -->
-                        <h5>Giao hàng</h5>
-                        <p>Free ship đơn >3.500k</p>
+        <!-- bảo hành -->
+        <div class="custom-container">
+            <div class="custom-row text-center">
+                <!-- Feature 1 -->
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div class="feature-text"> <!-- Thêm class bao quanh -->
+                            <h5>Free trà và cafe</h5>
+                            <p>Tại showroom</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Feature 3 -->
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-money-check-dollar"></i>
-                    </div>
-                    <div class="feature-text"> <!-- Thêm class bao quanh -->
-                        <h5>Thanh toán</h5>
-                        <p>Bảo mật an toàn</p>
+                <!-- Feature 2 -->
+                <div class="col-md-3 ">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="feature-text"> <!-- Thêm class bao quanh -->
+                            <h5>Giao hàng</h5>
+                            <p>Free ship đơn >3.500k</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Feature 4 -->
-            <div class="col-md-3">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <!-- Feature 3 -->
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                        </div>
+                        <div class="feature-text"> <!-- Thêm class bao quanh -->
+                            <h5>Thanh toán</h5>
+                            <p>Bảo mật an toàn</p>
+                        </div>
                     </div>
-                    <div class="feature-text"> <!-- Thêm class bao quanh -->
-                        <h5>Bảo hành</h5>
-                        <p>Lên đến 180 ngày</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-text"> <!-- Thêm class bao quanh -->
+                            <h5>Bảo hành</h5>
+                            <p>Lên đến 180 ngày</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <!-- Footer -->
-    <div id="footer"></div>
+        <!-- Footer -->
+        <div id="footer"></div>
 
-    <!-- js -->
-    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/main.js"></script>
-    <script src="resources/js/quit.js"></script>
-    <script src="resources/js/backtotop.js"></script>
+        <!-- js -->
+        <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+        <script src="resources/js/main.js"></script>
+        <script src="resources/js/quit.js"></script>
+        <script src="resources/js/backtotop.js"></script>
 
 </body>
 

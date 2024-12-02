@@ -270,8 +270,8 @@
                     </thead>
                     <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây -->
                         <tr>
-                            <td>Nguyễn Văn A</td>
-                            <td>nguyenvana@example.com</td>
+                            <td>Lai Nhân Nghĩa</td>
+                            <td>nghia@nlu.com</td>
                             <td>0123456789</td>
                             <td>0</td>
                             <td>Admin</td>
@@ -309,9 +309,10 @@
                                     <div class="form-group"> <label for="userRole">Vai Trò</label> <select
                                             class="form-control" id="userRole" required>
                                             <option value="">Chọn vai trò</option>
-                                            <option>Admin</option>
-                                            <option>Người Giao Hàng</option>
                                             <option>Người Dùng</option>
+                                            <option>Người Giao Hàng</option>
+                                            <option>Nhân Viên</option>
+                                            <option>Admin</option>
                                         </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
                                         Thay
                                         Đổi</button>
@@ -399,9 +400,9 @@
                                             <option>Đã giao</option>
                                             <option>Đã hủy</option>
                                         </select> </div>
-                                        <div class="form-group"> <label for="order-location">Vị Trí Hiện Tại</label> <input type="text"
-                                            class="form-control" id="order-location" placeholder="Nhập vị trí hiện tại" required
-                                            >
+                                    <div class="form-group"> <label for="order-location">Vị Trí Hiện Tại</label> <input
+                                            type="text" class="form-control" id="order-location"
+                                            placeholder="Nhập vị trí hiện tại" required>
                                     </div>
                                     <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
                                         Thay
@@ -516,7 +517,36 @@
             </div>
         </section>
 
-
+        <!-- nofitication -->
+        <section id="admin-notification" class="admin-hide">
+            <div class="container">
+                <h1 class="mb-4">Quản Lý Danh Mục</h1>
+                <hr>
+                <h2 class="text-center">Tạo Thông Báo Sản Phẩm Mới</h2>
+                <form id="notificationForm">
+                    <div class="mb-3"> <label for="notificationTitle" class="form-label">Tiêu Đề Thông Báo</label>
+                        <input type="text" class="form-control" id="notificationTitle"
+                            placeholder="Nhập tiêu đề thông báo" required>
+                    </div>
+                    <div class="">
+                        <div class="form-group mb-3"> <label for="checkDangKy">Người Nhân Thông Báo</label> <select class="form-control"
+                            id="checkDangKy" required>
+                            <option value="">Chọn</option>
+                            <option>Chưa Đăng Ký</option>
+                            <option>Đã Đăng Ký</option>
+                            <option>Tất Cả Người Dùng</option>
+                            <option>Người Giao Hàng</option>
+                            <option>Nhân Viên</option>
+                            <option>Admin</option>
+                        </select> </div>
+                    </div>
+                    <div class="mb-3"> <label for="notificationContent" class="form-label">Nội Dung Thông Báo</label>
+                        <textarea class="form-control" id="notificationContent" rows="5"
+                            placeholder="Nhập nội dung thông báo" required></textarea>
+                    </div> <button type="submit" class="btn btn-primary">Gửi Thông Báo</button>
+                </form>
+            </div>
+        </section>
 
 
     </div>
