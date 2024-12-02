@@ -104,3 +104,9 @@ $('#orderForm').on('submit', function (e) {
     $('#orderForm')[0].reset();
 });
 
+// Dữ liệu mẫu cho thông báo khách hàng 
+const notifications = [ 
+    { id: 1, name: 'Nguyễn Trọng Nhân', email: 'nhan@nlu.com', orderId: '123', content: 'Sản phẩm rất tốt, nhưng kích thước' }, 
+    { id: 2, name: 'Hoàng Đức Nghĩa', email: 'nghia1@nlu.com', orderId: '22', content: 'Sản phẩm rất vừa ý nhưng túi bị rách' }, 
+    { id: 3, name: 'Lai Nhân Nghĩa', email: 'nghia2@nlu.com', orderId: '43', content: 'Nói chung là không thích' } ]; 
+    const notificationList = document.getElementById('notificationList'); notifications.forEach(notification => { const newNotification = document.createElement('li'); newNotification.className = 'list-group-item'; newNotification.innerHTML = ` <strong>${notification.id} <strong>: ${notification.name} (${notification.email}) - Mã Đơn Hàng: ${notification.orderId}:</strong> ${notification.content} <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#replyForm${notification.id}" aria-expanded="false" aria-controls="replyForm${notification.id}"> Phản hồi </button> <div class="collapse" id="replyForm${notification.id}"> <form class="mt-3"> <div class="mb-3"> <label for="replyContent${notification.id}" class="form-label">Nội Dung Phản Hồi</label> <textarea class="form-control" id="replyContent${notification.id}" rows="3" placeholder="Nhập nội dung phản hồi"></textarea> </div> <button type="submit" class="btn btn-primary">Gửi Phản Hồi</button> </form> </div> `; notificationList.appendChild(newNotification); });

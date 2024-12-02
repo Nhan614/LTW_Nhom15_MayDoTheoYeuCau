@@ -68,6 +68,12 @@ $(document).ready(function (e) {
     $('.sidebar li').removeClass('sidebar-active')
     $(this).addClass('sidebar-active')
   })
+  $('.admin-sidebar-8').click(function (e) {
+    $('section').addClass('admin-hide')
+    $('#admin-reports').removeClass('admin-hide')
+    $('.sidebar li').removeClass('sidebar-active')
+    $(this).addClass('sidebar-active')
+  })
   
   // onload sidebar
   if (window.location.hash === '#admin-dashboard') {
@@ -93,6 +99,10 @@ $(document).ready(function (e) {
   if (window.location.hash === '#admin-notification') {
     $('#admin-notification').removeClass('admin-hide')
     $('.admin-sidebar-7').addClass('sidebar-active')
+  }
+  if (window.location.hash === '#admin-reports') {
+    $('#admin-reports').removeClass('admin-hide')
+    $('.admin-sidebar-8').addClass('sidebar-active')
   }
 
 })

@@ -97,9 +97,11 @@
                 <br>
                 <br> -->
             <div class="container">
-                <h1>Dữ liệu</h1>
+                <h1>Dữ Liệu</h1>
+                <hr>
                 <!-- doanh thu hom nay -->
-                <div class="row">
+                <div class="row mt-4">
+                    <h3 class="mx-5">Danh Thu</h3>
                     <div class="col-md-4">
                         <div class="card bg-info-subtle">
                             <div class="card-header"> Doanh thu hôm nay </div>
@@ -129,11 +131,47 @@
                     </div>
 
 
+                    <!-- chart -->
+                    <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
+                    <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
+                </div>
+                <!-- doanh thu hom nay -->
+                <div class="row mt-4">
+                    <h3>Chi Phí</h3>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu hôm nay </div>
+                            <div class="card-body">
+                                <h5 class="card-title">100,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng hôm nay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tuần này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">500,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng tuần này.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tháng này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">1,000,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng tháng này.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- chart -->
+                    <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
+                    <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
                 </div>
 
-                <!-- chart -->
-                <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
-                <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
             </div>
         </section>
 
@@ -145,8 +183,9 @@
                 <div class="admin-header">
                     <h1 class="">Quản Lý Sản Phẩm</h1>
                     <div class="admin-header-right">
-                        <input class="admin-search" type="search" placeholder="Nhập...">
-                        <i class="fa-solid fa-magnifying-glass fa-xl align-middle"></i>
+                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Button to Open the Modal -->
@@ -250,8 +289,9 @@
                 <div class="admin-header">
                     <h1 class="">Quản Lý Người Dùng</h1>
                     <div class="admin-header-right">
-                        <input class="admin-search" type="search" placeholder="Nhập...">
-                        <i class="fa-solid fa-magnifying-glass fa-xl align-middle"></i>
+                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
+                        </div>
                     </div>
 
                 </div>
@@ -333,8 +373,9 @@
                 <div class="admin-header">
                     <h1 class="">Quản Lý Đơn Hàng</h1>
                     <div class="admin-header-right">
-                        <input class="admin-search" type="search" placeholder="Nhập...">
-                        <i class="fa-solid fa-magnifying-glass fa-xl align-middle"></i>
+                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -423,8 +464,16 @@
             <!-- <br><br><br> -->
             <!--  -->
             <div class="container">
-                <h1 class="mb-4">Quản Lý Danh Mục</h1>
-                <div class="card">
+                <div class="admin-header">
+                    <h1 class="">Quản Lý Danh Mục</h1>
+                    <div class="admin-header-right">
+                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card mt-4">
                     <div class="card-header">
                         <h2>Danh Sách Danh Mục</h2>
                     </div>
@@ -520,34 +569,90 @@
         <!-- nofitication -->
         <section id="admin-notification" class="admin-hide">
             <div class="container">
-                <h1 class="mb-4">Quản Lý Danh Mục</h1>
+                <div class="admin-header">
+                    <h1 class="">Thông Báo Đến Người Dùng</h1>
+                    <div class="admin-header-right">
+                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
+                        </div>
+                    </div>
+                </div>
                 <hr>
-                <h2 class="text-center">Tạo Thông Báo Sản Phẩm Mới</h2>
+                <h2 class="text-center">Tạo Thông Báo</h2>
                 <form id="notificationForm">
                     <div class="mb-3"> <label for="notificationTitle" class="form-label">Tiêu Đề Thông Báo</label>
                         <input type="text" class="form-control" id="notificationTitle"
                             placeholder="Nhập tiêu đề thông báo" required>
                     </div>
                     <div class="">
-                        <div class="form-group mb-3"> <label for="checkDangKy">Người Nhân Thông Báo</label> <select class="form-control"
-                            id="checkDangKy" required>
-                            <option value="">Chọn</option>
-                            <option>Chưa Đăng Ký</option>
-                            <option>Đã Đăng Ký</option>
-                            <option>Tất Cả Người Dùng</option>
-                            <option>Người Giao Hàng</option>
-                            <option>Nhân Viên</option>
-                            <option>Admin</option>
-                        </select> </div>
+                        <div class="form-group mb-3"> <label for="checkDangKy">Người Nhân Thông Báo</label> <select
+                                class="form-control" id="checkDangKy" required>
+                                <option value="">Chọn</option>
+                                <option>Chưa Đăng Ký</option>
+                                <option>Đã Đăng Ký</option>
+                                <option>Tất Cả Người Dùng</option>
+                                <option>Người Giao Hàng</option>
+                                <option>Nhân Viên</option>
+                                <option>Admin</option>
+                            </select> </div>
+                    </div>
+                    <div class="">
+                        <div class="form-group mb-3"> <label for="loaithongbao">Loại Thông Báo</label> <select
+                                class="form-control" id="loaithongbao" required>
+                                <option value="">Chọn</option>
+                                <option>Thông Báo Sản Phẩm Mới</option>
+                                <option>Thông Báo Khiến Mãi</option>
+
+                            </select> </div>
                     </div>
                     <div class="mb-3"> <label for="notificationContent" class="form-label">Nội Dung Thông Báo</label>
                         <textarea class="form-control" id="notificationContent" rows="5"
                             placeholder="Nhập nội dung thông báo" required></textarea>
                     </div> <button type="submit" class="btn btn-primary">Gửi Thông Báo</button>
                 </form>
-            </div>
+
+                <!-- luu thong báo -->
+                <div class="container mt-5">
+                    <h2 class="text-center">Danh Sách Thông Báo</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tiêu Đề</th>
+                                <th>Người Nhận Thông Báo</th>
+                                <th>Loại Thông Báo</th>
+                                <th>Nội Dung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Có vải mới</td>
+                                <td>Tất Cả Người Dùng</td>
+                                <td>Thông Báo Sản Phẩm Mới</td>
+                                <td>Chúng tôi vừa thêm một sản phẩm mới vào cửa hàng!</td>
+                            </tr>
+                            <tr>
+                                <td>Khuyến mãi hot</td>
+                                <td>Người Giao Hàng</td>
+                                <td>Thông Báo Khuyến Mãi</td>
+                                <td>GIẢM GIÁ 25% KHI NHẬP MÃ THREENTAILORED.</td>
+                            </tr>
+                            <tr>
+                                <td>Lại có hàng</td>
+                                <td>Nhân Viên</td>
+                                <td>Thông Báo Sản Phẩm Mới</td>
+                                <td>Sản phẩm mới đã có mặt tại kho.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </section>
 
+        <!-- report -->
+        <section id="admin-reports" class="admin-hide">
+            <div class="container mt-5">
+                <h2 class="text-center">Thông Báo Khách Hàng</h2>
+                <ul id="notificationList" class="list-group"> <!-- Thông báo sẽ được thêm vào đây --> </ul>
+        </section>
 
     </div>
     <!-- </div>
