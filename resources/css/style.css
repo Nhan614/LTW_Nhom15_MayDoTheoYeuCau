@@ -914,6 +914,25 @@ a:hover {
     height: 100vh;
 }
 
+.admin-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header i:hover{
+    cursor: pointer;
+}
+
+.admin-header-right{
+    align-items: center;
+}
+
+.admin-search{
+    align-self: center;
+    height: 30px;
+}
+
 /* ------------------------------------------Custumize --------------------------- */
 
 .custumize-img {
