@@ -179,7 +179,7 @@ a:hover {
 }
 
 
-.nav-search-box:hover .box{
+.nav-search-box:hover .box {
     display: flex;
     scale: 1;
     transition: 0.5s ease;
@@ -854,6 +854,16 @@ a:hover {
 
 }
 
+.img-acs{
+    width: 300px;
+    height: 300px;
+}
+
+.detail-limg {
+    display: flex;
+    width: 100%;
+}
+
 /* ------------------------------ Profile và ProfileEdit -----------------------------*/
 .profile-img {
     width: 150px;
@@ -914,21 +924,21 @@ a:hover {
     height: 100vh;
 }
 
-.admin-header{
+.admin-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.admin-header i:hover{
+.admin-header i:hover {
     cursor: pointer;
 }
 
-.admin-header-right{
+.admin-header-right {
     align-items: center;
 }
 
-.admin-search{
+.admin-search {
     align-self: center;
     height: 30px;
 }
@@ -1054,6 +1064,38 @@ a:hover {
 
 /* --------------------- Vest --------------------------- */
 
+/* fillter */
+.filter-part {
+    cursor: pointer;
+}
+
+.sidebarFil {
+    margin-top: 60px;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #6c757d;
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebarFil.active {
+    display: block;
+    /* Hiển thị sidebar khi có lớp active */
+}
+
+.sidebarFil select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #495057;
+    color: white;
+}
 
 .section-products {
     padding: 80px 0 54px;
@@ -1768,7 +1810,7 @@ a:hover {
 }
 
 .section-products .single-product:hover .part-1 ul {
-    bottom: 30px;   
+    bottom: 30px;
     opacity: 0;
 }
 
@@ -1837,7 +1879,7 @@ a:hover {
 .full-link {
     margin: 0;
     padding: 0;
-    list-style: none;    
+    list-style: none;
     position: absolute;
     width: 100%;
     height: 100%;
