@@ -45,7 +45,7 @@
 .left-col {
 
   height: 100%;
-  background-image: url("resources/images/contactus.jpg");
+  background-image: url("../images/contactus.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
