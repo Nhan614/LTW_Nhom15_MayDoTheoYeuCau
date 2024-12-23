@@ -1,4 +1,4 @@
-<%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,15 +39,24 @@
 
                 <div class="form-box login" id="login-form">
                     <h2 class="animation" style="--i:0; --j:11">Đăng nhập</h2>
+
+                    <%
+                        String error= (String) request.getAttribute("error");
+                        String email= request.getParameter("email");
+                        if(error==null) error = "";
+                        if(email==null) email = "";
+                    %>
+                    <p><%= error %></p>
+
                     <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
-                            <input type="text" required>
+                            <input type="text" id="email" value="<%= email%>" name="email" required>
                             <label>Email:</label>
                             <i class="fa-solid fa-user"></i>
                         </div>
 
                         <div class="input-box animation" style="--i:2; --j:13">
-                            <input type="password" required>
+                            <input type="password" id="password" name="pass" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>
