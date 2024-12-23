@@ -1,3 +1,5 @@
+<%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +39,7 @@
 
                 <div class="form-box login" id="login-form">
                     <h2 class="animation" style="--i:0; --j:11">Đăng nhập</h2>
-                    <form action="#">
+                    <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
                             <input type="text" required>
                             <label>Email:</label>
@@ -52,8 +54,10 @@
                         <div class="forgot-password animation" style="--i:3;--j:14">
                             <p><a href="forgotPassword.html" class="password-link">Bạn quên mật khẩu?</a></p>
                         </div>
-                        <a href="admin.html#admin-dashboard" type="submit" class="btn animation "
-                            style="--i:4; --j:15">Đăng nhập </a>
+<%--                        <a href="admin.html#admin-dashboard" type="submit" class="btn animation "--%>
+<%--                        <a href="#" type="submit" class="btn animation "--%>
+                        <button type="submit" class="btn animation"
+                                style="--i:4; --j:15">Đăng nhập </button>
                         <div class="logreg-link animation" style="--i:5; --j:16">
                             <p>Bạn chưa có tài khoản? <a href="#" class="register-link">Đăng ký</a></p>
 
