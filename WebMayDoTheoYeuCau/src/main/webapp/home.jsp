@@ -64,7 +64,7 @@
 
 
                     <!-- Shirt Category -->
-                    <div class="col-md-3 col-sm-6"><a href="aoSoMi.html">
+                    <div class="col-md-3 col-sm-6"><a href="aoSoMi.jsp">
                             <div class="category-box">
                                 <img src="resources/images/shirtCategory.jpg" alt="Shirt" class="img-fluid">
                                 <h3>ÁO SƠ MI</h3>

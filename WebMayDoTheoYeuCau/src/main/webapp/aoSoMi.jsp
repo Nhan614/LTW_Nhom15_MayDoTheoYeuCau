@@ -1,16 +1,16 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áo Sơ Mi - THREEN TAILORED</title>
-    <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
-        type="image/x-icon">
-    <script src="vendors/js/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <title>ÁO SƠ MI - N3TAILORED</title>
+    <link rel="icon" href="<c:url value='/resources/images/favicon.jpg'/>" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/x-icon">
+    <script src="<c:url value='/vendors/js/jquery-3.7.1.min.js'/>"></script>
+    <link rel="stylesheet" href="<c:url value='/vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/vendors/fontawesome-free-6.6.0-web/css/all.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
     <style>
         .vest-title {
             display: flex;
@@ -309,14 +309,15 @@
 </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <jsp:include page="/resources/data/footer.jsp" />
+
 
     <!-- js -->
-    <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/backtotop.js"></script>
-    <script src="resources/js/search.js"></script>
-    <script src="resources/js/main.js"></script>
-    <script src="resources/js/quit.js"></script>
+    <script src="<c:url value='/vendors/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js'/>"></script>
+    <script src="<c:url value='/resources/js/backtotop.js'/>"></script>
+    <script src="<c:url value='/resources/js/search.js'/>"></script>
+    <script src="<c:url value='/resources/js/main.js'/>"></script>
+    <script src="<c:url value='/resources/js/quit.js'/>"></script>
 
 <!-- my js -->
 <script> function toggleSidebar() { var sidebar = document.getElementById('sidebarFil'); sidebar.classList.toggle('active'); }</script>
