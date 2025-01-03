@@ -144,7 +144,10 @@
     </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+<%--    <div id="footer"> <jsp:include page="footer.jsp" /> </div>--%>
+    <div id="footer">
+        <jsp:include page="/resources/data/footer.jsp" />
+    </div>
 
     <script src="resources/js/main.js"></script>
     <script src="resources/js/quit.js"></script>

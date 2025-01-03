@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
             <a href="https://x.com/i/flow/login"><i class="fa-brands fa-x-twitter"></i></a> Twitter
         </div>
         <div class="contact-item-ak">
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
 
         </div>
     </div>
