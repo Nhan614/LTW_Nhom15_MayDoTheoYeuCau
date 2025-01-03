@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +45,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="home.jsp">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="blog.html">Tin tức</a></li>
+                        <li class="breadcrumb-item"><a href="blog.jsp">Tin tức</a></li>
 
                     </ol>
                 </nav>
@@ -416,7 +417,7 @@
                             <h4 class="mt-5 mb-3">Bài viết liên quan</h4>
                             <div class="list-group">
                                 <!-- Bài viết 1 -->
-                                <a href="blog.html"
+                                <a href="blog.jsp"
                                     class="list-group-item list-group-item-action d-flex align-items-start">
                                     <img src="resources/images/blog6.jpg" alt="Post 1" class="me-3 img-thumbnail"
                                         style="width: 80px; height: 80px;">
@@ -427,7 +428,7 @@
                                     </div>
                                 </a>
                                 <!-- Bài viết 2 -->
-                                <a href="blog.html"
+                                <a href="blog.jsp"
                                     class="list-group-item list-group-item-action d-flex align-items-start">
                                     <img src="resources/images/blog2.jpg" alt="Post 2" class="me-3 img-thumbnail"
                                         style="width: 80px; height: 80px;">
@@ -438,7 +439,7 @@
                                     </div>
                                 </a>
 
-                                <a href="blog.html"
+                                <a href="blog.jsp"
                                     class="list-group-item list-group-item-action d-flex align-items-start">
                                     <img src="resources/images/blog10.jpg" alt="Post 1" class="me-3 img-thumbnail"
                                         style="width: 80px; height: 80px;">
@@ -449,7 +450,7 @@
                                     </div>
                                 </a>
                                 <!-- Bài viết 5 -->
-                                <a href="blog.html"
+                                <a href="blog.jsp"
                                     class="list-group-item list-group-item-action d-flex align-items-start">
                                     <img src="resources/images/blog7.jpg" alt="Post 2" class="me-3 img-thumbnail"
                                         style="width: 80px; height: 80px;">
@@ -460,7 +461,7 @@
                                     </div>
                                 </a>
                                 <!-- Bài viết 6 -->
-                                <a href="blog.html"
+                                <a href="blog.jsp"
                                     class="list-group-item list-group-item-action d-flex align-items-start">
                                     <img src="resources/images/blog3.jpg" alt="Post 3" class="me-3 img-thumbnail"
                                         style="width: 80px; height: 80px;">

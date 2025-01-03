@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,17 +51,17 @@
                         <span class="badge bg-dark text-uppercase me-3">Tin tức mới</span>
                         <p class="text-muted mb-4">Ngày 11/11/2024</p>
                     </div>
-                    <a href="blogvest.html"> <h3>HUYỀN THOẠI PHƯƠNG ĐÔNG | BST THU ĐÔNG 2024</h3></a>
+                    <a href="blogvest.jsp"> <h3>HUYỀN THOẠI PHƯƠNG ĐÔNG | BST THU ĐÔNG 2024</h3></a>
                     <p>
                         Ra mắt Bộ Sưu Tập Thu Đông mới 2024, THREEN TAILORED dành tặng khách </br>
                         hàng chương trình quà tặng đặc biệt "Nhân ba điểm tích lũy" với</br>
                         đơn hàng có sẵn...
                     </p>
-                    <a href="blogvest.html" class="text-decoration-none fw-bold">Tìm hiểu thêm →</a>
+                    <a href="blogvest.jsp" class="text-decoration-none fw-bold">Tìm hiểu thêm →</a>
                 </div>
 
                 <!-- Image Section -->
-                <a href="blogvest.html" class="col-md-7 position-relative">
+                <a href="blogvest.jsp" class="col-md-7 position-relative">
                     <img src="resources/images/vest31.jpg" alt="Aristino - BST Thu Đông" class="img-fluid">
                     <div
                         class="overlay position-absolute top-0 start-0 w-100 h-100  flex-column align-items-center justify-content-center">
@@ -83,7 +84,7 @@
             <div class="row">
                 <!-- Column 1 -->
                 <h2 class="mt-5 mb-4">TẤT CẢ BÀI VIẾT </h2>
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog9.webp" class="card-img-top" alt="Bóng đá Việt Nam">
                         <div class="card-body bg-light">
@@ -100,7 +101,7 @@
                 </a>
 
                 <!-- Column 2 -->
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog2.jpg" class="card-img-top" alt="Bóng đá Việt Nam">
                         <div class="card-body bg-light">
@@ -116,7 +117,7 @@
                 </a>
 
                 <!-- Column 3 -->
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog3.jpg" class="card-img-top" alt="Sức khoẻ">
                         <div class="card-body bg-light">
@@ -132,7 +133,7 @@
                 </a>
 
                 <!-- Column 4 -->
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog6.jpg" class="card-img-top" alt="Phim">
                         <div class="card-body bg-light">
@@ -147,7 +148,7 @@
                 </a>
 
                 <!-- Column 5 -->
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog10.jpg" class="card-img-top" alt="Sức khoẻ">
                         <div class="card-body bg-light">
@@ -161,7 +162,7 @@
                 </a>
 
                 <!-- Column 6 -->
-                <a href="blogvest.html" class="col-md-4 mb-4">
+                <a href="blogvest.jsp" class="col-md-4 mb-4">
                     <div class="card text-center border-0 shadow-sm">
                         <img src="resources/images/blog7.jpg" class="card-img-top" alt="Truyền hình">
                         <div class="card-body bg-light">
@@ -182,7 +183,7 @@
                 <h4 class="mt-5 mb-3">Bài viết mới nhất</h4>
                 <div class="list-group">
                     <!-- Bài viết 1 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog6.jpg" alt="Post 1" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -192,7 +193,7 @@
                         </div>
                     </a>
                     <!-- Bài viết 2 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog2.jpg" alt="Post 2" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -202,7 +203,7 @@
                         </div>
                     </a>
                     <!-- Bài viết 3 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog9.webp" alt="Post 3" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -220,7 +221,7 @@
                 <h4 class="mt-2 mb-3">Bài viết nổi bật</h4>
                 <div class="list-group">
                     <!-- Bài viết 4 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog10.jpg" alt="Post 1" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -230,7 +231,7 @@
                         </div>
                     </a>
                     <!-- Bài viết 5 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog7.jpg" alt="Post 2" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -240,7 +241,7 @@
                         </div>
                     </a>
                     <!-- Bài viết 6 -->
-                    <a href="blogvest.html" class="list-group-item list-group-item-action d-flex align-items-start">
+                    <a href="blogvest.jsp" class="list-group-item list-group-item-action d-flex align-items-start">
                         <img src="resources/images/blog3.jpg" alt="Post 3" class="me-3 img-thumbnail"
                             style="width: 80px; height: 80px;">
                         <div>
@@ -317,7 +318,7 @@
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a> Facebook
         </div>
         <div class="contact-item">
-            <a href="contactUs.html"><i class="fa-solid fa-envelope"></i></a> Khiếu nại
+            <a href="contactUs.jsp"><i class="fa-solid fa-envelope"></i></a> Khiếu nại
         </div>
         <div class="contact-item">
             <a href="https://x.com/i/flow/login"><i class="fab fa-twitter"></i></a> Twitter

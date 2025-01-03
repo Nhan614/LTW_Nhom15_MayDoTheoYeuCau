@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -262,7 +263,7 @@
                 <h4>Kết Luận</h4>
                 <p>
                     Nếu bạn có bất kỳ thắc mắc nào về Chính Sách Bảo Mật, hoặc muốn rút lại sự đồng ý đã cung cấp, vui
-                    lòng liên hệ với chúng tôi qua mục <a href="contactUs.html">"Liên Hệ"</a> trên Trang Web. Chúng tôi
+                    lòng liên hệ với chúng tôi qua mục <a href="contactUs.jsp">"Liên Hệ"</a> trên Trang Web. Chúng tôi
                     luôn sẵn sàng hỗ trợ bạn.
                 </p>
             </div>
