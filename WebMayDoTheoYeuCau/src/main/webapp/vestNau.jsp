@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
 
 <body>
   <!-- Header -->
-  <div id="menubar"></div>
+  <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
   <section id="sec1">
     <div class="top-bar text-center py-2">
@@ -102,7 +103,7 @@
     <div class="row">
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-1" class="single-product">
             <div class="part-1">
               <ul>
@@ -124,7 +125,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-2" class="single-product">
             <div class="part-1">
               <span class="discount">Giảm 15%</span>
@@ -146,7 +147,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-3" class="single-product">
             <div class="part-1">
               <ul>
@@ -168,7 +169,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-4" class="single-product">
             <div class="part-1">
               <span class="new">Mới</span>
@@ -190,7 +191,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-5" class="single-product">
             <div class="part-1">
               <ul>
@@ -212,7 +213,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-6" class="single-product">
             <div class="part-1">
               <span class="discount">Giảm 15%</span>
@@ -234,7 +235,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-7" class="single-product">
             <div class="part-1">
               <ul>
@@ -256,7 +257,7 @@
       </div>
       <!-- Single Product -->
       <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.html" class="full-link">
+        <a href="detail.jsp" class="full-link">
           <div id="vestNau-8" class="single-product">
             <div class="part-1">
               <span class="new">Mới</span>
@@ -302,13 +303,13 @@
     <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
 </div>
   <!-- Footer -->
-  <div id="footer"></div>
+  <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
   <!-- js -->
   <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
   <script src="resources/js/backtotop.js"></script>
   <script src="resources/js/search.js"></script>
-  <script src="resources/js/main.js"></script>
+<%--  <script src="resources/js/main.js"></script>--%>
   <script src="resources/js/quit.js"></script>
 
 <!-- my js -->

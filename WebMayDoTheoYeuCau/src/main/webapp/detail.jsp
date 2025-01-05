@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 
 <body>
     <!-- menu -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <!-- sec1 -->
     <div id="sec1">
@@ -45,7 +46,7 @@
                         tím với họa tiết Prince of Wales tinh tế. Trang phục công sở hoàn hảo, kết hợp với áo khoác và
                         cà vạt để có vẻ ngoài hoàn hảo và cá tính</p>
 
-                    <a href="custumize.html"><button class="btn-custumize btn-lg">THIẾT KẾ</button></a>
+                    <a href="custumize.jsp"><button class="btn-custumize btn-lg">THIẾT KẾ</button></a>
 
                     <div class="product-detail mt-4">
                         <h3>Chi Tiết</h3>
@@ -62,12 +63,12 @@
 
     </div>
     <!-- footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
 

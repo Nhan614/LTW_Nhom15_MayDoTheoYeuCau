@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 
 <body>
   <!-- header -->
-  <div id="menubar"></div>
+  <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
   <!-- section 1 -->
   <div id="sec1">
@@ -63,7 +64,7 @@
                       </td>
                       <td class="align-middle"><button class="btn-custumize btn-sm ">Chi tiết</button></td>
                       <td class="align-middle"> <button
-                          class="btn-custumize"><a href="custumize.html">Sửa</a></button>
+                          class="btn-custumize"><a href="custumize.jsp">Sửa</a></button>
                       </td>
                       <td class="align-middle">
                         <button class="btn-custumize bg-danger btn-sm deleteBtn">Xóa</button>
@@ -100,8 +101,8 @@
                   <div class="col cart-total">
                     <h4>Tổng cộng: <span>1,570,000 VND</span></h4>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                      <button> <a href="collection.html" class="shop-btn ">Mua Thêm</a></button>
-                      <button><a href="checkout.html" class="shop-btn bg-success">Thanh Toán</a></button>
+                      <button> <a href="collection.jsp" class="shop-btn ">Mua Thêm</a></button>
+                      <button><a href="checkout.jsp" class="shop-btn bg-success">Thanh Toán</a></button>
                     </div>
                   </div>
                 </div>
@@ -114,12 +115,12 @@
   </div>
 
   <!-- footer -->
-  <div id="footer"></div>
+  <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
   <!-- js -->
   <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
   <script src="vendors/js/jquery-3.7.1.min.js"></script>
-  <script src="resources/js/main.js"></script>
+<%--  <script src="resources/js/main.js"></script>--%>
   <script src="resources/js/quit.js"></script>
   <script src="resources/js/backtotop.js"></script>
 

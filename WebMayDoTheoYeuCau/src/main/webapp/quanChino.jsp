@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quần Âu - THREEN TAILORED</title>
+    <title>Quần Chino - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
         type="image/x-icon">
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
@@ -58,7 +59,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <div class="top-bar text-center py-2">
@@ -71,7 +72,7 @@
         <!-- Tiêu Đề và Mô Tả -->
         <div class="vest-title">
             <div class="vest-header">
-                <h2>Quần Âu May Đo Cho Quý Ông</h2>
+                <h2>Quần Chino May Đo Cho Quý Ông</h2>
             </div>
             <!-- Sắp Xếp và Lọc -->
             <div class="tl-filters">
@@ -92,19 +93,20 @@
 
         <!-- Mô Tả -->
         <p class="vest-description">
-            Quần âu nam may đo, với dáng cao, gấu quần xắn, nẹp hoặc mặt trước phẳng, phù hợp cho phong cách
-            thường ngày hay hiện đại, thanh lịch hay thoải mái? Chúng tôi có quần nam may đo phù hợp với mọi
-            dịp.
-            Chi tiết may đo 100% từ VietNam và sự vừa vặn hoàn hảo: điều bạn cần làm chỉ là cá nhân hóa chiếc
-            quần may đo của mình theo phong cách riêng để tạo nên một tủ đồ thực sự độc đáo và sáng tạo.
+            Chúng là một trong những món đồ không thể thiếu cho mùa hè, không thể thiếu trong vali du lịch
+            hay tủ quần áo của mỗi quý ông. Với màu sắc đa dạng, nhẹ nhàng, linh hoạt và chống nhăn, quần
+            chinos hay còn gọi là quần cotton, là biểu tượng hiện đại của trang phục thường ngày.
+
+            Sản xuất tại VietNam với vải cotton mềm mại cao cấp từ Ý, bạn có thể mặc chúng suốt cả năm. Hãy
+            khám phá bộ sưu tập quần chino may đo của chúng tôi và tùy chỉnh chiếc quần của bạn trực tuyến.
         </p>
     </section>
     <section class="container my-4 section-products">
         <div class="row">
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-1" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-1" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -114,8 +116,9 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xanh Không Quân May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
+                                Be</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -125,8 +128,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-2" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-2" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -137,8 +140,9 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Lạc Đà May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
+                                Xanh Lục Xăng</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -147,8 +151,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-3" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-3" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -158,9 +162,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xanh Đậm - Xanh Lá Cây May Đo Theo Yêu Cầu
-                            </h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Làm Từ Cotton và Len</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -170,8 +173,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-4" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-4" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -182,8 +185,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Knickerbocker Len Màu Xanh Dương May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -192,8 +195,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-5" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-5" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -203,8 +206,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Co Giãn Màu Đỏ May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Twill Màu Xanh Dầu</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -214,8 +217,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-6" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-6" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -226,8 +229,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Quần Len Màu Xám Salt and Pepper May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Màu Xanh Đậm</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -236,8 +239,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-7" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-7" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -247,8 +250,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">xuân hạ</div>
-                            <h3 class="product-title">Quần Linen và Len Twill Màu Gun Metal May Đo Theo Yêu Cầu</h3>
+                            <div class="product-season">thu đông</div>
+                            <h3 class="product-title">Quần Chino Cotton và Cashmere Màu Garnet</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -258,8 +261,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="trouser-8" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="chino-8" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -270,9 +273,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xám và Xanh Prince of Wales May Đo Theo Yêu
-                                Cầu</h3>
+                            <div class="product-season">xuân hạ</div>
+                            <h3 class="product-title">Quần Chino Linen Màu Trắng Trơn</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -305,13 +307,13 @@
 </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/backtotop.js"></script>
     <script src="resources/js/search.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
 
 <!-- my js -->

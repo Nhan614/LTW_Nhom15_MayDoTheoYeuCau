@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +46,7 @@
 
 <body>
     <!-- menu -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <!-- sec1 -->
     <div id="sec1">
@@ -283,11 +284,11 @@
                                                         phường Linh Trung, thành phố Thủ Đức, thành phố Hồ Chí Minh
                                                     </li>
                                                 </ul>
-                                                <a href="profileEdit.html"><button
+                                                <a href="profileEdit.jsp"><button
                                                         class="btn-custumize mt-3 profile-update-btn">Cập
                                                         nhật
                                                         thông tin</button></a>
-                                                <a href="changePassword.html"><button class="btn-custumize mt-3">Đổi
+                                                <a href="changePassword.jsp"><button class="btn-custumize mt-3">Đổi
                                                         mật
                                                         khẩu</button></a>
                                                 <button class="btn-custumize bg-danger mt-3">Đăng xuất</button>
@@ -313,12 +314,12 @@
         </div>
     </div>
     <!-- footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
 

@@ -1,9 +1,9 @@
 // load header
 document.addEventListener("DOMContentLoaded", function () {
-  fetch('./resources/data/header.html')
+  fetch('./resources/data/header.jsp')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('menubar').innerHTML = data; // Add active class to current nav-link 
+      document.getElementById('menubar').innerHTML = data; // Add active class to current nav-link
       const currentPath = window.location.pathname.split("/").pop();
       const navLinks = document.querySelectorAll(".nav-link");
       navLinks.forEach(link => {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // load footer
 document.addEventListener("DOMContentLoaded", function () {
-  fetch('./resources/data/footer.html')
+  fetch('./resources/data/footer.jsp')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer').innerHTML = data;

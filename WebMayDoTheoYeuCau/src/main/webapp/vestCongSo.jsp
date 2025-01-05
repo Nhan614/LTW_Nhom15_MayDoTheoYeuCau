@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quần Chino - THREEN TAILORED</title>
+    <title>Vest Công Sở - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
         type="image/x-icon">
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
@@ -58,7 +59,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <div class="top-bar text-center py-2">
@@ -71,7 +72,7 @@
         <!-- Tiêu Đề và Mô Tả -->
         <div class="vest-title">
             <div class="vest-header">
-                <h2>Quần Chino May Đo Cho Quý Ông</h2>
+                <h2>Bộ Vest May Đo Cho Quý Ông | Dòng Trang Phục Công Sở</h2>
             </div>
             <!-- Sắp Xếp và Lọc -->
             <div class="tl-filters">
@@ -92,20 +93,19 @@
 
         <!-- Mô Tả -->
         <p class="vest-description">
-            Chúng là một trong những món đồ không thể thiếu cho mùa hè, không thể thiếu trong vali du lịch
-            hay tủ quần áo của mỗi quý ông. Với màu sắc đa dạng, nhẹ nhàng, linh hoạt và chống nhăn, quần
-            chinos hay còn gọi là quần cotton, là biểu tượng hiện đại của trang phục thường ngày.
-
-            Sản xuất tại VietNam với vải cotton mềm mại cao cấp từ Ý, bạn có thể mặc chúng suốt cả năm. Hãy
-            khám phá bộ sưu tập quần chino may đo của chúng tôi và tùy chỉnh chiếc quần của bạn trực tuyến.
+            Từ những loại vải kinh điển như sọc nhỏ pinstripe, sharkskin, và kẻ ô Prince of Wales đến
+            những mẫu hiện đại hơn như họa tiết Microdesign độc quyền của chúng tôi. Hãy tạo nên bộ vest
+            may đo của riêng bạn với các loại vải vừa bền vừa linh hoạt, mang vẻ cuốn hút không thể chối
+            từ. Sự thanh lịch 100% phong cách Ý, hoàn hảo cho những sự kiện công việc trang trọng nhất,
+            đem đến vẻ ngoài lịch lãm đầy ấn tượng.
         </p>
     </section>
     <section class="container my-4 section-products">
         <div class="row">
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-1" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-1" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -116,8 +116,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
-                                Be</h3>
+                            <h3 class="product-title">Bộ Vest Icon Sharkskin Xám</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -127,8 +126,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-2" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-2" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -140,8 +139,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
-                                Xanh Lục Xăng</h3>
+                            <h3 class="product-title">Bộ Vest Prince of Wales Xám</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -150,8 +148,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-3" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-3" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -162,7 +160,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Làm Từ Cotton và Len</h3>
+                            <h3 class="product-title">Bộ Vest Icon Xám Nhạt</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -172,8 +170,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-4" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-4" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -185,7 +183,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill</h3>
+                            <h3 class="product-title">Bộ Vest Twill Xanh Biển</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -194,8 +192,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-5" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-5" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -206,7 +204,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Twill Màu Xanh Dầu</h3>
+                            <h3 class="product-title">Bộ Vest Biella Xanh Côban </h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -216,8 +214,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-6" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-6" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -229,7 +227,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Màu Xanh Đậm</h3>
+                            <h3 class="product-title">Bộ Vest Icon Bird's Eye</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -238,8 +236,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-7" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-7" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -249,8 +247,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Chino Cotton và Cashmere Màu Garnet</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Bộ Vest Icon Xám Than</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -260,8 +258,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="chino-8" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestCongSo-8" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -272,8 +270,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">xuân hạ</div>
-                            <h3 class="product-title">Quần Chino Linen Màu Trắng Trơn</h3>
+                            <div class="product-season">Bốn Mùa</div>
+                            <h3 class="product-title">Bộ Vest Icon Prince of Wales Xanh</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -306,13 +304,13 @@
 </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/backtotop.js"></script>
     <script src="resources/js/search.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
 
 <!-- my js -->

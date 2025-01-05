@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áo Overshirt - THREEN TAILORED</title>
+    <title>Vest Thường Ngày - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
         type="image/x-icon">
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
@@ -58,7 +59,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <div class="top-bar text-center py-2">
@@ -68,12 +69,12 @@
         </div>
     </section>
     <section class="container my-4">
-        <!-- Tiêu Đề và Mô Tả -->
+        <!-- Title and Description -->
         <div class="vest-title">
             <div class="vest-header">
-                <h2>Áo Overshirt May Đo Cho Quý Ông</h2>
+                <h2>Bộ Vest May Đo Cho Quý Ông | Dòng Trang Phục Thường Ngày</h2>
             </div>
-            <!-- Sắp Xếp và Lọc -->
+            <!-- Sorting and Filtering options -->
             <div class="tl-filters">
                 <div class="sorting">
                     <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/sort.png">
@@ -90,19 +91,19 @@
             </div>
         </div>
 
-        <!-- Mô Tả -->
+        <!-- Description -->
         <p class="vest-description">
-            Sản xuất tại VietNam kết hợp với phong cách thoải mái và hiện đại, mang đến
-            những trang phục phá vỡ các hình thức truyền thống, không tuân theo các quy tắc may
-            đo thông thường và cực kỳ thoải mái để mặc.
+            Từ những họa tiết dễ phối như kẻ sọc và kẻ vuông, đến những lựa chọn mang cảm hứng lịch lãm hơn
+            như thiết kế pied-de-poule quyến rũ. Chất liệu vải vest với cấu trúc hoàn hảo và bảng màu đa năng,
+            lý tưởng để tạo nên trang phục khác biệt mỗi ngày, khẳng định phong cách và sự tinh tế của bạn.
         </p>
     </section>
     <section class="container my-4 section-products">
         <div class="row">
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-1" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-1" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -113,8 +114,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">
-                                Áo Overshirt Màu Xanh Đậm Làm Từ Vải Cotton Velvet Co Giãn</h3>
+                            <h3 class="product-title">Bộ Vest Seersucker Xanh Chất Liệu Len và Cotton</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -123,9 +123,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-2" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-2" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Màu Xám Xanh Đậm Làm Từ Vải Wool Flannel</h3>
+                            <h3 class="product-title">Bộ Vest Seersucker Xám Chất Liệu Len và Cotton</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -145,9 +145,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-3" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-3" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -158,7 +158,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Màu Cát Làm Từ Vải Wool Flannel Co Giãn</h3>
+                            <h3 class="product-title">Bộ Vest Flannel Tím Chất Liệu Len Co Giãn</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -167,9 +167,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-4" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-4" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -181,7 +181,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Cotton Velvet Màu Be</h3>
+                            <h3 class="product-title">Bộ Vest Flannel Xanh Lá Chất Liệu Len Co Giãn</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -189,9 +189,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-5" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-5" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -202,7 +202,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Wool Shetland Herringbone Màu Be và Đỏ</h3>
+                            <h3 class="product-title">Bộ Vest Flannel Màu Be Chất Liệu Len Co Giãn</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -211,9 +211,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-6" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-6" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -225,7 +225,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Wool Màu Xám Thiết Kế Micro</h3>
+                            <h3 class="product-title">Bộ Vest Flannel Đỏ Chất Liệu Len và Cashmere</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -233,9 +233,9 @@
                 </a>
             </div>
             <!-- Single Product -->
-            <div class=" position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-7" class="single-product">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-7" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -245,8 +245,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Màu Nâu Làm Từ Vải Wool Flannel</h3>
+                            <div class="product-season">mùa xuân</div>
+                            <h3 class="product-title">Bộ Vest Linen Nâu</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -256,8 +256,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="overshirt-8" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="vestThuongNgay-8" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -268,9 +268,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Overshirt Màu Xanh Hoàng Gia Làm Từ Vải Cotton Velvet Co Giãn
-                            </h3>
+                            <div class="product-season">mùa xuân</div>
+                            <h3 class="product-title">Bộ Vest Lụa Cotton Xanh Biển</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -279,37 +278,37 @@
             </div>
         </div>
     </section>
-<!-- sidebar -->
-<div class="sidebarFil" id="sidebarFil">
-    <h2 class="mt-3">Lọc</h2>
-    <hr>
-    <h4>Theo Giá</h4>
-    <div class="mx-3">
-        <label><input type="checkbox" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
-        <label><input type="checkbox" value="1000-1500" onchange="filterItems()">Từ 500,000 - 1,500,000
-            VND</label><br>
-        <label><input type="checkbox" value="above-1500" onchange="filterItems()">Từ 1,500,000 - 2,000,000 VND</label>
-        <label><input type="checkbox" value="above-1500" onchange="filterItems()">Trên 2,000,000 VND</label>
-    </div>
-    <h4 class="mt-5">Theo Vật Liệu</h4>
-    <select id="priceFilter" onchange="filterItems()">
-        <option value="all">Tất Cả</option>
-        <option value="under-1000">Vải Nhám</option>
-        <option value="1000-1500">Vải Trơn</option>
-        <option value="1000-1500">Vải Trơn Nhẵn</option>
-        <option value="above-1500">Vải Bóng</option>
-    </select>
-    <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
-</div>
 
+    <!-- sidebar -->
+    <div class="sidebarFil" id="sidebarFil">
+        <h2 class="mt-3">Lọc</h2>
+        <hr>
+        <h4>Theo Giá</h4>
+        <div class="mx-3">
+            <label><input type="checkbox" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
+            <label><input type="checkbox" value="1000-1500" onchange="filterItems()">Từ 500,000 - 1,500,000
+                VND</label><br>
+            <label><input type="checkbox" value="above-1500" onchange="filterItems()">Từ 1,500,000 - 2,000,000 VND</label>
+            <label><input type="checkbox" value="above-1500" onchange="filterItems()">Trên 2,000,000 VND</label>
+        </div>
+        <h4 class="mt-5">Theo Vật Liệu</h4>
+        <select id="priceFilter" onchange="filterItems()">
+            <option value="all">Tất Cả</option>
+            <option value="under-1000">Vải Nhám</option>
+            <option value="1000-1500">Vải Trơn</option>
+            <option value="1000-1500">Vải Trơn Nhẵn</option>
+            <option value="above-1500">Vải Bóng</option>
+        </select>
+        <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
+    </div>
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/backtotop.js"></script>
     <script src="resources/js/search.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
 
 <!-- my js -->

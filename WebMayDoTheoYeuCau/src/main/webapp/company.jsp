@@ -141,7 +141,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <!--Top Bar-->
@@ -293,11 +293,11 @@
 </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
 

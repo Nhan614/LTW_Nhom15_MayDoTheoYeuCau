@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 
 <body>
     <!-- header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <!-- secsion 1 -->
     <div id="sec1">
@@ -55,8 +56,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/vestIconBluePrinceOfWales.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/vestIconBluePrinceOfWales.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Bộ Đồ Nam 1</h5>
@@ -67,8 +68,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/vestBrownWoolCashmereCanvas.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/vestBrownWoolCashmereCanvas.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Bộ Đồ Nam 2</h5>
@@ -83,8 +84,8 @@
                             <div class="row mt-5">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/vestGreyAuthentic.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/vestGreyAuthentic.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Bộ Đồ Nam 3</h5>
@@ -96,8 +97,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/vestBlueTwill.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/vestBlueTwill.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Bộ Đồ Nam 4</h5>
@@ -129,7 +130,7 @@
                         <p class="collection-text-costume">Các loại áo khác được thiết kế tỉ mỉ với chất liệu vải tốt
                             nhất
                         </p>
-                        <a href="blazer.html" class="shop-btn text-center">Khám Phá</a>
+                        <a href="blazer.jsp" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5">
@@ -147,8 +148,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/blazerAnthraciteGray.webp"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/blazerAnthraciteGray.webp"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Nam 1</h5>
@@ -159,8 +160,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/blazerNavyMicro.webp"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/blazerNavyMicro.webp"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Nam 2</h5>
@@ -175,8 +176,8 @@
                             <div class="row mt-5">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/blazerBrownSmoothVelvet.webp"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/blazerBrownSmoothVelvet.webp"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Nam 1</h5>
@@ -188,8 +189,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/blazerPurplePinstripe.webp"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/blazerPurplePinstripe.webp"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Nam 2</h5>
@@ -227,8 +228,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/shirtIceGreyLinenZephyr.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/shirtIceGreyLinenZephyr.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Sơ Mi 1</h5>
@@ -239,8 +240,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/shirtLightBlueHerringboneFlannel.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/shirtLightBlueHerringboneFlannel.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Sơ Mi 2</h5>
@@ -255,8 +256,8 @@
                             <div class="row mt-5">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/shirtPinkHerringbone.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/shirtPinkHerringbone.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Sơ Mi 3</h5>
@@ -268,8 +269,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/shirtTobaccoLinenZephyr.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/shirtTobaccoLinenZephyr.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Áo Sơ Mi 4</h5>
@@ -316,8 +317,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/trouserCamelFlannel.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/trouserCamelFlannel.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Quần Nam 1</h5>
@@ -328,8 +329,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/trouserAirForceBlueFlannel.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/trouserAirForceBlueFlannel.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Quần Nam 2</h5>
@@ -344,8 +345,8 @@
                             <div class="row mt-5">
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/trouserDarkBlueGreenFlannel.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/trouserDarkBlueGreenFlannel.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Quần Nam 3</h5>
@@ -357,8 +358,8 @@
 
                                 <div class="col-lg-6">
                                     <div class="card">
-                                        <a href="detail.html"><img src="resources/images/trouserSaltPepper.jpg"
-                                                                   class="card-img-top" alt="Áo vest 1">
+                                        <a href="detail.jsp"><img src="resources/images/trouserSaltPepper.jpg"
+                                                                  class="card-img-top" alt="Áo vest 1">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title">Quần Nam 4</h5>
@@ -375,7 +376,7 @@
         </div>
     </div>
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
 
@@ -383,7 +384,7 @@
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/backtotop.js"></script>
     <script src="resources/js/quit.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
 
 </body>
 

@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vest Công Sở - THREEN TAILORED</title>
+    <title>Blazers - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
         type="image/x-icon">
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
@@ -58,7 +59,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <div class="top-bar text-center py-2">
@@ -71,7 +72,7 @@
         <!-- Tiêu Đề và Mô Tả -->
         <div class="vest-title">
             <div class="vest-header">
-                <h2>Bộ Vest May Đo Cho Quý Ông | Dòng Trang Phục Công Sở</h2>
+                <h2>Áo Blazer May Đo Cho Quý Ông</h2>
             </div>
             <!-- Sắp Xếp và Lọc -->
             <div class="tl-filters">
@@ -92,19 +93,21 @@
 
         <!-- Mô Tả -->
         <p class="vest-description">
-            Từ những loại vải kinh điển như sọc nhỏ pinstripe, sharkskin, và kẻ ô Prince of Wales đến
-            những mẫu hiện đại hơn như họa tiết Microdesign độc quyền của chúng tôi. Hãy tạo nên bộ vest
-            may đo của riêng bạn với các loại vải vừa bền vừa linh hoạt, mang vẻ cuốn hút không thể chối
-            từ. Sự thanh lịch 100% phong cách Ý, hoàn hảo cho những sự kiện công việc trang trọng nhất,
-            đem đến vẻ ngoài lịch lãm đầy ấn tượng.
+            Dù là mùa nào hay xu hướng hiện tại ra sao, những chiếc áo blazer may đo của chúng tôi luôn là
+            biểu tượng đích thực của sự thanh lịch.
+            Không có lớp lót và thiết kế không cấu trúc, những chiếc blazer của chúng tôi được hoàn thiện
+            với những chi tiết truyền thống đặc trưng của may đo Ý, như vai áo kiểu Neapolitan, túi ngực
+            Neapolitan và các lỗ thông gió ở tay áo. Đây chỉ là một số chi tiết tinh xảo của nền may đo Ý
+            truyền thống, làm cho mỗi chiếc blazer may đo trở thành một trang phục độc đáo, thanh lịch
+            và có thể được cá nhân hóa theo phong cách riêng của bạn.
         </p>
     </section>
     <section class="container my-4 section-products">
         <div class="row">
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-1" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-1" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -114,8 +117,9 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Icon Sharkskin Xám</h3>
+                            <div class="product-season">thu đông</div>
+                            <h3 class="product-title">Áo Blazer Flannel Wool Màu Xám Nhạt Mélange May Đo Theo Yêu Cầu
+                            </h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -125,8 +129,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-2" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-2" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -138,7 +142,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Prince of Wales Xám</h3>
+                            <h3 class="product-title">Áo Blazer Active Wool Màu Xám Than May Đo Theo Yêu Cầu</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -147,8 +151,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-3" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-3" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -159,7 +163,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Icon Xám Nhạt</h3>
+                            <h3 class="product-title">Áo Blazer Wool Prince of Wales Màu Tím</h3>
                             <div class="product-maker">đức nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -169,8 +173,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-4" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-4" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -182,7 +186,7 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Twill Xanh Biển</h3>
+                            <h3 class="product-title">Áo Blazer Wool Kẻ Sọc Màu Tím May Đo Theo Yêu Cầu</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -191,8 +195,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-5" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-5" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -202,8 +206,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Biella Xanh Côban </h3>
+                            <div class="product-season">thu đông</div>
+                            <h3 class="product-title">Áo Blazer Wool Flannel Màu Xanh Bột May Đo Theo Yêu Cầu</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -213,8 +217,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-6" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-6" class="single-product">
                         <div class="part-1">
                             <span class="discount">Giảm 15%</span>
                             <ul>
@@ -226,7 +230,8 @@
                         </div>
                         <div class="part-2">
                             <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Icon Bird's Eye</h3>
+                            <h3 class="product-title">Áo Blazer Wool Stretch Màu Xanh Đậm Thiết Kế Micro May Đo Theo Yêu
+                                Cầu</h3>
                             <div class="product-maker">trọng nhân</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -235,8 +240,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-7" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-7" class="single-product">
                         <div class="part-1">
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -246,8 +251,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Icon Xám Than</h3>
+                            <div class="product-season">thu đông</div>
+                            <h3 class="product-title">Áo Blazer Wool Flannel Kẻ Sọc Màu Xám May Đo Theo Yêu Cầu</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-old-price">1,500,000 VND</h4>
                             <h4 class="product-price">1,300,000 VND</h4>
@@ -257,8 +262,8 @@
             </div>
             <!-- Single Product -->
             <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.html" class="full-link">
-                    <div id="vestCongSo-8" class="single-product">
+                <a href="detail.jsp" class="full-link">
+                    <div id="blazer-8" class="single-product">
                         <div class="part-1">
                             <span class="new">Mới</span>
                             <ul>
@@ -269,8 +274,8 @@
                             </ul>
                         </div>
                         <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Bộ Vest Icon Prince of Wales Xanh</h3>
+                            <div class="product-season">thu đông</div>
+                            <h3 class="product-title">Áo Blazer Velvet Màu Nâu Mịn May Đo Theo Yêu Cầu</h3>
                             <div class="product-maker">nhân nghĩa</div>
                             <h4 class="product-price">1,300,000 VND</h4>
                         </div>
@@ -303,17 +308,19 @@
 </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/backtotop.js"></script>
+    <script src="resources/js/login.js"></script>
     <script src="resources/js/search.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
+    <script src="resources/js/backtotop.js"></script>
 
 <!-- my js -->
 <script> function toggleSidebar() { var sidebar = document.getElementById('sidebarFil'); sidebar.classList.toggle('active'); }</script>
+
 
 </body>
 

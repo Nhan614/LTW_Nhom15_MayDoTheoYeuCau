@@ -15,7 +15,7 @@
 
 <body>
     <!-- Header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <section id="sec1">
         <!--Top Bar-->
@@ -31,7 +31,7 @@
                 <p class="lead text-white">May đo riêng biệt, tinh tế trong từng chi tiết, mang đậm dấu ấn phong cách
                     của bạn</p>
                 <div class="home-btn-shop">
-                    <a href="custumize.html" class="shop-btn text-center">Thiết Kế Ngay</a>
+                    <a href="custumize.jsp" class="shop-btn text-center">Thiết Kế Ngay</a>
                 </div>
             </div>
         </section>
@@ -82,7 +82,7 @@
                     </div>
 
                     <!-- Accessories Category -->
-                    <div class="col-md-3 col-sm-6"><a href="caVat.html">
+                    <div class="col-md-3 col-sm-6"><a href="caVat.jsp">
                             <div class="category-box">
                                 <img src="resources/images/accessoriesCategory.jpg" alt="Accessories" class="img-fluid">
                                 <h3>CÀ VẠT</h3>
@@ -101,7 +101,7 @@
         </div>
         <div class="banner-text-right">
             <h2>BỘ SƯU TẬP MỚI</h2>
-            <a href="collection.html" class="shop-btn text-center">ĐẾN BỘ SƯU TẬP</a>
+            <a href="collection.jsp" class="shop-btn text-center">ĐẾN BỘ SƯU TẬP</a>
         </div>
     </div>
     <!--Carousel-->
@@ -168,11 +168,11 @@
    
 </section>
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
     <!-- js -->
     <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
 </body>

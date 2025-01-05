@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áo Sơ Mi - THREEN TAILORED</title>
+    <title>Áo Overshirt - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
           type="image/x-icon">
     <script src="vendors/js/jquery-3.7.1.min.js"></script>
@@ -72,7 +72,7 @@
     <!-- Tiêu Đề và Mô Tả -->
     <div class="vest-title">
         <div class="vest-header">
-            <h2>Áo Sơ Mi May Đo Cho Quý Ông</h2>
+            <h2>Áo Overshirt May Đo Cho Quý Ông</h2>
         </div>
         <!-- Sắp Xếp và Lọc -->
         <div class="tl-filters">
@@ -93,23 +93,17 @@
 
     <!-- Mô Tả -->
     <p class="vest-description">
-        Món đồ không thể thiếu trong tủ đồ của mỗi quý ông? Một chiếc áo sơ mi may đo! Thanh lịch
-        cho những dịp đặc biệt, giản dị cho cuộc sống thường ngày: một chiếc áo sơ mi vừa vặn hoàn
-        hảo luôn là điểm nhấn cho mọi phong cách.
-        Mỗi chiếc áo sơ mi THREEN TAILORED đều được sản xuất hoàn toàn tại VietNam,
-        sử dụng vải cao cấp từ những thương hiệu nổi tiếng của Ý. Tất cả các sản phẩm đều được chế
-        tác theo những truyền thống may đo tinh tế nhất, kết hợp với công nghệ hiện đại nhất để
-        đạt được sự hoàn hảo. Những chi tiết đặc biệt như cổ áo có thể tháo rời, đường may Pháp tinh
-        xảo và những mảnh vải đệm hình cánh bướm là những yếu tố làm cho mỗi chiếc áo sơ mi nam của
-        chúng tôi trở nên thực sự độc đáo.
+        Sản xuất tại VietNam kết hợp với phong cách thoải mái và hiện đại, mang đến
+        những trang phục phá vỡ các hình thức truyền thống, không tuân theo các quy tắc may
+        đo thông thường và cực kỳ thoải mái để mặc.
     </p>
 </section>
 <section class="container my-4 section-products">
     <div class="row">
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-1" class="single-product">
+                <div id="overshirt-1" class="single-product">
                     <div class="part-1">
                         <ul>
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -119,8 +113,9 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Kẻ Sọc Màu Xanh Nhạt May Đo Theo Yêu Cầu</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">
+                            Áo Overshirt Màu Xanh Đậm Làm Từ Vải Cotton Velvet Co Giãn</h3>
                         <div class="product-maker">đức nghĩa</div>
                         <h4 class="product-old-price">1,500,000 VND</h4>
                         <h4 class="product-price">1,300,000 VND</h4>
@@ -129,9 +124,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-2" class="single-product">
+                <div id="overshirt-2" class="single-product">
                     <div class="part-1">
                         <span class="discount">Giảm 15%</span>
                         <ul>
@@ -142,8 +137,8 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Herringbone Màu Hồng May Đo Theo Yêu Cầu</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">Áo Overshirt Màu Xám Xanh Đậm Làm Từ Vải Wool Flannel</h3>
                         <div class="product-maker">đức nghĩa</div>
                         <h4 class="product-price">1,300,000 VND</h4>
                     </div>
@@ -151,9 +146,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-3" class="single-product">
+                <div id="overshirt-3" class="single-product">
                     <div class="part-1">
                         <ul>
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -163,8 +158,8 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Kẻ Sọc Màu Tím May Đo Theo Yêu Cầu</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">Áo Overshirt Màu Cát Làm Từ Vải Wool Flannel Co Giãn</h3>
                         <div class="product-maker">đức nghĩa</div>
                         <h4 class="product-old-price">1,500,000 VND</h4>
                         <h4 class="product-price">1,300,000 VND</h4>
@@ -173,9 +168,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-4" class="single-product">
+                <div id="overshirt-4" class="single-product">
                     <div class="part-1">
                         <span class="new">Mới</span>
                         <ul>
@@ -186,8 +181,8 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Màu Tím Nhạt May Đo Theo Yêu Cầu</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">Áo Overshirt Cotton Velvet Màu Be</h3>
                         <div class="product-maker">trọng nhân</div>
                         <h4 class="product-price">1,300,000 VND</h4>
                     </div>
@@ -195,9 +190,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-5" class="single-product">
+                <div id="overshirt-5" class="single-product">
                     <div class="part-1">
                         <ul>
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -208,7 +203,7 @@
                     </div>
                     <div class="part-2">
                         <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Sơ Mi Flannel Herringbone Lớn Màu Xanh Nhạt</h3>
+                        <h3 class="product-title">Áo Overshirt Wool Shetland Herringbone Màu Be và Đỏ</h3>
                         <div class="product-maker">trọng nhân</div>
                         <h4 class="product-old-price">1,500,000 VND</h4>
                         <h4 class="product-price">1,300,000 VND</h4>
@@ -217,9 +212,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-6" class="single-product">
+                <div id="overshirt-6" class="single-product">
                     <div class="part-1">
                         <span class="discount">Giảm 15%</span>
                         <ul>
@@ -231,7 +226,7 @@
                     </div>
                     <div class="part-2">
                         <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Sơ Mi Flannel Twill Màu Xanh</h3>
+                        <h3 class="product-title">Áo Overshirt Wool Màu Xám Thiết Kế Micro</h3>
                         <div class="product-maker">trọng nhân</div>
                         <h4 class="product-price">1,300,000 VND</h4>
                     </div>
@@ -239,9 +234,9 @@
             </a>
         </div>
         <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
+        <div class=" position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-7" class="single-product">
+                <div id="overshirt-7" class="single-product">
                     <div class="part-1">
                         <ul>
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -251,9 +246,8 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">xuân hạ</div>
-                        <h3 class="product-title">Áo Sơ Mi May Đo Nam Màu Nâu Thuốc Lá Làm Từ Vải Linen Zephyr Cho
-                            Phong Cách Tối Thượng</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">Áo Overshirt Màu Nâu Làm Từ Vải Wool Flannel</h3>
                         <div class="product-maker">nhân nghĩa</div>
                         <h4 class="product-old-price">1,500,000 VND</h4>
                         <h4 class="product-price">1,300,000 VND</h4>
@@ -264,7 +258,7 @@
         <!-- Single Product -->
         <div class="col-md-6 col-lg-4 position-relative">
             <a href="detail.html" class="full-link">
-                <div id="somi-8" class="single-product">
+                <div id="overshirt-8" class="single-product">
                     <div class="part-1">
                         <span class="new">Mới</span>
                         <ul>
@@ -275,9 +269,9 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <div class="product-season">xuân hạ</div>
-                        <h3 class="product-title">Áo Sơ Mi May Đo Nam Màu Xám Băng Làm Từ Vải Linen Zephyr Cho Phong
-                            Cách Tối Thượng</h3>
+                        <div class="product-season">thu đông</div>
+                        <h3 class="product-title">Áo Overshirt Màu Xanh Hoàng Gia Làm Từ Vải Cotton Velvet Co Giãn
+                        </h3>
                         <div class="product-maker">nhân nghĩa</div>
                         <h4 class="product-price">1,300,000 VND</h4>
                     </div>

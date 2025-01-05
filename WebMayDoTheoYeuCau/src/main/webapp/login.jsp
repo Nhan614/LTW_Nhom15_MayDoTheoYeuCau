@@ -18,7 +18,7 @@
 <body>
 
     <!-- header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
     <!-- section 1 -->
     <div id="sec1">
@@ -61,9 +61,9 @@
                             <i class="fa-solid fa-lock"></i>
                         </div>
                         <div class="forgot-password animation" style="--i:3;--j:14">
-                            <p><a href="forgotPassword.html" class="password-link">Bạn quên mật khẩu?</a></p>
+                            <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
                         </div>
-<%--                        <a href="admin.html#admin-dashboard" type="submit" class="btn animation "--%>
+<%--                        <a href="admin.jsp#admin-dashboard" type="submit" class="btn animation "--%>
 <%--                        <a href="#" type="submit" class="btn animation "--%>
                         <button type="submit" class="btn animation"
                                 style="--i:4; --j:15">Đăng nhập </button>
@@ -144,12 +144,10 @@
     </div>
 
     <!-- Footer -->
-<%--    <div id="footer"> <jsp:include page="footer.jsp" /> </div>--%>
-<%--    <div id="footer">--%>
-        <jsp:include page="resources/data/footer.jsp" />
-<%--    </div>--%>
+    <div id="footer"> <%@include file="resources/data/footer.jsp"%> </div>
 
-    <script src="resources/js/main.js"></script>
+
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/signup.js"></script>
     <script src="resources/js/backtotop.js"></script>

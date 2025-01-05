@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,7 @@
 <body>
 
     <!-- header -->
-    <div id="menubar"></div>
+    <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
     <!-- Trang Forgot Password -->
     <div id="sec1">
         <div class="security-note">
@@ -50,9 +51,9 @@
     </div>
 
     <!-- footer -->
-    <div id="footer"></div>
+    <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
-    <script src="resources/js/main.js"></script>
+<%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/forgotPassword.js"></script>
     <script src="resources/js/backtotop.js"></script>
