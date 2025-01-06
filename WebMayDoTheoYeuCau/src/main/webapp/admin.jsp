@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - THREEN TAILORED</title>
-    <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
-        type="image/x-icon">
-    <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/x-icon">
+    <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
@@ -70,7 +68,7 @@
             <li class="admin-sidebar-8">
                 <a href="#admin-reports">
                     <i class="fa-brands fa-whatsapp"></i>
-                    <span>Phản hồi khách hàng</span>
+                    <span>Hỗ trợ khách hàng</span>
                 </a>
             </li>
             <li class="admin-sidebar-9">
@@ -80,7 +78,7 @@
                 </a>
             </li>
             <li>
-                <a href="home.jsp" class="admin-logout">
+                <a href="home.html" class="admin-logout">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Logout</span>
                 </a>
@@ -98,53 +96,43 @@
                 <br>
                 <br> -->
             <div class="container">
-                <h1>Dữ Liệu</h1>
-                <hr>
+                <h1>Dữ liệu</h1>
                 <!-- doanh thu hom nay -->
-                <div class="row mt-4">
+                <div class="row">
                     <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header"> Doanh Thu Tháng </div>
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu hôm nay </div>
                             <div class="card-body">
-                                <h5 class="card-title text-success">1,000,000,000 VND</h5>
+                                <h5 class="card-title">100,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng hôm nay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tuần này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">500,000,000 VND</h5>
+                                <p class="card-text">Tổng doanh thu từ các đơn hàng tuần này.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info-subtle">
+                            <div class="card-header"> Doanh thu tháng này </div>
+                            <div class="card-body">
+                                <h5 class="card-title">1,000,000,000 VND</h5>
                                 <p class="card-text">Tổng doanh thu từ các đơn hàng tháng này.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header"> Chi Phí Nhập Hàng </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-danger" >600,000,000 VND</h5>
-                                <p class="card-text">Tiền nhập các loại vật liệu.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header"> Lợi Nhuận </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-primary" >400,000,000 VND</h5>
-                                <p class="card-text">Lợi nhận thu được chưa qua thuế.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <div class="card">
-                            <div class="card-header"> Tổng Sản Phẩm Bán Ra </div>
-                            <div class="card-body">
-                                <h5 class="card-title">200 Sản Phẩm</h5>
-                                <p class="card-text">Bao gồm các lại vest và phụ kiện.</p>
-                            </div>
-                        </div>
-                    </div>
 
 
-                    <!-- chart -->
-                    <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
-                    <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
                 </div>
 
+                <!-- chart -->
+                <h3 class="mt-5 mb-5">Biểu đồ doanh thu hàng tháng (triệu VND / tháng):</h3>
+                <canvas id="chartDashBoard" style="width:100%;max-width:700px" class="mt-5  mx-auto"></canvas>
             </div>
         </section>
 
@@ -153,14 +141,7 @@
             <!-- <br><br><br> -->
 
             <div class="container">
-                <div class="admin-header">
-                    <h1 class="">Quản Lý Sản Phẩm</h1>
-                    <div class="admin-header-right">
-                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="">Quản Lý Sản Phẩm</h1>
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn-custumize btn-lg admin-addProduct mt-3" data-toggle="modal"
                     data-target="#productModal"> Thêm Sản Phẩm </button>
@@ -176,8 +157,11 @@
                             <div class="modal-body">
                                 <form id="productForm">
                                     <div class="form-group"> <label for="productName">Tên Sản Phẩm</label> <input
-                                            type="text" class="form-control" id="productName" placeholder="Nhập"
-                                            required> </div>
+                                            type="text" class="form-control" id="productName"
+                                            placeholder="Nhập tên sản phẩm" required> </div>
+                                    <div class="form-group"> <label for="productCode">Mã Sản Phẩm</label> <input
+                                            type="text" class="form-control" id="productCode"
+                                            placeholder="Nhập mã sản phẩm" required> </div>
                                     <div class="form-group"> <label for="productPrice">Giá</label>
                                         <input type="number" id="productPrice" class="form-control" min="0">
                                     </div>
@@ -197,11 +181,9 @@
                                     <div class="form-group"> <label for="material">Chất Liệu</label> <input type="text"
                                             class="form-control" id="material" placeholder="Nhập chất liệu" required>
                                     </div>
-                                    <div class="form-group"> <label for="hot">Nổi Bật</label> <select
-                                            class="form-control" id="hot" required>
-                                            <option>0</option>
-                                            <option>1</option>
-                                        </select> </div>
+                                    <div class="form-group"> <label for="manufacturer">Nhà Sản Xuất</label> <input
+                                            type="text" class="form-control" id="manufacturer"
+                                            placeholder="Nhập nhà sản xuất" required> </div>
                                     <div class="form-group"> <label for="category">Loại Sản Phẩm</label> <select
                                             class="form-control" id="category">
                                             <option>Vest Công Sở</option>
@@ -226,30 +208,18 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Mã Sản Phẩm</th>
                             <th>Tên Sản Phẩm</th>
+                            <th>Mã Sản Phẩm</th>
                             <th>Giá</th>
                             <th>Số Lượng</th>
                             <th>Mùa</th>
                             <th>Chất Liệu</th>
-                            <th>Nổi Bật</th>
+                            <th>Nhà Sản Xuất</th>
                             <th>Loại Sản Phẩm</th>
                             <th>Hành Động</th>
                         </tr>
                     </thead>
-                    <!-- p1 -->
-                    <tr>
-                        <td>1</td>
-                        <td>Vest Nam Cao Cấp</td>
-                        <td>2,500,000 VND</td>
-                        <td>1</td>
-                        <td>4 Mùa</td>
-                        <td>Len</td>
-                        <td>0</td>
-                        <td>Vest Công Sở</td>
-                        <td><button class="btn btn-primary btn-sm admin-product-editBtn">Sửa</button> <button
-                                class="btn btn-danger btn-sm deleteBtn">Xóa</button>
-                            <tbody id="productList"> <!-- Danh sách sản phẩm sẽ được thêm vào đây --> </tbody>
+                    <tbody id="productList"> <!-- Danh sách sản phẩm sẽ được thêm vào đây --> </tbody>
                 </table>
             </div>
         </section>
@@ -259,15 +229,7 @@
             <!-- <br><br><br> -->
             <!--  -->
             <div class="container">
-                <div class="admin-header">
-                    <h1 class="">Quản Lý Người Dùng</h1>
-                    <div class="admin-header-right">
-                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
-                        </div>
-                    </div>
-
-                </div>
+                <h1 class="">Quản Lý Người Dùng</h1>
                 <hr>
                 <h3 class="text-center">Danh Sách Người Dùng</h3>
                 <table class="table table-bordered">
@@ -276,17 +238,15 @@
                             <th>Tên Người Dùng</th>
                             <th>Email</th>
                             <th>Số Điện Thoại</th>
-                            <th>Đăng Ký</th>
                             <th>Vai Trò</th>
                             <th>Hành Động</th>
                         </tr>
                     </thead>
                     <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây -->
                         <tr>
-                            <td>Lai Nhân Nghĩa</td>
-                            <td>nghia@nlu.com</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>nguyenvana@example.com</td>
                             <td>0123456789</td>
-                            <td>0</td>
                             <td>Admin</td>
                             <td> <button class="btn btn-primary btn-sm user-editBtn">Sửa</button> <button
                                     class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
@@ -305,27 +265,18 @@
                                 <form id="userForm">
                                     <div class="form-group"> <label for="userName">Tên Người Dùng</label> <input
                                             type="text" class="form-control" id="userName"
-                                            placeholder="Nhập tên người dùng" required readonly> </div>
+                                            placeholder="Nhập tên người dùng" required> </div>
                                     <div class="form-group"> <label for="userEmail">Email</label> <input type="email"
-                                            class="form-control" id="userEmail" placeholder="Nhập email" required
-                                            readonly>
+                                            class="form-control" id="userEmail" placeholder="Nhập email" required>
                                     </div>
                                     <div class="form-group"> <label for="userPhone">Số Điện Thoại</label> <input
                                             type="number" class="form-control" id="userPhone"
-                                            placeholder="Nhập số điện thoại" required readonly> </div>
-                                    <div class="form-group"> <label for="userCheck">Đăng Ký</label> <select
-                                            class="form-control" id="userCheck" required>
-
-                                            <option>0</option>
-                                            <option>1</option>
-                                        </select> </div>
+                                            placeholder="Nhập số điện thoại" required> </div>
                                     <div class="form-group"> <label for="userRole">Vai Trò</label> <select
                                             class="form-control" id="userRole" required>
                                             <option value="">Chọn vai trò</option>
-                                            <option>Người Dùng</option>
-                                            <option>Người Giao Hàng</option>
-                                            <option>Nhân Viên</option>
                                             <option>Admin</option>
+                                            <option>Người Dùng</option>
                                         </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
                                         Thay
                                         Đổi</button>
@@ -343,14 +294,7 @@
             <!-- <br><br><br> -->
             <!--  -->
             <div class="container">
-                <div class="admin-header">
-                    <h1 class="">Quản Lý Đơn Hàng</h1>
-                    <div class="admin-header-right">
-                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="">Quản Lý Đơn Hàng</h1>
                 <hr>
                 <h3 class="text-center">Danh Sách Đơn Hàng</h3>
                 <table class="table table-bordered">
@@ -362,20 +306,18 @@
                             <th>Số Lượng</th>
                             <th>Giá</th>
                             <th>Trạng Thái</th>
-                            <th>Vị Trí Hiện Tại</th>
                             <th>Hành Động</th>
                         </tr>
                     </thead>
                     <tbody id="orderList"> <!-- Danh sách đơn hàng sẽ được thêm vào đây -->
                         <tr>
-                            <td>1</td>
-                            <td>Nguyễn Trọng Nhân</td>
-                            <td>Vest Xanh</td>
-                            <td>1</td>
-                            <td>1000000</td>
-                            <td>Đang Vận Chuyển</td>
-                            <td>Quận Thủ Đức</td>
-                            <td> <button class="btn btn-primary btn-sm admin-order-editBtn">Cập Nhật</button> </td>
+                            <td>001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Sản phẩm 1</td>
+                            <td>10</td>
+                            <td>100000</td>
+                            <td>Đang xử lý</td>
+                            <td>  <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td>
                         </tr>
                     </tbody>
                 </table>
@@ -391,34 +333,25 @@
                                 <form id="orderForm">
                                     <div class="form-group"> <label for="orderCode">Mã Đơn Hàng</label> <input
                                             type="text" class="form-control" id="orderCode"
-                                            placeholder="Nhập mã đơn hàng" required readonly> </div>
+                                            placeholder="Nhập mã đơn hàng" required> </div>
                                     <div class="form-group"> <label for="customerName">Tên Khách Hàng</label> <input
                                             type="text" class="form-control" id="customerName"
-                                            placeholder="Nhập tên khách hàng" required readonly> </div>
+                                            placeholder="Nhập tên khách hàng" required> </div>
                                     <div class="form-group"> <label for="product">Sản Phẩm</label> <input type="text"
-                                            class="form-control" id="product" placeholder="Nhập sản phẩm" required
-                                            readonly>
+                                            class="form-control" id="product" placeholder="Nhập sản phẩm" required>
                                     </div>
                                     <div class="form-group"> <label for="quantity">Số Lượng</label> <input type="number"
-                                            class="form-control" id="quantity" placeholder="Nhập số lượng" required
-                                            readonly>
+                                            class="form-control" id="quantity" placeholder="Nhập số lượng" required>
                                     </div>
                                     <div class="form-group"> <label for="price">Giá</label> <input type="number"
-                                            class="form-control" id="price" placeholder="Nhập giá" required readonly>
-                                    </div>
+                                            class="form-control" id="price" placeholder="Nhập giá" required> </div>
                                     <div class="form-group"> <label for="status">Trạng Thái</label> <select
                                             class="form-control" id="status" required>
                                             <option value="">Chọn trạng thái</option>
                                             <option>Đang xử lý</option>
-                                            <option>Đang vận chuyển</option>
                                             <option>Đã giao</option>
                                             <option>Đã hủy</option>
-                                        </select> </div>
-                                    <div class="form-group"> <label for="order-location">Vị Trí Hiện Tại</label> <input
-                                            type="text" class="form-control" id="order-location"
-                                            placeholder="Nhập vị trí hiện tại" required>
-                                    </div>
-                                    <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
+                                        </select> </div> <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
                                         Thay
                                         Đổi</button>
                                 </form>
@@ -437,16 +370,8 @@
             <!-- <br><br><br> -->
             <!--  -->
             <div class="container">
-                <div class="admin-header">
-                    <h1 class="">Quản Lý Danh Mục</h1>
-                    <div class="admin-header-right">
-                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="card mt-4">
+                <h1 class="mb-4">Quản Lý Danh Mục</h1>
+                <div class="card">
                     <div class="card-header">
                         <h2>Danh Sách Danh Mục</h2>
                     </div>
@@ -457,7 +382,6 @@
                                     <th>ID</th>
                                     <th>Tên Danh Mục</th>
                                     <th>Danh Mục Cha</th>
-                                    <th>Nổi Bật</th>
                                     <th>Mô Tả</th>
                                     <th>Hành Động</th>
                                 </tr>
@@ -467,38 +391,34 @@
                                     <td>1</td>
                                     <td>Trang Phục</td>
                                     <td>Không Có</td>
-                                    <td>0</td>
                                     <td>Không Có</td>
                                     <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
                                             class="btn btn-danger btn-sm">Xóa</button> </td>
-                                </tr>
+                                </tr> 
                                 <tr>
                                     <td>2</td>
                                     <td>Phụ Kiện</td>
                                     <td>Không Có</td>
-                                    <td>0</td>
                                     <td>Không Có</td>
                                     <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
                                             class="btn btn-danger btn-sm">Xóa</button> </td>
-                                </tr>
+                                </tr> 
                                 <tr>
                                     <td>3</td>
                                     <td>Áo Sơ Mi</td>
                                     <td>Áo</td>
-                                    <td>1</td>
                                     <td>Loại vải tốt nhất</td>
                                     <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
                                             class="btn btn-danger btn-sm">Xóa</button> </td>
-                                </tr>
+                                </tr> 
                                 <tr>
                                     <td>4</td>
                                     <td>Quần Âu</td>
                                     <td>Quần Dài</td>
-                                    <td>1</td>
                                     <td>Chất lượng hàng đầu</td>
                                     <td> <button class="btn btn-primary btn-sm">Sửa</button> <button
                                             class="btn btn-danger btn-sm">Xóa</button> </td>
-                                </tr>
+                                </tr> 
                                 <!-- Thêm các hàng khác tại đây -->
                             </tbody>
                         </table>
@@ -511,121 +431,29 @@
                     <div class="card-body">
                         <form>
                             <div class="mb-3"> <label for="categoryName" class="form-label">Tên Danh Mục</label> <input
-                                    type="text" class="form-control" id="categoryName" placeholder="Nhập tên danh mục"
-                                    required>
+                                    type="text" class="form-control" id="categoryName" placeholder="Nhập tên danh mục" required>
                             </div>
 
 
                             <div class="form-group"> <label for="DanhMucCha">Danh Mục Cha</label> <select
-                                    class="form-control" id="DanhMucCha" required>
-                                    <option value="">Danh Mục Cha</option>
-                                    <option>Vest</option>
-                                    <option>Áo</option>
-                                    <option>Quần Dài</option>
-                                </select> </div>
-                            <div class="form-group"> <label for="NoiBat">Nổi Bật</label> <select class="form-control"
-                                    id="NoiBat" required>
-                                    <option value="">Nổi Bật</option>
-                                    <option>0</option>
-                                    <option>1</option>
-                                </select> </div>
+                                class="form-control" id="DanhMucCha" required>
+                                <option value="">Danh Mục Cha</option>
+                                <option>Vest</option>
+                                <option>Áo</option>
+                                <option>Quần Dài</option>
+                            </select> </div>
                             <div class="mb-3"> <label for="categoryDescription" class="form-label">Mô Tả</label>
                                 <textarea class="form-control" id="categoryDescription" rows="3"
-                                    placeholder="Nhập mô tả"></textarea>
-                            </div> <button type="submit" class="btn-custumize btn-lg">Thêm Danh Mục</button>
+                                    placeholder="Nhập mô tả"></textarea> </div> <button type="submit"
+                                class="btn-custumize btn-lg">Thêm Danh Mục</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- nofitication -->
-        <section id="admin-notification" class="admin-hide">
-            <div class="container">
-                <div class="admin-header">
-                    <h1 class="">Thông Báo Đến Người Dùng</h1>
-                    <div class="admin-header-right">
-                        <div class="input-group"> <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                            <button class="btn btn-primary" type="button"> <i class="fas fa-search"></i> </button>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <h2 class="text-center">Tạo Thông Báo</h2>
-                <form id="notificationForm">
-                    <div class="mb-3"> <label for="notificationTitle" class="form-label">Tiêu Đề Thông Báo</label>
-                        <input type="text" class="form-control" id="notificationTitle"
-                            placeholder="Nhập tiêu đề thông báo" required>
-                    </div>
-                    <div class="">
-                        <div class="form-group mb-3"> <label for="checkDangKy">Người Nhân Thông Báo</label> <select
-                                class="form-control" id="checkDangKy" required>
-                                <option value="">Chọn</option>
-                                <option>Chưa Đăng Ký</option>
-                                <option>Đã Đăng Ký</option>
-                                <option>Tất Cả Người Dùng</option>
-                                <option>Người Giao Hàng</option>
-                                <option>Nhân Viên</option>
-                                <option>Admin</option>
-                            </select> </div>
-                    </div>
-                    <div class="">
-                        <div class="form-group mb-3"> <label for="loaithongbao">Loại Thông Báo</label> <select
-                                class="form-control" id="loaithongbao" required>
-                                <option value="">Chọn</option>
-                                <option>Thông Báo Sản Phẩm Mới</option>
-                                <option>Thông Báo Khiến Mãi</option>
 
-                            </select> </div>
-                    </div>
-                    <div class="mb-3"> <label for="notificationContent" class="form-label">Nội Dung Thông Báo</label>
-                        <textarea class="form-control" id="notificationContent" rows="5"
-                            placeholder="Nhập nội dung thông báo" required></textarea>
-                    </div> <button type="submit" class="btn btn-primary">Gửi Thông Báo</button>
-                </form>
 
-                <!-- luu thong báo -->
-                <div class="container mt-5">
-                    <h2 class="text-center">Danh Sách Thông Báo</h2>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Tiêu Đề</th>
-                                <th>Người Nhận Thông Báo</th>
-                                <th>Loại Thông Báo</th>
-                                <th>Nội Dung</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Có vải mới</td>
-                                <td>Tất Cả Người Dùng</td>
-                                <td>Thông Báo Sản Phẩm Mới</td>
-                                <td>Chúng tôi vừa thêm một sản phẩm mới vào cửa hàng!</td>
-                            </tr>
-                            <tr>
-                                <td>Khuyến mãi hot</td>
-                                <td>Người Giao Hàng</td>
-                                <td>Thông Báo Khuyến Mãi</td>
-                                <td>GIẢM GIÁ 25% KHI NHẬP MÃ THREENTAILORED.</td>
-                            </tr>
-                            <tr>
-                                <td>Lại có hàng</td>
-                                <td>Nhân Viên</td>
-                                <td>Thông Báo Sản Phẩm Mới</td>
-                                <td>Sản phẩm mới đã có mặt tại kho.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-        </section>
-
-        <!-- report -->
-        <section id="admin-reports" class="admin-hide">
-            <div class="container mt-5">
-                <h2 class="text-center">Thông Báo Khách Hàng</h2>
-                <ul id="notificationList" class="list-group"> <!-- Thông báo sẽ được thêm vào đây --> </ul>
-        </section>
 
     </div>
     <!-- </div>
@@ -635,8 +463,8 @@
     <!-- <div id="footer"></div> -->
 
     <!-- js -->
-    <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
-    <script src="vendors/js/jquery-3.7.1.min.js"></script>
+    <script src="venders/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+    <script src="venders/js/jquery-3.7.1.min.js"></script>
     <script src="resources/js/main.js"></script>
 
 
