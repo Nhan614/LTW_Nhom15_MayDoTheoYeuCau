@@ -6,14 +6,13 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
 
 import java.util.List;
 
-
 public class SupplierDao {
     DBConnect dbConnect;
     public SupplierDao() {
         dbConnect = new DBConnect();
     }
     public List<Supplier> getAllSuppliers() {
-        String sql = "select * from supplier";
+        String sql = "select * from suppliers";
         return dbConnect.get().withHandle(handle -> {
             return handle.createQuery(sql).mapToBean(Supplier.class).list();
         });

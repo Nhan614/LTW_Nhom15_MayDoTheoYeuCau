@@ -4,16 +4,39 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String email;
+    private int userID;
+    private String avatar;
+    private String userName;
     private String password;
-    private String name;
+    private String fullName;
+    private String gmail;
+    private String phone;
+    private String address;
+    private boolean notificationCheck;
+    private int role;
 
-    public String getUsername() {
-        return email;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setUsername(String email) {
-        this.email = email;
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -24,20 +47,67 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public User(String email, String password, String name) {
-        this.email = email;
-        this.password = password;
-        this.name = name;
+    public String getGmail() {
+        return gmail;
     }
 
-    public User() {
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public boolean isNotificationCheck() {
+        return notificationCheck;
+    }
+
+    public void setNotificationCheck(boolean notificationCheck) {
+        this.notificationCheck = notificationCheck;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID=" + userID +
+                ", avatar='" + avatar + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", gmail='" + gmail + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", notificationCheck=" + notificationCheck +
+                ", role=" + role +
+                '}';
     }
 }

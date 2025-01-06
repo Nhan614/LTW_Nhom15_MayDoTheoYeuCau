@@ -22,15 +22,15 @@ public class LoginController extends HttpServlet {
 //        String pass = request.getParameter("pass");
 //        out.println("<p>email: " + email + "</p>");
 //        out.println("<p>Password: " + pass + "</p>");
-        String email= request.getParameter("email");
-        String pass= request.getParameter("pass");
-        AuthService service = new AuthService();
-        if(service.checkLogin(email,pass)) {
-            response.sendRedirect("home.jsp");
-        }else{
-            request.setAttribute("error","Dang Nhap Khong Thanh Cong");
-            request.getRequestDispatcher("login.jsp").forward(request,response);
-        }
+//        String email= request.getParameter("email");
+//        String pass= request.getParameter("pass");
+//        AuthService service = new AuthService();
+//        if(service.checkLogin(email,pass)) {
+//            response.sendRedirect("home.jsp");
+//        }else{
+//            request.setAttribute("error","Dang Nhap Khong Thanh Cong");
+//            request.getRequestDispatcher("login.jsp").forward(request,response);
+//        }
     }
 
 }

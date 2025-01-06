@@ -1,21 +1,22 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao;
 
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.db.DBConnect;
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserDao {
-    static Map<String, User> data= new HashMap<>();
-    static {
-        data.put("nghia@gmail.com",new User("nghia@gmail.com","123","nghia@gmail.com"));
-        data.put("nhan@gmail.com",new User("nhan@gmail.com","123","nhan@gmail.com"));
-        data.put("user@gmail.com",new User("user@gmail.com","123","user@gmail.com"));
-
-
+    DBConnect dbConnect;
+    public UserDao() {
+        dbConnect = new DBConnect();
     }
-
-    public User findUsername(String email) {
-        return data.get(email);
+    public List<Supplier> getAllSuppliers() {
+        String sql = "select * from supplier";
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createQuery(sql).mapToBean(Supplier.class).list();
+        });
     }
 }

@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model;
 
+
 import java.io.Serializable;
 
 public class Supplier implements Serializable {

@@ -59,18 +59,18 @@ $(document).on('click', '.user-editBtn', function () {
     $('#userModal').modal('show');
     $(this).closest('tr').remove();
 });
-$('#userForm').on('submit', function (e) {
-    e.preventDefault();
-    let userName = $('#userName').val();
-    let userEmail = $('#userEmail').val();
-    let userPhone = $('#userPhone').val();
-    let userCheck = $('#userCheck').val();
-    let userRole = $('#userRole').val();
-    let userRow = `<tr> <td>${userName}</td> <td>${userEmail}</td> <td>${userPhone}</td> <td>${userCheck}</td> <td>${userRole}</td> <td> <button class="btn btn-primary btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
-    $('#userList').append(userRow);
-    $('#userModal').modal('hide');
-    $('#userForm')[0].reset();
-});
+// $('#userForm').on('submit', function (e) {
+//     e.preventDefault();
+//     let userName = $('#userName').val();
+//     let userEmail = $('#userEmail').val();
+//     let userPhone = $('#userPhone').val();
+//     let userCheck = $('#userCheck').val();
+//     let userRole = $('#userRole').val();
+//     let userRow = `<tr> <td>${userName}</td> <td>${userEmail}</td> <td>${userPhone}</td> <td>${userCheck}</td> <td>${userRole}</td> <td> <button class="btn btn-primary btn-sm editBtn">Sửa</button> <button class="btn btn-danger btn-sm deleteBtn">Xóa</button> </td> </tr>`;
+//     $('#userList').append(userRow);
+//     $('#userModal').modal('hide');
+//     $('#userForm')[0].reset();
+// });
 $(document).on('click', '.deleteBtn', function () {
     $(this).closest('tr').remove();
 });
