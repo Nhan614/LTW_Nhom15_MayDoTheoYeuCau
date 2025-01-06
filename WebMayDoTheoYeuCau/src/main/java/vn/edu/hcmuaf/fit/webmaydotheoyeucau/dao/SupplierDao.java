@@ -1,22 +1,25 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao;
 
+import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.db.DBConnect;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
-import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class UserDao {
+public class SupplierDao {
     DBConnect dbConnect;
-    public UserDao() {
+    public SupplierDao() {
         dbConnect = new DBConnect();
     }
     public List<Supplier> getAllSuppliers() {
-        String sql = "select * from supplier";
+        String sql = "select * from suppliers";
         return dbConnect.get().withHandle(handle -> {
             return handle.createQuery(sql).mapToBean(Supplier.class).list();
         });
+    }
+
+    public static void main(String[] args) {
+        SupplierDao supplierDao = new SupplierDao();
+        System.out.println(supplierDao.getAllSuppliers());
     }
 }
