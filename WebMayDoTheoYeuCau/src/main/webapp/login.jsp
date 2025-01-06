@@ -63,7 +63,7 @@
                         <div class="forgot-password animation" style="--i:3;--j:14">
                             <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
                         </div>
-                        <a href="admin.jsp#admin-dashboard" type="submit" class="btn animation "
+                        <a href="admin.jsp" type="submit" class="btn animation "
                                 style="--i:4; --j:15">Đăng nhập </a>
                         <div class="logreg-link animation" style="--i:5; --j:16">
                             <p>Bạn chưa có tài khoản? <a href="#" class="register-link">Đăng ký</a></p>
