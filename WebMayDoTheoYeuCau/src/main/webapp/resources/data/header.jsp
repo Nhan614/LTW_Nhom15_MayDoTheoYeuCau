@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
     <div id="header">
@@ -96,20 +97,34 @@
                         </li>
                     </div>
                     <!-- ------------login ------------- -->
+
+
+                    <%
+                        // Lấy thông tin người dùng từ session
+                        User user = (User) session.getAttribute("auth");
+                    %>
+
                     <li class="nav-item dropdown">
                         <div class="user-box">
-                            <a href="profile.jsp"><i class="fa-regular fa-user fa-xl"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end pt-2 m-2">
-                                <li><a id="adress-form" href="login.jsp#login-form" class="dropdown-item">Đăng
-                                        Nhập</a>
-                                </li>
-                                <li><a class="dropdown-item" href="login.jsp#signup-form">Đăng Ký</a></li>
+                            <% if (user != null) { %> <!-- Nếu người dùng đã đăng nhập -->
 
+                            <a class="dropdown-item" href="profile.jsp">
+                            <img src="<%= user.getAvatar() %>" alt="Avatar" class="avatar-img" style="width: 40px; height: 40px; border-radius: 50%;">
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end pt-2 m-2">
+                                <li><a class="dropdown-item" href="logout">Đăng Xuất</a></li>
+<%--                                <a class="dropdown-item" href="profile.jsp"></a>--%>
                             </ul>
+                            <% } else { %> <!-- Nếu người dùng chưa đăng nhập -->
+                            <a href="#"><i class="fa-regular fa-user fa-xl"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end pt-2 m-2">
+                                <li><a id="adress-form" href="login.jsp#login-form" class="dropdown-item">Đăng Nhập</a></li>
+                                <li><a class="dropdown-item" href="login.jsp#signup-form">Đăng Ký</a></li>
+                            </ul>
+                            <% } %>
                         </div>
                     </li>
-
-
 
                     <!-- shop -->
                     <div class="cart-box">
