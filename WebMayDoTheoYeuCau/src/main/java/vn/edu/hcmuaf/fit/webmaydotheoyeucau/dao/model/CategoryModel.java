@@ -9,8 +9,7 @@ public class CategoryModel implements java.io.Serializable {
     private int categoryParentID;
 
     public CategoryModel() {}
-    public CategoryModel(int id, String categoryName, String description, int state, int categoryParentID) {
-        this.id = id;
+    public CategoryModel(String categoryName, int categoryParentID , int state,String description ) {
         this.categoryName = categoryName;
         this.description = description;
         this.state = state;

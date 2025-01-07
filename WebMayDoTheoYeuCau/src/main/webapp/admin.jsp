@@ -469,9 +469,6 @@
 
     <!-- Danh mục  -->
     <section id="admin-categories" class="admin-hide">
-        <%
-            List<CategoryModel> categories = (List<CategoryModel>) request.getAttribute("categories");
-        %>
         <!-- <br><br><br> -->
         <!--  -->
         <div class="container">
@@ -495,7 +492,7 @@
                             <th>ID</th>
                             <th>Tên Danh Mục</th>
                             <th>Danh Mục Cha</th>
-                            <th>Nổi Bật</th>
+                            <th>Trạng Thái</th>
                             <th>Mô Tả</th>
                             <th>Hành Động</th>
                         </tr>
@@ -513,7 +510,7 @@
                     <h2>Thêm Danh Mục Mới</h2>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form id="addCategoryForm" action="categories" method="POST">
                         <div class="mb-3"><label for="categoryName" class="form-label">Tên Danh Mục</label> <input
                                 type="text" class="form-control" id="categoryName" placeholder="Nhập tên danh mục"
                                 required>
@@ -523,15 +520,13 @@
                         <div class="form-group"><label for="DanhMucCha">Danh Mục Cha</label> <select
                                 class="form-control" id="DanhMucCha" required>
                             <option value="">Danh Mục Cha</option>
-                            <option>Vest</option>
-                            <option>Áo</option>
-                            <option>Quần Dài</option>
+
                         </select></div>
-                        <div class="form-group"><label for="NoiBat">Nổi Bật</label> <select class="form-control"
-                                                                                            id="NoiBat" required>
-                            <option value="">Nổi Bật</option>
-                            <option>0</option>
-                            <option>1</option>
+                        <div class="form-group"><label for="TrangThai">Trạng Thái</label> <select class="form-control"
+                                                                                            id="TrangThai" required>
+                            <option value="0">Ẩn</option>
+                            <option value="1">Hiện</option>
+                            <option value="2">Nổi Bật</option>
                         </select></div>
                         <div class="mb-3"><label for="categoryDescription" class="form-label">Mô Tả</label>
                             <textarea class="form-control" id="categoryDescription" rows="3"
