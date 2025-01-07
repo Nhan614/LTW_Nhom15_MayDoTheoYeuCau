@@ -15,37 +15,39 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+
+        // Section: Kiểm tra trạng thái đăng nhập
         if (session.getAttribute("auth") == null) {
             request.getRequestDispatcher("/login.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("home.jsp");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Section: Thu thập dữ liệu từ form
+        String email = request.getParameter("email");
+        String pass = request.getParameter("pass");
 
-        String email= request.getParameter("email");
-        String pass= request.getParameter("pass");
-
+        // Section: Xử lý đăng nhập với AuthService
         AuthService service = new AuthService();
-
         User user = service.checkLogin(email, pass);
 
-
+        // Section: Phân quyền và chuyển hướng
         if (user != null) {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("auth", user);
-//
-//            response.sendRedirect("./index.jsp");
-            if (user.getRole() == 1) {
+            HttpSession session = request.getSession();
+            session.setAttribute("auth", user);
+
+            if (user.getRole() == 1) { // Admin
                 request.getRequestDispatcher("admin.jsp").forward(request, response);
-            } else {
+            } else { // User thông thường
                 request.getRequestDispatcher("home.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("error", "Dang Nhap Khong Thanh Cong");
+            // Section: Thông báo lỗi nếu đăng nhập không thành công
+            request.setAttribute("error", "Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin.");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-
     }
-
 }
