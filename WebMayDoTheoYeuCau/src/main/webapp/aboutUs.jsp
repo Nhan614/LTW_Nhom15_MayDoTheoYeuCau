@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - THREEN TAILORED</title>
   <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/x-icon">
-  <script src="venders/js/jquery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="venders/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="venders/fontawesome-free-6.6.0-web/css/all.min.css">
+  <script src="vendors/js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
   <link rel="stylesheet" href="resources/css/aboutStyle.css">
   <link rel="stylesheet" href="resources/css/style.css">
 
 </head>
 <body>
   <!-- header -->
-  <div id="menubar"></div>
+  <div id="menubar"><%@ include file="resources/data/header.jsp"%></div>
 
   <!-- section 1 -->
 <section id="sec1">
@@ -43,7 +44,7 @@
                     Khách hàng có thể lựa chọn từ các bộ vest, áo sơ mi, quần, áo blazer, áo khoác, áo choàng, quần chino và phụ kiện;
                     mỗi sản phẩm đều có thể được cá nhân hóa chỉ với vài thao tác đơn giản, mang đến trải nghiệm may đo hoàn hảo, nhanh chóng và liền mạch.
                 </p>
-                <a href="home.html" class="about-btn btn-link mt-3">START NOW &gt;</a>
+                <a href="home.jsp" class="about-btn btn-link mt-3">START NOW &gt;</a>
             </div>
 
             <!-- Right Image Section -->
@@ -93,7 +94,7 @@
                       Tập đoàn bao gồm: <strong>Successori Reda</strong>, một nhà máy sản xuất len lịch sử, đã sản xuất vải cao cấp <strong>Made in Vietnam</strong> suốt hơn 150 năm; <strong>Rewoolution</strong>, dòng sản phẩm thể thao và thư giãn từ len Merino tự nhiên thân thiện với môi trường; và <strong>Tailoor</strong>,
                       nền tảng thương mại điện tử phygital đầu tiên cho phép tạo ra các sản phẩm tùy chỉnh.
                   </p>
-                  <a href="home.html" class="about-btn btn-link mt-3">MADE IN VIETNAM &gt;</a>
+                  <a href="home.jsp" class="about-btn btn-link mt-3">MADE IN VIETNAM &gt;</a>
               </div>
           </div>
       </div>
@@ -198,10 +199,10 @@
 </script>
 
 <!-- footer -->
-<div id="footer"></div>
+<div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 
-<script src="venders/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-<script src="./resources/js/main.js"></script>
+<script src="vendors/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<%--<script src="./resources/js/main.js"></script>--%>
 <script src="resources/js/quit.js"></script>
 <script src="resources/js/backtotop.js"></script>
 
