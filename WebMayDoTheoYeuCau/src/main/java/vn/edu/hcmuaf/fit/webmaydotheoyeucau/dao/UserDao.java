@@ -12,6 +12,7 @@ import java.util.Map;
 public class UserDao {
 
     DBConnect dbConnect;
+
     public UserDao() {
         dbConnect = new DBConnect();
 
@@ -23,7 +24,8 @@ public class UserDao {
             return handle.createQuery(sql).mapToBean(User.class).list();
         });
     }
-    public List<User> checkUser(String gmail , String password) {
+
+    public List<User> checkUser(String gmail, String password) {
         String sql = "SELECT * FROM users WHERE gmail = :gmail AND password = :password";
 
         return dbConnect.get().withHandle(handle -> {
@@ -31,11 +33,36 @@ public class UserDao {
         });
     }
 
+    public boolean updateUser(User user) {
+        String sql = "UPDATE users SET fullName = ?, gmail = ?, phone = ?, address = ?, avatar = ?, notificationCheck = ?, role = ? WHERE id = ?";
 
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind(0, user.getFullName())  // Bind fullName
+                        .bind(1, user.getGmail())     // Bind email
+                        .bind(2, user.getPhone())     // Bind phone
+                        .bind(3, user.getAddress())   // Bind address
+                        .bind(4, user.getAvatar())    // Bind avatar
+                        .bind(5, user.getNotificationCheck())  // Bind notificationCheck (boolean)
+                        .bind(6, user.getRole())      // Bind role
+                        .bind(7, user.getId())        // Bind the user ID for WHERE clause
+                        .execute() > 0               // If the update was successful, return true
+        );
+    }
+
+
+    public List<User> getUsersForAdmin() {
+        String sql = "SELECT id, avatar, fullName, gmail, phone, address, notificationCheck, role FROM users";
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createQuery(sql)
+                    .mapToBean(User.class)  // Maps each row of the result set to a User object
+                    .list();                // Collects the results in a list and returns it
+        });
+    }
 
 
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
-        System.out.println(userDao.checkUser("admin@gmail.com", "1234"));
+        System.out.println(userDao.updateUser(new User(2, "ff", "Nghia11", "n@nlu.com", "111111", "la", 0, 1)));
     }
 }

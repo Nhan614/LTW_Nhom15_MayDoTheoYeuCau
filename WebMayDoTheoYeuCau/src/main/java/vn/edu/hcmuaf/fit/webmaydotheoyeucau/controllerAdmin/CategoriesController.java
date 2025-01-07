@@ -33,7 +33,6 @@ public class CategoriesController extends HttpServlet {
         // Write the JSON to the response output stream
         response.getWriter().write(categoriesJson);
 
-
     }
 
     @Override

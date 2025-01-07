@@ -17,6 +17,7 @@ $(document).ready(function (e) {
     });
 
     $('.admin-sidebar-5').click(function (e) {
+        loadUsers();
         $('section').addClass('admin-hide');
         $('#admin-user').removeClass('admin-hide');
         $('.sidebar li').removeClass('sidebar-active');
@@ -67,6 +68,7 @@ $(document).ready(function (e) {
         $('.admin-sidebar-2').addClass('sidebar-active')
     }
     if (window.location.hash === '#admin-user') {
+        loadUsers();
         $('#admin-user').removeClass('admin-hide')
         $('.admin-sidebar-5').addClass('sidebar-active')
     }
@@ -252,10 +254,6 @@ $(document).on('click', '.editCategory-btn', function () {
     });
 });
 
-
-
-
-
 function updateCategory() {
     var id = $('#categoryId').val();
     var categoryName = $('#categoryName').val();
@@ -322,3 +320,113 @@ function clearFormCategory() {
         event.preventDefault();
     });
 }
+
+// -------------------------------------------- User ----------------------------------------------
+
+function loadUsers() {
+    $.ajax({
+        url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/userManagerController',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            $('#userList').empty(); // Clear existing rows
+
+            data.forEach(function (user) {
+                var row = $('<tr></tr>');
+                var avatarUrl = user.avatar; // Default avatar if no avatar exists
+                // https://gcs.tripi.vn/public-tripi/tripi-feed/img/476436UNs/anh-mo-ta.png
+                // Adding avatar with a fixed size of 50x50px
+                row.append('<td>' + user.id + '</td>');
+                row.append('<td><img src="' + avatarUrl + '" alt="Avatar" class="avatar-thumbnail"></td>');
+                row.append('<td>' + user.fullName + '</td>');
+                row.append('<td>' + user.gmail + '</td>');
+                row.append('<td>' + user.phone + '</td>');
+                row.append('<td>' + user.address + '</td>');
+                row.append('<td>' + (user.notificationCheck ? 'Đã Đăng Ký' : 'Chưa Đăng Ký') + '</td>');
+                row.append('<td>' + (user.role === 1 ? 'Admin' : user.role === 2 ? 'Nhân Viên' : 'Người Dùng') + '</td>');
+                row.append('<td>' +
+                    '<button class="btn btn-primary btn-sm user-editBtn" data-id="' + user.id + '">Sửa</button>' +
+                    ' <button class="btn btn-danger btn-sm deleteBtn" data-id="' + user.id + '">Xóa</button>' +
+                    '</td>');
+                $('#userList').append(row);
+            });
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching users: " + error);
+        }
+    });
+}
+
+// Khi nhấn nút Edit User
+$(document).on('click', '.user-editBtn', function () {
+    let row = $(this).closest('tr');
+
+    // Lấy thông tin từ hàng
+    let id = row.find('td:eq(0)').text(); // ID người dùng
+    let avatarUrl = row.find('td:eq(1) img').attr('src'); // URL ảnh đại diện
+    let fullName = row.find('td:eq(2)').text(); // Tên người dùng
+    let email = row.find('td:eq(3)').text(); // Email
+    let phone = row.find('td:eq(4)').text(); // Số điện thoại
+    let address = row.find('td:eq(5)').text(); // Địa chỉ
+    let notificationCheck = row.find('td:eq(6)').text() === 'Đã Đăng Ký' ? 1 : 0; // Đăng Ký
+    let role = row.find('td:eq(7)').text() === 'Admin' ? 1 : (row.find('td:eq(7)').text() === 'Nhân Viên' ? 2 : 3); // Vai Trò
+
+    // Điền thông tin vào form
+    $('#userId').val(id); // Điền ID vào hidden input
+    $('#userAvatarPreview').attr('src', avatarUrl); // Hiển thị ảnh đại diện
+    $('#userAvatarUrl').val(avatarUrl); // Hiển thị URL ảnh đại diện
+    $('#userName').val(fullName);
+    $('#userEmail').val(email);
+    $('#userPhone').val(phone);
+    $('#userAddress').val(address);
+    $('#userCheck').val(notificationCheck);
+    $('#userRole').val(role);
+
+    // Hiển thị modal
+    $('#userModal').modal('show');
+});
+
+// Cập nhật người dùng
+function updateUser() {
+    // Lấy dữ liệu từ form
+    let id = $('#userId').val(); // Lấy ID từ hidden input
+    let avatar = $('#userAvatarUrl').val();
+    let fullName = $('#userName').val();
+    let email = $('#userEmail').val();
+    let phone = $('#userPhone').val();
+    let address = $('#userAddress').val();
+    let notificationCheck = parseInt($('#userCheck').val());
+    let role = parseInt($('#userRole').val());
+
+    // Gửi yêu cầu PUT đến API
+    $.ajax({
+        url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/userManagerController',
+        type: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            id: id,
+            avatar: avatar,
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            address: address,
+            notificationCheck: notificationCheck,
+            role: role
+        }),
+        success: function (response) {
+            alert(response.message || 'Cập nhật thành công!');
+            $('#userModal').modal('hide'); // Ẩn modal
+            loadUsers(); // Tải lại danh sách người dùng
+        },
+        error: function (xhr, status, error) {
+            console.error('Error updating user:', error);
+            alert('Cập nhật không thành công. Vui lòng thử lại!');
+        }
+    });
+}
+
+// Gọi hàm updateUser khi nhấn nút "Lưu Thay Đổi"
+$('#userForm').on('submit', function (event) {
+    event.preventDefault(); // Ngăn form reload trang
+    updateUser();
+});

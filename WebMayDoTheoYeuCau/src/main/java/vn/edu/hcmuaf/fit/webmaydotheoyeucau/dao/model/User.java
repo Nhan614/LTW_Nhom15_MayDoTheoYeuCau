@@ -4,24 +4,22 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private int userID;
+    private int id;
     private String avatar;
-
     private String password;
     private String fullName;
     private String gmail;
     private String phone;
     private String address;
-    private boolean notificationCheck;
+    private int notificationCheck;
     private int role;
 
     public User() {
     }
 
-    public User(int userID, String avatar,  String password, String fullName, String gmail, String phone, String address, boolean notificationCheck, int role) {
-        this.userID = userID;
+    public User(int id, String avatar,  String password, String fullName, String gmail, String phone, String address, int notificationCheck, int role) {
+        this.id = id;
         this.avatar = avatar;
-
         this.password = password;
         this.fullName = fullName;
         this.gmail = gmail;
@@ -30,13 +28,23 @@ public class User implements Serializable {
         this.notificationCheck = notificationCheck;
         this.role = role;
     }
-
-    public int getUserID() {
-        return userID;
+    public User(int id, String avatar, String fullName, String gmail, String phone, String address, int notificationCheck, int role) {
+        this.id = id;
+        this.avatar = avatar;
+        this.fullName = fullName;
+        this.gmail = gmail;
+        this.phone = phone;
+        this.address = address;
+        this.notificationCheck = notificationCheck;
+        this.role = role;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getAvatar() {
@@ -46,8 +54,6 @@ public class User implements Serializable {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
-
 
     public String getPassword() {
         return password;
@@ -89,11 +95,11 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public boolean isNotificationCheck() {
+    public int getNotificationCheck() {
         return notificationCheck;
     }
 
-    public void setNotificationCheck(boolean notificationCheck) {
+    public void setNotificationCheck(int notificationCheck) {
         this.notificationCheck = notificationCheck;
     }
 
@@ -108,9 +114,8 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "userID=" + userID +
+                "id=" + id +
                 ", avatar='" + avatar + '\'' +
-
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", gmail='" + gmail + '\'' +

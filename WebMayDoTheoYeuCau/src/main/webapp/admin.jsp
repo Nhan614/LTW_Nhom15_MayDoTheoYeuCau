@@ -269,97 +269,98 @@
 
     <!-- User  -->
     <section id="admin-user" class="admin-hide">
-        <!-- <br><br><br> -->
-        <!--  -->
         <div class="container">
             <div class="admin-header">
-                <h1 class="">Quản Lý Người Dùng</h1>
+                <h1>Quản Lý Người Dùng</h1>
                 <div class="admin-header-right">
-                    <div class="input-group"><input type="text" class="form-control" placeholder="Tìm kiếm...">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
                         <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-
             </div>
             <hr>
             <h3 class="text-center">Danh Sách Người Dùng</h3>
             <table class="table table-bordered">
                 <thead>
                 <tr>
+                    <th>ID</th>
+                    <th>Ảnh Đại Diện</th>
                     <th>Tên Người Dùng</th>
                     <th>Email</th>
                     <th>Số Điện Thoại</th>
+                    <th>Địa Chỉ</th>
                     <th>Đăng Ký</th>
                     <th>Vai Trò</th>
                     <th>Hành Động</th>
                 </tr>
                 </thead>
-                <tbody id="userList"> <!-- Danh sách người dùng sẽ được thêm vào đây -->
-                <tr>
-                    <td>Lai Nhân Nghĩa</td>
-                    <td>nghia@nlu.com</td>
-                    <td>0123456789</td>
-                    <td>0</td>
-                    <td>Admin</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm user-editBtn">Sửa</button>
-                        <button
-                                class="btn btn-danger btn-sm deleteBtn">Xóa
-                        </button>
-                    </td>
-                </tr>
+                <tbody id="userList">
+                <!-- User data will be dynamically added here -->
                 </tbody>
-            </table> <!-- The Modal -->
+            </table>
+
+            <!-- Modal for Editing User -->
             <div class="modal" id="userModal">
                 <div class="modal-dialog">
-                    <div class="modal-content"> <!-- Modal Header -->
+                    <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Sửa Người Dùng</h4>
-                            <!-- <button type="button" class="close"
-                                data-dismiss="modal">&times;</button> -->
-                        </div> <!-- Modal Body -->
+                        </div>
                         <div class="modal-body">
-                            <form id="userForm" action="UserController" method="POST">
-                                <div class="form-group"><label for="userName">Tên Người Dùng</label> <input
-                                        type="text" class="form-control" id="userName"
-                                        placeholder="Nhập tên người dùng" required readonly></div>
-                                <div class="form-group"><label for="userEmail">Email</label> <input type="email"
-                                                                                                    class="form-control"
-                                                                                                    id="userEmail"
-                                                                                                    placeholder="Nhập email"
-                                                                                                    required
-                                                                                                    readonly>
+                            <form id="userForm">
+                                <input type="hidden" id="userId" name="userId">
+                                <div class="form-group">
+                                    <img id="userAvatarPreview" src="" alt="Avatar Preview"
+                                         class="avatar-thumbnail mt-2">
+                                    <input type="text" class="form-control mt-2" id="userAvatarUrl"
+                                           placeholder="URL của Avatar">
                                 </div>
-                                <div class="form-group"><label for="userPhone">Số Điện Thoại</label> <input
-                                        type="number" class="form-control" id="userPhone"
-                                        placeholder="Nhập số điện thoại" required readonly></div>
-                                <div class="form-group"><label for="userCheck">Đăng Ký</label> <select
-                                        class="form-control" id="userCheck" required>
-
-                                    <option>0</option>
-                                    <option>1</option>
-                                </select></div>
-                                <div class="form-group"><label for="userRole">Vai Trò</label> <select
-                                        class="form-control" id="userRole" required>
-                                    <option value="">Chọn vai trò</option>
-                                    <option>Người Dùng</option>
-                                    <option>Người Giao Hàng</option>
-                                    <option>Nhân Viên</option>
-                                    <option>Admin</option>
-                                </select></div>
-                                <button type="submit" class="btn-custumize btn-lg mt-2">Lưu
-                                    Thay
-                                    Đổi
-                                </button>
+                                <div class="form-group">
+                                    <label for="userName">Tên Người Dùng</label>
+                                    <input type="text" class="form-control" id="userName"
+                                           placeholder="Nhập tên người dùng" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email</label>
+                                    <input type="email" class="form-control" id="userEmail" placeholder="Nhập email"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Số Điện Thoại</label>
+                                    <input type="number" class="form-control" id="userPhone"
+                                           placeholder="Nhập số điện thoại" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userAddress">Địa Chỉ</label>
+                                    <input type="text" class="form-control" id="userAddress" placeholder="Nhập địa chỉ"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userCheck">Đăng Ký</label>
+                                    <select class="form-control" id="userCheck" required>
+                                        <option value="0">Chưa Đăng Ký</option>
+                                        <option value="1">Đã Đăng Ký</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userRole">Vai Trò</label>
+                                    <select class="form-control" id="userRole" required>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Nhân Viên</option>
+                                        <option value="3">Người Dùng</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn-custumize btn-lg mt-2">Lưu Thay Đổi</button>
                             </form>
-                        </div> <!-- Modal Footer -->
-                        <!-- <div class="modal-footer"> <button type="button" class="btn btn-danger"
-                                data-dismiss="modal">Đóng</button> </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
+
 
     <!-- Đơn hàng  -->
     <section id="admin-orders" class="admin-hide">
@@ -523,7 +524,8 @@
 
                         </select></div>
                         <div class="form-group"><label for="TrangThai">Trạng Thái</label> <select class="form-control"
-                                                                                            id="TrangThai" required>
+                                                                                                  id="TrangThai"
+                                                                                                  required>
                             <option value="0">Ẩn</option>
                             <option value="1">Hiện</option>
                             <option value="2">Nổi Bật</option>
