@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="input-box animation" style="--i:2; --j:13">
-                            <input type="password" id="password" name="pass" required>
+                            <input type="password" id="pass" name="pass" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>
@@ -64,8 +64,9 @@
                             <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
                         </div>
 <%--                        <a href="admin.jsp" type="submit" class="btn animation "--%>
-                        <a href="#" type="submit" class="btn animation "
-                           style="--i:4; --j:15">Đăng nhập </a>
+<%--                        <a href="#" type="submit" class="btn animation "--%>
+                        <button type="submit" class="btn animation"
+                                style="--i:4; --j:15">Đăng nhập </button>
                         <div class="logreg-link animation" style="--i:5; --j:16">
                             <p>Bạn chưa có tài khoản? <a href="#" class="register-link">Đăng ký</a></p>
 
