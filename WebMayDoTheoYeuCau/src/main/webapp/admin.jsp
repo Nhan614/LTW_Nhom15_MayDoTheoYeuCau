@@ -1,4 +1,7 @@
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.CategoryModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -355,6 +358,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Đơn hàng  -->
@@ -465,6 +469,9 @@
 
     <!-- Danh mục  -->
     <section id="admin-categories" class="admin-hide">
+        <%
+            List<CategoryModel> categories = (List<CategoryModel>) request.getAttribute("categories");
+        %>
         <!-- <br><br><br> -->
         <!--  -->
         <div class="container">
@@ -493,59 +500,9 @@
                             <th>Hành Động</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Trang Phục</td>
-                            <td>Không Có</td>
-                            <td>0</td>
-                            <td>Không Có</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">Sửa</button>
-                                <button
-                                        class="btn btn-danger btn-sm">Xóa
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Phụ Kiện</td>
-                            <td>Không Có</td>
-                            <td>0</td>
-                            <td>Không Có</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">Sửa</button>
-                                <button
-                                        class="btn btn-danger btn-sm">Xóa
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Áo Sơ Mi</td>
-                            <td>Áo</td>
-                            <td>1</td>
-                            <td>Loại vải tốt nhất</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">Sửa</button>
-                                <button
-                                        class="btn btn-danger btn-sm">Xóa
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Quần Âu</td>
-                            <td>Quần Dài</td>
-                            <td>1</td>
-                            <td>Chất lượng hàng đầu</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">Sửa</button>
-                                <button
-                                        class="btn btn-danger btn-sm">Xóa
-                                </button>
-                            </td>
-                        </tr>
+                        <tbody id="categories-tbody">
+
+
                         <!-- Thêm các hàng khác tại đây -->
                         </tbody>
                     </table>
@@ -667,6 +624,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
     </section>
 
     <!-- report -->
@@ -674,6 +632,7 @@
         <div class="container mt-5">
             <h2 class="text-center">Thông Báo Khách Hàng</h2>
             <ul id="notificationList" class="list-group"> <!-- Thông báo sẽ được thêm vào đây --> </ul>
+        </div>
     </section>
 
 </div>
@@ -684,7 +643,7 @@
 <!-- <div id="footer"></div> -->
 
 <!-- js -->
-<script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
+<script src="vendors/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/js/jquery-3.7.1.min.js"></script>
 <script src="resources/js/main.js"></script>
 

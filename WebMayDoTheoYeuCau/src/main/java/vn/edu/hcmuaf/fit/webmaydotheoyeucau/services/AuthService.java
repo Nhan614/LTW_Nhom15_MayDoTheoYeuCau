@@ -10,4 +10,19 @@ public class AuthService {
 //        if(u==null)  return false;
 //        return pass.equals(u.getPassword());
 //    }
+
+    public User checkLogin(String email, String passWord) {
+        UserDao uDao = new UserDao();
+
+        User user = uDao.listUser.get(email);
+
+        if (user != null) {
+            if (user.getPassword().equals(passWord)) {
+                user.setPassword(null);
+                return user;
+            }
+        }
+        return null;
+    }
 }
+

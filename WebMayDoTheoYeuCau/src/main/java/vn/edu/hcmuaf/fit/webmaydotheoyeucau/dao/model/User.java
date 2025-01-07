@@ -15,6 +15,22 @@ public class User implements Serializable {
     private boolean notificationCheck;
     private int role;
 
+    public User() {
+    }
+
+    public User(int userID, String avatar, String userName, String password, String fullName, String gmail, String phone, String address, boolean notificationCheck, int role) {
+        this.userID = userID;
+        this.avatar = avatar;
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.gmail = gmail;
+        this.phone = phone;
+        this.address = address;
+        this.notificationCheck = notificationCheck;
+        this.role = role;
+    }
+
     public int getUserID() {
         return userID;
     }
