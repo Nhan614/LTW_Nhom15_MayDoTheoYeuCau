@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/forgotPassword.css">
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
 <body>
@@ -41,10 +42,11 @@
                         <input type="email" id="email" class="email-input" placeholder="Email">
                     </div>
                 </div>
-                <a href="../../../../layLaiMatKhau.html"><button class="reset-button" disabled>Đặt lại mật khẩu</button></a>
+                <a href="layLaiMatKhau.jsp"><button class="reset-button" disabled>Đặt lại mật khẩu</button></a>
                 <div class="auth-links">
-                    <a href="../../../../signup.html#login-form" class="login-link">Đăng nhập</a>
-                    <a href="../../../../signup.html#signup-form" class="register-link">Đăng ký</a>
+                    <a href="login.jsp#login-form" class="login-link">Đăng nhập</a>
+                    <a href="login.jsp#signup-form" class="register-link">Đăng ký</a>
+
                 </div>
             </div>
         </div>

@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="nhom15">
-    <output-path>$PROJECT_DIR$/out/artifacts/nhom15</output-path>
-    <root id="root" />
-  </artifact>
-</component>

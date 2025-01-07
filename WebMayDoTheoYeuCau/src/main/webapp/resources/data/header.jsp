@@ -100,10 +100,10 @@
                         <div class="user-box">
                             <a href="profile.jsp"><i class="fa-regular fa-user fa-xl"></i></a>
                             <ul class="dropdown-menu dropdown-menu-end pt-2 m-2">
-                                <li><a id="adress-form" href="signup.jsp#login-form" class="dropdown-item">Đăng
+                                <li><a id="adress-form" href="login.jsp#login-form" class="dropdown-item">Đăng
                                         Nhập</a>
                                 </li>
-                                <li><a class="dropdown-item" href="signup.jsp#signup-form">Đăng Ký</a></li>
+                                <li><a class="dropdown-item" href="login.jsp#signup-form">Đăng Ký</a></li>
 
                             </ul>
                         </div>

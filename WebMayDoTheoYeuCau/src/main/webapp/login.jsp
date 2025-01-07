@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <!----------------- sign up------------ -->
+    <!----------------- login------------ -->
     <div class="signup">
         <div class="container">
             <div class="wrapper">
@@ -56,14 +56,14 @@
                         </div>
 
                         <div class="input-box animation" style="--i:2; --j:13">
-                            <input type="password" id="password" name="pass" required>
+                            <input type="password" id="pass" name="pass" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>
                         <div class="forgot-password animation" style="--i:3;--j:14">
                             <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
                         </div>
-<%--                        <a href="admin.jsp#admin-dashboard" type="submit" class="btn animation "--%>
+<%--                        <a href="admin.jsp" type="submit" class="btn animation "--%>
 <%--                        <a href="#" type="submit" class="btn animation "--%>
                         <button type="submit" class="btn animation"
                                 style="--i:4; --j:15">Đăng nhập </button>
