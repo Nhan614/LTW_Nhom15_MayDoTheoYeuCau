@@ -20,6 +20,13 @@ public class CategoriesService {
     public boolean addCategory(CategoryModel category) {
         return categoryDao.addCategory(category); // Delegate to DAO
     }
+    public boolean updateCategory(CategoryModel category) {
+        CategoryDao categoryDao = new CategoryDao();
+        return categoryDao.updateCategory(category);
+    }
+    public boolean deleteCategory(int id) {
+        return categoryDao.deleteCategory(id);
+    }
 
     public static void main(String[] args) {
         System.out.println(new CategoriesService().getAllCategories());

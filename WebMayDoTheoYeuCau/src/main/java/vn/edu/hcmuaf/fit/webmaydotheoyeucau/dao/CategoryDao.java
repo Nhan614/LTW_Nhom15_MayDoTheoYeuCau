@@ -46,6 +46,28 @@ public class CategoryDao {
         return false;
     }
 
+    public boolean updateCategory(CategoryModel category) {
+        String sql = "UPDATE categories SET categoryName = ?, description = ?, state = ?, categoryParentID = ? WHERE id = ?";
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind(0, category.getCategoryName())
+                        .bind(1, category.getDescription())
+                        .bind(2, category.getState())
+                        .bind(3, category.getCategoryParentID())
+                        .bind(4, category.getId())
+                        .execute() > 0
+        );
+    }
+
+    public boolean deleteCategory(int id) {
+        String sql = "DELETE FROM categories WHERE id = :id";
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("id", id)
+                        .execute() > 0
+        );
+    }
+
     public static void main(String[] args) {
         CategoryDao categoryDao = new CategoryDao();
         System.out.println(categoryDao.getAllCategories());

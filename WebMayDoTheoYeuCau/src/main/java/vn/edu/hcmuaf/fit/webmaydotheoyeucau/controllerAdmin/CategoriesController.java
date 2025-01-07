@@ -82,6 +82,87 @@ public class CategoriesController extends HttpServlet {
     
     }
 
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        try {
+            // Đọc JSON từ request body
+            StringBuilder jsonBuffer = new StringBuilder();
+            String line;
+            try (BufferedReader reader = request.getReader()) {
+                while ((line = reader.readLine()) != null) {
+                    jsonBuffer.append(line);
+                }
+            }
+            String json = jsonBuffer.toString();
+
+            // Chuyển JSON thành đối tượng CategoryModel
+            Gson gson = new Gson();
+            CategoryModel category = gson.fromJson(json, CategoryModel.class);
+
+            // Gọi service để cập nhật danh mục
+            CategoriesService categoryService = new CategoriesService();
+            boolean isUpdated = categoryService.updateCategory(category);
+
+            // Trả về response
+            JsonObject jsonResponse = new JsonObject();
+            if (isUpdated) {
+                jsonResponse.addProperty("message", "Category updated successfully");
+                response.setStatus(HttpServletResponse.SC_OK);
+            } else {
+                jsonResponse.addProperty("message", "Failed to update category");
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+            response.getWriter().write(gson.toJson(jsonResponse));
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"message\": \"Invalid JSON format\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("{\"message\": \"Error processing request: " + e.getMessage() + "\"}");
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        try {
+            // Lấy ID từ query string
+            String idParam = request.getParameter("id");
+            if (idParam == null || idParam.isEmpty()) {
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                response.getWriter().write("{\"message\": \"Category ID is required\"}");
+                return;
+            }
+
+            int categoryId = Integer.parseInt(idParam);
+
+            // Gọi service để xóa danh mục
+            CategoriesService categoryService = new CategoriesService();
+            boolean isDeleted = categoryService.deleteCategory(categoryId);
+
+            // Trả về kết quả
+            if (isDeleted) {
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.getWriter().write("{\"message\": \"Category deleted successfully\"}");
+            } else {
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                response.getWriter().write("{\"message\": \"Failed to delete category\"}");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("{\"message\": \"Error: " + e.getMessage() + "\"}");
+        }
+    }
+
+
     public static void main(String[] args) {
         CategoriesService categoryDao = new CategoriesService();  // Giả sử bạn có CategoryDAO
         List<CategoryModel> categories = categoryDao.getAllCategories();  // Lấy danh sách category từ DB
