@@ -1,4 +1,4 @@
-<%@ page import="vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User" %>
+        <%@ page import="vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
     <div id="header">
@@ -80,10 +80,18 @@
                         <a href="aboutUs.jsp" class="nav-link">VỀ CHÚNG TÔI</a>
                     </li>
 
+<%--ẩn liên hệ--%>
+                    <%
+                        User user = (User) session.getAttribute("auth");
+                        if (user != null) {
+                    %>
                     <li class="nav-item">
                         <a href="contactUs.jsp" class="nav-link">LIÊN HỆ</a>
                     </li>
-
+                    <%
+                        }
+                    %>
+<%-------------------------------------------------------------------------------%>
                 </ul>
                 <ul class="navbar-nav nav-icons-left">
                     <div class="nav-search-box">
@@ -101,7 +109,7 @@
 
                     <%
                         // Lấy thông tin người dùng từ session
-                        User user = (User) session.getAttribute("auth");
+                        user = (User) session.getAttribute("auth");
                     %>
 
                     <li class="nav-item dropdown">
@@ -109,12 +117,12 @@
                             <% if (user != null) { %> <!-- Nếu người dùng đã đăng nhập -->
 
                             <a class="dropdown-item" href="profile.jsp">
-                            <img src="<%= user.getAvatar() %>" alt="Avatar" class="avatar-img" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <img src="<%=user.getAvatar()%>" alt="Avatar" class="avatar-img" style="width: 40px; height: 40px; border-radius: 50%;">
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-end pt-2 m-2">
                                 <li><a class="dropdown-item" href="logout">Đăng Xuất</a></li>
-<%--                                <a class="dropdown-item" href="profile.jsp"></a>--%>
+
                             </ul>
                             <% } else { %> <!-- Nếu người dùng chưa đăng nhập -->
                             <a href="#"><i class="fa-regular fa-user fa-xl"></i></a>
@@ -127,12 +135,15 @@
                     </li>
 
                     <!-- shop -->
+                    <% if (user != null) { %>
                     <div class="cart-box">
                         <li class="nav-item" id="shop-address"> <a style="color: black;" href="cart.jsp"><i
                                     class="fa-solid fa-cart-shopping fa-lg"></i> </a></li>
                     </div>
+                    <% } %>
                 </ul>
             </div>
+
         </div>
     </div>
 

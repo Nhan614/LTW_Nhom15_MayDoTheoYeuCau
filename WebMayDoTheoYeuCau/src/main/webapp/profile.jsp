@@ -291,7 +291,7 @@
                                                 <a href="changePassword.jsp"><button class="btn-custumize mt-3">Đổi
                                                         mật
                                                         khẩu</button></a>
-                                                <button class="btn-custumize bg-danger mt-3">Đăng xuất</button>
+                                                <a href="logout"><button class="btn-custumize bg-danger mt-3">Đăng xuất</button></a>
                                             </div>
                                         </div>
                                     </div>

@@ -101,7 +101,9 @@
                 <!-- sign up------- -->
                 <div class="form-box register" id="signup-form">
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
+
                     <form action="#">
+
                         <div class="input-box animation" style="--i:18; --j:1">
                             <input type="text" required>
                             <label>Tên:</label>
