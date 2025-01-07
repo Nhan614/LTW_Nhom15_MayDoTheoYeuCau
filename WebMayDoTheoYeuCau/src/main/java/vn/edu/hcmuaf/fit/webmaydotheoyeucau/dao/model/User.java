@@ -6,7 +6,7 @@ public class User implements Serializable {
 
     private int userID;
     private String avatar;
-    private String userName;
+
     private String password;
     private String fullName;
     private String gmail;
@@ -18,10 +18,10 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int userID, String avatar, String userName, String password, String fullName, String gmail, String phone, String address, boolean notificationCheck, int role) {
+    public User(int userID, String avatar,  String password, String fullName, String gmail, String phone, String address, boolean notificationCheck, int role) {
         this.userID = userID;
         this.avatar = avatar;
-        this.userName = userName;
+
         this.password = password;
         this.fullName = fullName;
         this.gmail = gmail;
@@ -47,13 +47,7 @@ public class User implements Serializable {
         this.avatar = avatar;
     }
 
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getPassword() {
         return password;
@@ -116,7 +110,7 @@ public class User implements Serializable {
         return "User{" +
                 "userID=" + userID +
                 ", avatar='" + avatar + '\'' +
-                ", userName='" + userName + '\'' +
+
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", gmail='" + gmail + '\'' +

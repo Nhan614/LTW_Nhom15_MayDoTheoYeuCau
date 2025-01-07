@@ -17,6 +17,9 @@ public class CategoriesService {
     public List<CategoryModel> getAllCategories() {
         return categoryDao.getAllCategories();
     }
+    public boolean addCategory(CategoryModel category) {
+        return categoryDao.addCategory(category); // Delegate to DAO
+    }
 
     public static void main(String[] args) {
         System.out.println(new CategoriesService().getAllCategories());

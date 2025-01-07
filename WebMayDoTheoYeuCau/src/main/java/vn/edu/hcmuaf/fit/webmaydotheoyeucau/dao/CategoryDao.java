@@ -28,6 +28,24 @@ public class CategoryDao {
         });
     }
 
+    public boolean addCategory(CategoryModel category) {
+        String sql = "INSERT INTO categories (categoryName, description, state, categoryParentID) VALUES (:categoryName, :description, :state, :categoryParentID)";
+        try {
+            int rowsInserted = dbConnect.get().withHandle(handle ->
+                    handle.createUpdate(sql)
+                            .bind("categoryName", category.getCategoryName())
+                            .bind("description", category.getDescription())
+                            .bind("state", category.getState())
+                            .bind("categoryParentID", category.getCategoryParentID())
+                            .execute()
+            );
+            return rowsInserted > 0; // Returns true if a row was inserted
+        } catch (Exception e) {
+            e.printStackTrace(); // Log exception for debugging
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         CategoryDao categoryDao = new CategoryDao();
         System.out.println(categoryDao.getAllCategories());

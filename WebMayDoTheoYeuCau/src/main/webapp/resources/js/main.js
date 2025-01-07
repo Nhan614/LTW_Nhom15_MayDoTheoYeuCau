@@ -144,6 +144,11 @@ function loadCategories() {
             // Clear the current content of the table body
             $('#categories-tbody').empty();
 
+            // Clear the current content of the select dropdown
+            const danhMucChaSelect = $('#DanhMucCha');
+            danhMucChaSelect.empty();
+            danhMucChaSelect.append('<option value="">Danh Mục Cha</option>');
+
             // Iterate over the received categories
             data.forEach(function (category) {
                 // Create a new row for each category
@@ -152,13 +157,16 @@ function loadCategories() {
                 // Append the category details into the row
                 row.append('<td>' + category.id + '</td>');
                 row.append('<td>' + category.categoryName + '</td>');
-                row.append('<td>' + (category.categoryParentID ? category.categoryParentID : 'N/A') + '</td>');
+                row.append('<td>' + (category.categoryParentID ? category.categoryParentID : 0) + '</td>');
                 row.append('<td>' + (category.state === 1 ? 'Yes' : 'No') + '</td>'); // Assuming state 1 means featured
                 row.append('<td>' + category.description + '</td>');
-                row.append('<td><button class="edit-btn bg-success">Edit</button> <button class="delete-btn bg-danger">Delete</button></td>');
+                row.append('<td><button class="edit-btn btn btn-primary btn-sm">Edit</button> <button class="delete-btn btn btn-sm btn-danger">Delete</button></td>');
 
                 // Append the row to the table body
                 $('#categories-tbody').append(row);
+
+                // Add category to the dropdown
+                danhMucChaSelect.append('<option value="' + category.id + '"> ' + category.categoryName +'</option>');
             });
         },
         error: function (xhr, status, error) {
@@ -166,3 +174,38 @@ function loadCategories() {
         }
     });
 }
+
+$('#addCategoryForm').submit(function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get values from the form
+    var categoryName = $('#categoryName').val();
+    var categoryParentID = $('#DanhMucCha').val();
+    var state = $('#TrangThai').val();
+    var description = $('#categoryDescription').val();
+
+    // Create JSON object
+    var newCategory = {
+        categoryName: categoryName,
+        categoryParentID: categoryParentID,
+        state: state,
+        description: description
+    };
+
+    // Send AJAX request
+    $.ajax({
+        url: '/WebMayDoTheoYeuCau_war_exploded/categories',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(newCategory),
+        success: function (response) {
+            alert('Category added successfully!');
+            loadCategories(); // Reload the categories to reflect the new addition
+        },
+        error: function (xhr, status, error) {
+            console.error('Error adding category: ' + error);
+            alert('Failed to add category. Please check the server logs for details.');
+        }
+    });
+});
+

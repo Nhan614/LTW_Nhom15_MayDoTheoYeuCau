@@ -32,18 +32,18 @@ public class LoginController extends HttpServlet {
 
 
         if (user != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("auth", user); // Lưu người dùng vào session với tên 'auth'
-
-            response.sendRedirect("./index.jsp");
+//            HttpSession session = request.getSession();
+//            session.setAttribute("auth", user);
+//
+//            response.sendRedirect("./index.jsp");
             if (user.getRole() == 1) {
-                response.sendRedirect("./admin.jsp");
+                request.getRequestDispatcher("admin.jsp").forward(request, response);
             } else {
-                response.sendRedirect("./index.jsp");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("error", "Dang Nhap Khong Thanh Cong");
-            request.getRequestDispatcher("./admin.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
     }
