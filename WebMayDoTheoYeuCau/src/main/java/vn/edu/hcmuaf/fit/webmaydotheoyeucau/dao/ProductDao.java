@@ -13,7 +13,7 @@ public class ProductDao {
     }
 
     // Lấy danh sách tất cả sản phẩm
-    public static List<Product> getAllProducts() {
+    public List<Product> getAllProducts() {
         String sql = "SELECT * FROM products";
         return dbConnect.get().withHandle(handle ->
                 handle.createQuery(sql).mapToBean(Product.class).list()

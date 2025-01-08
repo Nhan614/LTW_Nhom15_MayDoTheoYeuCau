@@ -513,12 +513,12 @@ function loadMaterials() {
                     material.id || '', // ID
                     material.name || 'N/A', // Tên
                     material.season || 'N/A', // Mùa
-                    material.description || 'N/A', // Mô tả
                     `<img src="${material.image || 'default-image-url'}" alt="Image" class="material-image" width="50" height="50">`, // Hình ảnh
                     material.quantity || 0, // Số lượng
-                    material.state === 1 ? 'Đang sử dụng' : 'Ngừng sử dụng', // Trạng thái
+                    material.state === 1 ? 'Còn hàng' : (material.state === 0 ? 'Hết hàng' : 'Ẩn'), // Trạng thái
                     material.matCategory || 'N/A', // Loại chất liệu
                     material.price + ' VND', // Loại chất liệu
+                    material.description || 'N/A', // Mô tả
                     `<button class="btn btn-primary btn-sm material-editBtn" data-id="${material.id}">Sửa</button>
                      <button class="btn btn-danger btn-sm material-deleteBtn" data-id="${material.id}">Xóa</button>` // Hành động
                 ]).draw(false);
@@ -530,6 +530,46 @@ function loadMaterials() {
         }
     });
 }
+
+$(document).ready(function() {
+    // Khi người dùng click vào nút "Thêm Vật Liệu", mở modal
+    $('.admin-addMaterialbtn').on('click', function() {
+        $('#addMaterialModal').modal('show');
+    });
+
+    // Gửi form khi nhấn nút "Thêm Vật Liệu"
+    $('#addMaterialForm').on('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn việc reload trang
+
+        // Lấy dữ liệu từ các input trong modal
+        var materialData = {
+            name: $('#materialName').val(),
+            season: $('#materialSeason').val(),
+            image: $('#materialImage').val(),
+            quantity: $('#materialQuantity').val(),
+            state: $('#materialState').val(),
+            matCategory: $('#materialCategory').val(),
+            price: $('#materialPrice').val(),
+            description: $('#materialDescription').val()
+        };
+
+        // Gửi dữ liệu tới server
+        $.ajax({
+            url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController',  // Đường dẫn API của bạn
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(materialData),
+            success: function(response) {
+                alert('Thêm vật liệu thành công!');
+                $('#addMaterialModal').modal('hide'); // Đóng modal
+                loadMaterials();  // Gọi lại hàm load dữ liệu vật liệu (cập nhật bảng)
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra khi thêm vật liệu!');
+            }
+        });
+    });
+});
 
 $(document).on('click', '.material-editBtn', function () {
     let materialId = $(this).data('id'); // Lấy ID từ nút
@@ -580,43 +620,3 @@ $(document).on('click', '.material-deleteBtn', function () {
     }
 });
 
-$(document).ready(function() {
-    // Khi nhấn nút "Thêm Vật Liệu", modal sẽ xuất hiện
-    $('#addMaterialModal').on('show.bs.modal', function(event) {
-        // Lấy nút kích hoạt modal và thực hiện các thao tác nếu cần
-        var button = $(event.relatedTarget); // Có thể lấy dữ liệu từ nút nếu cần
-    });
-
-    // Gửi form khi nhấn nút "Thêm Vật Liệu"
-    $('#addMaterialForm').on('submit', function(event) {
-        event.preventDefault(); // Ngăn chặn việc reload trang
-
-        // Lấy dữ liệu từ các input trong modal
-        var materialData = {
-            name: $('#materialName').val(),
-            season: $('#materialSeason').val(),
-            description: $('#materialDescription').val(),
-            image: $('#materialImage').val(),
-            quantity: $('#materialQuantity').val(),
-            state: $('#materialState').val(),
-            matCategory: $('#materialCategory').val(),
-            price: $('#materialPrice').val()
-        };
-
-        // Gửi dữ liệu tới server (tùy theo yêu cầu API của bạn)
-        $.ajax({
-            url: '/your/api/endpoint',  // Đường dẫn API của bạn
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(materialData),
-            success: function(response) {
-                alert('Thêm vật liệu thành công!');
-                $('#addMaterialModal').modal('hide'); // Đóng modal
-                loadMaterials();  // Gọi lại hàm load dữ liệu vật liệu (cập nhật bảng)
-            },
-            error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra khi thêm vật liệu!');
-            }
-        });
-    });
-});
