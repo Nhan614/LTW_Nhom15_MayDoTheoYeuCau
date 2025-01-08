@@ -43,5 +43,23 @@ public class SignupController extends HttpServlet {
             request.getRequestDispatcher("signup.jsp").forward(request, response);
             return;
         }
+        // Mã hóa mật khẩu trước khi lưu
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        // Tạo đối tượng User và thêm vào cơ sở dữ liệu
+        User newUser = new User(0, "", hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
+        boolean isSuccess = userDao.registerUser(newUser);
+
+        if (isSuccess) {
+            // Đăng nhập ngay sau khi đăng ký thành công
+            HttpSession session = request.getSession();
+            session.setAttribute("auth", newUser); // Tự động đăng nhập
+
+            // Chuyển hướng đến trang chủ sau khi đăng ký thành công
+            response.sendRedirect("home.jsp");
+        } else {
+            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        }
     }
 }
