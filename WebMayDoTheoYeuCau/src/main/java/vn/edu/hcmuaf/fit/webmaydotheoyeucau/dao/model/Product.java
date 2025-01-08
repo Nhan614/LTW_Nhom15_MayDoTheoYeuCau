@@ -5,11 +5,13 @@ public class Product {
     private String productName;
     private double price;
     private String image;
-    private String state;
+    private boolean state;
     private String description;
     private boolean checkCollection;
+    private int categoryID;
 
-    public Product(int id, String productName, double price, String image, String state, String description, boolean checkCollection) {
+    public Product(int id, String productName, double price, String image, boolean state, String description, boolean checkCollection
+    , int categoryID) {
         this.id = id;
         this.productName = productName;
         this.price = price;
@@ -17,6 +19,7 @@ public class Product {
         this.state = state;
         this.description = description;
         this.checkCollection = checkCollection;
+        this.categoryID = categoryID;
     }
 
     public int getId() {
@@ -51,11 +54,11 @@ public class Product {
         this.image = image;
     }
 
-    public String getState() {
+    public boolean getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(boolean state) {
         this.state = state;
     }
 
@@ -73,6 +76,27 @@ public class Product {
 
     public void setCheckCollection(boolean checkCollection) {
         this.checkCollection = checkCollection;
+    }
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                ", state='" + state + '\'' +
+                ", description='" + description + '\'' +
+                ", checkCollection=" + checkCollection +
+                ", categoryID=" + categoryID +
+                '}';
     }
 
     // Getters và Setters
