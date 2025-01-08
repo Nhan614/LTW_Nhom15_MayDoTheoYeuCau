@@ -1,14 +1,12 @@
-package vn.edu.hcmuaf.fit.webmaydotheoyeucau.controller;
-
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
-import org.mindrot.jbcrypt.BCrypt;
-import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.UserDao;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "SignupController", value = "/signup")
 public class SignupController extends HttpServlet {
@@ -23,8 +21,8 @@ public class SignupController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("signup.jsp").forward(request, response);
-
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fullName = request.getParameter("fullName");
@@ -40,29 +38,10 @@ public class SignupController extends HttpServlet {
         }
 
         // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
-        List<User> existingUsers = userDao.checkUser(gmail);
-        if (!existingUsers.isEmpty()) {
+        if (userDao.isEmailExist(gmail)) {
             request.setAttribute("error", "Email đã được sử dụng");
             request.getRequestDispatcher("signup.jsp").forward(request, response);
             return;
         }
-
-        // Mã hóa mật khẩu trước khi lưu
-        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-
-        // Tạo đối tượng User và thêm vào cơ sở dữ liệu
-        User newUser = new User(0, "", hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
-        boolean isSuccess = userDao.registerUser(newUser);
-
-        if (isSuccess) {
-            // Sau khi đăng ký thành công, thực hiện đăng nhập và chuyển đến trang chủ
-            HttpSession session = request.getSession();
-            session.setAttribute("auth", newUser);
-            response.sendRedirect("home.jsp");
-        } else {
-            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
-            request.getRequestDispatcher("signup.jsp").forward(request, response);
-        }
     }
-
 }

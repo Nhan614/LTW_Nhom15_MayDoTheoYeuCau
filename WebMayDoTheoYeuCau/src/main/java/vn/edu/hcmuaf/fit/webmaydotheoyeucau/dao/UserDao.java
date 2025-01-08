@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao;
 
 import org.jdbi.v3.core.Handle;
+import org.mindrot.jbcrypt.BCrypt;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.db.DBConnect;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
@@ -60,6 +61,25 @@ public class UserDao {
         });
     }
 
+
+    // Đăng ký người dùng mới (mã hóa mật khẩu)
+    public boolean registerUser(User user) {
+        String sql = "INSERT INTO users (avatar, password, fullName, gmail, phone, address, notificationCheck, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()); // Mã hóa mật khẩu trước khi lưu
+
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createUpdate(sql)
+                    .bind(0, user.getAvatar())
+                    .bind(1, hashedPassword)
+                    .bind(2, user.getFullName())
+                    .bind(3, user.getGmail())
+                    .bind(4, user.getPhone())
+                    .bind(5, user.getAddress())
+                    .bind(6, user.getNotificationCheck())
+                    .bind(7, user.getRole())
+                    .execute() > 0;
+        });
+    }
 
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
