@@ -50,6 +50,14 @@ public class User implements Serializable {
         this.role = role;
     }
 
+    public User(String image, String fullName, String gmail, String phone, String address) {
+        this.avatar = image;
+        this.fullName = fullName;
+        this.gmail = gmail;
+        this.phone = phone;
+        this.address = address;
+    }
+
     public int getId() {
         return id;
     }

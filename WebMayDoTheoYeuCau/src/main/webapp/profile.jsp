@@ -271,6 +271,7 @@
                             <div class="container mt-5">
                                 <div class="row ">
                                     <div class="col-lg-6 mx-auto">
+                                        <input type="hidden" id="userId" name="userId" value="<%=user.getId()%>">
                                         <img src="<%= user.getAvatar() %>" class="profile-img" alt="Profile Picture">
                                             <div class="card-body">
                                                 <h5 class="card-title"> <%= user.getFullName()%></h5>

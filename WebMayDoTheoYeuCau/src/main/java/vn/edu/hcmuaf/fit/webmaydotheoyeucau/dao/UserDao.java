@@ -73,6 +73,21 @@ public class UserDao {
         );
     }
 
+    public boolean updateProfile(User user, int id) {
+        String sql = "UPDATE users SET fullName = ?, gmail = ?, phone = ?, address = ?, avatar = ? WHERE id = ?";
+
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind(0, user.getFullName())  // Bind fullName
+                        .bind(1, user.getGmail())     // Bind email
+                        .bind(2, user.getPhone())     // Bind phone
+                        .bind(3, user.getAddress())   // Bind address
+                        .bind(4, user.getAvatar())    // Bind avatar
+                        .bind(5, id)       // Bind the user ID for WHERE clause
+                        .execute() > 0               // If the update was successful, return true
+        );
+    }
+
     public boolean deleteUserById(String userId) {
         String sql = "DELETE FROM users WHERE id = ?";
 
