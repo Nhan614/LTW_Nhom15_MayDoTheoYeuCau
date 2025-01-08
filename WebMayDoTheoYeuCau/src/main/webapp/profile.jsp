@@ -271,17 +271,14 @@
                             <div class="container mt-5">
                                 <div class="row ">
                                     <div class="col-lg-6 mx-auto">
-                                        <div class="card"> <img src="resources/images/profile.jpg" class="profile-img"
-                                                alt="Profile Picture">
+                                        <img src="<%= user.getAvatar() %>" class="profile-img" alt="Profile Picture">
                                             <div class="card-body">
-                                                <h5 class="card-title">Nguyễn Trọng Nhân</h5>
+                                                <h5 class="card-title"> <%= user.getFullName()%></h5>
                                                 <hr>
                                                 <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">Email: nhan@nlu.com</li>
-                                                    <li class="list-group-item">Điện thoại: 0123456789</li>
-                                                    <li class="list-group-item">Địa chỉ: Số 6, đường số 6, khu phố
-                                                        6,
-                                                        phường Linh Trung, thành phố Thủ Đức, thành phố Hồ Chí Minh
+                                                    <li class="list-group-item">Email: <%= user.getGmail()%></li>
+                                                    <li class="list-group-item">Điện thoại: <%= user.getPhone()%></li>
+                                                    <li class="list-group-item">Địa chỉ: S<%= user.getAddress()%>
                                                     </li>
                                                 </ul>
                                                 <a href="profileEdit.jsp"><button
