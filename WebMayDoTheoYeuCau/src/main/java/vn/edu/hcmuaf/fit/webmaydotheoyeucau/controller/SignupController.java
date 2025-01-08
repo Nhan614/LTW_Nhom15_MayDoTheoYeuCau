@@ -3,10 +3,12 @@ package vn.edu.hcmuaf.fit.webmaydotheoyeucau.controller;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.mindrot.jbcrypt.BCrypt;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.UserDao;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "SignupController", value = "/signup")
 public class SignupController extends HttpServlet {
@@ -20,41 +22,47 @@ public class SignupController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("signup.jsp").forward(request, response);
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fullName = request.getParameter("fullName");
         String gmail = request.getParameter("gmail");
         String password = request.getParameter("password");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
+        String confirmPassword = request.getParameter("confirmPassword");
 
-        // Check if user already exists
-        if (userDao.checkUserExists(gmail)) {
-            request.setAttribute("error", "Email đã tồn tại");
+        // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
+        if (!password.equals(confirmPassword)) {
+            request.setAttribute("error", "Mật khẩu xác minh không khớp");
             request.getRequestDispatcher("signup.jsp").forward(request, response);
             return;
         }
 
-        // Create a new User object
-        User newUser = new User();
-        newUser.setFullName(fullName);
-        newUser.setGmail(gmail);
-        newUser.setPassword(password);
-        newUser.setPhone(phone);
-        newUser.setAddress(address);
-        newUser.setRole(1); // Default role (can be changed later)
+        // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
+        List<User> existingUsers = userDao.checkUser(gmail);
+        if (!existingUsers.isEmpty()) {
+            request.setAttribute("error", "Email đã được sử dụng");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+            return;
+        }
 
-        // Add user to the database
-        if (userDao.addUser(newUser)) {
-            response.sendRedirect("login.jsp");
+        // Mã hóa mật khẩu trước khi lưu
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        // Tạo đối tượng User và thêm vào cơ sở dữ liệu
+        User newUser = new User(0, "", hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
+        boolean isSuccess = userDao.registerUser(newUser);
+
+        if (isSuccess) {
+            // Sau khi đăng ký thành công, thực hiện đăng nhập và chuyển đến trang chủ
+            HttpSession session = request.getSession();
+            session.setAttribute("auth", newUser);
+            response.sendRedirect("home.jsp");
         } else {
-            request.setAttribute("error", "Đăng ký thất bại, vui lòng thử lại!");
+            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
             request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
     }
 
-
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("signup.jsp").forward(request, response);
-    }
 }

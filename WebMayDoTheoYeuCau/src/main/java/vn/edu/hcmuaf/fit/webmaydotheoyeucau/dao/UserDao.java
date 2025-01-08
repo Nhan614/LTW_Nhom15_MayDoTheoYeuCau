@@ -66,3 +66,5 @@ public class UserDao {
         System.out.println(userDao.updateUser(new User(2, "ff", "Nghia11", "n@nlu.com", "111111", "la", 0, 1)));
     }
 }
+
+

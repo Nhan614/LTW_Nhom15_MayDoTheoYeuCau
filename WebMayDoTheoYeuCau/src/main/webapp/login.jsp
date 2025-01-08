@@ -99,25 +99,27 @@
                 </div>
 
                 <!-- sign up------- -->
+
                 <div class="form-box register" id="signup-form">
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
+
 
                     <form action="signup" method="post">
 
 
                         <div class="input-box animation" style="--i:18; --j:1">
-                            <input type="text" required>
+                            <input type="text"  id="fullName" name="fullName" required>
                             <label>Tên:</label>
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="input-box animation" style="--i:19; --j:2">
-                            <input type="text" required>
+                            <input type="text" id="gmail" name="gmail" required>
                             <label>E-mail:</label>
                             <i class="fa-solid fa-envelope"></i>
                         </div>
 
                         <div class="input-box animation" style="--i:20; --j:3">
-                            <input type="password" required>
+                            <input type="password" id="password" name="password" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>
