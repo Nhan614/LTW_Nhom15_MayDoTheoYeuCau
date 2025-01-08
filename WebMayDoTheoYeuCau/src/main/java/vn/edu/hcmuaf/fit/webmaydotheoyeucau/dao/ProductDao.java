@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model;
+package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao;
 
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.db.DBConnect;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Product;
@@ -6,7 +6,7 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Product;
 import java.util.List;
 
 public class ProductDao {
-    private final DBConnect dbConnect;
+    DBConnect dbConnect;
 
     public ProductDao() {
         this.dbConnect = new DBConnect();
