@@ -46,12 +46,12 @@
                 <span>Quản lý đơn hàng</span>
             </a>
         </li>
-        <!-- <li class="admin-sidebar-4">
-            <a href="#admin-customers">
+        <li class="admin-sidebar-4">
+            <a href="#admin-material">
                 <i class="fa-solid fa-wrench"></i>
-                <span>Quản lý khách hàng</span>
+                <span>Quản lý vật liệu</span>
             </a>
-        </li> -->
+        </li>
         <li class="admin-sidebar-5">
             <a href="#admin-user">
                 <i class="fa-regular fa-user"></i>
@@ -323,7 +323,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="userEmail">Email</label>
-                                    <input type="email" class="form-control" id="userEmail" placeholder="Nhập email"
+                                    <input type="email" class="form-control" id="userEmail" name="userEmail"
+                                           placeholder="Nhập email"
                                            required>
                                 </div>
                                 <div class="form-group">
@@ -358,6 +359,89 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Material Management -->
+    <section id="admin-material" class="admin-hide">
+        <div class="container">
+            <div class="admin-header">
+                <h1 class="">Quản Lý Vật Liệu</h1>
+                <div class="admin-header-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm vật liệu...">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn-custumize btn-lg admin-addMaterial mt-3" data-toggle="modal"
+                    data-target="#materialModal"> Thêm Vật Liệu
+            </button>
+            <!-- The Modal -->
+            <div class="modal" id="materialModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thêm/Sửa Vật Liệu</h4>
+                        </div>
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <form id="materialForm">
+                                <div class="form-group">
+                                    <label for="materialName">Tên Vật Liệu</label>
+                                    <input type="text" class="form-control" id="materialName"
+                                           placeholder="Nhập tên vật liệu" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialQuantity">Số Lượng</label>
+                                    <input type="number" id="materialQuantity" class="form-control" value="1" min="1"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialUnit">Đơn Vị</label>
+                                    <input type="text" id="materialUnit" class="form-control"
+                                           placeholder="Nhập đơn vị (kg, m3...)" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialDescription">Mô Tả</label>
+                                    <textarea id="materialDescription" class="form-control" rows="3"
+                                              placeholder="Nhập mô tả vật liệu"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialPrice">Giá</label>
+                                    <input type="number" id="materialPrice" class="form-control"
+                                           placeholder="Nhập giá vật liệu" required>
+                                </div>
+                                <button type="submit" class="btn-custumize btn-lg mt-2">Lưu Thay Đổi</button>
+                            </form>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 class="text-center">Danh Sách Vật Liệu</h3>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Mã Vật Liệu</th>
+                    <th>Tên Vật Liệu</th>
+                    <th>Số Lượng</th>
+                    <th>Đơn Vị</th>
+                    <th>Mô Tả</th>
+                    <th>Giá</th>
+                    <th>Hành Động</th>
+                </tr>
+                </thead>
+                <tbody id="materialList">
+                <!-- Material data will be dynamically added here -->
+                </tbody>
+            </table>
         </div>
     </section>
 

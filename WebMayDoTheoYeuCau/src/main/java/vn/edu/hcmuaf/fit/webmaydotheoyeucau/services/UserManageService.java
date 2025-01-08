@@ -18,8 +18,17 @@ public class UserManageService {
     }
 
     public boolean updateUser(User user) {
-        UserDao user1 = new UserDao();
-        return user1.updateUser(user);
+        return userDao.updateUser(user);
+    }
+
+    public boolean deleteUserById(String id) {
+        try {
+            // Gọi DAO để xóa người dùng trong cơ sở dữ liệu
+            return userDao.deleteUserById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static void main(String[] args) {

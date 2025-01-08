@@ -70,6 +70,16 @@ public class UserDao {
         );
     }
 
+    public boolean deleteUserById(String userId) {
+        String sql = "DELETE FROM users WHERE id = ?";
+
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind(0, userId) // Bind user ID vào câu lệnh DELETE
+                        .execute() > 0   // Kiểm tra nếu ít nhất một dòng bị ảnh hưởng
+        );
+    }
+
 
     public List<User> getUsersForAdmin() {
         String sql = "SELECT id, avatar, fullName, gmail, phone, address, notificationCheck, role FROM users";

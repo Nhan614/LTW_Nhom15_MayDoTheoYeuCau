@@ -87,4 +87,40 @@ public class UserManageController extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        try {
+            // Lấy `id` từ tham số URL
+            String id = request.getParameter("id");
+
+            if (id == null || id.isEmpty()) {
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                response.getWriter().write("{\"message\": \"ID người dùng không hợp lệ\"}");
+                return;
+            }
+
+            // Gọi service để xóa người dùng
+            UserManageService userService = new UserManageService();
+            boolean isDeleted = userService.deleteUserById(id);
+
+            // Trả về kết quả
+            JsonObject jsonResponse = new JsonObject();
+            if (isDeleted) {
+                jsonResponse.addProperty("message", "Xóa người dùng thành công");
+                response.setStatus(HttpServletResponse.SC_OK);
+            } else {
+                jsonResponse.addProperty("message", "Không tìm thấy người dùng");
+                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            }
+            response.getWriter().write(jsonResponse.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("{\"message\": \"Đã xảy ra lỗi: " + e.getMessage() + "\"}");
+        }
+    }
+
 }

@@ -2040,3 +2040,15 @@ a:hover {
     object-fit: cover; /* Ensures the image fits within the box while maintaining aspect ratio */
     border-radius: 50%; /* Makes the image circular */
 }
+
+#admin-material .admin-header {
+    margin-bottom: 20px;
+}
+
+#admin-material table {
+    margin-top: 20px;
+}
+
+#materialModal .modal-content {
+    padding: 20px;
+}

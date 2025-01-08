@@ -15,6 +15,13 @@ $(document).ready(function (e) {
         $(this).addClass('sidebar-active');
         window.location.hash = '#admin-products'; // Đặt hash sau khi thay đổi
     });
+    $('.admin-sidebar-4').click(function (e) {
+        $('section').addClass('admin-hide');
+        $('#admin-material').removeClass('admin-hide');
+        $('.sidebar li').removeClass('sidebar-active');
+        $(this).addClass('sidebar-active');
+        window.location.hash = '#admin-material';
+    });
 
     $('.admin-sidebar-5').click(function (e) {
         loadUsers();
@@ -76,6 +83,10 @@ $(document).ready(function (e) {
         $('#admin-orders').removeClass('admin-hide')
         $('.admin-sidebar-3').addClass('sidebar-active')
     }
+    if (window.location.hash === '#admin-material') {
+        $('#admin-material').removeClass('admin-hide')
+        $('.admin-sidebar-4').addClass('sidebar-active')
+    }
     if (window.location.hash === '#admin-categories') {
         loadCategories();
         $('#admin-categories').removeClass('admin-hide')
@@ -107,6 +118,14 @@ $(document).ready(function (e) {
             case '#admin-user':
                 $('#admin-user').removeClass('admin-hide');
                 $('.admin-sidebar-5').addClass('sidebar-active');
+                break;
+            case '#admin-material':
+                $('#admin-material').removeClass('admin-hide');
+                $('.admin-sidebar-4').addClass('sidebar-active');
+                break;
+            case '#admin-material':
+                $('#admin-user').removeClass('admin-hide');
+                $('.admin-sidebar-4').addClass('sidebar-active');
                 break;
             case '#admin-orders':
                 $('#admin-orders').removeClass('admin-hide');
@@ -202,13 +221,13 @@ $('#addCategoryForm').submit(function (event) {
         contentType: 'application/json',
         data: JSON.stringify(newCategory),
         success: function (response) {
-            alert('Category added successfully!');
+            alert('Thêm danh mục thành công!');
             clearFormCategory();
             loadCategories(); // Reload the categories to reflect the new addition
         },
         error: function (xhr, status, error) {
             console.error('Error adding category: ' + error);
-            alert('Failed to add category. Please check the server logs for details.');
+            alert('Thêm danh mục thất bại.');
         }
     });
 });
@@ -346,7 +365,7 @@ function loadUsers() {
                 row.append('<td>' + (user.role === 1 ? 'Admin' : user.role === 2 ? 'Nhân Viên' : 'Người Dùng') + '</td>');
                 row.append('<td>' +
                     '<button class="btn btn-primary btn-sm user-editBtn" data-id="' + user.id + '">Sửa</button>' +
-                    ' <button class="btn btn-danger btn-sm deleteBtn" data-id="' + user.id + '">Xóa</button>' +
+                    ' <button class="btn btn-danger btn-sm user-deleteBtn" data-id="' + user.id + '">Xóa</button>' +
                     '</td>');
                 $('#userList').append(row);
             });
@@ -392,12 +411,22 @@ function updateUser() {
     let id = $('#userId').val(); // Lấy ID từ hidden input
     let avatar = $('#userAvatarUrl').val();
     let fullName = $('#userName').val();
-    let email = $('#userEmail').val();
+    let gmail = $('#userEmail').val();
     let phone = $('#userPhone').val();
     let address = $('#userAddress').val();
     let notificationCheck = parseInt($('#userCheck').val());
     let role = parseInt($('#userRole').val());
 
+    console.log(JSON.stringify({
+        id: id,
+        avatar: avatar,
+        fullName: fullName,
+        gmail: gmail,
+        phone: phone,
+        address: address,
+        notificationCheck: notificationCheck,
+        role: role
+    }));
     // Gửi yêu cầu PUT đến API
     $.ajax({
         url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/userManagerController',
@@ -407,12 +436,13 @@ function updateUser() {
             id: id,
             avatar: avatar,
             fullName: fullName,
-            email: email,
+            gmail: gmail,
             phone: phone,
             address: address,
             notificationCheck: notificationCheck,
             role: role
         }),
+
         success: function (response) {
             alert(response.message || 'Cập nhật thành công!');
             $('#userModal').modal('hide'); // Ẩn modal
@@ -429,4 +459,24 @@ function updateUser() {
 $('#userForm').on('submit', function (event) {
     event.preventDefault(); // Ngăn form reload trang
     updateUser();
+});
+
+$(document).on('click', '.user-deleteBtn', function () {
+    let userId = $(this).data('id'); // Lấy ID người dùng từ nút xóa
+
+    if (confirm('Bạn có chắc chắn muốn xóa người dùng này không?')) {
+        // Gửi yêu cầu xóa đến server
+        $.ajax({
+            url: `http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/userManagerController?id=${userId}`,
+            type: 'DELETE',
+            success: function (response) {
+                alert(response.message || 'Xóa thành công!');
+                loadUsers(); // Tải lại danh sách người dùng
+            },
+            error: function (xhr, status, error) {
+                console.error('Error deleting user:', xhr.responseText);
+                alert('Xóa không thành công. Vui lòng thử lại!');
+            }
+        });
+    }
 });
