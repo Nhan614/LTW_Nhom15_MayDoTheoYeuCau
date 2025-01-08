@@ -29,11 +29,12 @@ import java.util.List;
 
 public class AuthService {
 
+
+
     public User checkLogin(String email, String pass) {
         UserDao uDao = new UserDao();
-        List<User> listuser = (List<User>) uDao.checkUser(email, pass);
-        if (listuser != null && !listuser.isEmpty()) {
-            User user = listuser.get(0);
+        User user = (User) uDao.checkUser(email, pass); // Phương thức này trả về 1 User chứ không phải List<User>
+        if (user != null) {
             // Kiểm tra mật khẩu mã hóa
             if (BCrypt.checkpw(pass, user.getPassword())) {
                 return user;

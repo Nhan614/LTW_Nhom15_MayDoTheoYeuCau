@@ -72,13 +72,26 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         // Lấy dữ liệu từ form đăng nhập
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
+        String confirmPassword = request.getParameter("confirmPassword");
+
+        // Debug: In ra mật khẩu và xác minh mật khẩu
+        System.out.println("Password: " + pass);
+        System.out.println("Confirm Password: " + confirmPassword);
+
+        // Kiểm tra xem mật khẩu và xác minh mật khẩu có khớp không
+        if (!pass.trim().equals(confirmPassword.trim())) {
+            request.setAttribute("error", "Mật khẩu xác minh không khớp");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            return;
+        }
 
         // Khởi tạo UserDao để kiểm tra đăng nhập
         UserDao userDao = new UserDao();
-        User user = userDao.checkUser(email, pass);  // Phương thức checkUser đã kiểm tra mật khẩu mã hóa
+        User user = (User) userDao.checkUser(email, pass);  // Phương thức checkUser đã kiểm tra mật khẩu mã hóa
 
         // Kiểm tra kết quả đăng nhập
         if (user != null) {

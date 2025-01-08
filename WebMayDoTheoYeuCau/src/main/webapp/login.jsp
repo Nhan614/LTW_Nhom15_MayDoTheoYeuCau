@@ -103,19 +103,30 @@
                 <div class="form-box register" id="signup-form">
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
 
+                    <%
+                        String gmail = (String) request.getAttribute("gmail");
+                        String fullname = (String) request.getAttribute("fullname");
+                        String password = (String) request.getAttribute("password");
+                        String emailExist = (String) request.getAttribute("emailExist");
 
+                        gmail = (gmail == null ? "" : gmail);
+                        fullname = (fullname == null ? "" : fullname);
+                        password = (password == null ? "" : password);
+                        emailExist = (emailExist == null ? "" : emailExist);
+                    %>
                     <form action="signup" method="post">
 
 
                         <div class="input-box animation" style="--i:18; --j:1">
-                            <input type="text"  id="fullName" name="fullName" required>
+                            <input type="text"  id="fullName" name="fullName" value="<%=fullname%>" required>
                             <label>Tên:</label>
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="input-box animation" style="--i:19; --j:2">
-                            <input type="text" id="gmail" name="gmail" required>
+                            <input type="text" id="gmail" name="gmail" value="<%=gmail%>" required>
                             <label>E-mail:</label>
                             <i class="fa-solid fa-envelope"></i>
+
                         </div>
 
                         <div class="input-box animation" style="--i:20; --j:3">

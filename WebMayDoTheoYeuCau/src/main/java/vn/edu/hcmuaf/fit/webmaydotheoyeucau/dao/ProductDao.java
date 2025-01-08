@@ -6,7 +6,7 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Product;
 import java.util.List;
 
 public class ProductDao {
-    DBConnect dbConnect;
+    static DBConnect dbConnect;
 
     public ProductDao() {
         this.dbConnect = new DBConnect();
