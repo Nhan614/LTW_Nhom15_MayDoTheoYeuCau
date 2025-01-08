@@ -62,10 +62,10 @@ public class CategoriesController extends HttpServlet {
             // Trả về response
             JsonObject jsonResponse = new JsonObject();
             if (isAdded) {
-                jsonResponse.addProperty("message", "Category added successfully");
+                jsonResponse.addProperty("message", "Thêm danh mục thành công");
                 response.setStatus(HttpServletResponse.SC_OK);
             } else {
-                jsonResponse.addProperty("message", "Failed to add category");
+                jsonResponse.addProperty("message", "Thêm danh mục thất bại");
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
             response.getWriter().write(gson.toJson(jsonResponse));
@@ -108,10 +108,10 @@ public class CategoriesController extends HttpServlet {
             // Trả về response
             JsonObject jsonResponse = new JsonObject();
             if (isUpdated) {
-                jsonResponse.addProperty("message", "Category updated successfully");
+                jsonResponse.addProperty("message", "Cập nhật thành công");
                 response.setStatus(HttpServletResponse.SC_OK);
             } else {
-                jsonResponse.addProperty("message", "Failed to update category");
+                jsonResponse.addProperty("message", "Cập nhật thất bại");
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
             response.getWriter().write(gson.toJson(jsonResponse));

@@ -11,6 +11,8 @@
     <title>Admin - THREEN TAILORED</title>
     <link rel="icon" href="resources/images/favicon.jpg" sizes="16x16 32x32 48x48 64x64 128x128 256x256"
           type="image/x-icon">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
@@ -281,22 +283,22 @@
             </div>
             <hr>
             <h3 class="text-center">Danh Sách Người Dùng</h3>
-            <table class="table table-bordered">
+            <table id="userTable" class="table table-bordered">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Ảnh Đại Diện</th>
-                    <th>Tên Người Dùng</th>
+                    <th>Avatar</th>
+                    <th>Tên</th>
                     <th>Email</th>
-                    <th>Số Điện Thoại</th>
-                    <th>Địa Chỉ</th>
-                    <th>Đăng Ký</th>
-                    <th>Vai Trò</th>
-                    <th>Hành Động</th>
+                    <th>Điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Thông báo</th>
+                    <th>Vai trò</th>
+                    <th>Hành động</th>
                 </tr>
                 </thead>
-                <tbody id="userList">
-                <!-- User data will be dynamically added here -->
+                <tbody>
+                <!-- Dữ liệu sẽ được thêm vào đây -->
                 </tbody>
             </table>
 
@@ -374,75 +376,96 @@
                     </div>
                 </div>
             </div>
-            <!-- Button to Open the Modal -->
-            <button type="button" class="btn-custumize btn-lg admin-addMaterial mt-3" data-toggle="modal"
-                    data-target="#materialModal"> Thêm Vật Liệu
-            </button>
-            <!-- The Modal -->
-            <div class="modal" id="materialModal">
-                <div class="modal-dialog">
+            <!-- Modal Thêm Vật Liệu -->
+            <div class="modal fade" id="addMaterialModal" tabindex="-1" role="dialog" aria-labelledby="addMaterialModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Thêm/Sửa Vật Liệu</h4>
+                            <h5 class="modal-title" id="addMaterialModalLabel">Thêm Vật Liệu</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <!-- Modal Body -->
                         <div class="modal-body">
-                            <form id="materialForm">
+                            <form id="addMaterialForm">
                                 <div class="form-group">
                                     <label for="materialName">Tên Vật Liệu</label>
-                                    <input type="text" class="form-control" id="materialName"
-                                           placeholder="Nhập tên vật liệu" required>
+                                    <input type="text" class="form-control" id="materialName" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="materialQuantity">Số Lượng</label>
-                                    <input type="number" id="materialQuantity" class="form-control" value="1" min="1"
-                                           required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="materialUnit">Đơn Vị</label>
-                                    <input type="text" id="materialUnit" class="form-control"
-                                           placeholder="Nhập đơn vị (kg, m3...)" required>
+                                    <label for="materialSeason">Mùa</label>
+                                    <select class="form-control" id="materialSeason" required>
+                                        <option value="">Chọn mùa</option>
+                                        <option value="Xuân">Xuân</option>
+                                        <option value="Hạ">Hạ</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Đông">Đông</option>
+                                        <option value="4 Mùa">4 Mùa</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="materialDescription">Mô Tả</label>
-                                    <textarea id="materialDescription" class="form-control" rows="3"
-                                              placeholder="Nhập mô tả vật liệu"></textarea>
+                                    <textarea class="form-control" id="materialDescription" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialImage">Hình Ảnh</label>
+                                    <input type="text" class="form-control" id="materialImage" placeholder="Nhập URL hình ảnh">
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialQuantity">Số Lượng</label>
+                                    <input type="number" class="form-control" id="materialQuantity" required min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialState">Trạng Thái</label>
+                                    <select class="form-control" id="materialState" required>
+                                        <option value="1">Còn hàng</option>
+                                        <option value="0">Hết hàng</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialCategory">Loại Chất Liệu</label>
+                                    <input type="text" class="form-control" id="materialCategory" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="materialPrice">Giá</label>
-                                    <input type="number" id="materialPrice" class="form-control"
-                                           placeholder="Nhập giá vật liệu" required>
+                                    <input type="number" class="form-control" id="materialPrice" required min="0">
                                 </div>
-                                <button type="submit" class="btn-custumize btn-lg mt-2">Lưu Thay Đổi</button>
+                                <button type="submit" class="btn btn-primary">Thêm Vật Liệu</button>
                             </form>
-                        </div>
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
                 </div>
             </div>
             <hr>
             <h3 class="text-center">Danh Sách Vật Liệu</h3>
-            <table class="table table-bordered">
+            <table id="materialTable" class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Mã Vật Liệu</th>
-                    <th>Tên Vật Liệu</th>
-                    <th>Số Lượng</th>
-                    <th>Đơn Vị</th>
-                    <th>Mô Tả</th>
-                    <th>Giá</th>
-                    <th>Hành Động</th>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Mùa</th>
+                    <th>Mô tả</th>
+                    <th>Hình ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Trạng thái</th>
+                    <th>Loại chất liệu</th>
+                    <th>Gía</th>
+                    <th>Hành động</th>
                 </tr>
                 </thead>
-                <tbody id="materialList">
-                <!-- Material data will be dynamically added here -->
+                <tbody>
+                <!-- Dữ liệu sẽ được thêm động -->
                 </tbody>
             </table>
         </div>
+        <!-- Nút Thêm Vật Liệu -->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addMaterialModal">
+            Thêm Vật Liệu
+        </button>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn-custumize btn-lg admin-addMaterial mt-3" data-toggle="modal"
+                data-target="#materialModal"> Thêm Vật Liệu
+        </button>
     </section>
 
 
@@ -727,11 +750,14 @@
 <script src="vendors/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/js/jquery-3.7.1.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="resources/js/admin.js"></script>
 
 
 <!-- CDN chart and demo script  -->
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<script src="resources/js/admin.js"></script>
 
 
 </body>

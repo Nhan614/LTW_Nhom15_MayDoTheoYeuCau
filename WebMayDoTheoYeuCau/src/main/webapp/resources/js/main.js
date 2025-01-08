@@ -1,158 +1,125 @@
 $(document).ready(function (e) {
     // admin sidebar
-    $('.admin-sidebar-1').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-dashboard').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-dashboard';  // Đặt hash sau khi thay đổi
+        $('.admin-sidebar-1').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-dashboard').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-dashboard';  // Đặt hash sau khi thay đổi
+        });
+
+        $('.admin-sidebar-2').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-products').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-products'; // Đặt hash sau khi thay đổi
+        });
+        $('.admin-sidebar-4').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-material').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-material';
+        });
+
+        $('.admin-sidebar-5').click(function (e) {
+
+            $('section').addClass('admin-hide');
+            $('#admin-user').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-user'; // Đặt hash sau khi thay đổi
+        });
+
+        $('.admin-sidebar-3').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-orders').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-orders'; // Đặt hash sau khi thay đổi
+        });
+
+        $('.admin-sidebar-6').click(function (e) {
+
+            window.location.hash = '#admin-categories';  // Đặt hash sau khi thay đổi
+            $('section').addClass('admin-hide');
+            $('#admin-categories').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+        });
+
+        $('.admin-sidebar-7').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-notification').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-notification'; // Đặt hash sau khi thay đổi
+        });
+
+        $('.admin-sidebar-8').click(function (e) {
+            $('section').addClass('admin-hide');
+            $('#admin-reports').removeClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+            $(this).addClass('sidebar-active');
+            window.location.hash = '#admin-reports'; // Đặt hash sau khi thay đổi
+        });
+
+        // Xử lý sự kiện thay đổi hash
+        $(window).on('hashchange', function () {
+            $('section').addClass('admin-hide');
+            $('.sidebar li').removeClass('sidebar-active');
+
+            switch (window.location.hash) {
+                case '#admin-dashboard':
+                    $('#admin-dashboard').removeClass('admin-hide');
+                    $('.admin-sidebar-1').addClass('sidebar-active');
+                    break;
+                case '#admin-products':
+                    $('#admin-products').removeClass('admin-hide');
+                    $('.admin-sidebar-2').addClass('sidebar-active');
+                    break;
+                case '#admin-user':
+                    $('#admin-user').removeClass('admin-hide');
+                    $('.admin-sidebar-5').addClass('sidebar-active');
+                    loadUsers();
+                    break;
+                case '#admin-material':
+                    $('#admin-material').removeClass('admin-hide');
+                    $('.admin-sidebar-4').addClass('sidebar-active');
+                    loadMaterials();
+                    break;
+                case '#admin-material':
+                    $('#admin-user').removeClass('admin-hide');
+                    $('.admin-sidebar-4').addClass('sidebar-active');
+                    break;
+                case '#admin-orders':
+                    $('#admin-orders').removeClass('admin-hide');
+                    $('.admin-sidebar-3').addClass('sidebar-active');
+                    break;
+                case '#admin-categories':
+                    $('#admin-categories').removeClass('admin-hide');
+                    $('.admin-sidebar-6').addClass('sidebar-active');
+                    loadCategories();
+                    break;
+                case '#admin-notification':
+                    $('#admin-notification').removeClass('admin-hide');
+                    $('.admin-sidebar-7').addClass('sidebar-active');
+                    break;
+                case '#admin-reports':
+                    $('#admin-reports').removeClass('admin-hide');
+                    $('.admin-sidebar-8').addClass('sidebar-active');
+                    break;
+                default:
+                    $('#admin-dashboard').removeClass('admin-hide');
+                    $('.admin-sidebar-1').addClass('sidebar-active');
+                    break;
+            }
+        });
+
+        // Kích hoạt sự kiện hashchange khi trang tải lần đầu
+        $(window).trigger('hashchange');
     });
-
-    $('.admin-sidebar-2').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-products').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-products'; // Đặt hash sau khi thay đổi
-    });
-    $('.admin-sidebar-4').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-material').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-material';
-    });
-
-    $('.admin-sidebar-5').click(function (e) {
-        loadUsers();
-        $('section').addClass('admin-hide');
-        $('#admin-user').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-user'; // Đặt hash sau khi thay đổi
-    });
-
-    $('.admin-sidebar-3').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-orders').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-orders'; // Đặt hash sau khi thay đổi
-    });
-
-    $('.admin-sidebar-6').click(function (e) {
-        loadCategories();  // Gọi AJAX để tải danh mục
-        window.location.hash = '#admin-categories';  // Đặt hash sau khi thay đổi
-        $('section').addClass('admin-hide');
-        $('#admin-categories').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-    });
-
-    $('.admin-sidebar-7').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-notification').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-notification'; // Đặt hash sau khi thay đổi
-    });
-
-    $('.admin-sidebar-8').click(function (e) {
-        $('section').addClass('admin-hide');
-        $('#admin-reports').removeClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-        $(this).addClass('sidebar-active');
-        window.location.hash = '#admin-reports'; // Đặt hash sau khi thay đổi
-    });
-
-    // onload sidebar
-    if (window.location.hash === '#admin-dashboard') {
-        $('#admin-dashboard').removeClass('admin-hide')
-        $('.admin-sidebar-1').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-products') {
-        $('#admin-products').removeClass('admin-hide')
-        $('.admin-sidebar-2').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-user') {
-        loadUsers();
-        $('#admin-user').removeClass('admin-hide')
-        $('.admin-sidebar-5').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-orders') {
-        $('#admin-orders').removeClass('admin-hide')
-        $('.admin-sidebar-3').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-material') {
-        $('#admin-material').removeClass('admin-hide')
-        $('.admin-sidebar-4').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-categories') {
-        loadCategories();
-        $('#admin-categories').removeClass('admin-hide')
-        $('.admin-sidebar-6').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-notification') {
-        $('#admin-notification').removeClass('admin-hide')
-        $('.admin-sidebar-7').addClass('sidebar-active')
-    }
-    if (window.location.hash === '#admin-reports') {
-        $('#admin-reports').removeClass('admin-hide')
-        $('.admin-sidebar-8').addClass('sidebar-active')
-    }
-
-    // Xử lý sự kiện thay đổi hash
-    $(window).on('hashchange', function () {
-        $('section').addClass('admin-hide');
-        $('.sidebar li').removeClass('sidebar-active');
-
-        switch (window.location.hash) {
-            case '#admin-dashboard':
-                $('#admin-dashboard').removeClass('admin-hide');
-                $('.admin-sidebar-1').addClass('sidebar-active');
-                break;
-            case '#admin-products':
-                $('#admin-products').removeClass('admin-hide');
-                $('.admin-sidebar-2').addClass('sidebar-active');
-                break;
-            case '#admin-user':
-                $('#admin-user').removeClass('admin-hide');
-                $('.admin-sidebar-5').addClass('sidebar-active');
-                break;
-            case '#admin-material':
-                $('#admin-material').removeClass('admin-hide');
-                $('.admin-sidebar-4').addClass('sidebar-active');
-                break;
-            case '#admin-material':
-                $('#admin-user').removeClass('admin-hide');
-                $('.admin-sidebar-4').addClass('sidebar-active');
-                break;
-            case '#admin-orders':
-                $('#admin-orders').removeClass('admin-hide');
-                $('.admin-sidebar-3').addClass('sidebar-active');
-                break;
-            case '#admin-categories':
-                $('#admin-categories').removeClass('admin-hide');
-                $('.admin-sidebar-6').addClass('sidebar-active');
-                break;
-            case '#admin-notification':
-                $('#admin-notification').removeClass('admin-hide');
-                $('.admin-sidebar-7').addClass('sidebar-active');
-                break;
-            case '#admin-reports':
-                $('#admin-reports').removeClass('admin-hide');
-                $('.admin-sidebar-8').addClass('sidebar-active');
-                break;
-            default:
-                $('#admin-dashboard').removeClass('admin-hide');
-                $('.admin-sidebar-1').addClass('sidebar-active');
-                break;
-        }
-    });
-
-    // Kích hoạt sự kiện hashchange khi trang tải lần đầu
-    $(window).trigger('hashchange');
-});
 
 // --------------------------- Category --------------------------------------
 
@@ -343,35 +310,58 @@ function clearFormCategory() {
 // -------------------------------------------- User ----------------------------------------------
 
 function loadUsers() {
+    // Kiểm tra và hủy DataTable nếu đã khởi tạo
+    if ($.fn.dataTable.isDataTable('#userTable')) {
+        $('#userTable').DataTable().clear().destroy();
+    }
+
+    // Gửi yêu cầu GET đến servlet
     $.ajax({
         url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/userManagerController',
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            $('#userList').empty(); // Clear existing rows
+            // Xóa các hàng cũ trong bảng
+            $('#userTable tbody').empty();
 
+            // Khởi tạo DataTable
+            var table = $('#userTable').DataTable({
+                paging: true,
+                searching: true,
+                ordering: true,
+                responsive: true,
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ mục",
+                    info: "Hiển thị _START_ đến _END_ của _TOTAL_ mục",
+                    paginate: {
+                        first: "Đầu",
+                        last: "Cuối",
+                        next: "Sau",
+                        previous: "Trước",
+                    },
+                },
+            });
+
+            // Xử lý và thêm dữ liệu vào DataTable
             data.forEach(function (user) {
-                var row = $('<tr></tr>');
-                var avatarUrl = user.avatar; // Default avatar if no avatar exists
-                // https://gcs.tripi.vn/public-tripi/tripi-feed/img/476436UNs/anh-mo-ta.png
-                // Adding avatar with a fixed size of 50x50px
-                row.append('<td>' + user.id + '</td>');
-                row.append('<td><img src="' + avatarUrl + '" alt="Avatar" class="avatar-thumbnail"></td>');
-                row.append('<td>' + user.fullName + '</td>');
-                row.append('<td>' + user.gmail + '</td>');
-                row.append('<td>' + user.phone + '</td>');
-                row.append('<td>' + user.address + '</td>');
-                row.append('<td>' + (user.notificationCheck ? 'Đã Đăng Ký' : 'Chưa Đăng Ký') + '</td>');
-                row.append('<td>' + (user.role === 1 ? 'Admin' : user.role === 2 ? 'Nhân Viên' : 'Người Dùng') + '</td>');
-                row.append('<td>' +
-                    '<button class="btn btn-primary btn-sm user-editBtn" data-id="' + user.id + '">Sửa</button>' +
-                    ' <button class="btn btn-danger btn-sm user-deleteBtn" data-id="' + user.id + '">Xóa</button>' +
-                    '</td>');
-                $('#userList').append(row);
+                table.row.add([
+                    user.id || '', // ID
+                    `<img src="${user.avatar || 'default-avatar-url'}" alt="Avatar" class="avatar-thumbnail" width="50" height="50">`, // Avatar
+                    user.fullName || 'N/A', // Họ và tên
+                    user.gmail || 'N/A', // Email
+                    user.phone || 'N/A', // Số điện thoại
+                    user.address || 'N/A', // Địa chỉ
+                    user.notificationCheck ? 'Đã Đăng Ký' : 'Chưa Đăng Ký', // Trạng thái thông báo
+                    user.role === 1 ? 'Admin' : (user.role === 2 ? 'Nhân Viên' : 'Người Dùng'), // Vai trò
+                    `<button class="btn btn-primary btn-sm user-editBtn" data-id="${user.id}">Sửa</button>
+                     <button class="btn btn-danger btn-sm user-deleteBtn" data-id="${user.id}">Xóa</button>` // Hành động
+                ]).draw(false);
             });
         },
         error: function (xhr, status, error) {
             console.error("Error fetching users: " + error);
+            alert("Không thể tải danh sách người dùng. Vui lòng thử lại!");
         }
     });
 }
@@ -479,4 +469,154 @@ $(document).on('click', '.user-deleteBtn', function () {
             }
         });
     }
+});
+
+//-----------------------------------Material ---------------------------------------
+
+function loadMaterials() {
+    // Kiểm tra và hủy DataTable nếu đã khởi tạo
+    if ($.fn.dataTable.isDataTable('#materialTable')) {
+        $('#materialTable').DataTable().clear().destroy();
+    }
+
+    // Gửi yêu cầu GET đến API
+    $.ajax({
+        url: 'http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController', // URL API
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // Xóa các hàng cũ trong bảng
+            $('#materialTable tbody').empty();
+
+            // Khởi tạo DataTable
+            var table = $('#materialTable').DataTable({
+                paging: true,
+                searching: true,
+                ordering: true,
+                responsive: true,
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ mục",
+                    info: "Hiển thị _START_ đến _END_ của _TOTAL_ mục",
+                    paginate: {
+                        first: "Đầu",
+                        last: "Cuối",
+                        next: "Sau",
+                        previous: "Trước",
+                    },
+                },
+            });
+
+            // Thêm dữ liệu vào DataTable
+            data.forEach(function (material) {
+                table.row.add([
+                    material.id || '', // ID
+                    material.name || 'N/A', // Tên
+                    material.season || 'N/A', // Mùa
+                    material.description || 'N/A', // Mô tả
+                    `<img src="${material.image || 'default-image-url'}" alt="Image" class="material-image" width="50" height="50">`, // Hình ảnh
+                    material.quantity || 0, // Số lượng
+                    material.state === 1 ? 'Đang sử dụng' : 'Ngừng sử dụng', // Trạng thái
+                    material.matCategory || 'N/A', // Loại chất liệu
+                    material.price + ' VND', // Loại chất liệu
+                    `<button class="btn btn-primary btn-sm material-editBtn" data-id="${material.id}">Sửa</button>
+                     <button class="btn btn-danger btn-sm material-deleteBtn" data-id="${material.id}">Xóa</button>` // Hành động
+                ]).draw(false);
+            });
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching materials: " + error);
+            alert("Không thể tải danh sách chất liệu. Vui lòng thử lại!");
+        }
+    });
+}
+
+$(document).on('click', '.material-editBtn', function () {
+    let materialId = $(this).data('id'); // Lấy ID từ nút
+
+    // Gửi yêu cầu GET để lấy thông tin chi tiết
+    $.ajax({
+        url: `http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController/${materialId}`,
+        type: 'GET',
+        dataType: 'json',
+        success: function (material) {
+            // Điền dữ liệu vào form
+            $('#materialId').val(material.id);
+            $('#materialName').val(material.name);
+            $('#materialSeason').val(material.season);
+            $('#materialDescription').val(material.description);
+            $('#materialImagePreview').attr('src', material.image);
+            $('#materialQuantity').val(material.quantity);
+            $('#materialState').val(material.state);
+            $('#materialCategory').val(material.matCategory);
+
+            // Hiển thị modal
+            $('#materialModal').modal('show');
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching material details: " + error);
+            alert("Không thể tải chi tiết chất liệu. Vui lòng thử lại!");
+        }
+    });
+});
+
+$(document).on('click', '.material-deleteBtn', function () {
+    let materialId = $(this).data('id'); // Lấy ID từ nút
+
+    if (confirm('Bạn có chắc chắn muốn xóa chất liệu này không?')) {
+        // Gửi yêu cầu DELETE
+        $.ajax({
+            url: `http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController/${materialId}`,
+            type: 'DELETE',
+            success: function (response) {
+                alert(response.message || 'Xóa thành công!');
+                loadMaterials(); // Tải lại danh sách
+            },
+            error: function (xhr, status, error) {
+                console.error("Error deleting material: " + error);
+                alert("Không thể xóa chất liệu. Vui lòng thử lại!");
+            }
+        });
+    }
+});
+
+$(document).ready(function() {
+    // Khi nhấn nút "Thêm Vật Liệu", modal sẽ xuất hiện
+    $('#addMaterialModal').on('show.bs.modal', function(event) {
+        // Lấy nút kích hoạt modal và thực hiện các thao tác nếu cần
+        var button = $(event.relatedTarget); // Có thể lấy dữ liệu từ nút nếu cần
+    });
+
+    // Gửi form khi nhấn nút "Thêm Vật Liệu"
+    $('#addMaterialForm').on('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn việc reload trang
+
+        // Lấy dữ liệu từ các input trong modal
+        var materialData = {
+            name: $('#materialName').val(),
+            season: $('#materialSeason').val(),
+            description: $('#materialDescription').val(),
+            image: $('#materialImage').val(),
+            quantity: $('#materialQuantity').val(),
+            state: $('#materialState').val(),
+            matCategory: $('#materialCategory').val(),
+            price: $('#materialPrice').val()
+        };
+
+        // Gửi dữ liệu tới server (tùy theo yêu cầu API của bạn)
+        $.ajax({
+            url: '/your/api/endpoint',  // Đường dẫn API của bạn
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(materialData),
+            success: function(response) {
+                alert('Thêm vật liệu thành công!');
+                $('#addMaterialModal').modal('hide'); // Đóng modal
+                loadMaterials();  // Gọi lại hàm load dữ liệu vật liệu (cập nhật bảng)
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra khi thêm vật liệu!');
+            }
+        });
+    });
 });

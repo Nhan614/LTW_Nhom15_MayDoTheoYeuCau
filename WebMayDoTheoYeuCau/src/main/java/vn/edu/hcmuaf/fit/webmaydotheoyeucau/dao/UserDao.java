@@ -58,7 +58,6 @@ public class UserDao {
 
     public boolean updateUser(User user) {
         String sql = "UPDATE users SET fullName = ?, gmail = ?, phone = ?, address = ?, avatar = ?, notificationCheck = ?, role = ? WHERE id = ?";
-
         return dbConnect.get().withHandle(handle ->
                 handle.createUpdate(sql)
                         .bind(0, user.getFullName())  // Bind fullName
