@@ -636,20 +636,19 @@ $(document).ready(function (e) {
     });
 
     $(document).on('click', '.material-deleteBtn', function () {
-        let materialId = $(this).data('id'); // Lấy ID từ nút
+        const materialId = $(this).data('id');
 
-        if (confirm('Bạn có chắc chắn muốn xóa chất liệu này không?')) {
-            // Gửi yêu cầu DELETE
+        if (confirm('Bạn có chắc muốn xóa vật liệu này?')) {
             $.ajax({
-                url: `http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController/${materialId}`,
+                url: `http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/materialController?id=${materialId}`,
                 type: 'DELETE',
                 success: function (response) {
-                    alert(response.message || 'Xóa thành công!');
-                    loadMaterials(); // Tải lại danh sách
+                    alert(response.message);
+                    loadMaterials(); // Tải lại danh sách vật liệu
                 },
                 error: function (xhr, status, error) {
-                    console.error("Error deleting material: " + error);
-                    alert("Không thể xóa chất liệu. Vui lòng thử lại!");
+                    const errorMessage = xhr.responseJSON?.message || 'Có lỗi xảy ra khi xóa vật liệu';
+                    alert(errorMessage);
                 }
             });
         }

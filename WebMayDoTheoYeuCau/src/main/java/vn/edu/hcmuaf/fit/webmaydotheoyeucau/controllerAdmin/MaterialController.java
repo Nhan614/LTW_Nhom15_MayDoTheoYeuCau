@@ -124,4 +124,43 @@ public class MaterialController extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        try {
+            // Lấy ID từ query string
+            String idParam = request.getParameter("id");
+            if (idParam == null || idParam.isEmpty()) {
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                response.getWriter().write("{\"message\": \"Material ID is required\"}");
+                return;
+            }
+
+            int materialId = Integer.parseInt(idParam);
+
+            // Gọi service để xóa vật liệu
+            MaterialService materialService = new MaterialService();
+            boolean isDeleted = materialService.deleteMaterial(materialId);
+
+            // Trả về kết quả
+            if (isDeleted) {
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.getWriter().write("{\"message\": \"Xóa vật liệu thành công\"}");
+            } else {
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                response.getWriter().write("{\"message\": \"Failed to delete material\"}");
+            }
+        } catch (NumberFormatException e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"message\": \"Invalid Material ID format\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("{\"message\": \"Error: " + e.getMessage() + "\"}");
+        }
+    }
+
+
 }

@@ -22,4 +22,9 @@ public class MaterialService {
     public boolean updateMaterial(Material material) {
         return materialDao.updateMaterial(material);
     }
+
+    public boolean deleteMaterial(int id) {
+        return materialDao.deleteMaterial(id);
+    }
+
 }

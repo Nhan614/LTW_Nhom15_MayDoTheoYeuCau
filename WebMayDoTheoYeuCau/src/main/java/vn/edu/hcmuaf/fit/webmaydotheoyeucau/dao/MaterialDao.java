@@ -55,6 +55,14 @@ public class MaterialDao {
                         .execute() > 0);
     }
 
+    public boolean deleteMaterial(int id) {
+        String sql = "DELETE FROM materials WHERE id = :id";
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("id", id)
+                        .execute() > 0);
+    }
+
     public static void main(String[] args) {
         MaterialDao materialDao = new MaterialDao();
         System.out.println(materialDao.getAllMaterial());
