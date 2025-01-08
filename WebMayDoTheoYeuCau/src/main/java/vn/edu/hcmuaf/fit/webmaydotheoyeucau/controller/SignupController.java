@@ -1,5 +1,3 @@
-package vn.edu.hcmuaf.fit.webmaydotheoyeucau.controller;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,46 +27,6 @@ public class SignupController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String fullName = request.getParameter("fullName");
-//        String gmail = request.getParameter("gmail");
-//        String password = request.getParameter("password");
-//        String confirmPassword = request.getParameter("confirmPassword");
-//
-//        // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
-//        if (!password.equals(confirmPassword)) {
-//            request.setAttribute("error", "Mật khẩu xác minh không khớp");
-//            request.getRequestDispatcher("login.jsp").forward(request, response);
-//            return;
-//        }
-//
-//        // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
-//        if (userDao.isEmailExist(gmail)) {
-//            request.setAttribute("error", "Email đã được sử dụng");
-//            request.getRequestDispatcher("login.jsp").forward(request, response);
-//            return;
-//        }
-//        // Mã hóa mật khẩu trước khi lưu
-//        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-//
-//        // Tạo đối tượng User và thêm vào cơ sở dữ liệu
-//        User newUser = new User(0, "", hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
-//        boolean isSuccess = userDao.registerUser(newUser);
-//
-//        if (isSuccess) {
-//            // Đăng nhập ngay sau khi đăng ký thành công
-//            HttpSession session = request.getSession();
-//            session.setAttribute("auth", newUser); // Tự động đăng nhập
-//
-//            // Chuyển hướng đến trang chủ sau khi đăng ký thành công
-//            response.sendRedirect("home.jsp");
-//        } else {
-//            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
-//            request.getRequestDispatcher("login.jsp").forward(request, response);
-//        }
-//    }
-//}
-
-// Lấy dữ liệu từ form đăng ký
         String fullName = request.getParameter("fullName");
         String gmail = request.getParameter("gmail");
         String password = request.getParameter("password");
@@ -76,25 +34,22 @@ public class SignupController extends HttpServlet {
 
         // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
         if (!password.equals(confirmPassword)) {
-            // Nếu mật khẩu xác minh không khớp, chuyển đến trang đăng ký với thông báo lỗi
             request.setAttribute("error", "Mật khẩu xác minh không khớp");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
             return;
         }
 
         // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
-        UserDao userDao = new UserDao();
         if (userDao.isEmailExist(gmail)) {
             request.setAttribute("error", "Email đã được sử dụng");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
             return;
         }
-
         // Mã hóa mật khẩu trước khi lưu
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
         // Tạo đối tượng User và thêm vào cơ sở dữ liệu
-        User newUser = new User(0, fullName, hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
+        User newUser = new User(0, "", hashedPassword, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
         boolean isSuccess = userDao.registerUser(newUser);
 
         if (isSuccess) {
@@ -105,10 +60,8 @@ public class SignupController extends HttpServlet {
             // Chuyển hướng đến trang chủ sau khi đăng ký thành công
             response.sendRedirect("home.jsp");
         } else {
-            // Nếu đăng ký không thành công, quay lại trang đăng ký với thông báo lỗi
             request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
     }
 }
-

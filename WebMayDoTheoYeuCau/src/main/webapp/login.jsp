@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="input-box animation" style="--i:20; --j:3">
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" value="<%=gmail%>" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>

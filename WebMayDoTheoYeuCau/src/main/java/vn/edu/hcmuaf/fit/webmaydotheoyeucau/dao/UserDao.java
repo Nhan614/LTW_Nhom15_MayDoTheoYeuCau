@@ -7,7 +7,6 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,10 +53,9 @@ public class UserDao {
         });
     }
 
-
-
     public boolean updateUser(User user) {
         String sql = "UPDATE users SET fullName = ?, gmail = ?, phone = ?, address = ?, avatar = ?, notificationCheck = ?, role = ? WHERE id = ?";
+
         return dbConnect.get().withHandle(handle ->
                 handle.createUpdate(sql)
                         .bind(0, user.getFullName())  // Bind fullName
@@ -101,7 +99,7 @@ public class UserDao {
         return dbConnect.get().withHandle(handle -> {
             return handle.createUpdate(sql)
                     .bind(0, user.getAvatar())
-                    .bind(1, hashedPassword)  // Lưu mật khẩu đã mã hóa
+                    .bind(1, hashedPassword)
                     .bind(2, user.getFullName())
                     .bind(3, user.getGmail())
                     .bind(4, user.getPhone())
@@ -111,7 +109,6 @@ public class UserDao {
                     .execute() > 0;
         });
     }
-
 
     // Kiểm tra xem email đã tồn tại chưa
     public boolean isEmailExist(String email) {
@@ -152,8 +149,8 @@ public class UserDao {
 
         // Kiểm tra đăng nhập người dùng với cả email và mật khẩu
         String gmail = "john@example.com";
-        String password = "123";
-        User loggedInUser = (User) userDao.checkUser(gmail, password);
+        String password = "plainpassword";
+        User loggedInUser = userDao.checkUser(gmail, password);
 
         if (loggedInUser != null) {
             System.out.println("Đăng nhập thành công: " + loggedInUser.getFullName());
