@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.mindrot.jbcrypt.BCrypt;
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.UserDao;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.io.IOException;
