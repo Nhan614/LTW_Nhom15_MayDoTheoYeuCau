@@ -37,7 +37,6 @@ public class MaterialController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Set response content type to JSON
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
@@ -56,7 +55,7 @@ public class MaterialController extends HttpServlet {
             Gson gson = new Gson();
             Material newMaterial = gson.fromJson(json, Material.class);
 
-            // Gọi service để thêm vật liệu vào DB
+            // Gọi service để thêm Material vào DB
             MaterialService materialService = new MaterialService();
             boolean isAdded = materialService.addMaterial(newMaterial);
 
@@ -70,12 +69,56 @@ public class MaterialController extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
             response.getWriter().write(gson.toJson(jsonResponse));
+
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("{\"message\": \"Invalid JSON format\"}");
         } catch (Exception e) {
             e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("{\"message\": \"Error processing request: " + e.getMessage() + "\"}");
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        try {
+            // Đọc dữ liệu JSON từ request body
+            StringBuilder jsonBuffer = new StringBuilder();
+            String line;
+            try (BufferedReader reader = request.getReader()) {
+                while ((line = reader.readLine()) != null) {
+                    jsonBuffer.append(line);
+                }
+            }
+            String json = jsonBuffer.toString();
+
+            // Chuyển đổi JSON thành đối tượng MaterialModel
+            Gson gson = new Gson();
+            Material material = gson.fromJson(json, Material.class);
+
+            // Gọi service để cập nhật vật liệu trong DB
+            MaterialService materialService = new MaterialService();
+            boolean isUpdated = materialService.updateMaterial(material);
+
+            // Gửi phản hồi cho client
+            JsonObject jsonResponse = new JsonObject();
+            if (isUpdated) {
+                jsonResponse.addProperty("message", "Cập nhật vật liệu thành công");
+                response.setStatus(HttpServletResponse.SC_OK);
+            } else {
+                jsonResponse.addProperty("message", "Cập nhật vật liệu thất bại");
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+            response.getWriter().write(gson.toJson(jsonResponse));
+        } catch (JsonSyntaxException e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"message\": \"Invalid JSON format\"}");
+        } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("{\"message\": \"Error processing request: " + e.getMessage() + "\"}");
         }

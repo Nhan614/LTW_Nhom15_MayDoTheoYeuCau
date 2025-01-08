@@ -18,4 +18,8 @@ public class MaterialService {
     public boolean addMaterial(Material newMaterial) {
         return materialDao.addMaterial(newMaterial);
     }
+
+    public boolean updateMaterial(Material material) {
+        return materialDao.updateMaterial(material);
+    }
 }

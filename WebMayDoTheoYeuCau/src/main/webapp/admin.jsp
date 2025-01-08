@@ -377,7 +377,8 @@
                 </div>
             </div>
             <!-- Modal Thêm Vật Liệu -->
-            <div class="modal fade" id="addMaterialModal" tabindex="-1" role="dialog" aria-labelledby="addMaterialModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addMaterialModal" tabindex="-1" role="dialog"
+                 aria-labelledby="addMaterialModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -402,7 +403,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="materialImage">Hình Ảnh</label>
-                                    <input type="text" class="form-control" id="materialImage" placeholder="Nhập URL hình ảnh">
+                                    <input type="text" class="form-control" id="materialImage"
+                                           placeholder="Nhập URL hình ảnh">
                                 </div>
                                 <div class="form-group">
                                     <label for="materialQuantity">Số Lượng</label>
@@ -434,6 +436,70 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal sửa vật liệu -->
+            <div class="modal" id="editMaterialModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sửa Vật Liệu</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editMaterialForm">
+                                <!-- Input ẩn ID vật liệu -->
+                                <input type="hidden" id="editMaterialId">
+
+                                <div class="form-group">
+                                    <label for="editMaterialName">Tên Vật Liệu</label>
+                                    <input type="text" class="form-control" id="editMaterialName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialSeason">Mùa</label>
+                                    <select class="form-control" id="editMaterialSeason" required>
+                                        <option value="Xuân">Xuân</option>
+                                        <option value="Hạ">Hạ</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Đông">Đông</option>
+                                        <option value="4 Mùa">4 Mùa</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialImage">Hình Ảnh</label>
+                                    <input type="text" class="form-control" id="editMaterialImage" placeholder="Nhập URL hình ảnh">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialQuantity">Số Lượng</label>
+                                    <input type="number" class="form-control" id="editMaterialQuantity" required min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialState">Trạng Thái</label>
+                                    <select class="form-control" id="editMaterialState" required>
+                                        <option value="1">Còn hàng</option>
+                                        <option value="0">Hết hàng</option>
+                                        <option value="2">Ẩn</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialCategory">Loại Chất Liệu</label>
+                                    <input type="text" class="form-control" id="editMaterialCategory" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialPrice">Giá</label>
+                                    <input type="number" class="form-control" id="editMaterialPrice" required min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editMaterialDescription">Mô Tả</label>
+                                    <textarea class="form-control" id="editMaterialDescription" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn-custumize btn-lg">Lưu Thay Đổi</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <hr>
             <h3 class="text-center">Danh Sách Vật Liệu</h3>
             <table id="materialTable" class="table table-bordered">

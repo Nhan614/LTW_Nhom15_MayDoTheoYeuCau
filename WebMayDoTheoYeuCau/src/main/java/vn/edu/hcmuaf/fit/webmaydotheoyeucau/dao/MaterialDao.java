@@ -38,6 +38,23 @@ public class MaterialDao {
         });
     }
 
+    public boolean updateMaterial(Material material) {
+        String sql = "UPDATE materials SET name = :name, season = :season, description = :description, image = :image, " +
+                "quantity = :quantity, state = :state, matCategory = :matCategory, price = :price WHERE id = :id";
+        return dbConnect.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("id", material.getId())
+                        .bind("name", material.getName())
+                        .bind("season", material.getSeason())
+                        .bind("description", material.getDescription())
+                        .bind("image", material.getImage())
+                        .bind("quantity", material.getQuantity())
+                        .bind("state", material.getState())
+                        .bind("matCategory", material.getMatCategory())
+                        .bind("price", material.getPrice())
+                        .execute() > 0);
+    }
+
     public static void main(String[] args) {
         MaterialDao materialDao = new MaterialDao();
         System.out.println(materialDao.getAllMaterial());
