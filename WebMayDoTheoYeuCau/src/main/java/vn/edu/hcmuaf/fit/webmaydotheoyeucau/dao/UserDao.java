@@ -26,11 +26,30 @@ public class UserDao {
         });
     }
 
-    public List<User> checkUser(String gmail, String password) {
-        String sql = "SELECT * FROM users WHERE gmail = :gmail AND password = :password";
+    // Kiểm tra mật khẩu so với mật khẩu đã mã hóa
+    public boolean checkPassword(String plainPassword, String hashedPassword) {
+        if (!hashedPassword.startsWith("$2a$") && !hashedPassword.startsWith("$2b$")) {
+            throw new IllegalArgumentException("Mật khẩu không hợp lệ");
+        }
+        return BCrypt.checkpw(plainPassword, hashedPassword);
+    }
 
+    // Kiểm tra đăng nhập với email và mật khẩu
+    public User checkUser(String email, String pass) {
+        String sql = "SELECT * FROM users WHERE gmail = :email";
         return dbConnect.get().withHandle(handle -> {
-            return handle.createQuery(sql).bind("gmail", gmail).bind("password", password).mapToBean(User.class).list();
+            List<User> users = handle.createQuery(sql)
+                    .bind("email", email)
+                    .mapToBean(User.class)
+                    .list();
+
+            if (!users.isEmpty()) {
+                User user = users.get(0);
+                if (BCrypt.checkpw(pass, user.getPassword())) { // Kiểm tra mật khẩu đã mã hóa
+                    return user;
+                }
+            }
+            return null; // Nếu không tìm thấy người dùng hoặc mật khẩu sai
         });
     }
 
@@ -81,10 +100,59 @@ public class UserDao {
         });
     }
 
+    // Kiểm tra xem email đã tồn tại chưa
+    public boolean isEmailExist(String email) {
+        String sql = "SELECT * FROM users WHERE gmail = :gmail";
+        return dbConnect.get().withHandle(handle -> {
+            return !handle.createQuery(sql)
+                    .bind("gmail", email)
+                    .mapToBean(User.class)
+                    .list()
+                    .isEmpty();
+        });
+    }
+
+    // Kiểm tra quyền của người dùng (Admin)
+    public boolean isAdmin(User user) {
+        return user.getRole() == 1; // 1 là Admin
+    }
+
+//    public static void main(String[] args) {
+//        UserDao userDao = new UserDao();
+//        System.out.println(userDao.updateUser(new User(2, "ff", "Nghia11", "n@nlu.com", "111111", "la", 0, 1)));
+//    }
+
+
+    // Main để kiểm tra các chức năng
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
-        System.out.println(userDao.updateUser(new User(2, "ff", "Nghia11", "n@nlu.com", "111111", "la", 0, 1)));
+
+        // Kiểm tra đăng ký người dùng mới
+        User newUser = new User(0, "John Doe","123", "plainpassword", "john@example.com", "123456789", "123 Main St", 0, 2);
+        boolean registrationSuccess = userDao.registerUser(newUser);
+
+        if (registrationSuccess) {
+            System.out.println("Đăng ký thành công");
+        } else {
+            System.out.println("Đăng ký không thành công");
+        }
+
+        // Kiểm tra đăng nhập người dùng với cả email và mật khẩu
+        String gmail = "john@example.com";
+        String password = "plainpassword";
+        User loggedInUser = userDao.checkUser(gmail, password);
+
+        if (loggedInUser != null) {
+            System.out.println("Đăng nhập thành công: " + loggedInUser.getFullName());
+        } else {
+            System.out.println("Đăng nhập không thành công.");
+        }
     }
+}
+
+
+
+
 }
 
 
