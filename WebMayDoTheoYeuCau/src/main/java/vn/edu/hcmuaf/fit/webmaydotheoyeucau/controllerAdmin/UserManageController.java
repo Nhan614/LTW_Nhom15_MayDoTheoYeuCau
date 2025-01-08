@@ -61,7 +61,6 @@ public class UserManageController extends HttpServlet {
             // Parse the JSON into a UserModel object
             Gson gson = new Gson();
             User user = gson.fromJson(json, User.class);
-
             // Call the service to update the user
             UserManageService userService = new UserManageService();
             boolean isUpdated = userService.updateUser(user);
@@ -69,10 +68,10 @@ public class UserManageController extends HttpServlet {
             // Return response
             JsonObject jsonResponse = new JsonObject();
             if (isUpdated) {
-                jsonResponse.addProperty("message", "User updated successfully");
+                jsonResponse.addProperty("message", "Cập nhật thành công");
                 response.setStatus(HttpServletResponse.SC_OK);
             } else {
-                jsonResponse.addProperty("message", "Failed to update user");
+                jsonResponse.addProperty("message", "Cập nhật thất bại");
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
             response.getWriter().write(gson.toJson(jsonResponse));
