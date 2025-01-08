@@ -78,7 +78,7 @@ public class CategoriesController extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("{\"message\": \"Error processing request: " + e.getMessage() + "\"}");
         }
-    
+
     }
 
     @Override

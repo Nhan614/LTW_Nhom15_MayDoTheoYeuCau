@@ -14,4 +14,8 @@ public class MaterialService {
     public List<Material> getMaterial() {
        return materialDao.getAllMaterial();
     }
+
+    public boolean addMaterial(Material newMaterial) {
+        return materialDao.addMaterial(newMaterial);
+    }
 }

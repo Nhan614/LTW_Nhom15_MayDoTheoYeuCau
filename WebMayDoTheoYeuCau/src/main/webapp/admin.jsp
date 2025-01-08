@@ -382,9 +382,6 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addMaterialModalLabel">Thêm Vật Liệu</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                         <div class="modal-body">
                             <form id="addMaterialForm">
@@ -404,10 +401,6 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="materialDescription">Mô Tả</label>
-                                    <textarea class="form-control" id="materialDescription" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
                                     <label for="materialImage">Hình Ảnh</label>
                                     <input type="text" class="form-control" id="materialImage" placeholder="Nhập URL hình ảnh">
                                 </div>
@@ -420,6 +413,7 @@
                                     <select class="form-control" id="materialState" required>
                                         <option value="1">Còn hàng</option>
                                         <option value="0">Hết hàng</option>
+                                        <option value="2">Ẩn</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -430,7 +424,11 @@
                                     <label for="materialPrice">Giá</label>
                                     <input type="number" class="form-control" id="materialPrice" required min="0">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Thêm Vật Liệu</button>
+                                <div class="form-group">
+                                    <label for="materialDescription">Mô Tả</label>
+                                    <textarea class="form-control" id="materialDescription" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn-custumize btn-lg">Thêm Vật Liệu</button>
                             </form>
                         </div>
                     </div>
@@ -444,12 +442,12 @@
                     <th>ID</th>
                     <th>Tên</th>
                     <th>Mùa</th>
-                    <th>Mô tả</th>
                     <th>Hình ảnh</th>
                     <th>Số lượng</th>
                     <th>Trạng thái</th>
                     <th>Loại chất liệu</th>
                     <th>Gía</th>
+                    <th>Mô tả</th>
                     <th>Hành động</th>
                 </tr>
                 </thead>
@@ -458,13 +456,9 @@
                 </tbody>
             </table>
         </div>
-        <!-- Nút Thêm Vật Liệu -->
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addMaterialModal">
-            Thêm Vật Liệu
-        </button>
         <!-- Button to Open the Modal -->
-        <button type="button" class="btn-custumize btn-lg admin-addMaterial mt-3" data-toggle="modal"
-                data-target="#materialModal"> Thêm Vật Liệu
+        <button type="button" class="btn-custumize btn-lg admin-addMaterialbtn mt-3" data-toggle="modal"
+                data-target="#addMaterialModal"> Thêm Vật Liệu
         </button>
     </section>
 
@@ -507,7 +501,7 @@
                     <td>Đang Vận Chuyển</td>
                     <td>Quận Thủ Đức</td>
                     <td>
-                        <button class="btn btn-primary btn-sm admin-order-editBtn">Cập Nhật</button>
+                        <button type="submit" class="btn btn-primary btn-sm admin-order-editBtn">Cập Nhật</button>
                     </td>
                 </tr>
                 </tbody>
