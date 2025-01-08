@@ -149,10 +149,10 @@ public class CategoriesController extends HttpServlet {
             // Trả về kết quả
             if (isDeleted) {
                 response.setStatus(HttpServletResponse.SC_OK);
-                response.getWriter().write("{\"message\": \"Category deleted successfully\"}");
+                response.getWriter().write("{\"message\": \"Xóa danh mục thành công\"}");
             } else {
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                response.getWriter().write("{\"message\": \"Failed to delete category\"}");
+                response.getWriter().write("{\"message\": \"Xóa danh mục thất bại\"}");
             }
         } catch (Exception e) {
             e.printStackTrace();

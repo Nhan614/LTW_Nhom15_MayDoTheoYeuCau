@@ -137,7 +137,7 @@ $(document).ready(function (e) {
                 danhMucChaSelect.empty();
                 danhMucChaSelect.append('<option value="">Danh Mục Cha</option>');
 
-                // Duyệt qua danh sách danh mục
+                // Duyệt qua danh sách danh mục và hiển thị tất cả các danh mục vào bảng
                 data.forEach(function (category) {
                     // Thêm danh mục vào bảng
                     var row = $('<tr></tr>');
@@ -146,18 +146,63 @@ $(document).ready(function (e) {
                     row.append('<td>' + (category.categoryParentID || 'N/A') + '</td>');
                     row.append('<td>' + (category.state === 1 ? 'Hiện' : category.state === 2 ? 'Nổi Bật' : 'Ẩn') + '</td>');
                     row.append('<td>' + category.description + '</td>');
-                    row.append('<td>' +
-                        '<button class="editCategory-btn btn btn-primary btn-sm" data-id="' + category.id + '">Edit</button>' +
-                        ' <button class="deleteCategory-btn btn btn-sm btn-danger" data-id="' + category.id + '">Delete</button>' +
-                        '</td>');
-                    $('#categories-tbody').append(row);
 
-                    // Thêm danh mục vào dropdown
+                    // Kiểm tra nếu categoryParentID là 1 hoặc 0 thì không hiển thị nút Delete
+                    var actionButtons = '<button class="editCategory-btn btn btn-primary btn-sm" data-id="' + category.id + '">Edit</button>';
+
+                    if (category.categoryParentID !== 1 && category.categoryParentID !== 0) {
+                        actionButtons += ' <button class="deleteCategory-btn btn btn-sm btn-danger" data-id="' + category.id + '">Delete</button>';
+                    }
+
+                    row.append('<td>' + actionButtons + '</td>');
+                    $('#categories-tbody').append(row);
+                });
+
+                // Lọc các danh mục có categoryParentID = 1 và hiển thị vào dropdown
+                const filteredCategories = data.filter(function (category) {
+                    return category.categoryParentID === 1; // Chỉ lấy các danh mục có categoryParentID = 1
+                });
+
+                // Thêm các danh mục đã lọc vào dropdown
+                filteredCategories.forEach(function (category) {
                     danhMucChaSelect.append('<option value="' + category.id + '">' + category.categoryName + '</option>');
                 });
             },
             error: function (xhr, status, error) {
                 console.error("Error fetching categories: " + error);
+            }
+        });
+    }
+
+    function addCategory() {
+        // Lấy giá trị từ các trường nhập liệu
+        var categoryName = $('#categoryName').val();
+        var categoryParentID = $('#DanhMucCha').val();
+        var state = $('#TrangThai').val();
+        var description = $('#categoryDescription').val();
+
+        // Tạo đối tượng JSON để gửi lên server
+        var newCategory = {
+            categoryName: categoryName,
+            categoryParentID: categoryParentID || null, // Nếu không có chọn danh mục cha, sẽ là null
+            state: state,
+            description: description
+        };
+
+        // Gửi yêu cầu AJAX để thêm danh mục
+        $.ajax({
+            url: '/WebMayDoTheoYeuCau_war_exploded/categories',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(newCategory),
+            success: function (response) {
+                alert('Thêm danh mục thành công!');
+                clearFormCategory(); // Xóa form sau khi thêm
+                loadCategories(); // Tải lại danh sách danh mục
+            },
+            error: function (xhr, status, error) {
+                console.error('Error adding category: ' + error);
+                alert('Thêm danh mục thất bại.');
             }
         });
     }
@@ -300,10 +345,12 @@ $(document).ready(function (e) {
     }
 
     function clearFormCategory() {
-        $('#addCategoryForm')[0].reset();
+        $('#addCategoryForm')[0].reset(); // Reset lại form
         $('#categoryId').remove(); // Xóa input ẩn chứa ID danh mục
+        // Gắn lại sự kiện click cho nút Thêm Danh Mục
         $('.btn-custumize').text('Thêm Danh Mục').off('click').on('click', function (event) {
             event.preventDefault();
+            addCategory(); // Gọi hàm thêm danh mục
         });
     }
 
