@@ -34,22 +34,25 @@ public class UserDao {
         return BCrypt.checkpw(plainPassword, hashedPassword);
     }
 
-    // Kiểm tra đăng nhập với email và mật khẩu
     public User checkUser(String email, String pass) {
         String sql = "SELECT * FROM users WHERE gmail = :email";
         return dbConnect.get().withHandle(handle -> {
+            // Truy vấn cơ sở dữ liệu để lấy thông tin người dùng từ email
             List<User> users = handle.createQuery(sql)
                     .bind("email", email)
                     .mapToBean(User.class)
                     .list();
 
+            // Kiểm tra nếu tìm thấy người dùng
             if (!users.isEmpty()) {
                 User user = users.get(0);
-                if (BCrypt.checkpw(pass, user.getPassword())) { // Kiểm tra mật khẩu đã mã hóa
-                    return user;
+
+                // So sánh mật khẩu người dùng nhập vào với mật khẩu đã mã hóa trong cơ sở dữ liệu
+                if (BCrypt.checkpw(pass, user.getPassword())) {
+                    return user;  // Trả về đối tượng User nếu mật khẩu khớp
                 }
             }
-            return null; // Nếu không tìm thấy người dùng hoặc mật khẩu sai
+            return null;  // Trả về null nếu không tìm thấy người dùng hoặc mật khẩu sai
         });
     }
 
@@ -94,19 +97,21 @@ public class UserDao {
     // Đăng ký người dùng mới (mã hóa mật khẩu)
     public boolean registerUser(User user) {
         String sql = "INSERT INTO users (avatar, password, fullName, gmail, phone, address, notificationCheck, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()); // Mã hóa mật khẩu trước khi lưu
+
+        // Mã hóa mật khẩu trước khi lưu
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 
         return dbConnect.get().withHandle(handle -> {
             return handle.createUpdate(sql)
-                    .bind(0, user.getAvatar())
-                    .bind(1, hashedPassword)
-                    .bind(2, user.getFullName())
-                    .bind(3, user.getGmail())
-                    .bind(4, user.getPhone())
-                    .bind(5, user.getAddress())
-                    .bind(6, user.getNotificationCheck())
-                    .bind(7, user.getRole())
-                    .execute() > 0;
+                    .bind(0, user.getAvatar())  // Liên kết giá trị avatar
+                    .bind(1, hashedPassword)    // Liên kết mật khẩu đã mã hóa
+                    .bind(2, user.getFullName()) // Liên kết tên đầy đủ
+                    .bind(3, user.getGmail())    // Liên kết email
+                    .bind(4, user.getPhone())    // Liên kết số điện thoại
+                    .bind(5, user.getAddress())  // Liên kết địa chỉ
+                    .bind(6, user.getNotificationCheck()) // Liên kết thông báo
+                    .bind(7, user.getRole())     // Liên kết vai trò người dùng
+                    .execute() > 0; // Thực thi câu lệnh và kiểm tra xem có dòng nào bị ảnh hưởng (thêm thành công)
         });
     }
 
@@ -136,27 +141,31 @@ public class UserDao {
     // Main để kiểm tra các chức năng
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
+        String hashedPassword = BCrypt.hashpw("111", BCrypt.gensalt());
+        System.out.println(hashedPassword);
+//        User user = new User("avatar.png", "111", "John Doe", "11@11.v", "123456789", "123 Main St", 1, 2);
+//        System.out.println(userDao.registerUser(user));
 
-        // Kiểm tra đăng ký người dùng mới
-        User newUser = new User(0, "John Doe","123", "plainpassword", "john@example.com", "123456789", "123 Main St", 0, 2);
-        boolean registrationSuccess = userDao.registerUser(newUser);
+//        // Kiểm tra đăng ký người dùng mới
 
-        if (registrationSuccess) {
-            System.out.println("Đăng ký thành công");
-        } else {
-            System.out.println("Đăng ký không thành công");
-        }
-
-        // Kiểm tra đăng nhập người dùng với cả email và mật khẩu
-        String gmail = "john@example.com";
-        String password = "plainpassword";
-        User loggedInUser = userDao.checkUser(gmail, password);
-
-        if (loggedInUser != null) {
-            System.out.println("Đăng nhập thành công: " + loggedInUser.getFullName());
-        } else {
-            System.out.println("Đăng nhập không thành công.");
-        }
+        //System.out.println(userDao.checkUser("11@11.v", "111"));
+//
+//        if (registrationSuccess) {
+//            System.out.println("Đăng ký thành công");
+//        } else {
+//            System.out.println("Đăng ký không thành công");
+//        }
+//
+//        // Kiểm tra đăng nhập người dùng với cả email và mật khẩu
+//        String gmail = "john@example.com";
+//        String password = "plainpassword";
+//        User loggedInUser = userDao.checkUser(gmail, password);
+//
+//        if (loggedInUser != null) {
+//            System.out.println("Đăng nhập thành công: " + loggedInUser.getFullName());
+//        } else {
+//            System.out.println("Đăng nhập không thành công.");
+//        }
     }
 }
 

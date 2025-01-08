@@ -114,28 +114,26 @@
                         password = (password == null ? "" : password);
                         emailExist = (emailExist == null ? "" : emailExist);
                     %>
-                    <form action="signup" method="post">
-
-
+                    <form action="signupController" method="POST">
                         <div class="input-box animation" style="--i:18; --j:1">
                             <input type="text"  id="fullName" name="fullName" value="<%=fullname%>" required>
                             <label>Tên:</label>
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="input-box animation" style="--i:19; --j:2">
-                            <input type="text" id="gmail" name="gmail" value="<%=gmail%>" required>
+                            <input type="text" id="gmailRe" name="gmailRe" value="<%=gmail%>" required>
                             <label>E-mail:</label>
                             <i class="fa-solid fa-envelope"></i>
 
                         </div>
 
                         <div class="input-box animation" style="--i:20; --j:3">
-                            <input type="password" id="password" name="password" value="<%=gmail%>" required>
+                            <input type="password" id="passwordRe" name="passwordRe" value="<%=gmail%>" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
                         </div>
                         <div class="input-box animation" style="--i:21; --j:4">
-                            <input type="password" required>
+                            <input type="password" id="confirmPasswordRe" name="confirmPasswordRe" required>
                             <label>Xác minh mật khẩu:</label>
                         </div>
 
