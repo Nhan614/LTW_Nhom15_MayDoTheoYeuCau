@@ -30,7 +30,34 @@
             /* display: none;   */
             pointer-events: none;
         }
+
+        /*.error-message {*/
+        /*    display: none;*/
+        /*}*/
+
+
     </style>
+<%--    <script>--%>
+<%--        window.onload = function() {--%>
+<%--            // Ẩn thông báo lỗi khi trang đã tải xong--%>
+<%--            var errorMessage = document.querySelector('.error-message');--%>
+<%--            if (errorMessage) {--%>
+<%--                setTimeout(function() {--%>
+<%--                    errorMessage.style.display = 'none';--%>
+<%--                }, 3000); // Ẩn sau 3 giây--%>
+<%--            }--%>
+<%--        };--%>
+<%--    </script>--%>
+<%--    <script>--%>
+<%--        window.onload = function() {--%>
+<%--            var errorMessage = document.querySelector('.error-message');--%>
+<%--            if (errorMessage) {--%>
+<%--                errorMessage.style.display = 'block';--%>
+<%--            }--%>
+<%--        };--%>
+<%--    </script>--%>
+
+
 </head>
 
 <body>
@@ -59,33 +86,25 @@
                     <h2 class="animation" style="--i:0; --j:11">Đăng nhập</h2>
 
 <%--                    <%--%>
-<%--                        String error= (String) request.getAttribute("error");--%>
-<%--                        String email= request.getParameter("email");--%>
-<%--                        if(error==null) error = "";--%>
-<%--                        if(email==null) email = "";--%>
-<%--                    %>--%>
-<%--&lt;%&ndash;                    <p><%= error %></p>&ndash;%&gt;--%>
-<%--                    <p class="error-message"><%= error %></p>--%>
-
-<%--                    <%--%>
-<%--                        String loginError = (String) request.getAttribute("error");--%>
-<%--                        String email = request.getParameter("email");--%>
+<%--                        String loginError = (String) session.getAttribute("loginError");--%>
+<%--                        String email = (String) session.getAttribute("email");--%>
 <%--                        if (email == null) email = "";--%>
+<%--                        if (loginError != null) {--%>
 <%--                    %>--%>
-
-
+<%--                    <p class="error-message"><%= loginError %></p>--%>
+<%--                    <%--%>
+<%--                            session.removeAttribute("signupError");--%>
+<%--                            session.removeAttribute("email");--%>
+<%--                        }--%>
+<%--                    %>--%>
                     <%
-                        String loginError = (String) session.getAttribute("loginError");
-                        String email = (String) session.getAttribute("email");
-                        if (email == null) email = "";
-                        if (loginError != null) {
+                        String error= (String) request.getAttribute("error");
+                        String email= request.getParameter("email");
+                        if(error==null) error = "";
+                        if(email==null) email = "";
                     %>
-                    <p class="error-message"><%= loginError %></p>
-                    <%
-                            session.removeAttribute("loginError");
-                            session.removeAttribute("email");
-                        }
-                    %>
+                    <%--                    <p><%= error %></p>--%>
+                    <p class="error-message"><%= error %></p>
 
                     <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
@@ -93,9 +112,6 @@
                             <label>Email:</label>
                             <i class="fa-solid fa-user"></i>
 
-<%--//                            <% if (loginError != null && loginError.contains("email")) { %>--%>
-<%--//                            <p class="error-message"><%= loginError %></p>--%>
-<%--//                            <% } %>--%>
                         </div>
 
                         <div class="input-box animation" style="--i:2; --j:13">
@@ -103,9 +119,7 @@
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
 
-<%--                            <% if (loginError != null && loginError.contains("pass")) { %>--%>
-<%--                            <p class="error-message"><%= loginError %></p>--%>
-<%--                            <% } %>--%>
+
                         </div>
                         <div class="forgot-password animation" style="--i:3;--j:14">
                             <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
@@ -150,17 +164,7 @@
                 <div class="form-box register" id="signup-form">
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
 
-<%--                    <%--%>
-<%--                        String gmail = (String) request.getAttribute("gmail");--%>
-<%--                        String fullname = (String) request.getAttribute("fullname");--%>
-<%--                        String password = (String) request.getAttribute("password");--%>
-<%--                        String emailExist = (String) request.getAttribute("emailExist");--%>
 
-<%--                        gmail = (gmail == null ? "" : gmail);--%>
-<%--                        fullname = (fullname == null ? "" : fullname);--%>
-<%--                        password = (password == null ? "" : password);--%>
-<%--                        emailExist = (emailExist == null ? "" : emailExist);--%>
-<%--                    %>--%>
                     <%
                         String signupError = (String) request.getAttribute("error");
                         String fullname = request.getParameter("fullName");
@@ -181,18 +185,13 @@
                             <i class="fa-solid fa-user"></i>
 
 
-<%--//                            <% if (signupError != null && signupError.contains("fullname")) { %>--%>
-<%--//                            <p class="error-message"><%= signupError %></p>--%>
-<%--//                            <% } %>--%>
+
                         </div>
                         <div class="input-box animation" style="--i:19; --j:2">
                             <input type="text" id="gmailRe" name="gmailRe" value="<%=gmail%>" required>
                             <label>E-mail:</label>
                             <i class="fa-solid fa-envelope"></i>
 
-<%--//                            <% if (signupError != null && signupError.contains("email")) { %>--%>
-<%--//                            <p class="error-message"><%= signupError %></p>--%>
-<%--//                            <% } %>--%>
 
                         </div>
 
@@ -201,19 +200,11 @@
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
 
-
-<%--//                            <% if (signupError != null && signupError.contains("password")) { %>--%>
-<%--//                            <p class="error-message"><%= signupError %></p>--%>
-<%--//                            <% } %>--%>
                         </div>
                         <div class="input-box animation" style="--i:21; --j:4">
                             <input type="password" id="confirmPasswordRe" name="confirmPasswordRe" required>
                             <label>Xác minh mật khẩu:</label>
 
-
-<%--//                            <% if (signupError != null && signupError.contains("confirmPassword")) { %>--%>
-<%--//                            <p class="error-message"><%= signupError %></p>--%>
-<%--//                            <% } %>--%>
                         </div>
 
                         <button type="submit" class="btn animation" style="--i:22; --j:5">Đăng ký </button>
