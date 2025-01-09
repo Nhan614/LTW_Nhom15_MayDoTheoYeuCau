@@ -27,48 +27,64 @@ public class ProductController extends HttpServlet {
 
         switch (type) {
             case "vestCongSo":
+                request.setAttribute("products", productService.getProductsByCategoryId(1));
                 request.getRequestDispatcher("/vestCongSo.jsp").forward(request, response);
                 break;
+
             case "vestThuongNgay":
+                request.setAttribute("products", productService.getProductsByCategoryId(2));
                 request.getRequestDispatcher("/vestThuongNgay.jsp").forward(request, response);
                 break;
             case "vestXanh":
+                request.setAttribute("products", productService.getProductsByCategoryId(3));
                 request.getRequestDispatcher("/vestXanh.jsp").forward(request, response);
                 break;
             case "vestNau":
+                request.setAttribute("products", productService.getProductsByCategoryId(4));
                 request.getRequestDispatcher("/vestNau.jsp").forward(request, response);
                 break;
             case "vestXam":
+                request.setAttribute("products", productService.getProductsByCategoryId(5));
                 request.getRequestDispatcher("/vestXam.jsp").forward(request, response);
                 break;
             case "aoSoMi":
+                request.setAttribute("products", productService.getProductsByCategoryId(6));
                 request.getRequestDispatcher("/aoSoMi.jsp").forward(request, response);
                 break;
             case "aoPolo":
+                request.setAttribute("products", productService.getProductsByCategoryId(7));
                 request.getRequestDispatcher("/aoPolo.jsp").forward(request, response);
                 break;
             case "aoKhoacNgoai":
+                request.setAttribute("products", productService.getProductsByCategoryId(8));
                 request.getRequestDispatcher("/aoKhoacNgoai.jsp").forward(request, response);
                 break;
             case "blazers":
+                request.setAttribute("products", productService.getProductsByCategoryId(9));
                 request.getRequestDispatcher("/blazers.jsp").forward(request, response);
                 break;
             case "quanAu":
+                request.setAttribute("products", productService.getProductsByCategoryId(10));
                 request.getRequestDispatcher("/quanAu.jsp").forward(request, response);
                 break;
             case "quanChino":
+                request.setAttribute("products", productService.getProductsByCategoryId(11));
                 request.getRequestDispatcher("/quanChino.jsp").forward(request, response);
                 break;
             case "quanNi":
+                request.setAttribute("products", productService.getProductsByCategoryId(12));
                 request.getRequestDispatcher("/quanNi.jsp").forward(request, response);
                 break;
             case "caVat":
+                request.setAttribute("products", productService.getProductsByCategoryId(13));
                 request.getRequestDispatcher("/caVat.jsp").forward(request, response);
                 break;
             case "khanChoang":
+                request.setAttribute("products", productService.getProductsByCategoryId(14));
                 request.getRequestDispatcher("/khanChoang.jsp").forward(request, response);
                 break;
             case "thatLung":
+                request.setAttribute("products", productService.getProductsByCategoryId(15));
                 request.getRequestDispatcher("/thatLung.jsp").forward(request, response);
                 break;
             default:
@@ -88,7 +104,7 @@ public class ProductController extends HttpServlet {
             String stateString = request.getParameter("state");
             String checkCollectionString = request.getParameter("checkCollection");
             String categoryIDString = request.getParameter("categoryID");
-            String maker = request.getParameter("maker"); // Thêm maker
+            String maker = request.getParameter("maker"); 
 
             // Kiểm tra dữ liệu null hoặc trống
             if (productName == null || productName.trim().isEmpty() ||
