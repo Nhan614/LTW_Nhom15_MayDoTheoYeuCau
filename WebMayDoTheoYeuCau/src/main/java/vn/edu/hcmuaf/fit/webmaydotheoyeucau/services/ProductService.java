@@ -47,35 +47,6 @@ public class ProductService {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
-
-        // Test thêm sản phẩm mới
-        Product newProduct = new Product(0, "Áo sơ mi", 300000, "shirt.jpg", true, "Mô tả áo sơ mi", true, 2);
-        boolean isAdded = productService.addProduct(newProduct);
-        System.out.println("Thêm sản phẩm mới: " + isAdded);
-
-        // Test lấy tất cả sản phẩm
-        List<Product> allProducts = productService.getAllProducts();
-        System.out.println("Danh sách sản phẩm:");
-        allProducts.forEach(System.out::println);
-
-        // Test lấy sản phẩm theo ID
-        Product product = productService.getProductById(1);
-        System.out.println("Sản phẩm có ID 1: " + product);
-
-        // Test cập nhật sản phẩm
-        if (product != null) {
-            product.setPrice(350000); // Thay đổi giá
-            boolean isUpdated = productService.updateProduct(product);
-            System.out.println("Cập nhật sản phẩm: " + isUpdated);
-        }
-
-        // Test xóa sản phẩm
-        boolean isDeleted = productService.deleteProduct(3);
-        System.out.println("Xóa sản phẩm có ID 3: " + isDeleted);
-
-        // Test lấy sản phẩm theo categoryID
-        List<Product> productsByCategory = productService.getProductsByCategoryId(2);
-        System.out.println("Danh sách sản phẩm thuộc categoryID = 2:");
-        productsByCategory.forEach(System.out::println);
+        System.out.println(productService.getAllProducts());
     }
 }
