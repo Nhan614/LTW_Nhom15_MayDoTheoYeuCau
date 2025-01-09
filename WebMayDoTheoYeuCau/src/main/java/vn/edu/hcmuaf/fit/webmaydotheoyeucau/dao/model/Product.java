@@ -9,9 +9,10 @@ public class Product {
     private String description;
     private boolean checkCollection;
     private int categoryID;
+    private String maker;
 
     public Product(int id, String productName, double price, String image, boolean state, String description, boolean checkCollection
-    , int categoryID) {
+    , int categoryID, String maker) {
         this.id = id;
         this.productName = productName;
         this.price = price;
@@ -20,6 +21,8 @@ public class Product {
         this.description = description;
         this.checkCollection = checkCollection;
         this.categoryID = categoryID;
+        this.maker = maker;
+
     }
 
     public int getId() {
@@ -84,7 +87,13 @@ public class Product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
+    public String getMaker() {
+        return maker;
+    }
 
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
     @Override
     public String toString() {
         return "Product{" +
@@ -96,6 +105,7 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", checkCollection=" + checkCollection +
                 ", categoryID=" + categoryID +
+                ", maker='" + maker + '\'' +
                 '}';
     }
 
