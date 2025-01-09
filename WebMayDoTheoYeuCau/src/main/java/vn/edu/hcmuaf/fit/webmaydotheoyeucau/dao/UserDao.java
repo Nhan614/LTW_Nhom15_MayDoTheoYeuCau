@@ -152,9 +152,112 @@ public class UserDao {
         return user.getRole() == 1; // 1 là Admin
     }
 
+    public void sendResetPasswordLink(String email) {
+        // Kiểm tra xem email có null hoặc rỗng không
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email không thể là null hoặc rỗng");
+        }
 
+        // Kiểm tra email có hợp lệ không
+        try {
+            InternetAddress.parse(email); // Kiểm tra nếu email hợp lệ
+        } catch (AddressException e) {
+            throw new IllegalArgumentException("Email không hợp lệ: " + email);
+        }
+
+        // Thay thế bằng giá trị tĩnh nếu biến môi trường không có giá trị
+        final String fromEmail = "nhannghialai@gmail.com";  // Thay bằng email của bạn
+        final String password = "xpna sqpq sefp dfix";  // Thay bằng mật khẩu email của bạn
+
+        // Kiểm tra xem các thông tin này có hợp lệ không
+        if (fromEmail == null || fromEmail.isEmpty()) {
+            throw new IllegalArgumentException("Email gửi không thể là null hoặc rỗng");
+        }
+        if (password == null || password.isEmpty()) {
+            throw new IllegalArgumentException("Mật khẩu không thể là null hoặc rỗng");
+        }
+
+        String host = "smtp.gmail.com";
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+
+        try {
+            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/resetPassword.jsp?email=" + email;
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+            message.setSubject("Đặt lại mật khẩu của bạn");
+            message.setText("Vui lòng nhấp vào liên kết sau để đặt lại mật khẩu của bạn: " + resetLink);
+            Transport.send(message);
+            System.out.println("Email đã được gửi thành công");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Không thể gửi email reset mật khẩu", e);
+        }
+    }
+
+
+    // Cập nhật mật khẩu người dùng
+    public boolean updatePassword(String email, String newPassword) {
+        String sql = "UPDATE users SET password = ? WHERE gmail = ?";
+        String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createUpdate(sql)
+                    .bind(0, hashedPassword)
+                    .bind(1, email)
+                    .execute() > 0;
+        });
+    }
+
+
+    public User getUserByEmail(String email) {
+        String sql = "SELECT * FROM users WHERE gmail = :email";
+        return dbConnect.get().withHandle(handle -> {
+            List<User> users = handle.createQuery(sql)
+                    .bind("email", email)
+                    .mapToBean(User.class)
+                    .list();
+            return users.isEmpty() ? null : users.get(0);
+        });
+    }
+
+
+//-----------------------------------------------------------------------------------
+
+// Main để kiểm tra các chức năng
+//    public static void main(String[] args) {
+//        UserDao userDao = new UserDao();
+//        String hashedPassword = BCrypt.hashpw("111", BCrypt.gensalt());
+//        System.out.println(hashedPassword);
+//
+//    }
+//}
+//-----------------------------------------------------------------------------------
+
+
+    public static void main(String[] args) {
+        // Tạo đối tượng UserDao
+        UserDao userDao = new UserDao();
+
+        // Email mà bạn muốn gửi liên kết reset mật khẩu
+        String email = "22130185@st.hcmuaf.edu.vn";
+
+        // Gửi email reset mật khẩu
+        userDao.sendResetPasswordLink(email);
+        System.out.println("Đã gửi liên kết đặt lại mật khẩu tới email: " + email);
+    }
 }
-
 
 
 
