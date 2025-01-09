@@ -35,12 +35,12 @@
                 <h3>Thay đổi thông tin khách hàng</h3>
             </div>
             <div class="card-body text-center">
-                <form action="profileEditController" method="POST">
+                <form action="profileEditController?userId=<%=user.getId()%>" method="POST">
                     <img src="<%=user.getAvatar()%>" alt="Profile Image" class="profile-img"
-                         id="profileImage">
+                         >
                     <div class="mb-3">
                         <label for="profileImageUrl" class="form-label">Nhập URL hình ảnh mới</label>
-                        <input class="form-control" type="text" id="profileImageUrl"
+                        <input class="form-control" type="text" name="profileImageUrl" id="profileImageUrl"
                                placeholder="https://example.com/image.jpg"
                                value="<%=user.getAvatar()%>">
                     </div>
@@ -48,20 +48,22 @@
                     <div class="mb-3"><label for="name" class="form-label">Tên</label> <input type="text"
                                                                                               class="form-control"
                                                                                               id="name"
+                                                                                              name="name"
                                                                                               placeholder="Tên của bạn"
                                                                                               value="<%=user.getFullName()%>">
                     </div>
                     <div class="mb-3"><label for="email" class="form-label">Email</label> <input type="email"
                                                                                                  class="form-control"
                                                                                                  id="email"
+                                                                                                 name="email"
                                                                                                  placeholder="your.email@example.com"
                                                                                                  value="<%=user.getGmail()%>">
                     </div>
                     <div class="mb-3"><label for="phone" class="form-label">Điện thoại</label> <input
-                            type="text" class="form-control" id="phone" placeholder="0123456789"
+                            type="text" class="form-control" id="phone" name="phone" placeholder="0123456789"
                             value="<%=user.getPhone()%>"></div>
                     <div class="mb-3"><label for="address" class="form-label">Địa chỉ</label> <input
-                            type="text" class="form-control" id="address" placeholder="Địa chỉ của bạn"
+                            type="text" class="form-control" id="address" name="address" placeholder="Địa chỉ của bạn"
                             value="<%=user.getAddress()%>"></div>
                     <button type="submit" class="btn-custumize">Lưu thay đổi</button>
                 </form>

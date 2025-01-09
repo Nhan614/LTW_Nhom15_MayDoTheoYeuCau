@@ -31,6 +31,17 @@ public class UserDao {
         });
     }
 
+    public User getUserById(int id) {
+        String sql = "SELECT * FROM users WHERE id = :id";
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createQuery(sql)
+                    .bind("id", id)  // Gắn giá trị tham số id vào câu SQL
+                    .mapToBean(User.class)  // Ánh xạ kết quả vào đối tượng User
+                    .findOne()  // Lấy một kết quả
+                    .orElse(null); // Trả về null nếu không tìm thấy
+        });
+    }
+
     // Kiểm tra mật khẩu so với mật khẩu đã mã hóa
     public boolean checkPassword(String plainPassword, String hashedPassword) {
         if (!hashedPassword.startsWith("$2a$") && !hashedPassword.startsWith("$2b$")) {

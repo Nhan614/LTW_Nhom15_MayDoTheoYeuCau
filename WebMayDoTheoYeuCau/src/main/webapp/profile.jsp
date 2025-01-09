@@ -279,7 +279,7 @@
                                                 <ul class="list-group list-group-flush">
                                                     <li class="list-group-item">Email: <%= user.getGmail()%></li>
                                                     <li class="list-group-item">Điện thoại: <%= user.getPhone()%></li>
-                                                    <li class="list-group-item">Địa chỉ: S<%= user.getAddress()%>
+                                                    <li class="list-group-item">Địa chỉ:<%= user.getAddress()%>
                                                     </li>
                                                 </ul>
                                                 <a href="profileEdit.jsp"><button
@@ -322,14 +322,14 @@
     <script src="resources/js/backtotop.js"></script>
 
     <!-- js demo -->
-    <script> // Initialize the modal 
+    <script> // Initialize the modal
         $(document).ready(function () {
             $(document).on('click', '.btn-profile-close', function () {
                 $('#productModal').modal('hide');
             });
             $('.btn-profile-deltail').click(function () {
                 var productId = $(this).data('product');
-                // Fetch product details based on productId 
+                // Fetch product details based on productId
                 var productDetails = { name: 'Sản phẩm 1', price: '1,000,000 VND', quantity: 3, description: 'Đây là mô tả của sản phẩm 1.' };
                 $('#productName').text('Tên sản phẩm: ' + productDetails.name);
                 $('#productPrice').text('Giá: ' + productDetails.price);
