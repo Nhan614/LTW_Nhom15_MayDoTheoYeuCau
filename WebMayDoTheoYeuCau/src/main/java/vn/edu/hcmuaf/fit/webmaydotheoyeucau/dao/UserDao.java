@@ -7,8 +7,13 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Supplier;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 
+import javax.mail.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class UserDao {
 
@@ -147,23 +152,8 @@ public class UserDao {
         return user.getRole() == 1; // 1 là Admin
     }
 
-//    public static void main(String[] args) {
-//        UserDao userDao = new UserDao();
-//        System.out.println(userDao.updateUser(new User(2, "ff", "Nghia11", "n@nlu.com", "111111", "la", 0, 1)));
-//    }
 
-
-    // Main để kiểm tra các chức năng
-    public static void main(String[] args) {
-        UserDao userDao = new UserDao();
-        String hashedPassword = BCrypt.hashpw("111", BCrypt.gensalt());
-        System.out.println(hashedPassword);
-
-    }
 }
-
-
-
 
 
 

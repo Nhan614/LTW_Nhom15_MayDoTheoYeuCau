@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    padding-bottom: 10px;
     box-sizing: border-box;
     font-family:  sans-serif, TAHOMA;
 }
@@ -63,7 +62,7 @@
 
 .wrapper .form-box.register{
     right: 0;
-    padding: 0 30px 100px 70px;
+    /*padding: 0 30px 10px 70px;*/
     /* display: none;   */
     pointer-events: none;
 }
