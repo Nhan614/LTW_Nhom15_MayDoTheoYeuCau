@@ -103,184 +103,30 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
-                                Be</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
+            <c:forEach var="quanChino" items="${products}">
+                <c:if test="${quanChino.categoryID == 11}">
+                    <div class="col-md-6 col-lg-4 position-relative">
+                        <a href="detail.jsp?id=${quanChino.id}" class="full-link">
+                            <div class="single-product">
+                                <div class="part-1">
+                                    <img src="${quanChino.image}" alt="${quanChino.productName}">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title">${quanChino.productName}</h3>
+                                    <div class="product-maker">${quanChino.maker}</div>
+                                    <h4 class="product-price">${quanChino.price} VND</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill Màu
-                                Xanh Lục Xăng</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Làm Từ Cotton và Len</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Nam May Đo Theo Yêu Cầu Làm Từ Cotton và Lụa Twill</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-5" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Twill Màu Xanh Dầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-6" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Quần Chino Hiệu Ứng Denim Màu Xanh Đậm</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-7" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Chino Cotton và Cashmere Màu Garnet</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="chino-8" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">xuân hạ</div>
-                            <h3 class="product-title">Quần Chino Linen Màu Trắng Trơn</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </c:if>
+            </c:forEach>
         </div>
     </section>
 <!-- sidebar -->

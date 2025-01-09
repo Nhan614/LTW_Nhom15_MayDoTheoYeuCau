@@ -100,182 +100,30 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Seersucker Xanh Chất Liệu Len và Cotton</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
+            <c:forEach var="vestThuongNgay" items="${products}">
+                <c:if test="${vestThuongNgay.categoryID == 2}">
+                    <div class="col-md-6 col-lg-4 position-relative">
+                        <a href="detail.jsp?id=${vestThuongNgay.id}" class="full-link">
+                            <div class="single-product">
+                                <div class="part-1">
+                                    <img src="${vestThuongNgay.image}" alt="${vestThuongNgay.productName}">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title">${vestThuongNgay.productName}</h3>
+                                    <div class="product-maker">${vestThuongNgay.maker}</div>
+                                    <h4 class="product-price">${vestThuongNgay.price} VND</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Seersucker Xám Chất Liệu Len và Cotton</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Flannel Tím Chất Liệu Len Co Giãn</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Flannel Xanh Lá Chất Liệu Len Co Giãn</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-5" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Flannel Màu Be Chất Liệu Len Co Giãn</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-6" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Bộ Vest Flannel Đỏ Chất Liệu Len và Cashmere</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-7" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">mùa xuân</div>
-                            <h3 class="product-title">Bộ Vest Linen Nâu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="vestThuongNgay-8" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">mùa xuân</div>
-                            <h3 class="product-title">Bộ Vest Lụa Cotton Xanh Biển</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </c:if>
+            </c:forEach>
         </div>
     </section>
 

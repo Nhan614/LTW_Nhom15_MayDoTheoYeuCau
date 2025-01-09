@@ -111,32 +111,33 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <c:forEach var="polo" items="${products}">
-                <div class="col-md-6 col-lg-4 position-relative">
-                    <a href="detail.jsp?id=${polo.id}" class="full-link">
-                        <div class="single-product">
-                            <div class="part-1">
-                                <img src="${polo.image}" alt="${polo.productName}">
-                                <ul>
-                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="part-2">
-                                <h3 class="product-title">${polo.productName}</h3>
-                                <div class="product-maker">${polo.maker}</div>
-                                <h4 class="product-price">${polo.price}</h4>
-                            </div>
+            <c:forEach var="aoPolo" items="${products}">
+            <c:if test="${aoPolo.categoryID == 7}">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="detail.jsp?id=${aoPolo.id}" class="full-link">
+                    <div class="single-product">
+                        <div class="part-1">
+                            <img src="${aoPolo.image}" alt="${aoPolo.productName}">
+                            <ul>
+                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                            </ul>
                         </div>
-                    </a>
-                </div>
+                        <div class="part-2">
+                            <h3 class="product-title">${aoPolo.productName}</h3>
+                            <div class="product-maker">${aoPolo.maker}</div>
+                            <h4 class="product-price">${aoPolo.price} VND</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </c:if>
             </c:forEach>
-        </div>
-    </section>
 
-    <!-- sidebar -->
+
+            <!-- sidebar -->
     <div class="sidebarFil" id="sidebarFil">
         <h2 class="mt-3">Lọc</h2>
         <hr>

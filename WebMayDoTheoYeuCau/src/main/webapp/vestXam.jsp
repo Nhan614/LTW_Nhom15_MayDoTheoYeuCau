@@ -68,215 +68,32 @@
         style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
     </div>
   </section>
-  <section class="container my-4">
-    <!-- Tiêu Đề và Mô Tả -->
-    <div class="vest-title">
-      <div class="vest-header">
-        <h2>Bộ Vest Xám May Đo Cho Quý Ông</h2>
-      </div>
-      <!-- Sắp Xếp và Lọc -->
-      <div class="tl-filters">
-        <div class="sorting">
-            <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/sort.png">
-            <select class="ordainment">
-                <option value="">Sắp xếp</option>
-                <option value="price_asc">Giá cao đến thấp</option>
-                <option value="price_desc">Giá thấp đến cao</option>
-            </select>
-        </div>
-        <div class="filter-part" onclick="toggleSidebar()">
-            <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/ico_filter.svg">
-            <a class="tl-filter">Lọc</a>
-        </div>
-    </div>
-    </div>
-
-    <!-- Mô Tả -->
-    <p class="vest-description">
-      Tinh tế nhưng không bao giờ nhàm chán, bộ vest xám may đo là lựa chọn cổ điển cho những sự kiện
-      chuyên nghiệp quan trọng nhất, đồng thời phù hợp cho các dịp thường ngày. Chất liệu màu xám đậm
-      lý tưởng để tạo nên những bộ suit may đo thêm phần trang trọng. Kết hợp cùng giày đen cho những
-      dịp đặc biệt, hoặc giày nâu để mang phong cách hằng ngày.
-    </p>
-  </section>
   <section class="container my-4 section-products">
     <div class="row">
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-1" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Icon Sharkskin Xám</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
+      <c:forEach var="vestXam" items="${products}">
+        <c:if test="${vestXam.categoryID == 5}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestXam.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestXam.image}" alt="${vestXam.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestXam.productName}</h3>
+                  <div class="product-maker">${vestXam.maker}</div>
+                  <h4 class="product-price">${vestXam.price} VND</h4>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-2" class="single-product">
-            <div class="part-1">
-              <span class="discount">Giảm 15%</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Prince of Wales Xám</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-3" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Icon Xám Nhạt</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-4" class="single-product">
-            <div class="part-1">
-              <span class="new">Mới</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Icon Xám Than</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-5" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Jaquard Camouflage</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-6" class="single-product">
-            <div class="part-1">
-              <span class="discount">Giảm 15%</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">Bốn Mùa</div>
-              <h3 class="product-title">Bộ Vest Xám Chính Hãng</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-7" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">bốn mùa</div>
-              <h3 class="product-title">Bộ Vest Xám Than</h3>
-              <div class="product-maker">nhân nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="vestXam-8" class="single-product">
-            <div class="part-1">
-              <span class="new">Mới</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Bộ Vest Flannel Cashmere Xám Dệt Trơn</h3>
-              <div class="product-maker">nhân nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
+        </c:if>
+      </c:forEach>
     </div>
   </section>
 <!-- sidebar -->

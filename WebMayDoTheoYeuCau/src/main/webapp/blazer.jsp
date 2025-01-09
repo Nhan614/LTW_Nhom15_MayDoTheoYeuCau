@@ -104,184 +104,30 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Blazer Flannel Wool Màu Xám Nhạt Mélange May Đo Theo Yêu Cầu
-                            </h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
+            <c:forEach var="blazer" items="${products}">
+                <c:if test="${blazer.categoryID == 9}">
+                    <div class="col-md-6 col-lg-4 position-relative">
+                        <a href="detail.jsp?id=${blazer.id}" class="full-link">
+                            <div class="single-product">
+                                <div class="part-1">
+                                    <img src="${blazer.image}" alt="${blazer.productName}">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title">${blazer.productName}</h3>
+                                    <div class="product-maker">${blazer.maker}</div>
+                                    <h4 class="product-price">${blazer.price} VND</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Áo Blazer Active Wool Màu Xám Than May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Áo Blazer Wool Prince of Wales Màu Tím</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Áo Blazer Wool Kẻ Sọc Màu Tím May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-5" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Blazer Wool Flannel Màu Xanh Bột May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-6" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn Mùa</div>
-                            <h3 class="product-title">Áo Blazer Wool Stretch Màu Xanh Đậm Thiết Kế Micro May Đo Theo Yêu
-                                Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-7" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Blazer Wool Flannel Kẻ Sọc Màu Xám May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="blazer-8" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Áo Blazer Velvet Màu Nâu Mịn May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </c:if>
+            </c:forEach>
         </div>
     </section>
 <!-- sidebar -->

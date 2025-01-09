@@ -102,184 +102,30 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xanh Không Quân May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
+            <c:forEach var="quanAu" items="${products}">
+                <c:if test="${quanAu.categoryID == 10}">
+                    <div class="col-md-6 col-lg-4 position-relative">
+                        <a href="detail.jsp?id=${quanAu.id}" class="full-link">
+                            <div class="single-product">
+                                <div class="part-1">
+                                    <img src="${quanAu.image}" alt="${quanAu.productName}">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title">${quanAu.productName}</h3>
+                                    <div class="product-maker">${quanAu.maker}</div>
+                                    <h4 class="product-price">${quanAu.price} VND</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Lạc Đà May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xanh Đậm - Xanh Lá Cây May Đo Theo Yêu Cầu
-                            </h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Knickerbocker Len Màu Xanh Dương May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-5" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Co Giãn Màu Đỏ May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-6" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Quần Len Màu Xám Salt and Pepper May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-7" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">xuân hạ</div>
-                            <h3 class="product-title">Quần Linen và Len Twill Màu Gun Metal May Đo Theo Yêu Cầu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="trouser-8" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">thu đông</div>
-                            <h3 class="product-title">Quần Len Flannel Màu Xám và Xanh Prince of Wales May Đo Theo Yêu
-                                Cầu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </c:if>
+            </c:forEach>
         </div>
     </section>
 <!-- sidebar -->

@@ -55,13 +55,13 @@ public class ProductController extends HttpServlet {
                 request.setAttribute("products", productService.getProductsByCategoryId(7));
                 request.getRequestDispatcher("/aoPolo.jsp").forward(request, response);
                 break;
-            case "aoKhoacNgoai":
+            case "overshirt":
                 request.setAttribute("products", productService.getProductsByCategoryId(8));
-                request.getRequestDispatcher("/aoKhoacNgoai.jsp").forward(request, response);
+                request.getRequestDispatcher("/overshirt.jsp").forward(request, response);
                 break;
-            case "blazers":
+            case "blazer":
                 request.setAttribute("products", productService.getProductsByCategoryId(9));
-                request.getRequestDispatcher("/blazers.jsp").forward(request, response);
+                request.getRequestDispatcher("/blazer.jsp").forward(request, response);
                 break;
             case "quanAu":
                 request.setAttribute("products", productService.getProductsByCategoryId(10));
@@ -104,7 +104,7 @@ public class ProductController extends HttpServlet {
             String stateString = request.getParameter("state");
             String checkCollectionString = request.getParameter("checkCollection");
             String categoryIDString = request.getParameter("categoryID");
-            String maker = request.getParameter("maker"); 
+            String maker = request.getParameter("maker");
 
             // Kiểm tra dữ liệu null hoặc trống
             if (productName == null || productName.trim().isEmpty() ||

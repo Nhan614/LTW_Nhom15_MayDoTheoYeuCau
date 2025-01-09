@@ -106,184 +106,30 @@
 </section>
 <section class="container my-4 section-products">
     <div class="row">
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-1" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Kẻ Sọc Màu Xanh Nhạt May Đo Theo Yêu Cầu</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
+        <c:forEach var="aoSoMi" items="${products}">
+            <c:if test="${aoSoMi.categoryID == 6}">
+                <div class="col-md-6 col-lg-4 position-relative">
+                    <a href="detail.jsp?id=${aoSoMi.id}" class="full-link">
+                        <div class="single-product">
+                            <div class="part-1">
+                                <img src="${aoSoMi.image}" alt="${aoSoMi.productName}">
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="part-2">
+                                <h3 class="product-title">${aoSoMi.productName}</h3>
+                                <div class="product-maker">${aoSoMi.maker}</div>
+                                <h4 class="product-price">${aoSoMi.price} VND</h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-2" class="single-product">
-                    <div class="part-1">
-                        <span class="discount">Giảm 15%</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Herringbone Màu Hồng May Đo Theo Yêu Cầu</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-3" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Kẻ Sọc Màu Tím May Đo Theo Yêu Cầu</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-4" class="single-product">
-                    <div class="part-1">
-                        <span class="new">Mới</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">Bốn Mùa</div>
-                        <h3 class="product-title">Áo Sơ Mi Cotton Màu Tím Nhạt May Đo Theo Yêu Cầu</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-5" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Sơ Mi Flannel Herringbone Lớn Màu Xanh Nhạt</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-6" class="single-product">
-                    <div class="part-1">
-                        <span class="discount">Giảm 15%</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Sơ Mi Flannel Twill Màu Xanh</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-7" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">xuân hạ</div>
-                        <h3 class="product-title">Áo Sơ Mi May Đo Nam Màu Nâu Thuốc Lá Làm Từ Vải Linen Zephyr Cho
-                            Phong Cách Tối Thượng</h3>
-                        <div class="product-maker">nhân nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="somi-8" class="single-product">
-                    <div class="part-1">
-                        <span class="new">Mới</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">xuân hạ</div>
-                        <h3 class="product-title">Áo Sơ Mi May Đo Nam Màu Xám Băng Làm Từ Vải Linen Zephyr Cho Phong
-                            Cách Tối Thượng</h3>
-                        <div class="product-maker">nhân nghĩa</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
+            </c:if>
+        </c:forEach>
     </div>
 </section>
 <!-- sidebar -->

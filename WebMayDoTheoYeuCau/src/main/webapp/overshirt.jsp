@@ -100,184 +100,30 @@
 </section>
 <section class="container my-4 section-products">
     <div class="row">
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-1" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">
-                            Áo Overshirt Màu Xanh Đậm Làm Từ Vải Cotton Velvet Co Giãn</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
+        <c:forEach var="overshirt" items="${products}">
+            <c:if test="${overshirt.categoryID == 8}">
+                <div class="col-md-6 col-lg-4 position-relative">
+                    <a href="detail.jsp?id=${overshirt.id}" class="full-link">
+                        <div class="single-product">
+                            <div class="part-1">
+                                <img src="${overshirt.image}" alt="${overshirt.productName}">
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="part-2">
+                                <h3 class="product-title">${overshirt.productName}</h3>
+                                <div class="product-maker">${overshirt.maker}</div>
+                                <h4 class="product-price">${overshirt.price} VND</h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-2" class="single-product">
-                    <div class="part-1">
-                        <span class="discount">Giảm 15%</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Màu Xám Xanh Đậm Làm Từ Vải Wool Flannel</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-3" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Màu Cát Làm Từ Vải Wool Flannel Co Giãn</h3>
-                        <div class="product-maker">đức nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-4" class="single-product">
-                    <div class="part-1">
-                        <span class="new">Mới</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Cotton Velvet Màu Be</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-5" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Wool Shetland Herringbone Màu Be và Đỏ</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-6" class="single-product">
-                    <div class="part-1">
-                        <span class="discount">Giảm 15%</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Wool Màu Xám Thiết Kế Micro</h3>
-                        <div class="product-maker">trọng nhân</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class=" position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-7" class="single-product">
-                    <div class="part-1">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Màu Nâu Làm Từ Vải Wool Flannel</h3>
-                        <div class="product-maker">nhân nghĩa</div>
-                        <h4 class="product-old-price">1,500,000 VND</h4>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- Single Product -->
-        <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.html" class="full-link">
-                <div id="overshirt-8" class="single-product">
-                    <div class="part-1">
-                        <span class="new">Mới</span>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="part-2">
-                        <div class="product-season">thu đông</div>
-                        <h3 class="product-title">Áo Overshirt Màu Xanh Hoàng Gia Làm Từ Vải Cotton Velvet Co Giãn
-                        </h3>
-                        <div class="product-maker">nhân nghĩa</div>
-                        <h4 class="product-price">1,300,000 VND</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
+            </c:if>
+        </c:forEach>
     </div>
 </section>
 <!-- sidebar -->
