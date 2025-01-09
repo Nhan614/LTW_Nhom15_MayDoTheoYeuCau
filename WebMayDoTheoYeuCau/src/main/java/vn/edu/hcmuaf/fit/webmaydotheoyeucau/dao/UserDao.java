@@ -158,29 +158,7 @@ public class UserDao {
         UserDao userDao = new UserDao();
         String hashedPassword = BCrypt.hashpw("111", BCrypt.gensalt());
         System.out.println(hashedPassword);
-//        User user = new User("avatar.png", "111", "John Doe", "11@11.v", "123456789", "123 Main St", 1, 2);
-//        System.out.println(userDao.registerUser(user));
 
-//        // Kiểm tra đăng ký người dùng mới
-
-        //System.out.println(userDao.checkUser("11@11.v", "111"));
-//
-//        if (registrationSuccess) {
-//            System.out.println("Đăng ký thành công");
-//        } else {
-//            System.out.println("Đăng ký không thành công");
-//        }
-//
-//        // Kiểm tra đăng nhập người dùng với cả email và mật khẩu
-//        String gmail = "john@example.com";
-//        String password = "plainpassword";
-//        User loggedInUser = userDao.checkUser(gmail, password);
-//
-//        if (loggedInUser != null) {
-//            System.out.println("Đăng nhập thành công: " + loggedInUser.getFullName());
-//        } else {
-//            System.out.println("Đăng nhập không thành công.");
-//        }
     }
 }
 

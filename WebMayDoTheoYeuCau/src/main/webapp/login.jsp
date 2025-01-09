@@ -13,6 +13,24 @@
     <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/signup.css">
     <link rel="stylesheet" href="resources/css/style.css">
+
+
+    <style>
+        .error-message {
+            color: white;
+            padding: 0 ;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        .wrapper .form-box.register{
+            right: 0;
+            padding: 0 30px 10px 70px;
+            /* display: none;   */
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,25 +58,54 @@
                 <div class="form-box login" id="login-form">
                     <h2 class="animation" style="--i:0; --j:11">Đăng nhập</h2>
 
+<%--                    <%--%>
+<%--                        String error= (String) request.getAttribute("error");--%>
+<%--                        String email= request.getParameter("email");--%>
+<%--                        if(error==null) error = "";--%>
+<%--                        if(email==null) email = "";--%>
+<%--                    %>--%>
+<%--&lt;%&ndash;                    <p><%= error %></p>&ndash;%&gt;--%>
+<%--                    <p class="error-message"><%= error %></p>--%>
+
+<%--                    <%--%>
+<%--                        String loginError = (String) request.getAttribute("error");--%>
+<%--                        String email = request.getParameter("email");--%>
+<%--                        if (email == null) email = "";--%>
+<%--                    %>--%>
+
+
                     <%
-                        String error= (String) request.getAttribute("error");
-                        String email= request.getParameter("email");
-                        if(error==null) error = "";
-                        if(email==null) email = "";
+                        String loginError = (String) session.getAttribute("loginError");
+                        String email = (String) session.getAttribute("email");
+                        if (email == null) email = "";
+                        if (loginError != null) {
                     %>
-                    <p><%= error %></p>
+                    <p class="error-message"><%= loginError %></p>
+                    <%
+                            session.removeAttribute("loginError");
+                            session.removeAttribute("email");
+                        }
+                    %>
 
                     <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
                             <input type="text" id="email" value="<%= email%>" name="email" required>
                             <label>Email:</label>
                             <i class="fa-solid fa-user"></i>
+
+<%--//                            <% if (loginError != null && loginError.contains("email")) { %>--%>
+<%--//                            <p class="error-message"><%= loginError %></p>--%>
+<%--//                            <% } %>--%>
                         </div>
 
                         <div class="input-box animation" style="--i:2; --j:13">
                             <input type="password" id="pass" name="pass" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
+
+<%--                            <% if (loginError != null && loginError.contains("pass")) { %>--%>
+<%--                            <p class="error-message"><%= loginError %></p>--%>
+<%--                            <% } %>--%>
                         </div>
                         <div class="forgot-password animation" style="--i:3;--j:14">
                             <p><a href="forgotPassword.jsp" class="password-link">Bạn quên mật khẩu?</a></p>
@@ -103,27 +150,49 @@
                 <div class="form-box register" id="signup-form">
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
 
-                    <%
-                        String gmail = (String) request.getAttribute("gmail");
-                        String fullname = (String) request.getAttribute("fullname");
-                        String password = (String) request.getAttribute("password");
-                        String emailExist = (String) request.getAttribute("emailExist");
+<%--                    <%--%>
+<%--                        String gmail = (String) request.getAttribute("gmail");--%>
+<%--                        String fullname = (String) request.getAttribute("fullname");--%>
+<%--                        String password = (String) request.getAttribute("password");--%>
+<%--                        String emailExist = (String) request.getAttribute("emailExist");--%>
 
-                        gmail = (gmail == null ? "" : gmail);
-                        fullname = (fullname == null ? "" : fullname);
-                        password = (password == null ? "" : password);
-                        emailExist = (emailExist == null ? "" : emailExist);
+<%--                        gmail = (gmail == null ? "" : gmail);--%>
+<%--                        fullname = (fullname == null ? "" : fullname);--%>
+<%--                        password = (password == null ? "" : password);--%>
+<%--                        emailExist = (emailExist == null ? "" : emailExist);--%>
+<%--                    %>--%>
+                    <%
+                        String signupError = (String) request.getAttribute("error");
+                        String fullname = request.getParameter("fullName");
+                        String gmail = request.getParameter("gmailRe");
+                        if (fullname == null) fullname = "";
+                        if (gmail == null) gmail = "";
                     %>
+
+                    <% if (signupError != null && !signupError.isEmpty()) { %>
+                    <p class="error-message"><%= signupError %></p>
+                    <% } %>
+
+
                     <form action="signupController" method="POST">
                         <div class="input-box animation" style="--i:18; --j:1">
                             <input type="text"  id="fullName" name="fullName" value="<%=fullname%>" required>
                             <label>Tên:</label>
                             <i class="fa-solid fa-user"></i>
+
+
+<%--//                            <% if (signupError != null && signupError.contains("fullname")) { %>--%>
+<%--//                            <p class="error-message"><%= signupError %></p>--%>
+<%--//                            <% } %>--%>
                         </div>
                         <div class="input-box animation" style="--i:19; --j:2">
                             <input type="text" id="gmailRe" name="gmailRe" value="<%=gmail%>" required>
                             <label>E-mail:</label>
                             <i class="fa-solid fa-envelope"></i>
+
+<%--//                            <% if (signupError != null && signupError.contains("email")) { %>--%>
+<%--//                            <p class="error-message"><%= signupError %></p>--%>
+<%--//                            <% } %>--%>
 
                         </div>
 
@@ -131,10 +200,20 @@
                             <input type="password" id="passwordRe" name="passwordRe" value="<%=gmail%>" required>
                             <label>Mật khẩu:</label>
                             <i class="fa-solid fa-lock"></i>
+
+
+<%--//                            <% if (signupError != null && signupError.contains("password")) { %>--%>
+<%--//                            <p class="error-message"><%= signupError %></p>--%>
+<%--//                            <% } %>--%>
                         </div>
                         <div class="input-box animation" style="--i:21; --j:4">
                             <input type="password" id="confirmPasswordRe" name="confirmPasswordRe" required>
                             <label>Xác minh mật khẩu:</label>
+
+
+<%--//                            <% if (signupError != null && signupError.contains("confirmPassword")) { %>--%>
+<%--//                            <p class="error-message"><%= signupError %></p>--%>
+<%--//                            <% } %>--%>
                         </div>
 
                         <button type="submit" class="btn animation" style="--i:22; --j:5">Đăng ký </button>
@@ -144,7 +223,7 @@
                         </div>
                     </form>
 
-                    <p><%= request.getAttribute("error") %></p>
+
 
                 </div>
 
