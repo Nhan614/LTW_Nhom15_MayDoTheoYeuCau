@@ -9,6 +9,7 @@ public class ProductDao {
     DBConnect dbConnect;
 
     public ProductDao() {
+
         this.dbConnect = new DBConnect();
     }
 

@@ -29,36 +29,30 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="resources/images/vestCobaltBlueBiella.jpg" class="img-fluid" alt="Product Image">
+                    <img src="${product.image}" class="img-fluid" alt="${product.productName}">
                     <div class="detail-limg">
-                        <img src="resources/images/vai1.jpg" class="img-fluid img-acs mx-auto" alt="Product Image">
-                        <img src="resources/images/cutAo1.png" class="img-fluid img-acs mx-auto" alt="Product Image">
+                        <img src="resources/images/vai1.jpg" class="img-fluid img-acs mx-auto" alt="Additional Image">
+                        <img src="resources/images/cutAo1.png" class="img-fluid img-acs mx-auto" alt="Additional Image">
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="display-4">Bộ Vest Icon Midnight Xanh</h1>
-                    <p class="lead">Vãi do <strong>Trọng Nhân</strong> sản suất</p>
-                    <div style="display: flex; gap: 20px;">
-                        <h3 class=" text-decoration-line-through">2.000.000 VNĐ</h3>
-                        <h3 class="text-price">1.500.000 VNĐ</h3>
-                    </div>
-                    <p class="mt-4">Bộ vest may theo kích thước được làm bằng vải len từ nhà máy len Reda với tông màu
-                        tím với họa tiết Prince of Wales tinh tế. Trang phục công sở hoàn hảo, kết hợp với áo khoác và
-                        cà vạt để có vẻ ngoài hoàn hảo và cá tính</p>
+                    <h1 class="display-4">${product.productName}</h1>
+                    <p class="lead">Vải do <strong>${product.maker}</strong> sản xuất</p>
+                    <h3 class="text-price">${product.price} VNĐ</h3>
+                    <p class="mt-4">${product.description}</p>
 
                     <a href="custumize.jsp"><button class="btn-custumize btn-lg">THIẾT KẾ</button></a>
 
                     <div class="product-detail mt-4">
                         <h3>Chi Tiết</h3>
-                        <p>Mã sản phẩm : HDCGFJ</p>
-                        <p>Mùa : Dành cho 4 mùa</p>
-                        <p>Chất liệu : 100% sợ bông</p>
+                        <p>Mã sản phẩm : ${product.id}</p>
+                        <p>Chất liệu : ${product.material}</p>
                         <p>Sản xuất bởi : <span class="text-price">THREEN TAILORED</span> tại Việt Nam</p>
-
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     </div>
