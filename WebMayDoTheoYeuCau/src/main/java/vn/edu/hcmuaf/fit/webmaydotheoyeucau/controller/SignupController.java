@@ -37,7 +37,8 @@ public class SignupController extends HttpServlet {
         // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
         if (!password.equals(confirmPassword)) {
             request.setAttribute("error", "Mật khẩu xác minh không khớp");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            response.sendRedirect("login.jsp#signup-form");
             return;
         }
 
@@ -46,7 +47,8 @@ public class SignupController extends HttpServlet {
         // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
         if (userDao.isEmailExist(gmail)) {
             request.setAttribute("error", "Email đã được sử dụng");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            response.sendRedirect("login.jsp#signup-form");
             return;
         }
 
@@ -63,7 +65,9 @@ public class SignupController extends HttpServlet {
             response.sendRedirect("home.jsp");
         } else {
             request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            response.sendRedirect("login.jsp#signup-form");
         }
     }
 }
+

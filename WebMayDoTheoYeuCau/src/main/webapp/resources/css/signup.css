@@ -62,8 +62,8 @@
 
 .wrapper .form-box.register{
     right: 0;
-    /*padding: 0 30px 10px 70px;*/
-    /* display: none;   */
+    padding: 0 30px 10px 70px;
+     /*display: none;*/
     pointer-events: none;
 }
 .wrapper.active .form-box.register{

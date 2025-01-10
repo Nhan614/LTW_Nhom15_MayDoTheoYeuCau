@@ -16,46 +16,83 @@
 
 
     <style>
+        /*.error-message {*/
+        /*    color: white;*/
+        /*    padding: 0 ;*/
+        /*    font-size: 11px;*/
+        /*    font-weight: bold;*/
+        /*    margin-bottom: 0;*/
+        /*    margin-top: 5px;*/
+        /*}*/
+        /*.wrapper .form-box.register{*/
+        /*    right: 0;*/
+        /*    padding: 0 30px 10px 70px;*/
+        /*    !* display: none;   *!*/
+        /*    pointer-events: none;*/
+        /*}*/
+
+        /*!*.error-message {*!*/
+        /*!*    display: none;*!*/
+        /*!*}*!*/
+
+
         .error-message {
-            color: white;
+            display: none;
+            color: #ff0000; /* Màu đỏ cho thông báo lỗi */
+            opacity: 0;
+            /*color: white;*/
             padding: 0 ;
             font-size: 11px;
             font-weight: bold;
             margin-bottom: 0;
             margin-top: 5px;
-        }
-        .wrapper .form-box.register{
-            right: 0;
-            padding: 0 30px 10px 70px;
-            /* display: none;   */
-            pointer-events: none;
+            transform: translateX(-120%);
+            filter: blur(10px);
+            transition: transform 0.7s ease, opacity 0.7s ease, filter 0.7s ease;
+            transition-delay: calc(.1s * var(--j));
         }
 
-        /*.error-message {*/
-        /*    display: none;*/
-        /*}*/
+        .error-message.animation {
+            transform: translateX(0);
+            opacity: 1;
+            filter: blur(0);
+            transition-delay: calc(.1s * var(--i));
+            display: block;
+        }
+
+
 
 
     </style>
-<%--    <script>--%>
-<%--        window.onload = function() {--%>
-<%--            // Ẩn thông báo lỗi khi trang đã tải xong--%>
-<%--            var errorMessage = document.querySelector('.error-message');--%>
-<%--            if (errorMessage) {--%>
-<%--                setTimeout(function() {--%>
-<%--                    errorMessage.style.display = 'none';--%>
-<%--                }, 3000); // Ẩn sau 3 giây--%>
-<%--            }--%>
-<%--        };--%>
-<%--    </script>--%>
-<%--    <script>--%>
-<%--        window.onload = function() {--%>
-<%--            var errorMessage = document.querySelector('.error-message');--%>
-<%--            if (errorMessage) {--%>
-<%--                errorMessage.style.display = 'block';--%>
-<%--            }--%>
-<%--        };--%>
-<%--    </script>--%>
+    <script>
+        window.onload = function() {
+            // Lấy thông báo lỗi của cả form đăng nhập và đăng ký
+            var errorMessageLogin = document.querySelector('.error-message.login');
+            var errorMessageRegister = document.querySelector('.error-message.register');
+
+            // Nếu thông báo lỗi đăng nhập tồn tại, thêm hiệu ứng hiển thị
+            if (errorMessageLogin) {
+                errorMessageLogin.classList.add('animation');
+            }
+
+            // Nếu thông báo lỗi đăng ký tồn tại, thêm hiệu ứng hiển thị
+            if (errorMessageRegister) {
+                errorMessageRegister.classList.add('animation');
+            }
+
+            // Sau 5 giây, loại bỏ hiệu ứng để thông báo lỗi biến mất
+            setTimeout(function() {
+                if (errorMessageLogin) {
+                    errorMessageLogin.classList.remove('animation'); // Loại bỏ hiệu ứng đăng nhập
+                }
+                if (errorMessageRegister) {
+                    errorMessageRegister.classList.remove('animation'); // Loại bỏ hiệu ứng đăng ký
+                }
+            }, 3000); // Ẩn sau 5 giây
+        };
+
+
+    </script>
 
 
 </head>
@@ -85,26 +122,17 @@
                 <div class="form-box login" id="login-form">
                     <h2 class="animation" style="--i:0; --j:11">Đăng nhập</h2>
 
-<%--                    <%--%>
-<%--                        String loginError = (String) session.getAttribute("loginError");--%>
-<%--                        String email = (String) session.getAttribute("email");--%>
-<%--                        if (email == null) email = "";--%>
-<%--                        if (loginError != null) {--%>
-<%--                    %>--%>
-<%--                    <p class="error-message"><%= loginError %></p>--%>
-<%--                    <%--%>
-<%--                            session.removeAttribute("signupError");--%>
-<%--                            session.removeAttribute("email");--%>
-<%--                        }--%>
-<%--                    %>--%>
+
                     <%
-                        String error= (String) request.getAttribute("error");
+                        String loginError= (String) request.getAttribute("error");
                         String email= request.getParameter("email");
-                        if(error==null) error = "";
+                        if(loginError==null)loginError = "";
                         if(email==null) email = "";
                     %>
                     <%--                    <p><%= error %></p>--%>
-                    <p class="error-message"><%= error %></p>
+<%--                    <p class="error-message"><%= error %></p>--%>
+<%--                    <p class="error-message animation" style="--i:0; --j:11"><%= loginError %></p>--%>
+                    <p class="error-message login animation" style="--i:0; --j:11"><%= loginError %></p>
 
                     <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
@@ -165,16 +193,37 @@
                     <h2 class="animation" style="--i:17; --j:0">Đăng ký</h2>
 
 
+<%--                    <%--%>
+<%--                        String signupError = (String) request.getAttribute("error");--%>
+<%--                        String fullname = request.getParameter("fullName");--%>
+<%--                        String gmail = request.getParameter("gmailRe");--%>
+<%--                        if (fullname == null) fullname = "";--%>
+<%--                        if (gmail == null) gmail = "";--%>
+<%--                    %>--%>
+
+<%--                    <% if (signupError != null && !signupError.isEmpty()) { %>--%>
+
+<%--&lt;%&ndash;                    <p class="error-message"><%= signupError %></p>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                    <p class="error-message animation" style="--i:17; --j:0"><%= signupError %></p>&ndash;%&gt;--%>
+<%--                    <p class="error-message register animation" style="--i:17; --j:0"><%= signupError %></p>--%>
+
+<%--                    <% } %>--%>
+
                     <%
-                        String signupError = (String) request.getAttribute("error");
+                        // Lấy thông báo lỗi từ session
+                        String signupError = (String) session.getAttribute("error");
                         String fullname = request.getParameter("fullName");
                         String gmail = request.getParameter("gmailRe");
+
+                        // Nếu không có giá trị trong session, gán signupError là chuỗi trống
+                        if (signupError == null) signupError = "";
                         if (fullname == null) fullname = "";
                         if (gmail == null) gmail = "";
                     %>
 
-                    <% if (signupError != null && !signupError.isEmpty()) { %>
-                    <p class="error-message"><%= signupError %></p>
+                    <!-- Hiển thị thông báo lỗi nếu có -->
+                    <% if (!signupError.isEmpty()) { %>
+                    <p class="error-message register animation" style="--i:17; --j:0"><%= signupError %></p>
                     <% } %>
 
 
