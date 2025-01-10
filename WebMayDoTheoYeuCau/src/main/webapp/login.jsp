@@ -38,11 +38,11 @@
 
         .error-message {
             display: none;
-            color: #ff0000; /* Màu đỏ cho thông báo lỗi */
+            color: red; /* Màu đỏ cho thông báo lỗi */
             opacity: 0;
             /*color: white;*/
             padding: 0 ;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 0;
             margin-top: 5px;
@@ -60,12 +60,12 @@
             display: block;
         }
 
-        /*.wrapper .form-box.register{*/
-        /*    right: 0;*/
-        /*    padding: 0 30px 10px 70px;*/
-        /*    !*display: none;*!*/
-        /*    pointer-events: none;*/
-        /*}*/
+        .wrapper .form-box.register{
+            right: 0;
+            padding: 0 30px 10px 70px;
+            /*display: none;*/
+            pointer-events: none;
+        }
 
 
     </style>
