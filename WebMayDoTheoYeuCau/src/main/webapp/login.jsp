@@ -60,7 +60,12 @@
             display: block;
         }
 
-
+        /*.wrapper .form-box.register{*/
+        /*    right: 0;*/
+        /*    padding: 0 30px 10px 70px;*/
+        /*    !*display: none;*!*/
+        /*    pointer-events: none;*/
+        /*}*/
 
 
     </style>

@@ -12,6 +12,65 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.io.IOException;
 
+//@WebServlet(name = "SignupController", value = "/signupController")
+//public class SignupController extends HttpServlet {
+//
+//    private UserDao userDao;
+//
+//    @Override
+//    public void init() {
+//        userDao = new UserDao();
+//    }
+//
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.getRequestDispatcher("login.jsp").forward(request, response);
+//    }
+//
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String fullName = request.getParameter("fullName");
+//        String gmail = request.getParameter("gmailRe");
+//        String password = request.getParameter("passwordRe");
+//        String confirmPassword = request.getParameter("confirmPasswordRe");
+//
+//        // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
+//        if (!password.equals(confirmPassword)) {
+//            request.setAttribute("error", "Mật khẩu xác minh không khớp");
+////            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+//            response.sendRedirect("login.jsp#signup-form");
+//            return;
+//        }
+//
+//
+//
+//        // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
+//        if (userDao.isEmailExist(gmail)) {
+//            request.setAttribute("error", "Email đã được sử dụng");
+////            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+//            response.sendRedirect("login.jsp#signup-form");
+//            return;
+//        }
+//
+//        // Tạo đối tượng User và thêm vào cơ sở dữ liệu
+//        User newUser = new User( "", password, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
+//        boolean isSuccess = userDao.registerUser(newUser);
+//
+//        if (isSuccess) {
+//            // Đăng nhập ngay sau khi đăng ký thành công
+//            HttpSession session = request.getSession();
+//            session.setAttribute("auth", newUser); // Tự động đăng nhập
+//
+//            // Chuyển hướng đến trang chủ sau khi đăng ký thành công
+//            response.sendRedirect("home.jsp");
+//        } else {
+//            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
+////            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+//            response.sendRedirect("login.jsp#signup-form");
+//        }
+//    }
+//}
+
 @WebServlet(name = "SignupController", value = "/signupController")
 public class SignupController extends HttpServlet {
 
@@ -34,40 +93,33 @@ public class SignupController extends HttpServlet {
         String password = request.getParameter("passwordRe");
         String confirmPassword = request.getParameter("confirmPasswordRe");
 
+        HttpSession session = request.getSession();  // Khởi tạo session trước khi sử dụng
+
         // Kiểm tra mật khẩu và xác minh mật khẩu có trùng khớp hay không
         if (!password.equals(confirmPassword)) {
-            request.setAttribute("error", "Mật khẩu xác minh không khớp");
-//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            session.setAttribute("error", "Mật khẩu xác minh không khớp");
             response.sendRedirect("login.jsp#signup-form");
             return;
         }
 
-
-
         // Kiểm tra email có tồn tại trong cơ sở dữ liệu không
         if (userDao.isEmailExist(gmail)) {
-            request.setAttribute("error", "Email đã được sử dụng");
-//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            session.setAttribute("error", "Email đã được sử dụng");
             response.sendRedirect("login.jsp#signup-form");
             return;
         }
 
         // Tạo đối tượng User và thêm vào cơ sở dữ liệu
-        User newUser = new User( "", password, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
+        User newUser = new User("", password, fullName, gmail, "", "", 0, 2); // Role 2 là người dùng bình thường
         boolean isSuccess = userDao.registerUser(newUser);
 
         if (isSuccess) {
             // Đăng nhập ngay sau khi đăng ký thành công
-            HttpSession session = request.getSession();
             session.setAttribute("auth", newUser); // Tự động đăng nhập
-
-            // Chuyển hướng đến trang chủ sau khi đăng ký thành công
             response.sendRedirect("home.jsp");
         } else {
-            request.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
-//            request.getRequestDispatcher("login.jsp#signup-form").forward(request, response);
+            session.setAttribute("error", "Đăng ký không thành công. Vui lòng thử lại.");
             response.sendRedirect("login.jsp#signup-form");
         }
     }
 }
-
