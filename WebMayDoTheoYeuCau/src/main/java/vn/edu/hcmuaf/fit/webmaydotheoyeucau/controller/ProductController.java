@@ -105,6 +105,7 @@ public class ProductController extends HttpServlet {
             String checkCollectionString = request.getParameter("checkCollection");
             String categoryIDString = request.getParameter("categoryID");
             String maker = request.getParameter("maker");
+            String season = request.getParameter("season");
 
             // Kiểm tra dữ liệu null hoặc trống
             if (productName == null || productName.trim().isEmpty() ||
@@ -123,7 +124,8 @@ public class ProductController extends HttpServlet {
             int categoryID = Integer.parseInt(categoryIDString);
 
             // Tạo đối tượng sản phẩm mới
-            Product newProduct = new Product(0, productName, price, image, state, description, checkCollection, categoryID, maker);
+            Product newProduct = new Product(0, productName, price, image, state, description,
+                    checkCollection, categoryID, maker, season);
 
             // Gọi service để thêm sản phẩm
             boolean success = productService.addProduct(newProduct);

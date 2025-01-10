@@ -120,6 +120,7 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${quanNi.productName}</h3>
+                                    <p class="product-season">${quanNi.season}</p>
                                     <div class="product-maker">${quanNi.maker}</div>
                                     <h4 class="product-price">${quanNi.price} VND</h4>
                                 </div>

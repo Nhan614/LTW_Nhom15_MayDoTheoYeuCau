@@ -10,9 +10,10 @@ public class Product {
     private boolean checkCollection;
     private int categoryID;
     private String maker;
+    private String season;
 
     public Product(int id, String productName, double price, String image, boolean state, String description, boolean checkCollection
-    , int categoryID, String maker) {
+    , int categoryID, String maker,  String season) {
         this.id = id;
         this.productName = productName;
         this.price = price;
@@ -22,6 +23,7 @@ public class Product {
         this.checkCollection = checkCollection;
         this.categoryID = categoryID;
         this.maker = maker;
+        this.season = season;
 
     }
 
@@ -91,6 +93,14 @@ public class Product {
         return maker;
     }
 
+    public String getSeason() {
+        return season;
+    }
+
+    public void setSeason(String season) {
+        this.season = season;
+    }
+
     public void setMaker(String maker) {
         this.maker = maker;
     }
@@ -106,6 +116,7 @@ public class Product {
                 ", checkCollection=" + checkCollection +
                 ", categoryID=" + categoryID +
                 ", maker='" + maker + '\'' +
+                ", season='" + season + '\'' +
                 '}';
     }
 

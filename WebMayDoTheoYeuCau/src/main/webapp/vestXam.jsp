@@ -86,6 +86,7 @@
                 </div>
                 <div class="part-2">
                   <h3 class="product-title">${vestXam.productName}</h3>
+                  <p class="product-season">${vestXam.season}</p>
                   <div class="product-maker">${vestXam.maker}</div>
                   <h4 class="product-price">${vestXam.price} VND</h4>
                 </div>

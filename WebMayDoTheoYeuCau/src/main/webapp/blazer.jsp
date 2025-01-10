@@ -120,6 +120,7 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${blazer.productName}</h3>
+                                    <p class="product-season">${blazer.season}</p>
                                     <div class="product-maker">${blazer.maker}</div>
                                     <h4 class="product-price">${blazer.price} VND</h4>
                                 </div>

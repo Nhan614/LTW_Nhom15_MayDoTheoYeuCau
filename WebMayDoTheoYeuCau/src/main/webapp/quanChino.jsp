@@ -119,6 +119,7 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${quanChino.productName}</h3>
+                                    <p class="product-season">${quanChino.season}</p>
                                     <div class="product-maker">${quanChino.maker}</div>
                                     <h4 class="product-price">${quanChino.price} VND</h4>
                                 </div>

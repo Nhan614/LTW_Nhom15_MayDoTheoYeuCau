@@ -122,6 +122,7 @@
                             </div>
                             <div class="part-2">
                                 <h3 class="product-title">${aoSoMi.productName}</h3>
+                                <p class="product-season">${aoSoMi.season}</p>
                                 <div class="product-maker">${aoSoMi.maker}</div>
                                 <h4 class="product-price">${aoSoMi.price} VND</h4>
                             </div>

@@ -118,6 +118,7 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${vestXanh.productName}</h3>
+                                    <p class="product-season">${vestXanh.season}</p>
                                     <div class="product-maker">${vestXanh.maker}</div>
                                     <h4 class="product-price">${vestXanh.price} VND</h4>
                                 </div>

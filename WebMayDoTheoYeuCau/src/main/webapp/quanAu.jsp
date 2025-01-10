@@ -118,6 +118,7 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${quanAu.productName}</h3>
+                                    <p class="product-season">${quanAu.season}</p>
                                     <div class="product-maker">${quanAu.maker}</div>
                                     <h4 class="product-price">${quanAu.price} VND</h4>
                                 </div>

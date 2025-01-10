@@ -40,10 +40,11 @@ public class ProductService {
 
     // Lấy danh sách sản phẩm theo categoryID
     public List<Product> getProductsByCategoryId(int categoryId) {
-        return productDao.getAllProducts().stream()
-                .filter(product -> product.getCategoryID() == categoryId)
-                .toList();
+        return productDao.getProductsByCategoryId(categoryId);
     }
+
+
+
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();

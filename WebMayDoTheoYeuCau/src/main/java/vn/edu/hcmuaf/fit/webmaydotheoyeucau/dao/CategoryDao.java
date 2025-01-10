@@ -15,7 +15,7 @@ public class CategoryDao {
     }
 
     public List<CategoryModel> getAllCategoriesByParentID(int parentID) {
-        String sql = "select * from categories where categoryParentID = :?";
+        String sql = "select * from categories where categoryParentID = :parentID";
         List<CategoryModel> listCategories =  dbConnect.get().withHandle(handle -> {
             return handle.createQuery(sql).bind(1, parentID).mapToBean(CategoryModel.class).list();
         });

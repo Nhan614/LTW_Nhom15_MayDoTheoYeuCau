@@ -116,6 +116,7 @@
                             </div>
                             <div class="part-2">
                                 <h3 class="product-title">${overshirt.productName}</h3>
+                                <p class="product-season">${overshirt.season}</p>
                                 <div class="product-maker">${overshirt.maker}</div>
                                 <h4 class="product-price">${overshirt.price} VND</h4>
                             </div>
