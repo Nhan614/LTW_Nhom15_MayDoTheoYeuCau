@@ -31,26 +31,37 @@ public class ResetPassword extends HttpServlet {
             // Kiểm tra trong cơ sở dữ liệu
             User user = userDao.getUserByEmail(email);
             if (user != null) {
+                // Lưu email vào session hoặc truyền vào form
+                request.getSession().setAttribute("email", email);
                 // Hiển thị form nhập mật khẩu mới
-                request.setAttribute("email", email);
-                request.getRequestDispatcher("/resetPasswordForm.jsp").forward(request, response);
+                request.getRequestDispatcher("/layLaiMatKhau.jsp").forward(request, response);
             } else {
                 // Nếu email không tồn tại, hiển thị thông báo lỗi
-                response.getWriter().write("Email không hợp lệ. Vui lòng kiểm tra lại.");
+                request.setAttribute("errorMessage", "Email không hợp lệ. Vui lòng kiểm tra lại.");
+                request.getRequestDispatcher("/forgotPassword.jsp").forward(request, response);
             }
         } else {
-            response.getWriter().write("Liên kết không hợp lệ.");
+            request.setAttribute("errorMessage", "Liên kết không hợp lệ.");
+            request.getRequestDispatcher("/forgotPassword.jsp").forward(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Lấy email và mật khẩu mới từ form
-        String email = request.getParameter("email");
+        // Lấy thông tin từ form
+        String email = (String) request.getSession().getAttribute("email"); // Lấy email từ session
         String newPassword = request.getParameter("newPassword");
+        String confirmPassword = request.getParameter("confirmPassword");
 
         // Kiểm tra email và mật khẩu mới
-        if (email != null && !email.isEmpty() && newPassword != null && !newPassword.isEmpty()) {
+        if (email != null && !email.isEmpty() && newPassword != null && !newPassword.isEmpty() && confirmPassword != null && !confirmPassword.isEmpty()) {
+            // Kiểm tra mật khẩu xác nhận
+            if (!newPassword.equals(confirmPassword)) {
+                request.setAttribute("errorMessage", "Mật khẩu xác nhận không khớp.");
+                request.getRequestDispatcher("/layLaiMatKhau.jsp").forward(request, response);
+                return;
+            }
+
             // Kiểm tra trong cơ sở dữ liệu xem email có tồn tại không
             User user = userDao.getUserByEmail(email);
             if (user != null) {
@@ -62,15 +73,19 @@ public class ResetPassword extends HttpServlet {
                 boolean isUpdated = userDao.updateUser(user);
 
                 if (isUpdated) {
-                    response.getWriter().write("Mật khẩu đã được cập nhật thành công.");
+                    request.setAttribute("successMessage", "Mật khẩu đã được cập nhật thành công.");
+                    request.getRequestDispatcher("/login.jsp").forward(request, response); // Chuyển về trang login
                 } else {
-                    response.getWriter().write("Đã có lỗi xảy ra trong quá trình cập nhật mật khẩu.");
+                    request.setAttribute("errorMessage", "Đã có lỗi xảy ra trong quá trình cập nhật mật khẩu.");
+                    request.getRequestDispatcher("/layLaiMatKhau.jsp").forward(request, response);
                 }
             } else {
-                response.getWriter().write("Email không tồn tại trong hệ thống.");
+                request.setAttribute("errorMessage", "Email không tồn tại trong hệ thống.");
+                request.getRequestDispatcher("/layLaiMatKhau.jsp").forward(request, response);
             }
         } else {
-            response.getWriter().write("Vui lòng điền đầy đủ thông tin.");
+            request.setAttribute("errorMessage", "Vui lòng điền đầy đủ thông tin.");
+            request.getRequestDispatcher("/layLaiMatKhau.jsp").forward(request, response);
         }
     }
 }

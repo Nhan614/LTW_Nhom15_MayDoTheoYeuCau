@@ -30,7 +30,7 @@ public class EmailUtil {
 
         try {
             // Tạo liên kết reset mật khẩu
-            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/resetPassword.jsp?email=" + email;
+            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/layLaiMatKhau.jsp";
 
             // Tạo đối tượng email
             MimeMessage message = new MimeMessage(session);

@@ -25,7 +25,21 @@
                             <div class="card-body">
                                 <h5 class="card-title">Nhập Mật Khẩu Mới</h5>
                                 <hr>
+
+                                <!-- Hiển thị thông báo lỗi hoặc thành công -->
+                                <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
+                                <% String successMessage = (String) request.getAttribute("successMessage"); %>
+
+                                <% if (errorMessage != null) { %>
+                                <div class="alert alert-danger"><%= errorMessage %></div>
+                                <% } %>
+
+                                <% if (successMessage != null) { %>
+                                <div class="alert alert-success"><%= successMessage %></div>
+                                <% } %>
+
                                 <form action="ResetPassword" method="post">
+                                    <input type="hidden" name="email" value="<%= request.getSession().getAttribute("email") %>">
                                     <div class="mb-3">
                                         <label for="newPassword" class="form-label">Mật Khẩu Mới</label>
                                         <input type="password" class="form-control" id="newPassword" name="newPassword"
