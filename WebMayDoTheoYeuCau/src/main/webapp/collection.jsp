@@ -45,7 +45,7 @@
                     <div class="collection-alpha">
                         <h2 class="text-white text-center ">BỘ VEST</h2>
                         <p class="collection-text-costume">Tạo nên thiết kế bộ đồ ưng ý nhất đối với bạn</p>
-                        <a href="../../../../vestCongSo.html" class="shop-btn text-center">Khám Phá</a>
+                        <a href="vestCongSo.jsp" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5">
@@ -299,7 +299,7 @@
                     <div class="collection-alpha">
                         <h2 class="text-white text-center">QUẦN ÂU</h2>
                         <p class="collection-text-costume">Kiểu dáng đẹp mắt thoải mái khi mặc</p>
-                        <a href="../../../../quanAu.html" class="shop-btn text-center">Khám Phá</a>
+                        <a href="quanAu.jsp" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5 mb-5">

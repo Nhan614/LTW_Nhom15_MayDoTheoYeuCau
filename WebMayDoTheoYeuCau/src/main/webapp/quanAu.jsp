@@ -164,7 +164,30 @@
 
 <!-- my js -->
 <script> function toggleSidebar() { var sidebar = document.getElementById('sidebarFil'); sidebar.classList.toggle('active'); }</script>
+<script>function sortItems(order) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('sort', order);
+    window.location.search = urlParams.toString();
+}
 
+function filterItems() {
+    const selectedPrices = Array.from(document.querySelectorAll('input[name="priceFilter"]:checked')).map(el => el.value);
+    const selectedMaterial = document.getElementById('materialFilter').value;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (selectedPrices.length > 0) {
+        urlParams.set('price', selectedPrices.join(','));
+    } else {
+        urlParams.delete('price');
+    }
+    if (selectedMaterial && selectedMaterial !== 'all') {
+        urlParams.set('material', selectedMaterial);
+    } else {
+        urlParams.delete('material');
+    }
+    window.location.search = urlParams.toString();
+}
+</script>
 </body>
 
 </html>

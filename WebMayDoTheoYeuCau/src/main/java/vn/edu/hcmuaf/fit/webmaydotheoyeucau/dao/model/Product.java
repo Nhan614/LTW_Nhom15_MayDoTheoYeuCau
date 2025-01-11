@@ -119,6 +119,4 @@ public class Product implements java.io.Serializable {
                 ", season='" + season + '\'' +
                 '}';
     }
-
-    // Getters và Setters
 }

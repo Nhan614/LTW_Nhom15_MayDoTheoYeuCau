@@ -78,10 +78,10 @@
             <div class="tl-filters">
                 <div class="sorting">
                     <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/sort.png">
-                    <select class="ordainment">
+                    <select class="ordainment" onchange="sortItems(this.value)">
                         <option value="">Sắp xếp</option>
-                        <option value="price_asc">Giá cao đến thấp</option>
-                        <option value="price_desc">Giá thấp đến cao</option>
+                        <option value="price_asc">Giá thấp đến cao</option>
+                        <option value="price_desc">Giá cao đến thấp</option>
                     </select>
                 </div>
                 <div class="filter-part" onclick="toggleSidebar()">
@@ -136,19 +136,19 @@
     <hr>
     <h4>Theo Giá</h4>
     <div class="mx-3">
-        <label><input type="checkbox" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
-        <label><input type="checkbox" value="1000-1500" onchange="filterItems()">Từ 500,000 - 1,500,000
-            VND</label><br>
-        <label><input type="checkbox" value="above-1500" onchange="filterItems()">Từ 1,500,000 - 2,000,000 VND</label>
-        <label><input type="checkbox" value="above-1500" onchange="filterItems()">Trên 2,000,000 VND</label>
+        <label><input type="checkbox" name="priceFilter" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
+        <label><input type="checkbox" name="priceFilter" value="1000-1500" onchange="filterItems()"> Từ 500,000 - 1,500,000 VND</label><br>
+        <label><input type="checkbox" name="priceFilter" value="1500-2000" onchange="filterItems()"> Từ 1,500,000 - 2,000,000 VND</label><br>
+        <label><input type="checkbox" name="priceFilter" value="above-2000" onchange="filterItems()"> Trên 2,000,000 VND</label>
     </div>
+
     <h4 class="mt-5">Theo Vật Liệu</h4>
-    <select id="priceFilter" onchange="filterItems()">
+    <select id="materialFilter" onchange="filterItems()">
         <option value="all">Tất Cả</option>
-        <option value="under-1000">Vải Nhám</option>
-        <option value="1000-1500">Vải Trơn</option>
-        <option value="1000-1500">Vải Trơn Nhẵn</option>
-        <option value="above-1500">Vải Bóng</option>
+        <option value="cotton">Cotton</option>
+        <option value="wool">Len</option>
+        <option value="silk">Lụa</option>
+        <option value="polyester">Polyester</option>
     </select>
     <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
 </div>
@@ -165,6 +165,30 @@
 
 <!-- my js -->
 <script> function toggleSidebar() { var sidebar = document.getElementById('sidebarFil'); sidebar.classList.toggle('active'); }</script>
+<script>function sortItems(order) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('sort', order);
+    window.location.search = urlParams.toString();
+}
+
+function filterItems() {
+    const selectedPrices = Array.from(document.querySelectorAll('input[name="priceFilter"]:checked')).map(el => el.value);
+    const selectedMaterial = document.getElementById('materialFilter').value;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (selectedPrices.length > 0) {
+        urlParams.set('price', selectedPrices.join(','));
+    } else {
+        urlParams.delete('price');
+    }
+    if (selectedMaterial && selectedMaterial !== 'all') {
+        urlParams.set('material', selectedMaterial);
+    } else {
+        urlParams.delete('material');
+    }
+    window.location.search = urlParams.toString();
+}
+</script>
 
 </body>
 
