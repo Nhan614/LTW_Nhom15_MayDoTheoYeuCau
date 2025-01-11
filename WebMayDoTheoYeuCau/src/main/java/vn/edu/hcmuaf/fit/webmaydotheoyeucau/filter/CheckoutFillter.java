@@ -9,8 +9,8 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 
 import java.io.IOException;
 
-@WebFilter("/admin.jsp")  // Chỉ áp dụng filter cho trang admin.jsp
-public class AdminFilter implements Filter {
+@WebFilter("/checkout.jsp")  // Chỉ áp dụng filter cho trang admin.jsp
+public class CheckoutFillter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -28,20 +28,13 @@ public class AdminFilter implements Filter {
         Object user = session.getAttribute("auth");
 
         if (user != null) {
-            // Giả sử đối tượng User có thuộc tính role
-            User authUser = (User) user;
-
-            // Kiểm tra xem role của user có phải là 1 không
-            if (authUser.getRole() == 1) {
-                // Nếu role là 1, cho phép truy cập vào admin.jsp
-                chain.doFilter(request, response);
-            } else {
-                // Nếu không phải role 1, chuyển hướng đến trang khác (ví dụ: trang chủ)
-                httpResponse.sendRedirect(httpRequest.getContextPath() + "/404NotFound.jsp");
-            }
+            chain.doFilter(request, response); // Cho phép truy cập vào trang yêu cầu
         } else {
-            // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
-            httpResponse.sendRedirect(httpRequest.getContextPath() + "/404NotFound.jsp");
+            // Thêm thông báo cần đăng nhập vào session
+            session.setAttribute("loginMessage", "Bạn cần phải đăng nhập để thanh toán.");
+
+            // Chuyển hướng đến trang đăng nhập
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
         }
     }
 
