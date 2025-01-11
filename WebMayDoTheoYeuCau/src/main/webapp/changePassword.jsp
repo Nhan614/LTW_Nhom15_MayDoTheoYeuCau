@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
+
+    <script>
+        function validatePasswords() {
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (newPassword !== confirmPassword) {
+                alert("Mật khẩu mới và xác nhận mật khẩu phải trùng khớp.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
 </head>
 
 <body>
@@ -33,23 +48,40 @@
                             <div class="card-body">
                                 <h5 class="card-title">Đổi Mật Khẩu</h5>
                                 <hr>
-                                <form>
-                                    <div class="mb-3"> <label for="currentPassword" class="form-label">Mật Khẩu Hiện
-                                            Tại</label> <input type="password" class="form-control" id="currentPassword"
-                                            placeholder="Nhập mật khẩu hiện tại" required> </div>
-                                    <div class="mb-3"> <label for="newPassword" class="form-label">Mật Khẩu Mới</label>
-                                        <input type="password" class="form-control" id="newPassword"
-                                            placeholder="Nhập mật khẩu mới" required> </div>
-                                    <div class="mb-3"> <label for="confirmPassword" class="form-label">Xác Nhận Mật Khẩu
-                                            Mới</label> <input type="password" class="form-control" id="confirmPassword"
-                                            placeholder="Xác nhận mật khẩu mới" required> </div> <button type="submit"
-                                        class="btn-custumize">Đổi Mật Khẩu</button>
+
+                                <%-- Hiển thị lỗi --%>
+                                <c:if test="${not empty error}">
+                                    <div class="alert alert-danger">${error}</div>
+                                </c:if>
+
+                                <%-- Hiển thị thông báo thành công --%>
+                                <c:if test="${not empty success}">
+                                    <div class="alert alert-success">${success}</div>
+                                </c:if>
+
+                                <form action="changePassword" method="post" onsubmit="return validatePasswords()">
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Mật Khẩu Hiện Tại</label>
+                                        <input type="password" class="form-control" id="currentPassword" name="currentPassword" placeholder="Nhập mật khẩu hiện tại" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Mật Khẩu Mới</label>
+                                        <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="Nhập mật khẩu mới" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Xác Nhận Mật Khẩu Mới</label>
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu mới" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đổi Mật Khẩu</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </body>
+
     </div>
 
     <!-- footer -->
@@ -62,6 +94,6 @@
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
 
-</body>
+
 
 </html>

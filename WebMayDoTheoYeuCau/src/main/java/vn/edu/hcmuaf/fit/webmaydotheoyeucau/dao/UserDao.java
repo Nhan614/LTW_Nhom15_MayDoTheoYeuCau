@@ -42,13 +42,19 @@ public class UserDao {
         });
     }
 
-    // Kiểm tra mật khẩu so với mật khẩu đã mã hóa
+//    // Kiểm tra mật khẩu so với mật khẩu đã mã hóa
+//    public boolean checkPassword(String plainPassword, String hashedPassword) {
+//        if (!hashedPassword.startsWith("$2a$") && !hashedPassword.startsWith("$2b$")) {
+//            throw new IllegalArgumentException("Mật khẩu không hợp lệ");
+//        }
+//        return BCrypt.checkpw(plainPassword, hashedPassword);
+//    }
+
     public boolean checkPassword(String plainPassword, String hashedPassword) {
-        if (!hashedPassword.startsWith("$2a$") && !hashedPassword.startsWith("$2b$")) {
-            throw new IllegalArgumentException("Mật khẩu không hợp lệ");
-        }
+        // So sánh mật khẩu người dùng nhập vào với mật khẩu đã mã hóa trong DB
         return BCrypt.checkpw(plainPassword, hashedPassword);
     }
+
 
     public User checkUser(String email, String pass) {
         String sql = "SELECT * FROM users WHERE gmail = :email";
@@ -203,14 +209,12 @@ public class UserDao {
         });
 
         try {
-            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/layLaiMatKhau.jsp";
+            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/resetPassword.jsp?email=" + email;
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             message.setSubject("Đặt lại mật khẩu của bạn");
             message.setText("Vui lòng nhấp vào liên kết sau để đặt lại mật khẩu của bạn: " + resetLink);
-
-
             Transport.send(message);
             System.out.println("Email đã được gửi thành công");
         } catch (MessagingException e) {
@@ -246,17 +250,6 @@ public class UserDao {
     }
 
 
-//-----------------------------------------------------------------------------------
-
-// Main để kiểm tra các chức năng
-//    public static void main(String[] args) {
-//        UserDao userDao = new UserDao();
-//        String hashedPassword = BCrypt.hashpw("111", BCrypt.gensalt());
-//        System.out.println(hashedPassword);
-//
-//    }
-//}
-//-----------------------------------------------------------------------------------
 
 
     public static void main(String[] args) {
