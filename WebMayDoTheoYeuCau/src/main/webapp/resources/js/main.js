@@ -65,6 +65,15 @@ $(document).ready(function (e) {
         window.location.hash = '#admin-reports'; // Đặt hash sau khi thay đổi
     });
 
+    $('.admin-sidebar-9').click(function (e) {
+        $('section').addClass('admin-hide');
+        $('#admin-contacts').removeClass('admin-hide');
+        $('.sidebar li').removeClass('sidebar-active');
+        $(this).addClass('sidebar-active');
+        window.location.hash = '#admin-contacts'; // Đặt hash sau khi thay đổi
+        console.log('Hash is:', window.location.hash);
+    });
+
     // Xử lý sự kiện thay đổi hash
     $(window).on('hashchange', function () {
         $('section').addClass('admin-hide');
@@ -89,10 +98,10 @@ $(document).ready(function (e) {
                 $('.admin-sidebar-4').addClass('sidebar-active');
                 loadMaterials();
                 break;
-            case '#admin-material':
-                $('#admin-user').removeClass('admin-hide');
-                $('.admin-sidebar-4').addClass('sidebar-active');
-                break;
+            // case '#admin-material':
+            //     $('#admin-user').removeClass('admin-hide');
+            //     $('.admin-sidebar-4').addClass('sidebar-active');
+            //     break;
             case '#admin-orders':
                 $('#admin-orders').removeClass('admin-hide');
                 $('.admin-sidebar-3').addClass('sidebar-active');
@@ -109,6 +118,11 @@ $(document).ready(function (e) {
             case '#admin-reports':
                 $('#admin-reports').removeClass('admin-hide');
                 $('.admin-sidebar-8').addClass('sidebar-active');
+                break;
+            case '#admin-contacts':
+                $('#admin-contacts').removeClass('admin-hide');
+                $('.admin-sidebar-9').addClass('sidebar-active');
+                loadContacts()
                 break;
             default:
                 $('#admin-dashboard').removeClass('admin-hide');
@@ -701,4 +715,125 @@ $(document).ready(function (e) {
         }
     });
 
-});
+
+//------------------------- contacts ------------------------------------
+    function loadContacts() {
+        $.ajax({
+            url: '/WebMayDoTheoYeuCau_war_exploded/ContactsController', // URL to fetch contacts
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                if ($.fn.DataTable.isDataTable('#contactsTable')) {
+                    $('#contactsTable').DataTable().destroy();
+                }
+                $('#contactsTable tbody').empty();
+                var table = $('#contactsTable').DataTable({
+                    paging: true,
+                    searching: true,
+                    ordering: true,
+                    responsive: true,
+                    language: {
+                        search: "Tìm kiếm:",
+                        lengthMenu: "Hiển thị _MENU_ mục",
+                        info: "Hiển thị _START_ đến _END_ của _TOTAL_ mục",
+                        paginate: {
+                            first: "Đầu",
+                            last: "Cuối",
+                            next: "Sau",
+                            previous: "Trước",
+                        },
+                    },
+                });
+
+                // Adding data to the table
+                data.forEach(function (contact) {
+                    table.row.add([
+                        contact.id || '', // ID
+                        contact.name || 'N/A', // Name
+                        contact.email || 'N/A', // Email
+                        contact.message || 'N/A', // Message
+                        `<span class="badge ${getStatusClass(contact.status)}">${contact.status === 1 ? 'Active' : 'Inactive'}</span>`, // Status
+                        contact.response || 'Chưa có phản hồi', // Response (if any)
+                        `<button class="btn btn-sm btn-primary viewContactBtn" data-id="${contact.id}">Chi tiết</button>
+                     <button class="btn btn-sm btn-danger deleteContactBtn" data-id="${contact.id}">Xóa</button>
+                     <button class="btn btn-sm btn-info responseContactBtn" data-id="${contact.id}">Phản hồi</button>` // Response button
+                    ]).draw(false);
+                });
+
+                // Handle the "Respond" button click by calling the new function
+                handleResponseClick();
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching contacts:', xhr.responseText); // Log the error response
+                alert("Không thể tải danh sách liên hệ.");
+            }
+        });
+    }
+
+// Function to handle the "Respond" button click separately
+    function handleResponseClick() {
+        // Dùng .off() để loại bỏ sự kiện cũ trước khi gắn lại
+        $('.responseContactBtn').off('click').on('click', function () {
+            var contactId = $(this).data('id');
+            $.ajax({
+                url: '/WebMayDoTheoYeuCau_war_exploded/ContactsController?id=' + contactId,
+                type: 'GET',
+                dataType: 'json',
+                success: function (contactDetail) {
+                    $('#responseContactName').text(contactDetail.name);
+                    $('#responseContactEmail').text(contactDetail.email);
+                    $('#responseContactMessage').text(contactDetail.message);
+                    $('#currentResponse').text(contactDetail.response || 'Chưa có phản hồi'); // Display the current response
+
+                    // Open the modal
+                    $('#responseModal').modal('show');
+
+                    // Set the hidden field to the contact ID
+                    $('#responseContactId').val(contactDetail.id);
+
+                    // Send response when clicking the "Send Response" button
+                    $('#sendResponseBtn').off('click').on('click', function () {  // Off before on
+                        var contactId = $('#responseContactId').val();
+                        var responseText = $('#responseText').val();
+
+                        $.ajax({
+                            url: '/WebMayDoTheoYeuCau_war_exploded/ContactsController', // POST request to respond
+                            type: 'POST',
+                            data: {
+                                id: contactId,
+                                response: responseText
+                            },
+                            success: function (response) {
+                                alert(response.message); // Success message
+                                $('#responseModal').modal('hide'); // Close the modal
+                                loadContacts(); // Reload the contacts
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error response:', xhr.responseText); // Log the full error response
+                                alert("Có lỗi khi gửi phản hồi.");
+                            }
+                        });
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching contact detail:', xhr.responseText);
+                    alert("Không thể tải chi tiết liên hệ.");
+                }
+            });
+        });
+    }
+
+
+// Helper function to get status class for badge
+    function getStatusClass(status) {
+        if (status === 1) {
+            return 'bg-success'; // Active
+        } else {
+            return 'bg-danger'; // Inactive
+        }
+    }
+
+
+
+
+})

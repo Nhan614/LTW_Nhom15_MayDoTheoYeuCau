@@ -12,8 +12,7 @@ public class EmailUtil {
     public void sendResetPasswordLink(String email) {
         String host = "smtp.gmail.com";
         final String fromEmail = "nhannghialai@gmail.com";  // Thay bằng email của bạn
-        final String password = "xpna sqpq sefp dfix";    // Thay bằng mật khẩu ứng dụng Gmail của bạn
-
+        final String password = "xpna sqpq sefp dfix";
         // Thiết lập các thuộc tính của SMTP server
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host);
@@ -49,8 +48,44 @@ public class EmailUtil {
         }
     }
 
+    public void reponeContact(String toEmail, String subject, String body) {
+        // Cấu hình email
+        String host = "smtp.gmail.com";
+        final String fromEmail = "nhannghialai@gmail.com";  // Thay bằng email của bạn
+        final String password = "xpna sqpq sefp dfix";
+
+
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");       // SMTP Host
+        props.put("mail.smtp.port", "587");                 // Port
+        props.put("mail.smtp.auth", "true");                // Enable authentication
+        props.put("mail.smtp.starttls.enable", "true");     // Enable STARTTLS
+
+        // Xác thực tài khoản email
+        Session session = Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+
+        // Soạn email
+        Message message = new MimeMessage(session);
+        try {
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
+            message.setText(body);
+
+            Transport.send(message);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public static void main(String[] args) {
         EmailUtil emailUtil = new EmailUtil();
-        emailUtil.sendResetPasswordLink("22130185@st.hcmuaf.edu.vn"); // Đảm bảo đây là email hợp lệ
+    emailUtil.reponeContact("22130193@st.hcmuaf.edu.vn", "alo", "alo");
     }
 }

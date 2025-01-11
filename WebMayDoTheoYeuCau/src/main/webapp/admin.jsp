@@ -79,6 +79,12 @@
             </a>
         </li>
         <li class="admin-sidebar-9">
+            <a href="#admin-contacts">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Liên hệ khách hàng</span>
+            </a>
+        </li>
+        <li class="admin-sidebar-10">
             <a href="#admin-settings">
                 <i class="fa-solid fa-gear"></i>
                 <span>Cài đặt</span>
@@ -87,7 +93,7 @@
         <li>
             <a href="home.jsp" class="admin-logout">
                 <i class="fa-solid fa-right-to-bracket"></i>
-                <span>Logout</span>
+                <span>Về trang chủ</span>
             </a>
         </li>
 
@@ -465,11 +471,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="editMaterialImage">Hình Ảnh</label>
-                                    <input type="text" class="form-control" id="editMaterialImage" placeholder="Nhập URL hình ảnh">
+                                    <input type="text" class="form-control" id="editMaterialImage"
+                                           placeholder="Nhập URL hình ảnh">
                                 </div>
                                 <div class="form-group">
                                     <label for="editMaterialQuantity">Số Lượng</label>
-                                    <input type="number" class="form-control" id="editMaterialQuantity" required min="1">
+                                    <input type="number" class="form-control" id="editMaterialQuantity" required
+                                           min="1">
                                 </div>
                                 <div class="form-group">
                                     <label for="editMaterialState">Trạng Thái</label>
@@ -497,7 +505,6 @@
                     </div>
                 </div>
             </div>
-
 
 
             <hr>
@@ -790,6 +797,61 @@
             </div>
         </div>
     </section>
+
+    <section id="admin-contacts" class="admin-hide">
+        <div class="container mt-5">
+            <!-- Title -->
+            <h1>Quản lý liên hệ</h1>
+
+            <!-- DataTable -->
+            <hr>
+            <h3 class="text-center">Danh Sách Liên Hệ</h3>
+            <table id="contactsTable" class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Tin nhắn</th>
+                    <th>Trạng thái</th>
+                    <th>Phản hồi</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Data will be dynamically populated here via JavaScript -->
+                </tbody>
+            </table>
+
+            <!-- Modal for Responding to Contact -->
+            <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="responseModalLabel">Phản hồi liên hệ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Tên:</strong> <span id="responseContactName"></span></p>
+                            <p><strong>Email:</strong> <span id="responseContactEmail"></span></p>
+                            <p><strong>Tin nhắn:</strong> <span id="responseContactMessage"></span></p>
+                            <p><strong>Phản hồi hiện tại:</strong> <span id="currentResponse"></span></p> <!-- Show current response -->
+                            <textarea id="responseText" class="form-control" rows="4" placeholder="Nhập phản hồi"></textarea>
+                            <input type="hidden" id="responseContactId">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary" id="sendResponseBtn">Gửi phản hồi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
 
     <!-- report -->
     <section id="admin-reports" class="admin-hide">
