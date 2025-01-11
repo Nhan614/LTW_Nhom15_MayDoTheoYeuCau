@@ -145,11 +145,12 @@
     <h4 class="mt-5">Theo Vật Liệu</h4>
     <select id="materialFilter" onchange="filterItems()">
         <option value="all">Tất Cả</option>
-        <option value="cotton">Cotton</option>
-        <option value="wool">Len</option>
-        <option value="silk">Lụa</option>
-        <option value="polyester">Polyester</option>
+        <option value="vaiNham">Vải Nhám</option>
+        <option value="vaiTron">Vải Trơn</option>
+        <option value="vaiTronNhan">Vải Trơn Nhẵn</option>
+        <option value="vaiBong">Vải Bóng</option>
     </select>
+
     <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
 </div>
 

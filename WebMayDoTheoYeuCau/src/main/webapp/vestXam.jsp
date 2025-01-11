@@ -68,6 +68,37 @@
         style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
     </div>
   </section>
+  <section class="container my-4">
+    <!-- Title and Description -->
+    <div class="vest-title">
+      <div class="vest-header">
+        <h2>Bộ Vest Xám May Đo Cho Quý Ông</h2>
+      </div>
+      <!-- Sorting and Filtering options -->
+      <div class="tl-filters">
+        <div class="sorting">
+          <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/sort.png">
+          <select class="ordainment" onchange="sortItems(this.value)">
+            <option value="">Sắp xếp</option>
+            <option value="price_asc">Giá thấp đến cao</option>
+            <option value="price_desc">Giá cao đến thấp</option>
+          </select>
+
+        </div>
+        <div class="filter-part" onclick="toggleSidebar()">
+          <img src="https://lanieri.com/app/plugins/tailoor-integration/assets/img/ico_filter.svg">
+          <a class="tl-filter">Lọc</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <p class="vest-description">
+      Từ những họa tiết dễ phối như kẻ sọc và kẻ vuông, đến những lựa chọn mang cảm hứng lịch lãm hơn
+      như thiết kế pied-de-poule quyến rũ. Chất liệu vải vest với cấu trúc hoàn hảo và bảng màu đa năng,
+      lý tưởng để tạo nên trang phục khác biệt mỗi ngày, khẳng định phong cách và sự tinh tế của bạn.
+    </p>
+  </section>
   <section class="container my-4 section-products">
     <div class="row">
       <c:forEach var="vestXam" items="${products}">
@@ -103,20 +134,21 @@
   <hr>
   <h4>Theo Giá</h4>
   <div class="mx-3">
-      <label><input type="checkbox" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
-      <label><input type="checkbox" value="1000-1500" onchange="filterItems()">Từ 500,000 - 1,500,000
-          VND</label><br>
-      <label><input type="checkbox" value="above-1500" onchange="filterItems()">Từ 1,500,000 - 2,000,000 VND</label>
-      <label><input type="checkbox" value="above-1500" onchange="filterItems()">Trên 2,000,000 VND</label>
+    <label><input type="checkbox" name="priceFilter" value="under-1000" onchange="filterItems()"> Dưới 500,000 VND</label><br>
+    <label><input type="checkbox" name="priceFilter" value="1000-1500" onchange="filterItems()"> Từ 500,000 - 1,500,000 VND</label><br>
+    <label><input type="checkbox" name="priceFilter" value="1500-2000" onchange="filterItems()"> Từ 1,500,000 - 2,000,000 VND</label><br>
+    <label><input type="checkbox" name="priceFilter" value="above-2000" onchange="filterItems()"> Trên 2,000,000 VND</label>
   </div>
+
   <h4 class="mt-5">Theo Vật Liệu</h4>
-  <select id="priceFilter" onchange="filterItems()">
-      <option value="all">Tất Cả</option>
-      <option value="under-1000">Vải Nhám</option>
-      <option value="1000-1500">Vải Trơn</option>
-      <option value="1000-1500">Vải Trơn Nhẵn</option>
-      <option value="above-1500">Vải Bóng</option>
+  <select id="materialFilter" onchange="filterItems()">
+    <option value="all">Tất Cả</option>
+    <option value="vaiNham">Vải Nhám</option>
+    <option value="vaiTron">Vải Trơn</option>
+    <option value="vaiTronNhan">Vải Trơn Nhẵn</option>
+    <option value="vaiBong">Vải Bóng</option>
   </select>
+
   <button class="btn-custumize mt-5" onclick="toggleSidebar()">Đóng</button>
 </div>
 
