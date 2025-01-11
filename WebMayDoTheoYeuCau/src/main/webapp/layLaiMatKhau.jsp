@@ -25,16 +25,20 @@
                             <div class="card-body">
                                 <h5 class="card-title">Nhập Mật Khẩu Mới</h5>
                                 <hr>
-                                <form>
-                                    <div class="mb-3"> <label for="newPassword" class="form-label">Mật Khẩu Mới</label>
-                                        <input type="password" class="form-control" id="newPassword"
-                                            placeholder="Nhập mật khẩu mới" required>
+                                <form action="ResetPassword" method="post">
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Mật Khẩu Mới</label>
+                                        <input type="password" class="form-control" id="newPassword" name="newPassword"
+                                               placeholder="Nhập mật khẩu mới" required>
                                     </div>
-                                    <div class="mb-3"> <label for="confirmPassword" class="form-label">Xác Nhận Mật Khẩu
-                                            Mới</label> <input type="password" class="form-control" id="confirmPassword"
-                                            placeholder="Xác nhận mật khẩu mới" required> </div> <button type="submit"
-                                        class="btn-custumize">Đổi Mật Khẩu</button>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Xác Nhận Mật Khẩu Mới</label>
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                               placeholder="Xác nhận mật khẩu mới" required>
+                                    </div>
+                                    <button type="submit" class="btn-custumize">Đổi Mật Khẩu</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
