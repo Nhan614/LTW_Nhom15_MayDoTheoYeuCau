@@ -25,7 +25,7 @@ public class Fogotpassword extends HttpServlet {
 
         if (userDao.isEmailExist(email)) {
             // Gửi email reset mật khẩu
-//            userDao.sendResetPasswordLink(email);
+            userDao.sendResetPasswordLink(email);
 
 
             // Thêm thông báo thành công

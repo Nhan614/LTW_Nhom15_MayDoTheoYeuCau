@@ -209,6 +209,8 @@ public class UserDao {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             message.setSubject("Đặt lại mật khẩu của bạn");
             message.setText("Vui lòng nhấp vào liên kết sau để đặt lại mật khẩu của bạn: " + resetLink);
+
+
             Transport.send(message);
             System.out.println("Email đã được gửi thành công");
         } catch (MessagingException e) {
