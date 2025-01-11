@@ -107,182 +107,31 @@
     </section>
     <section class="container my-4 section-products">
         <div class="row">
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">Bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Họa Tiết Huy Hiệu Xanh và Hồng</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
+            <c:forEach var="caVat" items="${products}">
+                <c:if test="${caVat.categoryID == 1}">
+                    <div class="col-md-6 col-lg-4 position-relative">
+                        <a href="detail.jsp?id=${caVat.id}" class="full-link">
+                            <div class="single-product">
+                                <div class="part-1">
+                                    <img src="${caVat.image}" alt="${caVat.productName}">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="part-2">
+                                    <h3 class="product-title">${caVat.productName}</h3>
+                                    <p class="product-season">${caVat.season}</p>
+                                    <div class="product-maker">${caVat.maker}</div>
+                                    <h4 class="product-price">${caVat.price} VND</h4>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Họa Tiết Huy Hiệu Màu Vàng</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">hạ thu</div>
-                            <h3 class="product-title">Cà Vạt Lụa Họa Tiết Chấm Tròn Màu Đỏ Vang</h3>
-                            <div class="product-maker">đức nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Satin Màu Hồng</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-5" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Satin Màu Xanh Lá Sage</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-6" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">Giảm 15%</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Jacquard Họa Tiết Paisley Ngọc Trai Trắng</h3>
-                            <div class="product-maker">trọng nhân</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-7" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">bốn mùa</div>
-                            <h3 class="product-title">Cà Vạt Lụa Jacquard Họa Tiết Hoa Ngọc Trai Trắng</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-old-price">1,500,000 VND</h4>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 position-relative">
-                <a href="detail.jsp" class="full-link">
-                    <div id="caVat-8" class="single-product">
-                        <div class="part-1">
-                            <span class="new">Mới</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <div class="product-season">hạ thu</div>
-                            <h3 class="product-title">Cà Vạt Lụa Họa Tiết Huy Hiệu Màu Nâu</h3>
-                            <div class="product-maker">nhân nghĩa</div>
-                            <h4 class="product-price">1,300,000 VND</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </c:if>
+            </c:forEach>
         </div>
     </section>
 <!-- sidebar -->

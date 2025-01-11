@@ -104,184 +104,2101 @@
   </section>
   <section class="container my-4 section-products">
     <div class="row">
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-1" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Len Màu Xanh</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
+      <c:forEach var="khanChoang" items="${products}">
+        <c:if test="${khanChoang.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${khanChoang.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${khanChoang.image}" alt="${khanChoang.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${khanChoang.productName}</h3>
+                  <p class="product-season">${khanChoang.season}</p>
+                  <div class="product-maker">${khanChoang.maker}</div>
+                  <h4 class="product-price">${khanChoang.price} VND</h4>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-2" class="single-product">
-            <div class="part-1">
-              <span class="discount">Giảm 15%</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Cashmere Màu Xám</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-3" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">hạ thu</div>
-              <h3 class="product-title">Khăn Choàng Len Màu Xám Nhạt</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-4" class="single-product">
-            <div class="part-1">
-              <span class="new">Mới</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Len Màu Nâu</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-5" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Len Màu Xanh</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-6" class="single-product">
-            <div class="part-1">
-              <span class="discount">Giảm 15%</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Cashmere Màu Xám Đậm</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-7" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">thu đông</div>
-              <h3 class="product-title">Khăn Choàng Len Màu Be</h3>
-              <div class="product-maker">nhân nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="khanChoang-8" class="single-product">
-            <div class="part-1">
-              <span class="new">Mới</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <div class="product-season">hạ thu</div>
-              <h3 class="product-title">Khăn Choàng Cashmere Tái Chế Màu Xanh Bottle</h3>
-              <div class="product-maker">nhân nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
+        </c:if>
+      </c:forEach>
     </div>
   </section>
+  <!-- test -->
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+  <section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section><section class="container my-4 section-products">
+    <div class="row">
+      <c:forEach var="vestCongSo" items="${products}">
+        <c:if test="${vestCongSo.categoryID == 1}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${vestCongSo.productName}</h3>
+                  <p class="product-season">${vestCongSo.season}</p>
+                  <div class="product-maker">${vestCongSo.maker}</div>
+                  <h4 class="product-price">${vestCongSo.price} VND</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </c:if>
+      </c:forEach>
+    </div>
+  </section>
+
+
+
 
   <!-- sidebar -->
 <div class="sidebarFil" id="sidebarFil">

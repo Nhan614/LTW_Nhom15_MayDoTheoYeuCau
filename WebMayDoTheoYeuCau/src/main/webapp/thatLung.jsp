@@ -101,115 +101,33 @@
   </section>
   <section class="container my-4 section-products">
     <div class="row">
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="thatLung-1" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">Thắt Lưng Da Bê Chải Màu Đen</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
+      <c:forEach var="thatLung" items="${products}">
+        <c:if test="${thatLung.categoryID == 15}">
+          <div class="col-md-6 col-lg-4 position-relative">
+            <a href="detail.jsp?id=${thatLung.id}" class="full-link">
+              <div class="single-product">
+                <div class="part-1">
+                  <img src="${thatLung.image}" alt="${thatLung.productName}">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                  </ul>
+                </div>
+                <div class="part-2">
+                  <h3 class="product-title">${thatLung.productName}</h3>
+                  <p class="product-season">${thatLung.season}</p>
+                  <div class="product-maker">${thatLung.maker}</div>
+                  <h4 class="product-price">${thatLung.price} VND</h4>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="thatLung-2" class="single-product">
-            <div class="part-1">
-              <span class="discount">Giảm 15%</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">Thắt Lưng Da Bê Chải Màu Nâu Đậm</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="thatLung-3" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">Thắt Lưng Da Bê Chải Màu Xanh</h3>
-              <div class="product-maker">đức nghĩa</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="thatLung-4" class="single-product">
-            <div class="part-1">
-              <span class="new">Mới</span>
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">Thắt Lưng Da Bê Lộn Màu Nâu Đậm</h3>
-              <div class="product-maker">nhân nghĩa</div>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Single Product -->
-      <div class="col-md-6 col-lg-4 position-relative">
-        <a href="detail.jsp" class="full-link">
-          <div id="thatLung-5" class="single-product">
-            <div class="part-1">
-              <ul>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">Thắt Lưng Da Bê Sần Màu Nâu Tan</h3>
-              <div class="product-maker">trọng nhân</div>
-              <h4 class="product-old-price">1,500,000 VND</h4>
-              <h4 class="product-price">1,300,000 VND</h4>
-            </div>
-          </div>
-        </a>
-      </div>
+        </c:if>
+      </c:forEach>
     </div>
   </section>
-
   <!-- sidebar -->
   <div class="sidebarFil" id="sidebarFil">
     <h2 class="mt-3">Lọc</h2>

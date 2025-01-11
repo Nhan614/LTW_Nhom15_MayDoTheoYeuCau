@@ -1,6 +1,6 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model;
 
-public class Product {
+public class Product implements java.io.Serializable {
     private int id;
     private String productName;
     private double price;
