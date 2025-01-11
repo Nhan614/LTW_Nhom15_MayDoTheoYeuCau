@@ -22,75 +22,106 @@ public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type"); // Lấy loại sản phẩm từ tham số URL
-        List<Product> products = productService.getAllProducts();
-        request.setAttribute("products", products);
 
-        switch (type) {
-            case "vestCongSo":
-                request.setAttribute("products", productService.getProductsByCategoryId(1));
-                request.getRequestDispatcher("/vestCongSo.jsp").forward(request, response);
-                break;
+        if (type == null || type.isEmpty()) {
+            // Xử lý cho collection.jsp
+            List<Product> vests = productService.getTopProductsByCategoryId(1, 4); // Vest Công Sở
+            List<Product> aoSoMi = productService.getTopProductsByCategoryId(6, 4); // Áo Sơ Mi
+            List<Product> blazers = productService.getTopProductsByCategoryId(9, 4); // Blazer
+            List<Product> quanAu = productService.getTopProductsByCategoryId(10, 4); // Quần Âu
 
-            case "vestThuongNgay":
-                request.setAttribute("products", productService.getProductsByCategoryId(2));
-                request.getRequestDispatcher("/vestThuongNgay.jsp").forward(request, response);
-                break;
-            case "vestXanh":
-                request.setAttribute("products", productService.getProductsByCategoryId(3));
-                request.getRequestDispatcher("/vestXanh.jsp").forward(request, response);
-                break;
-            case "vestNau":
-                request.setAttribute("products", productService.getProductsByCategoryId(4));
-                request.getRequestDispatcher("/vestNau.jsp").forward(request, response);
-                break;
-            case "vestXam":
-                request.setAttribute("products", productService.getProductsByCategoryId(5));
-                request.getRequestDispatcher("/vestXam.jsp").forward(request, response);
-                break;
-            case "aoSoMi":
-                request.setAttribute("products", productService.getProductsByCategoryId(6));
-                request.getRequestDispatcher("/aoSoMi.jsp").forward(request, response);
-                break;
-            case "aoPolo":
-                request.setAttribute("products", productService.getProductsByCategoryId(7));
-                request.getRequestDispatcher("/aoPolo.jsp").forward(request, response);
-                break;
-            case "overshirt":
-                request.setAttribute("products", productService.getProductsByCategoryId(8));
-                request.getRequestDispatcher("/overshirt.jsp").forward(request, response);
-                break;
-            case "blazer":
-                request.setAttribute("products", productService.getProductsByCategoryId(9));
-                request.getRequestDispatcher("/blazer.jsp").forward(request, response);
-                break;
-            case "quanAu":
-                request.setAttribute("products", productService.getProductsByCategoryId(10));
-                request.getRequestDispatcher("/quanAu.jsp").forward(request, response);
-                break;
-            case "quanChino":
-                request.setAttribute("products", productService.getProductsByCategoryId(11));
-                request.getRequestDispatcher("/quanChino.jsp").forward(request, response);
-                break;
-            case "quanNi":
-                request.setAttribute("products", productService.getProductsByCategoryId(12));
-                request.getRequestDispatcher("/quanNi.jsp").forward(request, response);
-                break;
-            case "caVat":
-                request.setAttribute("products", productService.getProductsByCategoryId(13));
-                request.getRequestDispatcher("/caVat.jsp").forward(request, response);
-                break;
-            case "khanChoang":
-                request.setAttribute("products", productService.getProductsByCategoryId(14));
-                request.getRequestDispatcher("/khanChoang.jsp").forward(request, response);
-                break;
-            case "thatLung":
-                request.setAttribute("products", productService.getProductsByCategoryId(15));
-                request.getRequestDispatcher("/thatLung.jsp").forward(request, response);
-                break;
-            default:
-                response.sendRedirect("products"); // Trang mặc định nếu type không hợp lệ
+            // Truyền danh sách sản phẩm vào request
+            request.setAttribute("vests", vests);
+            request.setAttribute("aoSoMi", aoSoMi);
+            request.setAttribute("blazers", blazers);
+            request.setAttribute("quanAu", quanAu);
+
+            // Điều hướng đến collection.jsp
+            request.getRequestDispatcher("/collection.jsp").forward(request, response);
+        } else {
+            // Xử lý cho các trang sản phẩm cụ thể
+            switch (type) {
+                case "vestCongSo":
+                    request.setAttribute("products", productService.getProductsByCategoryId(1));
+                    request.getRequestDispatcher("/vestCongSo.jsp").forward(request, response);
+                    break;
+
+                case "vestThuongNgay":
+                    request.setAttribute("products", productService.getProductsByCategoryId(2));
+                    request.getRequestDispatcher("/vestThuongNgay.jsp").forward(request, response);
+                    break;
+
+                case "vestXanh":
+                    request.setAttribute("products", productService.getProductsByCategoryId(3));
+                    request.getRequestDispatcher("/vestXanh.jsp").forward(request, response);
+                    break;
+
+                case "vestNau":
+                    request.setAttribute("products", productService.getProductsByCategoryId(4));
+                    request.getRequestDispatcher("/vestNau.jsp").forward(request, response);
+                    break;
+
+                case "vestXam":
+                    request.setAttribute("products", productService.getProductsByCategoryId(5));
+                    request.getRequestDispatcher("/vestXam.jsp").forward(request, response);
+                    break;
+
+                case "aoSoMi":
+                    request.setAttribute("products", productService.getProductsByCategoryId(6));
+                    request.getRequestDispatcher("/aoSoMi.jsp").forward(request, response);
+                    break;
+
+                case "aoPolo":
+                    request.setAttribute("products", productService.getProductsByCategoryId(7));
+                    request.getRequestDispatcher("/aoPolo.jsp").forward(request, response);
+                    break;
+
+                case "overshirt":
+                    request.setAttribute("products", productService.getProductsByCategoryId(8));
+                    request.getRequestDispatcher("/overshirt.jsp").forward(request, response);
+                    break;
+
+                case "blazer":
+                    request.setAttribute("products", productService.getProductsByCategoryId(9));
+                    request.getRequestDispatcher("/blazer.jsp").forward(request, response);
+                    break;
+
+                case "quanAu":
+                    request.setAttribute("products", productService.getProductsByCategoryId(10));
+                    request.getRequestDispatcher("/quanAu.jsp").forward(request, response);
+                    break;
+
+                case "quanChino":
+                    request.setAttribute("products", productService.getProductsByCategoryId(11));
+                    request.getRequestDispatcher("/quanChino.jsp").forward(request, response);
+                    break;
+
+                case "quanNi":
+                    request.setAttribute("products", productService.getProductsByCategoryId(12));
+                    request.getRequestDispatcher("/quanNi.jsp").forward(request, response);
+                    break;
+
+                case "caVat":
+                    request.setAttribute("products", productService.getProductsByCategoryId(13));
+                    request.getRequestDispatcher("/caVat.jsp").forward(request, response);
+                    break;
+
+                case "khanChoang":
+                    request.setAttribute("products", productService.getProductsByCategoryId(14));
+                    request.getRequestDispatcher("/khanChoang.jsp").forward(request, response);
+                    break;
+
+                case "thatLung":
+                    request.setAttribute("products", productService.getProductsByCategoryId(15));
+                    request.getRequestDispatcher("/thatLung.jsp").forward(request, response);
+                    break;
+
+                default:
+                    response.sendRedirect("products"); // Trang mặc định nếu type không hợp lệ
+            }
         }
     }
+
 
 
     @Override

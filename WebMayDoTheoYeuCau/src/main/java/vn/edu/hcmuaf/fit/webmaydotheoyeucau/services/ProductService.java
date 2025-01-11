@@ -42,6 +42,9 @@ public class ProductService {
     public List<Product> getProductsByCategoryId(int categoryId) {
         return productDao.getProductsByCategoryId(categoryId);
     }
+    public List<Product> getTopProductsByCategoryId(int categoryId, int limit) {
+        return productDao.getTopProductsByCategoryId(categoryId, limit);
+    }
 
 
 

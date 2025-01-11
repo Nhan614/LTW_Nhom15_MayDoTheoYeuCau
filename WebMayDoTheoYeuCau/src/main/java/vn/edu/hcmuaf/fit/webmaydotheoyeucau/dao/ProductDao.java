@@ -97,6 +97,16 @@ public class ProductDao {
                         .list()
         );
     }
+    public List<Product> getTopProductsByCategoryId(int categoryId, int limit) {
+        String sql = "SELECT * FROM products WHERE categoryID = :categoryID LIMIT :limit";
+        return dbConnect.get().withHandle(handle ->
+                handle.createQuery(sql)
+                        .bind("categoryID", categoryId)
+                        .bind("limit", limit)
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
 
 
     public static void main(String[] args) {
