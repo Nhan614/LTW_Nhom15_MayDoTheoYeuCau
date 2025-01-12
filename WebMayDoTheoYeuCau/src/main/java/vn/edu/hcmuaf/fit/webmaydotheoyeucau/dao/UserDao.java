@@ -224,18 +224,29 @@ public class UserDao {
     }
 
 
-    // Cập nhật mật khẩu người dùng
-    public boolean updatePassword(String email, String newPassword) {
-        String sql = "UPDATE users SET password = ? WHERE gmail = ?";
-        String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+//    // Cập nhật mật khẩu người dùng
+//    public boolean updatePassword(String email, String newPassword) {
+//        String sql = "UPDATE users SET password = ? WHERE gmail = ?";
+//        String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+//
+//        return dbConnect.get().withHandle(handle -> {
+//            return handle.createUpdate(sql)
+//                    .bind(0, hashedPassword)
+//                    .bind(1, email)
+//                    .execute() > 0;
+//        });
+//    }
+public boolean updatePassword(String email, String hashedNewPassword) {
+    String sql = "UPDATE users SET password = :password WHERE gmail = :email";
+    return dbConnect.get().withHandle(handle -> {
+        int rowsUpdated = handle.createUpdate(sql)
+                .bind("password", hashedNewPassword)
+                .bind("email", email)
+                .execute();
+        return rowsUpdated > 0;
+    });
+}
 
-        return dbConnect.get().withHandle(handle -> {
-            return handle.createUpdate(sql)
-                    .bind(0, hashedPassword)
-                    .bind(1, email)
-                    .execute() > 0;
-        });
-    }
 
 
     public User getUserByEmail(String email) {
