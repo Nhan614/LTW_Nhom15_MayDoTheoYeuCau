@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,29 +26,32 @@
     <div class="top-bar text-center py-2">
         <span>GIẢM GIÁ 25% KHI NHẬP MÃ "THREENTAILORED"</span>
         <button type="button" class="btn-close position-absolute end-0"
-                style="margin-right:10px;filter: brightness(0) invert(1);" aria-label="Close"></button>
+                style="margin-right:10px;filter: brightness(0) invert(1); " aria-label="Close"></button>
     </div>
 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="https://pos.nvncdn.com/650b61-144700/ps/20240115_UrgP2weVDv.png" class="img-fluid" alt="Vest xanh" width="300" height="200">
+                <img src="${product.image}" class="img-fluid" alt="${product.productName}" width="300" height="200">
                 <div class="detail-limg">
-                    <!-- Additional images or content can go here -->
                 </div>
             </div>
             <div class="col-md-6">
-                <h1 class="display-4">Vest xanh</h1>
-                <h3 class="text-price">123123.0 VNĐ</h3>
-                <p class="mt-4">Vest xanh nam tinh</p>
+                <h1 class="display-4">${product.productName}</h1>
+                <h3 class="text-price">${product.price} VNĐ</h3>
+                <p class="mt-4">${product.description}</p>
 
-                <a href="custumize.jsp"><button class="btn-custumize btn-lg">THIẾT KẾ</button></a>
+                <a href="custumize.jsp">
+                    <button class="btn-custumize btn-lg">THIẾT KẾ</button>
+                </a>
 
                 <div class="product-detail mt-4">
                     <h3>Chi Tiết</h3>
-                    <p>Mã sản phẩm: 123</p>
-                    <p>Chất liệu: Vai Xanh</p>
-                    <p>Sản xuất bởi: THREEN TAILORED</p>
+                    <p>Mã sản phẩm : ${product.id}</p>
+                        <c:forEach var="mat" items="${product.productMaterials}">
+                            <p>Chất liệu : ${mat}</p>
+                        </c:forEach>
+                    <p>Sản xuất bởi : <span class="text-price">THREEN TAILORED</span> tại Việt Nam</p>
                 </div>
             </div>
         </div>
@@ -55,7 +59,7 @@
 
 </div>
 
-
+</div>
 <!-- footer -->
 <div id="footer">
     <%@include file="resources/data/footer.jsp" %>
