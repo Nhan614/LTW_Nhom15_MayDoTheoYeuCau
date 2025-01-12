@@ -20,7 +20,7 @@ public class PassWordService {
      * @param newPassword     Mật khẩu mới
      * @return true nếu đổi mật khẩu thành công, ngược lại false
      */
-    public boolean changePassword(String email, String currentPassword, String newPassword) {
+    public boolean changePassword(String email, String currentPassword, String newPassword, String confirmPassword) {
         // Xác minh người dùng có tồn tại với email không
         User user = userDao.getUserByEmail(email);
         if (user == null) {
@@ -29,7 +29,7 @@ public class PassWordService {
         }
 
         // Kiểm tra mật khẩu hiện tại có đúng không
-        if (!userDao.checkPassword(currentPassword, user.getPassword())) {
+        if (!BCrypt.checkpw(currentPassword, user.getPassword())) { // Đảm bảo dùng BCrypt để kiểm tra mật khẩu
             System.out.println("Mật khẩu hiện tại không đúng");
             return false;
         }
@@ -37,6 +37,17 @@ public class PassWordService {
         // Kiểm tra mật khẩu mới có hợp lệ không (có thể thêm kiểm tra độ dài, ký tự đặc biệt, v.v.)
         if (newPassword == null || newPassword.length() < 6) {
             System.out.println("Mật khẩu mới phải có ít nhất 6 ký tự");
+            return false;
+        }
+
+        // Kiểm tra nếu mật khẩu mới và xác nhận mật khẩu không trùng khớp
+        if (newPassword == null || confirmPassword == null) {
+            System.out.println("Mật khẩu mới và xác nhận mật khẩu không thể là rỗng");
+            return false;
+        }
+
+        if (!newPassword.equals(confirmPassword)) {
+            System.out.println("Mật khẩu mới và xác nhận mật khẩu không khớp");
             return false;
         }
 
@@ -54,25 +65,4 @@ public class PassWordService {
             return false;
         }
     }
-//
-//    public static void main(String[] args) {
-//        // Khởi tạo đối tượng PassWordService
-//        PassWordService passWordService = new PassWordService();
-//
-//        // Thông tin người dùng cần thay đổi mật khẩu
-//        String email = "nam1@gmail.com";  // Thay bằng email người dùng cần test
-//        String currentPassword = "1";  // Thay bằng mật khẩu hiện tại của người dùng
-//        String newPassword = "123456";  // Thay bằng mật khẩu mới
-//
-//        // Gọi phương thức changePassword và kiểm tra kết quả
-//        boolean isChanged = passWordService.changePassword(email, currentPassword, newPassword);
-//
-//        // In ra kết quả
-//        if (isChanged) {
-//            System.out.println("Mật khẩu đã được thay đổi thành công.");
-//        } else {
-//            System.out.println("Không thể thay đổi mật khẩu.");
-//        }
-//    }
-//
 }
