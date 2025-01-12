@@ -42,7 +42,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="custumize-card">
-                        <input type="radio" id="fabric1" name="fabric" value="Vải Xanh Nhẳn" class="" required>
+                        <input type="radio" id="fabric1" name="fabric" value="Vải Xanh Nhẳn"
+                            <%= "Vai Xanh".equals(request.getAttribute("fabric")) ? "checked" : "" %> required>
                         <label for="fabric1" class="custumize-label">
                             <img src="resources/images/vai1.jpg" class="custumize-img" alt="Fabric 1">
                             <div class="custumize-card-body">
@@ -54,6 +55,7 @@
                         </label>
                     </div>
                 </div>
+                <!-- Add more fabrics as needed -->
             </div>
         </div>
 
@@ -64,7 +66,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="custumize-card">
-                        <input type="radio" id="collar1" name="collar" value="Lớn" class="" required>
+                        <input type="radio" id="collar1" name="collar" value="Lớn"
+                            <%= "Lớn".equals(request.getAttribute("collar")) ? "checked" : "" %> required>
                         <label for="collar1" class="custumize-label">
                             <img src="resources/images/coAO1.png" class="custumize-img" alt="Collar 1">
                             <div class="custumize-card-body">
@@ -83,7 +86,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="custumize-card">
-                        <input type="radio" id="pocket1" name="pocket" value="Nắp" class="" required>
+                        <input type="radio" id="pocket1" name="pocket" value="Nắp"
+                            <%= "Nắp".equals(request.getAttribute("pocket")) ? "checked" : "" %> required>
                         <label for="pocket1" class="custumize-label">
                             <img src="resources/images/tuiAo1.png" class="custumize-img" alt="Pocket 1">
                             <div class="custumize-card-body">
@@ -102,7 +106,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="custumize-card">
-                        <input type="radio" id="button1" name="button" value="Đen" class="" required>
+                        <input type="radio" id="button1" name="button" value="Đen"
+                            <%= "Đen".equals(request.getAttribute("button")) ? "checked" : "" %> required>
                         <label for="button1" class="custumize-label">
                             <img src="resources/images/cutAo1.png" class="custumize-img" alt="Button 1">
                             <div class="custumize-card-body">
@@ -110,15 +115,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="custumize-card">
-                        <input type="radio" id="button2" name="button" value="Đen" class="" required>
-                        <label for="button2" class="custumize-label">
-                            <img src="resources/images/cutAo1.png" class="custumize-img" alt="Button 1">
-                            <div class="custumize-card-body">
-                                <h5 class="card-title text-center">Đen</h5>
-                            </div>
-                        </label>
-                    </div>
+                    <!-- Add more buttons as needed -->
                 </div>
             </div>
         </div>

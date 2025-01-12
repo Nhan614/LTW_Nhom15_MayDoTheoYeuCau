@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
                 <h3 class="text-price">${product.price} VNĐ</h3>
                 <p class="mt-4">${product.description}</p>
 
-                <a href="custumize.jsp">
+                <a href="MayAoController?id=${product.id}">
                     <button class="btn-custumize btn-lg">THIẾT KẾ</button>
                 </a>
 
