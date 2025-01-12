@@ -117,12 +117,7 @@ public class EmailUtil {
 
     public static void main(String[] args) {
         EmailUtil emailUtil = new EmailUtil();
-//    emailUtil.reponeContact("22130193@st.hcmuaf.edu.vn", "alo", "alo");
-
-
-//            // Kiểm tra phương thức đăng ký mới
-//            String testEmail = "22130185@st.hcmuaf.edu.vn"; // Thay bằng địa chỉ email thật
-//            emailUtil.registerNotification(testEmail);
+    emailUtil.reponeContact("22130193@st.hcmuaf.edu.vn", "alo", "alo");
 
 
     }
