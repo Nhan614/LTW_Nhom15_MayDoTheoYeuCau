@@ -54,62 +54,46 @@
                         <div class="col-lg-6">
                             <!-- Hàng 1 -->
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/vestIconBluePrinceOfWales.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bộ Đồ Nam 1</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
+                                <c:forEach var="vest" items="${vests}" varStatus="status">
+                                    <c:if test="${status.index < 2}"> <!-- Hiển thị 2 sản phẩm đầu -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${vest.id}">
+                                                    <img src="${vest.image}" class="card-img-top" alt="${vest.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${vest.productName}</h5>
+                                                    <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/vestBrownWoolCashmereCanvas.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bộ Đồ Nam 2</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
-                            <!-- Hang 2 -->
 
+                            <!-- Hàng 2 -->
                             <div class="row mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/vestGreyAuthentic.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bộ Đồ Nam 3</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
-
+                                <c:forEach var="vest" items="${vests}" varStatus="status">
+                                    <c:if test="${status.index >= 2 && status.index < 4}"> <!-- Hiển thị sản phẩm 3 và 4 -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${vest.id}">
+                                                    <img src="${vest.image}" class="card-img-top" alt="${vest.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${vest.productName}</h5>
+                                                    <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/vestBlueTwill.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bộ Đồ Nam 4</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </div>
-                        <!-- Beta -->
+                    </div>
+                </div>
+
+                <!-- Beta -->
                         <div class="col-lg-6">
                             <div class="collection-img-review">
                                 <img src="resources/images/collection-suit-review1.webp" alt="">
@@ -146,62 +130,42 @@
                         <div class="col-lg-6">
                             <!-- Hàng 1 -->
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/blazerAnthraciteGray.webp"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Nam 1</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
+                                <c:forEach var="blazers" items="${blazers}" varStatus="status">
+                                    <c:if test="${status.index < 2}"> <!-- Hiển thị 2 sản phẩm đầu -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${blazers.id}">
+                                                    <img src="${blazers.image}" class="card-img-top" alt="${vest.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${blazers.productName}</h5>
+                                                    <p class="card-text">Giá: ${blazers.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/blazerNavyMicro.webp"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Nam 2</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
-                            <!-- Hang 2 -->
 
+                            <!-- Hàng 2 -->
                             <div class="row mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/blazerBrownSmoothVelvet.webp"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Nam 1</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
-
+                                <c:forEach var="blazers" items="${blazers}" varStatus="status">
+                                    <c:if test="${status.index >= 2 && status.index < 4}"> <!-- Hiển thị sản phẩm 3 và 4 -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${blazers.id}">
+                                                    <img src="${blazers.image}" class="card-img-top" alt="${blazers.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${blazers.productName}</h5>
+                                                    <p class="card-text">Giá: ${blazers.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/blazerPurplePinstripe.webp"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Nam 2</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -226,59 +190,40 @@
                         <div class="col-lg-6">
                             <!-- Hàng 1 -->
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/shirtIceGreyLinenZephyr.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Sơ Mi 1</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
+                                <c:forEach var="aoSoMi" items="${aoSoMi}" varStatus="status">
+                                    <c:if test="${status.index < 2}"> <!-- Hiển thị 2 sản phẩm đầu -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${aoSoMi.id}">
+                                                    <img src="${aoSoMi.image}" class="card-img-top" alt="${aoSoMi.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${aoSoMi.productName}</h5>
+                                                    <p class="card-text">Giá: ${aoSoMi.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/shirtLightBlueHerringboneFlannel.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Sơ Mi 2</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
-                            <!-- Hang 2 -->
 
+                            <!-- Hàng 2 -->
                             <div class="row mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/shirtPinkHerringbone.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Sơ Mi 3</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
-
+                                <c:forEach var="aoSoMi" items="${aoSoMi}" varStatus="status">
+                                    <c:if test="${status.index >= 2 && status.index < 4}"> <!-- Hiển thị sản phẩm 3 và 4 -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${aoSoMi.id}">
+                                                    <img src="${aoSoMi.image}" class="card-img-top" alt="${aoSoMi.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${aoSoMi.productName}</h5>
+                                                    <p class="card-text">Giá: ${aoSoMi.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/shirtTobaccoLinenZephyr.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Áo Sơ Mi 4</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </div>
                         <!-- Beta -->
@@ -315,66 +260,46 @@
                         <div class="col-lg-6">
                             <!-- Hàng 1 -->
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/trouserCamelFlannel.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Quần Nam 1</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
+                                <c:forEach var="quanAu" items="${quanAu}" varStatus="status">
+                                    <c:if test="${status.index < 2}"> <!-- Hiển thị 2 sản phẩm đầu -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${quanAu.id}">
+                                                    <img src="${quanAu.image}" class="card-img-top" alt="${quanAu.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${quanAu.productName}</h5>
+                                                    <p class="card-text">Giá: ${quanAu.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/trouserAirForceBlueFlannel.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Quần Nam 2</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
-                            <!-- Hang 2 -->
 
+                            <!-- Hàng 2 -->
                             <div class="row mt-5">
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/trouserDarkBlueGreenFlannel.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Quần Nam 3</h5>
-                                            <p class="card-text">Giá: 1.200.000 VNĐ</p>
-
+                                <c:forEach var="quanAu" items="${quanAu}" varStatus="status">
+                                    <c:if test="${status.index >= 2 && status.index < 4}"> <!-- Hiển thị sản phẩm 3 và 4 -->
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <a href="product-detail?id=${quanAu.id}">
+                                                    <img src="${quanAu.image}" class="card-img-top" alt="${quanAu.productName}">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${quanAu.productName}</h5>
+                                                    <p class="card-text">Giá: ${quanAu.price} VNĐ</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <a href="detail.jsp"><img src="resources/images/trouserSaltPepper.jpg"
-                                                                  class="card-img-top" alt="Áo vest 1">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Quần Nam 4</h5>
-                                            <p class="card-text">Giá: 1.500.000 VNĐ</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     <!-- Footer -->
     <div id="footer"><%@include file="resources/data/footer.jsp"%></div>
 

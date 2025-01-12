@@ -12,6 +12,63 @@
     <link rel="stylesheet" href="vendors/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="resources/css/footer/cauhoitg.css">
     <link rel="stylesheet" href="resources/css/style.css">
+    <style>/* Overlay */
+    .modal-overlay {
+        display: none; /* Ẩn modal ban đầu */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Màu nền tối */
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        margin-top: 50px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    /* Close Button */
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* Input Fields */
+    .modal-content input {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-custumize {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn-custumize:hover {
+        background-color: #c9302c;
+    }
+    </style>
 </head>
 
 <body>
@@ -216,10 +273,45 @@
                             </div>
                             <div class="col-md-1 mb-3"> <button class="btn-custumize w-100">12XL</button>
                             </div>
-                            <div class="col-md-3 mb-3"> <button class="btn-custumize bg-danger w-100">Kích Thước Khác:
-                                    Liên
-                                    Hệ</button>
+                            <!-- Nút kích hoạt Modal -->
+                            <button class="btn-custumize bg-danger w-100" onclick="openModal()">Kích Thước Khác: Liên Hệ</button>
+
+                            <!-- Modal -->
+                            <div id="contactModal" class="modal-overlay">
+                                <div class="modal-content">
+                                    <span class="close-button" onclick="closeModal()">&times;</span>
+                                    <h2>Liên Hệ Đặt May</h2>
+                                    <p>Vui lòng nhập đủ thông tin bên dưới. Chúng tôi sẽ gọi xác nhận và tư vấn size trước khi may.</p>
+                                    <form>
+                                        <div>
+                                            <label for="name">Họ và tên <span class="red">*</span></label>
+                                            <input id="name" type="text" placeholder="Nhập họ và tên" required>
+                                        </div>
+                                        <div>
+                                            <label for="phone">Số điện thoại <span class="red">*</span></label>
+                                            <input id="phone" type="tel" placeholder="Nhập số điện thoại" required>
+                                        </div>
+                                        <div>
+                                            <label for="chest">Số đo ngực (cm) <span class="red">*</span></label>
+                                            <input id="chest" type="number" placeholder="Nhập số đo ngực" required>
+                                        </div>
+                                        <div>
+                                            <label for="waist">Số đo eo (cm) <span class="red">*</span></label>
+                                            <input id="waist" type="number" placeholder="Nhập số đo eo" required>
+                                        </div>
+                                        <div>
+                                            <label for="hip">Số đo mông (cm) <span class="red">*</span></label>
+                                            <input id="hip" type="number" placeholder="Nhập số đo mông" required>
+                                        </div>
+                                        <div>
+                                            <label for="shoulder">Số đo vai (cm) <span class="red">*</span></label>
+                                            <input id="shoulder" type="number" placeholder="Nhập số đo vai" required>
+                                        </div>
+                                        <button type="submit" class="btn-custumize">Gửi đi</button>
+                                    </form>
+                                </div>
                             </div>
+
                         </div>
                         <div class="container mt-5">
                             <div class="afk-container mx-0">
@@ -682,6 +774,16 @@
 <%--    <script src="resources/js/main.js"></script>--%>
     <script src="resources/js/quit.js"></script>
     <script src="resources/js/backtotop.js"></script>
+    <script>
+        function openModal() {
+            document.getElementById("contactModal").style.display = "flex"; // Hiển thị modal
+        }
+
+        function closeModal() {
+            document.getElementById("contactModal").style.display = "none"; // Đóng modal
+        }
+
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
