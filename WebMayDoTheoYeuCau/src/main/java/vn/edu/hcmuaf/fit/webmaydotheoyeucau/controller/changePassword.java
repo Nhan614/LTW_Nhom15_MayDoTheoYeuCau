@@ -13,14 +13,17 @@ import java.io.IOException;
 //@WebServlet("/changePassword")
 public class changePassword extends HttpServlet {
 
-private UserDao userDao;
+    private UserDao userDao;
 
     @Override
     public void init() {
         // Khởi tạo UserDao để sử dụng trong servlet
         userDao = new UserDao();
     }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
