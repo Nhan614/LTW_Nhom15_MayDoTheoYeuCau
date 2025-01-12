@@ -27,15 +27,60 @@ public class ProductDao {
     }
 
     // Lấy sản phẩm theo ID
-    public Product getProductById(int productId) {
-        String sql = "SELECT * FROM products WHERE id = :productId";
-        return dbConnect.get().withHandle(handle ->
-                handle.createQuery(sql)
-                        .bind("productId", productId)
-                        .mapToBean(Product.class)
-                        .findOne() // Trả về Optional
-                        .orElse(null) // Nếu không có thì trả về null
-        );
+    public Product getProductById(int id) {
+        Map<Integer, Product> map = new HashMap<Integer, Product>();
+        String sql = "SELECT" +
+                "   p.id AS id," +
+                "   p.productName AS name," +
+                "   p.price AS price," +
+                "   p.image AS image," +
+                "   p.state AS state," +
+                "   p.description AS description," +
+                "   p.checkCollection AS checkCollection," +
+                "   c.categoryName AS categoryName," +
+                "   m.name AS mName," +
+                "   ps.partName AS psName," +
+                "   ps.size AS psSize " +
+                "FROM products p " +
+                "JOIN categories c ON p.categoryID = c.id " +
+                "JOIN productmaterials pm ON p.id = pm.productID " +
+                "JOIN materials m ON pm.materialID = m.id " +
+                "JOIN productpartsizes ps ON ps.productID = p.id " +
+                "WHERE p.id = ?";
+        return dbConnect.get().withHandle(handle -> {
+            try {
+                PreparedStatement preparedStatement = handle.getConnection().prepareStatement(sql);
+                preparedStatement.setInt(1, id);
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+                    int proId = rs.getInt("id");
+                    Product product = map.getOrDefault(proId, new Product());
+
+                    product.setId(proId);
+                    product.setProductName(rs.getString("name"));
+                    product.setPrice(rs.getDouble("price"));
+                    product.setState(rs.getBoolean("state"));
+                    product.setDescription(rs.getString("description"));
+                    product.setCheckCollection(rs.getBoolean("checkCollection"));
+                    product.setCategoryName(rs.getString("categoryName"));
+
+                    String image = rs.getString("image");
+                    String material = rs.getString("mName");
+                    String partName = rs.getString("psName");
+                    Double partSize = rs.getDouble("psSize");
+
+                    product.setImage(image);
+                    product.getPartSizes().put(partName, partSize);
+                    if (!product.getProductMaterials().contains(material)) {
+                        product.getProductMaterials().add(material);
+                    }
+                    map.put(proId, product);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return map.get(id);
+        });
     }
 
     // Thêm mới sản phẩm
@@ -207,7 +252,7 @@ public class ProductDao {
     }
 
     public Map<Integer, Product> getProductByCategoryId(int categoryId) {
-        Map<Integer, Product> map = new HashMap<Integer, Product>();
+        Map<Integer, Product> map = new HashMap<>();
         String sql = "SELECT" +
                 "   p.id AS id," +
                 "   p.productName AS name," +
@@ -226,34 +271,46 @@ public class ProductDao {
                 "JOIN materials m ON pm.materialID = m.id " +
                 "JOIN productpartsizes ps ON ps.productID = p.id " +
                 "WHERE c.id = ?";
+
         return dbConnect.get().withHandle(handle -> {
             try {
                 PreparedStatement preparedStatement = handle.getConnection().prepareStatement(sql);
                 preparedStatement.setInt(1, categoryId);
                 ResultSet rs = preparedStatement.executeQuery();
+
                 while (rs.next()) {
                     int proId = rs.getInt("id");
-                    Product product = map.getOrDefault(proId, new Product());
 
-                    product.setId(proId);
-                    product.setProductName(rs.getString("name"));
-                    product.setPrice(rs.getDouble("price"));
-                    product.setState(rs.getBoolean("state"));
-                    product.setDescription(rs.getString("description"));
-                    product.setCheckCollection(rs.getBoolean("checkCollection"));
-                    product.setCategoryName(rs.getString("categoryName"));
+                    // Kiểm tra xem sản phẩm đã có trong map chưa
+                    Product product = map.get(proId);
+                    if (product == null) {
+                        // Nếu chưa, tạo mới sản phẩm và lưu vào map
+                        product = new Product();
+                        product.setId(proId);
+                        product.setProductName(rs.getString("name"));
+                        product.setPrice(rs.getDouble("price"));
+                        product.setState(rs.getBoolean("state"));
+                        product.setDescription(rs.getString("description"));
+                        product.setCheckCollection(rs.getBoolean("checkCollection"));
+                        product.setCategoryName(rs.getString("categoryName"));
+                        product.setImage(rs.getString("image"));
 
-                    String image = rs.getString("image");
+                        // Thêm sản phẩm vào map
+                        map.put(proId, product);
+                    }
+
+                    // Cập nhật thêm các thông tin phụ (material, partName, partSize)
                     String material = rs.getString("mName");
                     String partName = rs.getString("psName");
                     Double partSize = rs.getDouble("psSize");
 
-                    product.setImage(image);
+                    // Thêm kích thước và phần vào sản phẩm
                     product.getPartSizes().put(partName, partSize);
+
+                    // Thêm vật liệu nếu chưa có
                     if (!product.getProductMaterials().contains(material)) {
                         product.getProductMaterials().add(material);
                     }
-                    map.put(proId, product);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -263,8 +320,9 @@ public class ProductDao {
     }
 
 
+
     public static void main(String[] args) {
         ProductDao dao = new ProductDao();
-        System.out.println(dao.getTopProductsByCategoryId(5,0));
+        System.out.println(dao.getProductById(2));
     }
 }

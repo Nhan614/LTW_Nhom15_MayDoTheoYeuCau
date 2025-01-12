@@ -44,9 +44,9 @@ public class DetailController extends HttpServlet{
 
             // Truyền sản phẩm vào request
             request.setAttribute("product", product);
-
+            System.out.println(product);
             // Điều hướng tới file JSP
-            request.getRequestDispatcher("/product-detail.jsp").forward(request, response);
+            request.getRequestDispatcher("detail.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             response.sendRedirect("products"); // Xử lý lỗi nếu ID không hợp lệ
         }

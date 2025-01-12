@@ -61,6 +61,6 @@ public class ProductService {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
-        System.out.println(productService.getAllProducts());
+        System.out.println(productService.getTopProductsByCategoryId(5, 10));
     }
 }
