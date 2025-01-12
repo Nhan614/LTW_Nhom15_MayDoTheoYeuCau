@@ -855,11 +855,49 @@
 
     <!-- report -->
     <section id="admin-reports" class="admin-hide">
-        <div class="container mt-5">
-            <h2 class="text-center">Thông Báo Khách Hàng</h2>
-            <ul id="notificationList" class="list-group"> <!-- Thông báo sẽ được thêm vào đây --> </ul>
-        </div>
-    </section>
+            <div class="container mt-5">
+                <!-- Title -->
+                <h1>Phản Hồi Khách Hàng</h1>
+
+                <!-- DataTable -->
+                <hr>
+                <h3 class="text-center">Danh Sách Phản Hồi</h3>
+                <table id="criticTable" class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th>Tin nhắn</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Data will be dynamically populated here via JavaScript -->
+                    </tbody>
+                </table>
+
+                <!-- Modal for Responding to Contact -->
+                <div class="modal fade" id="criticModal" tabindex="-1" aria-labelledby="responseModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Tên:</strong> <span id="criticContactName"></span></p>
+                                <p><strong>Email:</strong> <span id="criticContactEmail"></span></p>
+                                <p><strong>Tin nhắn:</strong> <span id="criticContactMessage"></span></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
 </div>
 <!-- </div>
