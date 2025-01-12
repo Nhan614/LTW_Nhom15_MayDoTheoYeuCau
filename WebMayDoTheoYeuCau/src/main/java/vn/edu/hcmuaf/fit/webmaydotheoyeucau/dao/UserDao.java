@@ -209,7 +209,7 @@ public class UserDao {
         });
 
         try {
-            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/resetPassword.jsp?email=" + email;
+            String resetLink = "http://localhost:8080/WebMayDoTheoYeuCau_war_exploded/layLaiMatKhau.jsp";
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));

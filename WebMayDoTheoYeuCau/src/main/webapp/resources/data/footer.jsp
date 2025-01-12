@@ -64,10 +64,24 @@
             <!-- Newsletter Signup Section -->
             <div class="footer-section">
                 <h3>Đăng ký nhận thông báo của chúng tôi</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn" required>
+                <form class="newsletter-form" action="RegisterEmail" method="POST">
+                    <input type="email" name="email" placeholder="Nhập email của bạn" required>
                     <button type="submit">Đăng ký</button>
                 </form>
+                <!-- Hiển thị thông báo lỗi nếu có -->
+                <c:if test="${not empty errorMessage}">
+                    <div class="error-message">
+                            ${errorMessage}
+                    </div>
+                </c:if>
+
+                <!-- Hiển thị thông báo thành công nếu có -->
+                <!-- Hiển thị thông báo -->
+                <c:if test="${not empty message}">
+                    <div class="message">
+                            ${message}
+                    </div>
+                </c:if>
             </div>
         </div>
         <div class="container">

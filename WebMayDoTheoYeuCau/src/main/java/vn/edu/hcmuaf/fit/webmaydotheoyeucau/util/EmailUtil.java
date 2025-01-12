@@ -83,9 +83,47 @@ public class EmailUtil {
         }
     }
 
+    public static void sendEmail(String toEmail, String subject, String body) {
+        String fromEmail = "nhannghialai@gmail.com";  // Thay bằng email của bạn
+        String password = "xpna sqpq sefp dfix";  // Thay mật khẩu đúng vào đây
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+            message.setSubject(subject);
+            message.setText(body);
+
+            Transport.send(message);
+            System.out.println("Email đã được gửi thành công.");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Không thể gửi email", e);
+        }
+    }
 
     public static void main(String[] args) {
         EmailUtil emailUtil = new EmailUtil();
-    emailUtil.reponeContact("22130193@st.hcmuaf.edu.vn", "alo", "alo");
+//    emailUtil.reponeContact("22130193@st.hcmuaf.edu.vn", "alo", "alo");
+
+
+//            // Kiểm tra phương thức đăng ký mới
+//            String testEmail = "22130185@st.hcmuaf.edu.vn"; // Thay bằng địa chỉ email thật
+//            emailUtil.registerNotification(testEmail);
+
+
     }
 }

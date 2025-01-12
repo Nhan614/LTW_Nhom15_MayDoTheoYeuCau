@@ -9,8 +9,8 @@ import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.User;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.services.PassWordService;
 
 import java.io.IOException;
-
-@WebServlet("/changePassword")
+@WebServlet(name = "changePassword", value = "/changePassword")
+//@WebServlet("/changePassword")
 public class changePassword extends HttpServlet {
 
 private UserDao userDao;
