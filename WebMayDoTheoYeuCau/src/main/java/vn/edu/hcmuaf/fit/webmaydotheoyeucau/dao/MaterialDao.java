@@ -72,6 +72,6 @@ public class MaterialDao {
 
     public static void main(String[] args) {
         MaterialDao materialDao = new MaterialDao();
-        System.out.println(materialDao.getMaterialById(4));
+        System.out.println(materialDao.getAllMaterial());
     }
 }
