@@ -37,7 +37,7 @@
         </div>
         <div class="right-col">
             <h1 class="contact-heading">Liên hệ với chúng tôi</h1>
-            <form id="contact-form" method="post" action="ContactsController">
+            <form id="contact-form" method="post" action="CriticController">
                 <!-- Họ và Tên -->
                 <label class="label-contact" for="name">Họ tên</label>
                 <input type="text" id="name" name="name" class="input-field" placeholder="Họ và tên đầy đủ của bạn" required>

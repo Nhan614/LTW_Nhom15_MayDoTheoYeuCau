@@ -1,7 +1,7 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao;
 
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.db.DBConnect;
-import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Contact;
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Critic;
 
 import java.util.List;
 
@@ -14,47 +14,47 @@ public class CriticDao {
     }
 
     // Lấy tất cả liên hệ
-    public List<Contact> getAllContacts() {
-        String sql = "SELECT * FROM contacts";
+    public List<Critic> getAllCritic() {
+        String sql = "SELECT * FROM critics";
         return dbConnect.get().withHandle(handle -> {
-            return handle.createQuery(sql).mapToBean(Contact.class).list();
+            return handle.createQuery(sql).mapToBean(Critic.class).list();
         });
     }
 
     // Thêm liên hệ mới
-    public boolean addContact(Contact contact) {
-        String sql = "INSERT INTO contacts (name, email, message) " +
+    public boolean addCritic(Critic critic) {
+        String sql = "INSERT INTO critics (name, email, message) " +
                 "VALUES (?, ?, ?)";
 
         return dbConnect.get().withHandle(handle -> {
             int rowsAffected = handle.createUpdate(sql)
-                    .bind(0, contact.getName())
-                    .bind(1, contact.getEmail())
-                    .bind(2, contact.getMessage())
+                    .bind(0, critic.getName())
+                    .bind(1, critic.getEmail())
+                    .bind(2, critic.getMessage())
                     .execute();
 
             return rowsAffected > 0;
         });
     }
     // Xóa liên hệ
-    public boolean deleteContact(int id) {
-        String sql = "DELETE FROM contacts WHERE id = :id";
+    public boolean deleteCritic(int id) {
+        String sql = "DELETE FROM critics WHERE id = :id";
         return dbConnect.get().withHandle(handle ->
                 handle.createUpdate(sql)
                         .bind("id", id)
                         .execute() > 0);
     }
 
-    public Contact getContactByID(int id) {
-        String sql = "SELECT * FROM contacts where id = :id";
+    public Critic getCriticByID(int id) {
+        String sql = "SELECT * FROM critics where id = :id";
         return dbConnect.get().withHandle(handle ->{
-            return handle.createQuery(sql).bind("id", id).mapToBean(Contact.class).list().get(0);
+            return handle.createQuery(sql).bind("id", id).mapToBean(Critic.class).list().get(0);
         });
     }
 
     public static void main(String[] args) {
-        Contact contact = new Contact(2, 2, "alo clsdsa", "Nghia");
-        ContactDao contactDao = new ContactDao();
-        System.out.println(contactDao.getAllContacts());
+        Critic critic = new Critic(2, "hello", "alo clsdsa", "Nghia");
+        CriticDao criticDao = new CriticDao();
+        System.out.println(criticDao.getAllCritic());
     }
 }

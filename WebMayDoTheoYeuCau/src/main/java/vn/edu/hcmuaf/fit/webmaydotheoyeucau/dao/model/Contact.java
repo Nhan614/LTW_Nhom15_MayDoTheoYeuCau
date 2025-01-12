@@ -12,6 +12,13 @@ public class Contact {
     public Contact() {
     }
 
+    public Contact(int id, String name, String email, String message) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.message = message;
+    }
+
     public Contact(int id, String name, String email, String message, int status,
                    String response, String responseBy) {
         this.id = id;

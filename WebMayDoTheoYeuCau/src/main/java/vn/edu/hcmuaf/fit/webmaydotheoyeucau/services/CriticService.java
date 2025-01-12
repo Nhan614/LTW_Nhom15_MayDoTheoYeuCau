@@ -1,31 +1,32 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.services;
 
-import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.ContactDao;
-import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Contact;
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.CriticDao;
+import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Critic;
 
 import java.util.List;
 
 public class CriticService {
-    ContactDao contactDao;
+    CriticDao criticDao;
 
-    public List<Contact> getAllContacts() {
-        return contactDao.getAllContacts();
+    public  List<Critic> getAllCritic() {
+        return criticDao.getAllCritic();
     }
 
-    public boolean addContact(Contact contact) {
-        return contactDao.addContact(contact);
-    }
-    public boolean deleteContact(int id) {
-        return contactDao.deleteContact(id);
+    public boolean addCritic(Critic critic) {
+        return criticDao.addCritic(critic);
     }
 
-    public Contact getContactById(int id) {
-        return contactDao.getContactByID(id);
+    public boolean deleteCritic(int id) {
+        return criticDao.deleteCritic(id);
+    }
+
+    public Critic getCriticById(int id) {
+        return criticDao.getCriticByID(id);
     }
 
     public static void main(String[] args) {
-        ContactService contactService = new ContactService();
-        System.out.println(contactService.getContactById(1));
+        CriticService criticService = new CriticService();
+        System.out.println(criticService.getCriticById(1));
     }
 
 }
