@@ -16,43 +16,50 @@ public class MayAoController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        ProductService productService = new ProductService();
-        Product product = productService.getProductById(id);
-
-        MaterialService materialService = new MaterialService();
-        List<Material> materials = materialService.getMaterial();
-
-        request.setAttribute("materials", materials);
-
-        request.setAttribute("product", product);
-        String categoryName = product.getCategoryName();
-
-        if (categoryName.equalsIgnoreCase("Vest") || product.getCategoryName().equalsIgnoreCase("Ao")) {
-            List<String> list = product.getProductMaterials();
-            for (int i = 0; i < list.size(); i++) {
-                for (int j = 0; j < materials.size(); j++) {
-                    if (materials.get(j).getMatCategory().equalsIgnoreCase("Vai") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
-                        request.setAttribute("fabric", list.get(i));
-                    }
-                    ;
-                    if (materials.get(j).getMatCategory().equalsIgnoreCase("Co") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
-                        request.setAttribute("collar", list.get(i));
-                    }
-                    ;
-                    if (materials.get(j).getMatCategory().equalsIgnoreCase("Tui Ao") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
-                        request.setAttribute("pocket", list.get(i));
-                    }
-                    ;
-                    if (materials.get(j).getMatCategory().equalsIgnoreCase("Nut Ao") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
-                        request.setAttribute("button", list.get(i));
-                    }
-                    ;
-                }
-            }
+        String pid = request.getParameter("id");
+        if (pid == null) {
+            MaterialService materialService = new MaterialService();
+            List<Material> materials = materialService.getMaterial();
+            request.setAttribute("materials", materials);
             request.getRequestDispatcher("mayAo.jsp").forward(request, response);
-        }
+        } else {
+            int id = Integer.parseInt(request.getParameter("id"));
+            ProductService productService = new ProductService();
+            Product product = productService.getProductById(id);
 
+            MaterialService materialService = new MaterialService();
+            List<Material> materials = materialService.getMaterial();
+
+            request.setAttribute("materials", materials);
+
+            request.setAttribute("product", product);
+            String categoryName = product.getCategoryName();
+
+            if (categoryName.equalsIgnoreCase("Vest") || product.getCategoryName().equalsIgnoreCase("Ao")) {
+                List<String> list = product.getProductMaterials();
+                for (int i = 0; i < list.size(); i++) {
+                    for (int j = 0; j < materials.size(); j++) {
+                        if (materials.get(j).getMatCategory().equalsIgnoreCase("Vai") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
+                            request.setAttribute("fabric", list.get(i));
+                        }
+                        ;
+                        if (materials.get(j).getMatCategory().equalsIgnoreCase("Co") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
+                            request.setAttribute("collar", list.get(i));
+                        }
+                        ;
+                        if (materials.get(j).getMatCategory().equalsIgnoreCase("Tui Ao") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
+                            request.setAttribute("pocket", list.get(i));
+                        }
+                        ;
+                        if (materials.get(j).getMatCategory().equalsIgnoreCase("Nut Ao") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
+                            request.setAttribute("button", list.get(i));
+                        }
+                        ;
+                    }
+                }
+                request.getRequestDispatcher("mayAo.jsp").forward(request, response);
+            }
+        }
     }
 
     @Override

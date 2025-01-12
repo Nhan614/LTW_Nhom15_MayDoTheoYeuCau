@@ -31,7 +31,7 @@
                 <p class="lead text-white">May đo riêng biệt, tinh tế trong từng chi tiết, mang đậm dấu ấn phong cách
                     của bạn</p>
                 <div class="home-btn-shop">
-                    <a href="custumize.jsp" class="shop-btn text-center">Thiết Kế Ngay</a>
+                    <a href="MayAoController" class="shop-btn text-center">Thiết Kế Ngay</a>
                 </div>
             </div>
         </section>

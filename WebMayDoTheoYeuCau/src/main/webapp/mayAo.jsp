@@ -30,7 +30,7 @@
     </div>
 </section>
 <!-- Customize Form -->
-<form id="customizeForm" action="submit_form.jsp" method="POST">
+<form id="customizeForm" action="addCart?id=${product.id}&price=20000" method="POST">
     <!-- Loại Vải -->
     <div class="container mt-5">
         <h1 class="mb-4">Lựa Chọn Loại Vải</h1>
