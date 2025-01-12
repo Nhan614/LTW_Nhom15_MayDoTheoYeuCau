@@ -13,8 +13,8 @@
 
     <script>
         function validatePasswords() {
-            const newPassword = document.getElementById("newPassword").value;
-            const confirmPassword = document.getElementById("confirmPassword").value;
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
 
             if (newPassword !== confirmPassword) {
                 alert("Mật khẩu mới và xác nhận mật khẩu phải trùng khớp.");
@@ -23,6 +23,8 @@
 
             return true;
         }
+
+
     </script>
 
 </head>
@@ -58,6 +60,7 @@
                                 <c:if test="${not empty success}">
                                     <div class="alert alert-success">${success}</div>
                                 </c:if>
+
 
                                 <form action="changePassword" method="post" onsubmit="return validatePasswords()">
                                     <div class="mb-3">
