@@ -103,7 +103,6 @@
     <section class="container my-4 section-products">
         <div class="row">
             <c:forEach var="vestCongSo" items="${products}">
-                <c:if test="${vestCongSo.categoryID == 1}">
                     <div class="col-md-6 col-lg-4 position-relative">
                         <a href="detail.jsp?id=${vestCongSo.id}" class="full-link">
                             <div class="single-product">
@@ -118,14 +117,13 @@
                                 </div>
                                 <div class="part-2">
                                     <h3 class="product-title">${vestCongSo.productName}</h3>
-                                    <p class="product-season">${vestCongSo.season}</p>
-                                    <div class="product-maker">${vestCongSo.maker}</div>
+<%--                                    <p class="product-season">${vestCongSo.season}</p>--%>
+<%--                                    <div class="product-maker">${vestCongSo.maker}</div>--%>
                                     <h4 class="product-price">${vestCongSo.price} VND</h4>
                                 </div>
                             </div>
                         </a>
                     </div>
-                </c:if>
             </c:forEach>
         </div>
     </section>

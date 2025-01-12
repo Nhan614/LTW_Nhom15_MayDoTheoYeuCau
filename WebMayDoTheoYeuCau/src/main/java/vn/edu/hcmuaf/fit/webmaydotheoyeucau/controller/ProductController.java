@@ -42,7 +42,7 @@ public class ProductController extends HttpServlet {
             // Xử lý cho các trang sản phẩm cụ thể
             switch (type) {
                 case "vestCongSo":
-                    request.setAttribute("products", productService.getProductsByCategoryId(1));
+                    request.setAttribute("products", productService.getProductsByCategoryId(5));
                     request.getRequestDispatcher("/vestCongSo.jsp").forward(request, response);
                     break;
 
@@ -126,58 +126,58 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            // Lấy dữ liệu từ form
-            String productName = request.getParameter("productName");
-            String priceString = request.getParameter("price");
-            String image = request.getParameter("image");
-            String description = request.getParameter("description");
-            String stateString = request.getParameter("state");
-            String checkCollectionString = request.getParameter("checkCollection");
-            String categoryIDString = request.getParameter("categoryID");
-            String maker = request.getParameter("maker");
-            String season = request.getParameter("season");
-
-            // Kiểm tra dữ liệu null hoặc trống
-            if (productName == null || productName.trim().isEmpty() ||
-                    priceString == null || priceString.trim().isEmpty() ||
-                    categoryIDString == null || categoryIDString.trim().isEmpty() ||
-                    maker == null || maker.trim().isEmpty()) {
-                request.setAttribute("error", "Vui lòng điền đầy đủ thông tin.");
-                request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
-                return;
-            }
-
-            // Chuyển đổi dữ liệu
-            double price = Double.parseDouble(priceString);
-            boolean state = Boolean.parseBoolean(stateString);
-            boolean checkCollection = Boolean.parseBoolean(checkCollectionString);
-            int categoryID = Integer.parseInt(categoryIDString);
-
-            // Tạo đối tượng sản phẩm mới
-            Product newProduct = new Product(0, productName, price, image, state, description,
-                    checkCollection, categoryID, maker, season);
-
-            // Gọi service để thêm sản phẩm
-            boolean success = productService.addProduct(newProduct);
-
-            // Xử lý kết quả
-            if (success) {
-                response.sendRedirect("products");
-            } else {
-                request.setAttribute("error", "Thêm sản phẩm thất bại. Vui lòng thử lại.");
-                request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
-            }
-        } catch (NumberFormatException e) {
-            // Xử lý lỗi định dạng số
-            request.setAttribute("error", "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại các trường nhập.");
-            request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
-        } catch (Exception e) {
-            // Xử lý các lỗi khác
-            e.printStackTrace();
-            request.setAttribute("error", "Có lỗi xảy ra. Vui lòng thử lại sau.");
-            request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
-        }
+//        try {
+//            // Lấy dữ liệu từ form
+//            String productName = request.getParameter("productName");
+//            String priceString = request.getParameter("price");
+//            String image = request.getParameter("image");
+//            String description = request.getParameter("description");
+//            String stateString = request.getParameter("state");
+//            String checkCollectionString = request.getParameter("checkCollection");
+//            String categoryIDString = request.getParameter("categoryID");
+//            String maker = request.getParameter("maker");
+//            String season = request.getParameter("season");
+//
+//            // Kiểm tra dữ liệu null hoặc trống
+//            if (productName == null || productName.trim().isEmpty() ||
+//                    priceString == null || priceString.trim().isEmpty() ||
+//                    categoryIDString == null || categoryIDString.trim().isEmpty() ||
+//                    maker == null || maker.trim().isEmpty()) {
+//                request.setAttribute("error", "Vui lòng điền đầy đủ thông tin.");
+//                request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+//                return;
+//            }
+//
+//            // Chuyển đổi dữ liệu
+//            double price = Double.parseDouble(priceString);
+//            boolean state = Boolean.parseBoolean(stateString);
+//            boolean checkCollection = Boolean.parseBoolean(checkCollectionString);
+//            int categoryID = Integer.parseInt(categoryIDString);
+//
+//            // Tạo đối tượng sản phẩm mới
+//            Product newProduct = new Product(0, productName, price, image, state, description,
+//                    checkCollection, categoryID, maker, season);
+//
+//            // Gọi service để thêm sản phẩm
+//            boolean success = productService.addProduct(newProduct);
+//
+//            // Xử lý kết quả
+//            if (success) {
+//                response.sendRedirect("products");
+//            } else {
+//                request.setAttribute("error", "Thêm sản phẩm thất bại. Vui lòng thử lại.");
+//                request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+//            }
+//        } catch (NumberFormatException e) {
+//            // Xử lý lỗi định dạng số
+//            request.setAttribute("error", "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại các trường nhập.");
+//            request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+//        } catch (Exception e) {
+//            // Xử lý các lỗi khác
+//            e.printStackTrace();
+//            request.setAttribute("error", "Có lỗi xảy ra. Vui lòng thử lại sau.");
+//            request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+//        }
     }
 
 }

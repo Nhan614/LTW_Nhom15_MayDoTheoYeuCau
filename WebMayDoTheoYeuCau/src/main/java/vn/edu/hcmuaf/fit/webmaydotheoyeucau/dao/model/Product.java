@@ -1,5 +1,7 @@
 package vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model;
 
+import java.util.*;
+
 public class Product implements java.io.Serializable {
     private int id;
     private String productName;
@@ -8,12 +10,16 @@ public class Product implements java.io.Serializable {
     private boolean state;
     private String description;
     private boolean checkCollection;
-    private int categoryID;
-    private String maker;
-    private String season;
+    private String categoryName;
+    private List<String> productMaterials;
+    private Map<String, Double> partSizes; // Danh sách kích thước các bộ phận
 
-    public Product(int id, String productName, double price, String image, boolean state, String description, boolean checkCollection
-    , int categoryID, String maker,  String season) {
+    public Product() {
+        partSizes = new HashMap<String, Double>();
+        productMaterials = new ArrayList<>();
+    }
+
+    public Product(int id, String productName, double price, String image, boolean state, String description, boolean checkCollection, String categoryName, List<String> productMaterials, Map<String, Double> partSizes) {
         this.id = id;
         this.productName = productName;
         this.price = price;
@@ -21,10 +27,9 @@ public class Product implements java.io.Serializable {
         this.state = state;
         this.description = description;
         this.checkCollection = checkCollection;
-        this.categoryID = categoryID;
-        this.maker = maker;
-        this.season = season;
-
+        this.categoryName = categoryName;
+        this.productMaterials = productMaterials;
+        this.partSizes = partSizes;
     }
 
     public int getId() {
@@ -59,7 +64,7 @@ public class Product implements java.io.Serializable {
         this.image = image;
     }
 
-    public boolean getState() {
+    public boolean isState() {
         return state;
     }
 
@@ -82,41 +87,44 @@ public class Product implements java.io.Serializable {
     public void setCheckCollection(boolean checkCollection) {
         this.checkCollection = checkCollection;
     }
-    public int getCategoryID() {
-        return categoryID;
+
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategoryID(int categoryID) {
-        this.categoryID = categoryID;
-    }
-    public String getMaker() {
-        return maker;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public String getSeason() {
-        return season;
+    public List<String> getProductMaterials() {
+        return productMaterials;
     }
 
-    public void setSeason(String season) {
-        this.season = season;
+    public void setProductMaterials(List<String> productMaterials) {
+        this.productMaterials = productMaterials;
     }
 
-    public void setMaker(String maker) {
-        this.maker = maker;
+    public Map<String, Double> getPartSizes() {
+        return partSizes;
     }
+
+    public void setPartSizes(Map<String, Double> partSizes) {
+        this.partSizes = partSizes;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product1{" +
                 "id=" + id +
                 ", productName='" + productName + '\'' +
                 ", price=" + price +
                 ", image='" + image + '\'' +
-                ", state='" + state + '\'' +
+                ", state=" + state +
                 ", description='" + description + '\'' +
                 ", checkCollection=" + checkCollection +
-                ", categoryID=" + categoryID +
-                ", maker='" + maker + '\'' +
-                ", season='" + season + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", productMaterials=" + productMaterials +
+                ", partSizes=" + partSizes +
                 '}';
     }
 }

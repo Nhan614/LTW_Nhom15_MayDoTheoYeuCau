@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.webmaydotheoyeucau.services;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.ProductDao;
 import vn.edu.hcmuaf.fit.webmaydotheoyeucau.dao.model.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {
@@ -23,15 +24,30 @@ public class ProductService {
         return productDao.getProductById(productId);
     }
 
-    // Thêm mới sản phẩm
-    public boolean addProduct(Product product) {
-        return productDao.addProduct(product);
+    public List<Product> getProductsByCategoryId(int categoryId) {
+        List<Product> list = new ArrayList<Product>();
+        productDao.getProductByCategoryId(categoryId).forEach((key,value) -> {
+            list.add(value);
+        });
+        return list;
+    }
+    public List<Product> getTopProductsByCategoryId(int categoryId, int limit) {
+        List<Product> list = new ArrayList<Product>();
+        productDao.getProductByCategoryId(categoryId).forEach((key,value) -> {
+            list.add(value);
+        });
+        return list;
     }
 
-    // Cập nhật sản phẩm
-    public boolean updateProduct(Product product) {
-        return productDao.updateProduct(product);
-    }
+    // Thêm mới sản phẩm
+//    public boolean addProduct(Product product) {
+//        return productDao.addProduct(product);
+//    }
+//
+//    // Cập nhật sản phẩm
+//    public boolean updateProduct(Product product) {
+//        return productDao.updateProduct(product);
+//    }
 
     // Xóa sản phẩm
     public boolean deleteProduct(int productId) {
@@ -39,12 +55,6 @@ public class ProductService {
     }
 
     // Lấy danh sách sản phẩm theo categoryID
-    public List<Product> getProductsByCategoryId(int categoryId) {
-        return productDao.getProductsByCategoryId(categoryId);
-    }
-    public List<Product> getTopProductsByCategoryId(int categoryId, int limit) {
-        return productDao.getTopProductsByCategoryId(categoryId, limit);
-    }
 
 
 

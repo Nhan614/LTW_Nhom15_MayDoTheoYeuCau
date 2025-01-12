@@ -24,7 +24,7 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <h6>Vest</h6>
-                                        <a href="vestCongSo.jsp" class="dropdown-item">Vest Công Sở</a>
+                                        <a href="products?type=vestCongSo" class="dropdown-item">Vest Công Sở</a>
                                         <a href="vestThuongNgay.jsp" class="dropdown-item">Vest Thường Ngày</a>
                                         <a href="vestXanh.jsp" class="dropdown-item">Vest Xanh</a>
                                         <a href="vestNau.jsp" class="dropdown-item">Vest Nâu</a>

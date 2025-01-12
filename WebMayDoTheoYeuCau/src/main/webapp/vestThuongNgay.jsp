@@ -102,7 +102,7 @@
     <section class="container my-4 section-products">
         <div class="row">
             <c:forEach var="vestThuongNgay" items="${products}">
-                <c:if test="${vestThuongNgay.categoryID == 2}">
+                <c:if test="${vestThuongNgay.categoryID == 5}">
                     <div class="col-md-6 col-lg-4 position-relative">
                         <a href="detail.jsp?id=${vestThuongNgay.id}" class="full-link">
                             <div class="single-product">

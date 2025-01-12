@@ -16,6 +16,13 @@ public class MaterialDao {
             return handle.createQuery(sql).mapToBean(Material.class).list();
         });
     }
+
+    public Material getMaterialById(int id) {
+        String sql = "select * from materials where id = :id";
+        return dbConnect.get().withHandle(handle -> {
+            return handle.createQuery(sql).bind("id", id).mapToBean(Material.class).list().get(0);
+        });
+    }
     public boolean addMaterial(Material material) {
         String sql = "INSERT INTO materials (name, season, description, image, quantity, state, matCategory, price) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -65,6 +72,6 @@ public class MaterialDao {
 
     public static void main(String[] args) {
         MaterialDao materialDao = new MaterialDao();
-        System.out.println(materialDao.getAllMaterial());
+        System.out.println(materialDao.getMaterialById(4));
     }
 }
