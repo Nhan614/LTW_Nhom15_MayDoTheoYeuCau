@@ -30,41 +30,33 @@
     </div>
 
     <!----------------- contact us------------ -->
-    
+
     <div class="contact">
-        <div class="left-col ">
-            <img class="logo" src="resources/images/contactus.webp" />
+        <div class="left-col">
+            <img class="logo" src="resources/images/contactus.webp" alt="Contact Us">
         </div>
         <div class="right-col">
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" class="theme-checkbox" />
-                    <div class="slider round"></div>
-                </label>
-                <div class="description">Chế độ tối</div>
-            </div>
-
             <h1 class="contact-heading">Liên hệ với chúng tôi</h1>
-
-            <form id="contact-form" method="post" class="contact-form" action="#">
+            <form id="contact-form" method="post" action="ContactsController">
+                <!-- Họ và Tên -->
                 <label class="label-contact" for="name">Họ tên</label>
-                <input type="text" id="name" name="name" class="input-field" placeholder="Họ và tên đầy đủ của bạn"
-                    required>
+                <input type="text" id="name" name="name" class="input-field" placeholder="Họ và tên đầy đủ của bạn" required>
 
-                <label class="label-contact" for="email"> Địa chỉ Email</label>
-                <input type="email" id="email" name="email" class="input-field" placeholder="Địa chỉ Email của bạn"
-                    required>
+                <!-- Email -->
+                <label class="label-contact" for="email">Địa chỉ Email</label>
+                <input type="email" id="email" name="email" class="input-field" placeholder="Địa chỉ Email của bạn" required>
 
+                <!-- Tin nhắn -->
                 <label class="label-contact" for="message">Tin nhắn</label>
-                <textarea rows="6" class="textarea-field" placeholder="Tin nhắn của bạn" id="message" name="message"
-                    required></textarea>
+                <textarea rows="6" class="textarea-field" placeholder="Tin nhắn của bạn" id="message" name="message" required></textarea>
 
+                <!-- Nút Gửi -->
                 <button type="submit" id="submit" class="submit-btn" name="submit">Gửi</button>
             </form>
-            <div id="error" class="error-msg"></div>
-            <div id="success-msg" class="success-msg"></div>
         </div>
     </div>
+
+
     <!-- -----đia chi lien he---- -->
     <div class="total-container">
         <div class="contact-info">
