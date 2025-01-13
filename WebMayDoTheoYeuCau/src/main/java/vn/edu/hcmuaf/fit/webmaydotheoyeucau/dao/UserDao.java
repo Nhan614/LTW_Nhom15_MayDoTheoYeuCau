@@ -38,13 +38,7 @@ public class UserDao {
         });
     }
 
-//    // Kiểm tra mật khẩu so với mật khẩu đã mã hóa
-//    public boolean checkPassword(String plainPassword, String hashedPassword) {
-//        if (!hashedPassword.startsWith("$2a$") && !hashedPassword.startsWith("$2b$")) {
-//            throw new IllegalArgumentException("Mật khẩu không hợp lệ");
-//        }
-//        return BCrypt.checkpw(plainPassword, hashedPassword);
-//    }
+
 
     public boolean checkPassword(String plainPassword, String hashedPassword) {
         // So sánh mật khẩu người dùng nhập vào với mật khẩu đã mã hóa trong DB
