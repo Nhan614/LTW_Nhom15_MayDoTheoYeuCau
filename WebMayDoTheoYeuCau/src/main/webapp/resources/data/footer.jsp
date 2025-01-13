@@ -2,25 +2,25 @@
 
 <div id="footer">
     <!-- back-to-top -->
-    <a href="#" class="contact-btn shadow" onclick="toggleContactMenu(event)">
+    <a href="contactUs.jsp" class="contact-btn shadow" onclick="window.location.href='contactUs.jsp'; return false;">
         <i class="fa-regular fa-comment-dots"></i>
         <span class="contact-text">Liên Hệ</span>
     </a>
-    <div class="contact-menu">
-        <div class="contact-item-ak">
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a> Facebook
-        </div>
-        <div class="contact-item-ak">
-            <a href="contactUs.jsp"><i class="fa-solid fa-envelope"></i></a> Email
-        </div>
-        <div class="contact-item-ak">
-            <a href="https://x.com/i/flow/login"><i class="fa-brands fa-x-twitter"></i></a> Twitter
-        </div>
-        <div class="contact-item-ak">
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<%--    <div class="contact-menu">--%>
+<%--        <div class="contact-item-ak">--%>
+<%--            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a> Facebook--%>
+<%--        </div>--%>
+<%--        <div class="contact-item-ak">--%>
+<%--            <a href="contactUs.jsp"><i class="fa-solid fa-envelope"></i></a> Email--%>
+<%--        </div>--%>
+<%--        <div class="contact-item-ak">--%>
+<%--            <a href="https://x.com/i/flow/login"><i class="fa-brands fa-x-twitter"></i></a> Twitter--%>
+<%--        </div>--%>
+<%--        <div class="contact-item-ak">--%>
+<%--            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>--%>
 
-        </div>
-    </div>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <a href="#" class="back-to-top">
         <i class="fa-solid fa-arrow-up"></i>
