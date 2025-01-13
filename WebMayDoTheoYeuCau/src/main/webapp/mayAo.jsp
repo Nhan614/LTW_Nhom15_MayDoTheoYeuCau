@@ -194,11 +194,14 @@
             <label for="shoulderWidth" class="form-label">Rộng vai (cm) <span class="red">*</span></label>
             <input id="shoulderWidth" name="shoulderWidth" type="number" class="form-control" placeholder="Nhập số đo rộng vai" required>
         </div>
-        <div class="m-5 justify-content-center" >
+        <div class="m-5 justify-content-center d-flex w-100 align-items-center gap-5" >
             <button type="submit" class="btn btn-primary" style="width: 300px; height: auto">Gửi đi</button>
+            <a href="huongDan.jsp" class="btn btn-danger" style="width: 300px; height: auto">Hướng dẫn đo</a>
         </div>
     </div>
 </form>
+
+
 
 <!-- Footer -->
 <div id="footer">
