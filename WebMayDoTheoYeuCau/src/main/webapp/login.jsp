@@ -141,7 +141,7 @@
 
                     <form action="login" method="post">
                         <div class="input-box animation" style="--i:1; --j:12">
-                            <input type="text" id="email" value="<%= email%>" name="email" required>
+                            <input type="email" id="email" value="<%= email%>" name="email" required>
                             <label>Email:</label>
                             <i class="fa-solid fa-user"></i>
 

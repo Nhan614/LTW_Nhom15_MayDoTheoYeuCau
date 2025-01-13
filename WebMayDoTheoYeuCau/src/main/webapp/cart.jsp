@@ -100,12 +100,11 @@
                                 </div>
                                 <hr>
                                 <!-- van chuyen va gia cu -->
-                                <h5 class="text-left">Giá gốc: <span>2,000,000 VND</span></h5>
-                                <h5 class="text-left">Phí vận chuyển: <span>70,000 VND</span></h5>
+                                <h5 class="text-left">Phí vận chuyển: <span>0 VND</span></h5>
                                 <hr>
                                 <!-- Tổng cộng -->
                                 <div class="col cart-total">
-                                    <h4>Tổng cộng: <span>1,570,000 VND</span></h4>
+                                    <h4>Tổng cộng: <span>0 VND</span></h4>
                                     <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
                                         <button><a href="collection" class="shop-btn ">Mua Thêm</a></button>
                                         <button><a href="checkout.jsp" class="shop-btn bg-success">Thanh Toán</a>
@@ -125,6 +124,65 @@
 <div id="footer">
     <%@include file="resources/data/footer.jsp" %>
 </div>
+
+<script>
+    // Cố định phí vận chuyển (nếu không miễn phí)
+    const baseShippingFee = 70000;
+    const freeShippingThreshold = 3500000;
+
+
+    function calculateTotal() {
+        let total = 0;
+        let hasProduct = false;
+        const rows = document.querySelectorAll("tbody tr");
+
+
+        rows.forEach(row => {
+            const priceText = row.querySelector("td:nth-child(4) strong").innerText;
+            const price = parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
+            const quantityInput = row.querySelector("td:nth-child(3) input");
+            const quantity = parseInt(quantityInput.value);
+
+            if (!isNaN(price) && !isNaN(quantity) && quantity > 0) {
+                total += price * quantity;
+                hasProduct = true;
+            }
+        });
+
+        // Tính phí vận chuyển
+        let shippingFee = 0;
+        if (hasProduct) {
+            shippingFee = total >= freeShippingThreshold ? 0 : baseShippingFee;
+        }
+
+        // Tổng tiền bao gồm phí vận chuyển
+        const totalWithShipping = total + shippingFee;
+
+        // Cập nhật hiển thị tổng tiền
+        const totalElement = document.querySelector(".cart-total span");
+        if (totalElement) {
+            totalElement.innerText = new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(totalWithShipping);
+        }
+
+        // Cập nhật hiển thị phí vận chuyển
+        const shippingElement = document.querySelector(".cart-footer h5 span");
+        if (shippingElement) {
+            shippingElement.innerText = new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(shippingFee);
+        }
+    }
+
+    // Khi trang tải, gọi hàm tính toán tổng tiền
+    document.addEventListener("DOMContentLoaded", () => {
+        calculateTotal();
+
+        // Lắng nghe sự thay đổi số lượng sản phẩm
+        const quantityInputs = document.querySelectorAll("tbody input[type='number']");
+        quantityInputs.forEach(input => {
+            input.addEventListener("input", calculateTotal);
+        });
+    });
+</script>
+
 
 <!-- js -->
 <script src="vendors/bootstrap-5.3.3-dist//js/bootstrap.bundle.min.js"></script>
