@@ -330,6 +330,8 @@ public class ProductDao {
         System.out.println(dao.getProductById(3));
 
         System.out.println(dao.getProductById(4));
+        System.out.println(dao.getProductById(5));
+        System.out.println(dao.getProductById(6));
     }
 
 }
