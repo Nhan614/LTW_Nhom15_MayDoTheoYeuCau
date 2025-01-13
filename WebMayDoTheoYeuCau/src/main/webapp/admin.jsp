@@ -280,12 +280,6 @@
         <div class="container">
             <div class="admin-header">
                 <h1>Quản Lý Người Dùng</h1>
-                <div class="admin-header-right">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
             </div>
             <hr>
             <h3 class="text-center">Danh Sách Người Dùng</h3>
@@ -374,13 +368,7 @@
     <section id="admin-material" class="admin-hide">
         <div class="container">
             <div class="admin-header">
-                <h1 class="">Quản Lý Vật Liệu</h1>
-                <div class="admin-header-right">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm vật liệu...">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
+                <h1 class="">Quản Lý Vật Liệu</h1>  
             </div>
             <!-- Modal Thêm Vật Liệu -->
             <div class="modal fade" id="addMaterialModal" tabindex="-1" role="dialog"
