@@ -35,12 +35,13 @@ public class MayAoController extends HttpServlet {
             request.setAttribute("product", product);
             String categoryName = product.getCategoryName();
 
-            if (categoryName.equalsIgnoreCase("Vest") || product.getCategoryName().equalsIgnoreCase("Ao")) {
+            System.out.println(categoryName);
                 List<String> list = product.getProductMaterials();
                 for (int i = 0; i < list.size(); i++) {
                     for (int j = 0; j < materials.size(); j++) {
                         if (materials.get(j).getMatCategory().equalsIgnoreCase("Vai") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
                             request.setAttribute("fabric", list.get(i));
+
                         }
                         ;
                         if (materials.get(j).getMatCategory().equalsIgnoreCase("Co") && list.get(i).equalsIgnoreCase(materials.get(j).getName())) {
@@ -60,7 +61,7 @@ public class MayAoController extends HttpServlet {
                 request.getRequestDispatcher("mayAo.jsp").forward(request, response);
             }
         }
-    }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

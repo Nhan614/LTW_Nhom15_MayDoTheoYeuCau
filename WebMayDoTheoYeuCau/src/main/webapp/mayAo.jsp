@@ -85,15 +85,40 @@
             </c:forEach>
         </div>
     </div>
+    <div class="container mt-5">
+        <h1 class="mb-4">Ống Quần</h1>
+        <div class="row">
+            <!-- Vòng lặp lấy dữ liệu vật liệu -->
+            <c:forEach var="material" items="${materials}">
+                <c:if test="${material.matCategory != null && material.matCategory == 'Ong'}">
+                    <div class="col-md-3">
+                        <div class="custumize-card">
+                            <input type="radio" id="collar_${material.name}" name="collar" value="${material.name}"
+                                   <c:if test="${material.name == collar}">checked</c:if> required>
+                            <label for="collar_${material.name}" class="custumize-label">
+                                <img src="${material.image}" class="custumize-img" alt="${material.name}">
+                                <div class="custumize-card-body">
+                                    <h5 class="card-title">${material.name}</h5>
+                                        <%--                                    <span>${material.season}</span>--%>
+                                        <%--                                <span>${material.material}</span>--%>
+                                    <strong>${material.price} VND</strong>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </c:if>
+            </c:forEach>
+        </div>
+    </div>
 
     <!-- Túi Áo -->
     <hr>
     <div class="container mt-5">
-        <h1 class="mb-4">Túi Áo</h1>
+        <h1 class="mb-4">Túi</h1>
         <div class="row">
             <!-- Vòng lặp lấy dữ liệu vật liệu -->
             <c:forEach var="material" items="${materials}">
-                <c:if test="${material.matCategory != null && material.matCategory == 'Tui Ao'}">
+                <c:if test="${material.matCategory != null && material.matCategory == 'Tui'}">
                     <div class="col-md-3">
                         <div class="custumize-card">
                             <input type="radio" id="pocket_${material.name}" name="pocket" value="${material.name}"
@@ -117,11 +142,11 @@
     <!-- Nút áo -->
     <hr>
     <div class="container mt-5">
-        <h1 class="mb-4">Lựa Chọn Cúc Áo</h1>
+        <h1 class="mb-4">Lựa Chọn Cúc</h1>
         <div class="row">
             <!-- Vòng lặp lấy dữ liệu vật liệu -->
             <c:forEach var="material" items="${materials}">
-                <c:if test="${material.matCategory != null && material.matCategory == 'Nut Ao'}">
+                <c:if test="${material.matCategory != null && material.matCategory == 'Nut'}">
                     <div class="col-md-3">
                         <div class="custumize-card">
                             <input type="radio" id="button_${material.name}" name="button" value="${material.name}"

@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="collapseMenu">
                 <ul class="navbar-nav nav-menu-left">
                     <li class="nav-item">
-                        <a href="collection.jsp" class="nav-link">BỘ SƯU TẬP</a>
+                        <a href="collection" class="nav-link">BỘ SƯU TẬP</a>
                     </li>
                     <li class="nav-item dropdown mega-menu">
                         <a class="nav-link dropdown-toggle" href="#" role="button">TRANG PHỤC</a>
@@ -25,23 +25,23 @@
                                     <div class="col-md-3">
                                         <h6>Vest</h6>
                                         <a href="products?type=vestCongSo" class="dropdown-item">Vest Công Sở</a>
-                                        <a href="vestThuongNgay.jsp" class="dropdown-item">Vest Thường Ngày</a>
-                                        <a href="vestXanh.jsp" class="dropdown-item">Vest Xanh</a>
-                                        <a href="vestNau.jsp" class="dropdown-item">Vest Nâu</a>
-                                        <a href="vestXam.jsp" class="dropdown-item">Vest Xám</a>
+                                        <a href="products?type=vestThuongNgay" class="dropdown-item">Vest Thường Ngày</a>
+                                        <a href="products?type=vestXanh" class="dropdown-item">Vest Xanh</a>
+                                        <a href="products?type=vestNau" class="dropdown-item">Vest Nâu</a>
+                                        <a href="products?type=vestXam" class="dropdown-item">Vest Xám</a>
                                     </div>
                                     <div class="col-md-3">
                                         <h6>Áo</h6>
-                                        <a href="aoSoMi.jsp" class="dropdown-item">Áo Sơ Mi</a>
-                                        <a href="aoPolo.jsp" class="dropdown-item">Áo Polo</a>
-                                        <a href="overshirt.jsp" class="dropdown-item">Áo Khoác Ngoài</a>
-                                        <a href="blazer.jsp" class="dropdown-item">Blazers</a>
+                                        <a href="products?type=aoSoMi" class="dropdown-item">Áo Sơ Mi</a>
+                                        <a href="products?type=aoPolo" class="dropdown-item">Áo Polo</a>
+                                        <a href="products?type=overshirt" class="dropdown-item">Áo Khoác Ngoài</a>
+                                        <a href="products?type=blazer" class="dropdown-item">Blazers</a>
                                     </div>
                                     <div class="col-md-3">
                                         <h6>Quần Dài</h6>
-                                        <a href="quanAu.jsp" class="dropdown-item">Quần Âu</a>
-                                        <a href="quanChino.jsp" class="dropdown-item">Quần Chino</a>
-                                        <a href="quanNi.jsp" class="dropdown-item">Quần Nỉ</a>
+                                        <a href="products?type=quanAu" class="dropdown-item">Quần Âu</a>
+                                        <a href="products?type=quanChino" class="dropdown-item">Quần Chino</a>
+                                        <a href="products?type=quanNi" class="dropdown-item">Quần Nỉ</a>
                                     </div>
                                     <div class="col-md-3">
                                         <h6>Ưu Đãi</h6>
@@ -61,9 +61,9 @@
                                 <div class="row gap-5">
                                     <div class="col-md-3">
                                         <h6>Tất Cả Phụ Kiện</h6>
-                                        <a href="caVat.jsp" class="dropdown-item">Cà Vạt</a>
-                                        <a href="khanChoang.jsp" class="dropdown-item">Khăn Choàng</a>
-                                        <a href="thatLung.jsp" class="dropdown-item">Thắt Lưng</a>
+                                        <a href="products?type=caVat" class="dropdown-item">Cà Vạt</a>
+                                        <a href="products?type=khanChoang" class="dropdown-item">Khăn Choàng</a>
+                                        <a href="products?type=thatLung" class="dropdown-item">Thắt Lưng</a>
                                     </div>
                                     <div class="col-md-3">
                                         <h6>Sắp Ra Mắt</h6>

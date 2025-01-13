@@ -113,29 +113,26 @@
     <section class="container my-4 section-products">
         <div class="row">
             <c:forEach var="aoPolo" items="${products}">
-                <c:if test="${aoSoMi.categoryID == 6}">
-                    <div class="col-md-6 col-lg-4 position-relative">
-                        <a href="detail.jsp?id=${aoPolo.id}" class="full-link">
-                            <div class="single-product">
-                                <div class="part-1">
-                                    <img src="${aoPolo.image}" alt="${aoPolo.productName}">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="part-2">
-                                    <h3 class="product-title">${aoPolo.productName}</h3>
-                                    <p class="product-season">${aoPolo.season}</p>
-                                    <div class="product-maker">${aoPolo.maker}</div>
-                                    <h4 class="product-price">${aoPolo.price} VND</h4>
-                                </div>
+                <div class="col-md-6 col-lg-4 position-relative">
+                    <a href="product-detail?id=${aoPolo.id}" class="full-link">
+                        <div class="single-product">
+                            <div class="part-1">
+                                <!-- Sử dụng CSS đã định nghĩa để điều chỉnh kích thước ảnh -->
+                                <img src="${aoPolo.image}" alt="${aoPolo.productName}">
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                                </ul>
                             </div>
-                        </a>
-                    </div>
-                </c:if>
+                            <div class="part-2">
+                                <h3 class="product-title">${aoPolo.productName}</h3>
+                                <h4 class="product-price">${aoPolo.price} VND</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </c:forEach>
         </div>
     </section>

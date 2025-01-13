@@ -107,7 +107,7 @@
                                 <div class="col cart-total">
                                     <h4>Tổng cộng: <span>1,570,000 VND</span></h4>
                                     <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                                        <button><a href="collection.jsp" class="shop-btn ">Mua Thêm</a></button>
+                                        <button><a href="collection" class="shop-btn ">Mua Thêm</a></button>
                                         <button><a href="checkout.jsp" class="shop-btn bg-success">Thanh Toán</a>
                                         </button>
                                     </div>

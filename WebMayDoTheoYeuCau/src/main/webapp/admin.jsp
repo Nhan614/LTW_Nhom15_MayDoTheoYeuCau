@@ -715,53 +715,53 @@
         </div>
     </section>
 
-    <!-- nofitication -->
+    <!-- Notification Section -->
     <section id="admin-notification" class="admin-hide">
         <div class="container">
             <div class="admin-header">
                 <h1 class="">Thông Báo Đến Người Dùng</h1>
                 <div class="admin-header-right">
-                    <div class="input-group"><input type="text" class="form-control" placeholder="Tìm kiếm...">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchNotification" placeholder="Tìm kiếm...">
+                        <button class="btn btn-primary" type="button" onclick="searchNotification()"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
             <hr>
             <h2 class="text-center">Tạo Thông Báo</h2>
-            <form id="notificationForm">
-                <div class="mb-3"><label for="notificationTitle" class="form-label">Tiêu Đề Thông Báo</label>
-                    <input type="text" class="form-control" id="notificationTitle"
-                           placeholder="Nhập tiêu đề thông báo" required>
+            <form id="notificationForm" onsubmit="return sendNotification(event);">
+                <div class="mb-3">
+                    <label for="notificationTitle" class="form-label">Tiêu Đề Thông Báo</label>
+                    <input type="text" class="form-control" id="notificationTitle" name="title" placeholder="Nhập tiêu đề thông báo" required>
                 </div>
-                <div class="">
-                    <div class="form-group mb-3"><label for="checkDangKy">Người Nhân Thông Báo</label> <select
-                            class="form-control" id="checkDangKy" required>
+                <div class="mb-3">
+                    <label for="checkDangKy">Người Nhận Thông Báo</label>
+                    <select class="form-control" id="checkDangKy" name="userGroup" required>
                         <option value="">Chọn</option>
-                        <option>Chưa Đăng Ký</option>
-                        <option>Đã Đăng Ký</option>
-                        <option>Tất Cả Người Dùng</option>
-                        <option>Người Giao Hàng</option>
-                        <option>Nhân Viên</option>
-                        <option>Admin</option>
-                    </select></div>
+                        <option value="0">Chưa Đăng Ký</option>
+                        <option value="1">Đã Đăng Ký</option>
+                        <option value="2">Tất Cả Người Dùng</option>
+                        <option value="3">Người Giao Hàng</option>
+                        <option value="4">Nhân Viên</option>
+                        <option value="5">Admin</option>
+                    </select>
                 </div>
-                <div class="">
-                    <div class="form-group mb-3"><label for="loaithongbao">Loại Thông Báo</label> <select
-                            class="form-control" id="loaithongbao" required>
+                <div class="mb-3">
+                    <label for="loaithongbao">Loại Thông Báo</label>
+                    <select class="form-control" id="loaithongbao" name="type" required>
                         <option value="">Chọn</option>
-                        <option>Thông Báo Sản Phẩm Mới</option>
-                        <option>Thông Báo Khiến Mãi</option>
-
-                    </select></div>
+                        <option value="new_product">Thông Báo Sản Phẩm Mới</option>
+                        <option value="promotion">Thông Báo Khuyến Mãi</option>
+                    </select>
                 </div>
-                <div class="mb-3"><label for="notificationContent" class="form-label">Nội Dung Thông Báo</label>
-                    <textarea class="form-control" id="notificationContent" rows="5"
-                              placeholder="Nhập nội dung thông báo" required></textarea>
+                <div class="mb-3">
+                    <label for="notificationContent" class="form-label">Nội Dung Thông Báo</label>
+                    <textarea class="form-control" id="notificationContent" name="content" rows="5" placeholder="Nhập nội dung thông báo" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Gửi Thông Báo</button>
             </form>
 
-            <!-- luu thong báo -->
+            <!-- Lưu thông báo -->
             <div class="container mt-5">
                 <h2 class="text-center">Danh Sách Thông Báo</h2>
                 <table class="table table-bordered">
@@ -771,27 +771,11 @@
                         <th>Người Nhận Thông Báo</th>
                         <th>Loại Thông Báo</th>
                         <th>Nội Dung</th>
+                        <th>Thời Gian</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Có vải mới</td>
-                        <td>Tất Cả Người Dùng</td>
-                        <td>Thông Báo Sản Phẩm Mới</td>
-                        <td>Chúng tôi vừa thêm một sản phẩm mới vào cửa hàng!</td>
-                    </tr>
-                    <tr>
-                        <td>Khuyến mãi hot</td>
-                        <td>Người Giao Hàng</td>
-                        <td>Thông Báo Khuyến Mãi</td>
-                        <td>GIẢM GIÁ 25% KHI NHẬP MÃ THREENTAILORED.</td>
-                    </tr>
-                    <tr>
-                        <td>Lại có hàng</td>
-                        <td>Nhân Viên</td>
-                        <td>Thông Báo Sản Phẩm Mới</td>
-                        <td>Sản phẩm mới đã có mặt tại kho.</td>
-                    </tr>
+                    <tbody id="notificationList">
+                    <!-- Danh sách thông báo sẽ được thêm động tại đây -->
                     </tbody>
                 </table>
             </div>

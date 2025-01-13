@@ -102,29 +102,26 @@
   <section class="container my-4 section-products">
     <div class="row">
       <c:forEach var="vestXam" items="${products}">
-        <c:if test="${vestXam.categoryID == 5}">
-          <div class="col-md-6 col-lg-4 position-relative">
-            <a href="detail.jsp?id=${vestXam.id}" class="full-link">
-              <div class="single-product">
-                <div class="part-1">
-                  <img src="${vestXam.image}" alt="${vestXam.productName}">
-                  <ul>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">${vestXam.productName}</h3>
-                  <p class="product-season">${vestXam.season}</p>
-                  <div class="product-maker">${vestXam.maker}</div>
-                  <h4 class="product-price">${vestXam.price} VND</h4>
-                </div>
+        <div class="col-md-6 col-lg-4 position-relative">
+          <a href="product-detail?id=${vestXam.id}" class="full-link">
+            <div class="single-product">
+              <div class="part-1">
+                <!-- Sử dụng CSS đã định nghĩa để điều chỉnh kích thước ảnh -->
+                <img src="${vestXam.image}" alt="${vestXam.productName}">
+                <ul>
+                  <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                  <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                  <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                  <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                </ul>
               </div>
-            </a>
-          </div>
-        </c:if>
+              <div class="part-2">
+                <h3 class="product-title">${vestXam.productName}</h3>
+                <h4 class="product-price">${vestXam.price} VND</h4>
+              </div>
+            </div>
+          </a>
+        </div>
       </c:forEach>
     </div>
   </section>

@@ -251,7 +251,7 @@ public class ProductDao {
         });
     }
 
-    public Map<Integer, Product> getProductByCategoryId(int categoryId) {
+    public Map<Integer, Product> getProductsByCategoryId(int categoryId) {
         Map<Integer, Product> map = new HashMap<>();
         String sql = "SELECT" +
                 "   p.id AS id," +
@@ -323,16 +323,7 @@ public class ProductDao {
 
     public static void main(String[] args) {
         ProductDao dao = new ProductDao();
-        System.out.println(dao.getProductById(2));
-        System.out.println(dao.getProductById(1));
-        System.out.println(dao.getProductById(3));
-        System.out.println(dao.getProductById(4));
-        System.out.println(dao.getProductById(5));
-        System.out.println(dao.getProductById(6));
-        System.out.println(dao.getProductById(7));
-        System.out.println(dao.getProductById(8));
-        System.out.println(dao.getProductById(9));
-        System.out.println(dao.getProductById(10));
+        System.out.println(dao.getProductById(18));
     }
 
 }

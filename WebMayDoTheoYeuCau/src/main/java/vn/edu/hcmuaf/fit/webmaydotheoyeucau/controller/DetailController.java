@@ -25,7 +25,9 @@ public class DetailController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Lấy ID sản phẩm từ tham số request
+
         String productIdParam = request.getParameter("id");
+        System.out.println(productIdParam);
         if (productIdParam == null || productIdParam.isEmpty()) {
             response.sendRedirect("products"); // Quay lại trang danh sách nếu không có ID
             return;
@@ -51,4 +53,6 @@ public class DetailController extends HttpServlet{
             response.sendRedirect("products"); // Xử lý lỗi nếu ID không hợp lệ
         }
     }
+
 }
+

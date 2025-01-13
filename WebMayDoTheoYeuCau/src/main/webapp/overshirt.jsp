@@ -101,30 +101,27 @@
 </section>
 <section class="container my-4 section-products">
     <div class="row">
-        <c:forEach var="overshirt" items="${products}">
-            <c:if test="${overshirt.categoryID == 8}">
-                <div class="col-md-6 col-lg-4 position-relative">
-                    <a href="detail.jsp?id=${overshirt.id}" class="full-link">
-                        <div class="single-product">
-                            <div class="part-1">
-                                <img src="${overshirt.image}" alt="${overshirt.productName}">
-                                <ul>
-                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="part-2">
-                                <h3 class="product-title">${overshirt.productName}</h3>
-                                <p class="product-season">${overshirt.season}</p>
-                                <div class="product-maker">${overshirt.maker}</div>
-                                <h4 class="product-price">${overshirt.price} VND</h4>
-                            </div>
+        <c:forEach var="vestCongSo" items="${products}">
+            <div class="col-md-6 col-lg-4 position-relative">
+                <a href="product-detail?id=${vestCongSo.id}" class="full-link">
+                    <div class="single-product">
+                        <div class="part-1">
+                            <!-- Sử dụng CSS đã định nghĩa để điều chỉnh kích thước ảnh -->
+                            <img src="${vestCongSo.image}" alt="${vestCongSo.productName}">
+                            <ul>
+                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                            </ul>
                         </div>
-                    </a>
-                </div>
-            </c:if>
+                        <div class="part-2">
+                            <h3 class="product-title">${vestCongSo.productName}</h3>
+                            <h4 class="product-price">${vestCongSo.price} VND</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </c:forEach>
     </div>
 </section>

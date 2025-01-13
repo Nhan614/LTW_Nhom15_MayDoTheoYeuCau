@@ -25,21 +25,21 @@ public class NotificationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String title = request.getParameter("title");
-        String detail = request.getParameter("detail");
-        String style = request.getParameter("style");
-        String userIDParam = request.getParameter("userID");
+        String detail = request.getParameter("content");
+        String style = request.getParameter("type");
+        String userGroupParam = request.getParameter("userGroup");
 
         try {
-            int userID = Integer.parseInt(userIDParam);
+            int userGroup = Integer.parseInt(userGroupParam);
 
-            Notification notification = new Notification(title, detail, style, userID);
+            Notification notification = new Notification(title, detail, style, userGroup);
             boolean success = notificationService.addNotification(notification);
 
             response.setContentType("application/json");
-            response.getWriter().write("{\"success\":" + success + "}");
+            response.getWriter().write("{\"message\":\"" + (success ? "Thông báo đã được gửi!" : "Lỗi khi gửi thông báo.") + "\"}");
         } catch (NumberFormatException e) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("{\"error\":\"Invalid user ID\"}");
+            response.getWriter().write("{\"message\":\"Dữ liệu không hợp lệ!\"}");
         }
     }
 

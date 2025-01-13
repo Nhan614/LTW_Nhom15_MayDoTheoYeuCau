@@ -37,38 +37,38 @@ public class ProductController extends HttpServlet {
             request.setAttribute("quanAu", quanAu);
 
             // Điều hướng đến collection.jsp
-            request.getRequestDispatcher("/collection.jsp").forward(request, response);
+            request.getRequestDispatcher("collection.jsp").forward(request, response);
         } else {
             // Xử lý cho các trang sản phẩm cụ thể
             switch (type) {
                 case "vestCongSo":
-                    request.setAttribute("products", productService.getProductsByCategoryId(5));
-                    request.getRequestDispatcher("/vestCongSo.jsp").forward(request, response);
+                    request.setAttribute("products", productService.getProductsByCategoryId(1));
+                    request.getRequestDispatcher("vestCongSo.jsp").forward(request, response);
                     break;
 
                 case "vestThuongNgay":
                     request.setAttribute("products", productService.getProductsByCategoryId(2));
-                    request.getRequestDispatcher("/vestThuongNgay.jsp").forward(request, response);
+                    request.getRequestDispatcher("vestThuongNgay.jsp").forward(request, response);
                     break;
 
                 case "vestXanh":
                     request.setAttribute("products", productService.getProductsByCategoryId(3));
-                    request.getRequestDispatcher("/vestXanh.jsp").forward(request, response);
+                    request.getRequestDispatcher("vestXanh.jsp").forward(request, response);
                     break;
 
                 case "vestNau":
                     request.setAttribute("products", productService.getProductsByCategoryId(4));
-                    request.getRequestDispatcher("/vestNau.jsp").forward(request, response);
+                    request.getRequestDispatcher("vestNau.jsp").forward(request, response);
                     break;
 
                 case "vestXam":
                     request.setAttribute("products", productService.getProductsByCategoryId(5));
-                    request.getRequestDispatcher("/vestXam.jsp").forward(request, response);
+                    request.getRequestDispatcher("vestXam.jsp").forward(request, response);
                     break;
 
                 case "aoSoMi":
                     request.setAttribute("products", productService.getProductsByCategoryId(6));
-                    request.getRequestDispatcher("/aoSoMi.jsp").forward(request, response);
+                    request.getRequestDispatcher("aoSoMi.jsp").forward(request, response);
                     break;
 
                 case "aoPolo":

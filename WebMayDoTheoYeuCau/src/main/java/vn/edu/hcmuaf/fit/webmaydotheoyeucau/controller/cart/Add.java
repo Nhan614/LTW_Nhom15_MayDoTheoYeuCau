@@ -79,7 +79,7 @@ public class Add extends HttpServlet {
             pro = new ProductCart();
             CartDao cartDao = new CartDao();
             pro.setName("Đồ đặt may");
-            pro.setImage("");
+            pro.setImage("resources/images/vai4.jpg");
             pro.setQuantity(1);
             pro.setPrice(cartDao.getPriceByMaterials(fabric, collar, pocket, button));
             cart.put(cart.size() + 1, pro);

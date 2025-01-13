@@ -45,25 +45,34 @@
                     <div class="collection-alpha">
                         <h2 class="text-white text-center ">BỘ VEST</h2>
                         <p class="collection-text-costume">Tạo nên thiết kế bộ đồ ưng ý nhất đối với bạn</p>
-                        <a href="vestCongSo.jsp" class="shop-btn text-center">Khám Phá</a>
+                        <a href="products?type=vestCongSo"  class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5">
                     <div class="row">
-                        <!-- alpha -->
+                        <!-- Dữ liệu (bên trái) -->
                         <div class="col-lg-6">
                             <!-- Hàng 1 -->
                             <div class="row">
                                 <c:forEach var="vest" items="${vests}" varStatus="status">
-                                    <c:if test="${status.index < 2}"> <!-- Hiển thị 2 sản phẩm đầu -->
-                                        <div class="col-lg-6">
-                                            <div class="card">
-                                                <a href="product-detail?id=${vest.id}">
-                                                    <img src="${vest.image}" class="card-img-top" alt="${vest.productName}">
-                                                </a>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${vest.productName}</h5>
-                                                    <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                    <c:if test="${status.index < 2}">
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3">
+                                                <div class="row g-0 align-items-center">
+                                                    <!-- Dữ liệu -->
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">${vest.productName}</h5>
+                                                            <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                                            <a href="product-detail?id=${vest.id}" class="btn btn-primary">Xem Chi Tiết</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Ảnh -->
+                                                    <div class="col-md-4">
+                                                        <a href="product-detail?id=${vest.id}">
+                                                            <img src="${vest.image}" class="img-fluid rounded-start" alt="${vest.productName}">
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,15 +83,24 @@
                             <!-- Hàng 2 -->
                             <div class="row mt-5">
                                 <c:forEach var="vest" items="${vests}" varStatus="status">
-                                    <c:if test="${status.index >= 2 && status.index < 4}"> <!-- Hiển thị sản phẩm 3 và 4 -->
-                                        <div class="col-lg-6">
-                                            <div class="card">
-                                                <a href="product-detail?id=${vest.id}">
-                                                    <img src="${vest.image}" class="card-img-top" alt="${vest.productName}">
-                                                </a>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${vest.productName}</h5>
-                                                    <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                    <c:if test="${status.index >= 2 && status.index < 4}">
+                                        <div class="col-lg-12">
+                                            <div class="card mb-3">
+                                                <div class="row g-0 align-items-center">
+                                                    <!-- Dữ liệu -->
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">${vest.productName}</h5>
+                                                            <p class="card-text">Giá: ${vest.price} VNĐ</p>
+                                                            <a href="product-detail?id=${vest.id}" class="btn btn-primary">Xem Chi Tiết</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Ảnh -->
+                                                    <div class="col-md-4">
+                                                        <a href="product-detail?id=${vest.id}">
+                                                            <img src="${vest.image}" class="img-fluid rounded-start" alt="${vest.productName}">
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,17 +108,16 @@
                                 </c:forEach>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Beta -->
+                        <!-- Ảnh lớn (bên phải) -->
                         <div class="col-lg-6">
                             <div class="collection-img-review">
-                                <img src="resources/images/collection-suit-review1.webp" alt="">
+                                <img src="resources/images/collection-suit-review1.webp" class="img-fluid" alt="Collection Review">
                             </div>
                         </div>
                     </div>
                 </div>
+
 
 
                 <!-- Jacket -->
@@ -114,7 +131,7 @@
                         <p class="collection-text-costume">Các loại áo khác được thiết kế tỉ mỉ với chất liệu vải tốt
                             nhất
                         </p>
-                        <a href="blazer.jsp" class="shop-btn text-center">Khám Phá</a>
+                        <a href="products?type=blazer" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5">
@@ -179,7 +196,7 @@
                     <div class="collection-alpha">
                         <h2 class="text-white text-center">ÁO SƠ MI</h2>
                         <p class="collection-text-costume">Lựa chọn kiểu dáng và màu sắc mà bạn thích</p>
-                        <a href="aoSoMi.jsp" class="shop-btn text-center">Khám Phá</a>
+                        <a href="products?type=aoSoMi" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5">
@@ -244,7 +261,7 @@
                     <div class="collection-alpha">
                         <h2 class="text-white text-center">QUẦN ÂU</h2>
                         <p class="collection-text-costume">Kiểu dáng đẹp mắt thoải mái khi mặc</p>
-                        <a href="quanAu.jsp" class="shop-btn text-center">Khám Phá</a>
+                        <a href="products?type=quanAu" class="shop-btn text-center">Khám Phá</a>
                     </div>
                 </div>
                 <div class="container mt-5 mb-5">

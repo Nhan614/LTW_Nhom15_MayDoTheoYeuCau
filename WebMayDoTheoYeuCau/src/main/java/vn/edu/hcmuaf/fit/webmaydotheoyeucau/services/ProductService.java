@@ -26,14 +26,14 @@ public class ProductService {
 
     public List<Product> getProductsByCategoryId(int categoryId) {
         List<Product> list = new ArrayList<Product>();
-        productDao.getProductByCategoryId(categoryId).forEach((key,value) -> {
+        productDao.getProductsByCategoryId(categoryId).forEach((key,value) -> {
             list.add(value);
         });
         return list;
     }
     public List<Product> getTopProductsByCategoryId(int categoryId, int limit) {
         List<Product> list = new ArrayList<Product>();
-        productDao.getProductByCategoryId(categoryId).forEach((key,value) -> {
+        productDao.getProductsByCategoryId(categoryId).forEach((key,value) -> {
             list.add(value);
         });
         return list;
@@ -61,6 +61,6 @@ public class ProductService {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
-        System.out.println(productService.getTopProductsByCategoryId(5, 10));
+        System.out.println(productService.getProductsByCategoryId(2));
     }
 }
