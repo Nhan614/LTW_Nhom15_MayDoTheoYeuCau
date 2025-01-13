@@ -136,12 +136,10 @@
                     </li>
 
                     <!-- shop -->
-                    <% if (user != null) { %>
                     <div class="cart-box">
                         <li class="nav-item" id="shop-address"> <a style="color: black;" href="cart.jsp"><i
                                     class="fa-solid fa-cart-shopping fa-lg"></i> </a></li>
                     </div>
-                    <% } %>
                 </ul>
             </div>
 
