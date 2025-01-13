@@ -324,11 +324,8 @@ public class ProductDao {
     public static void main(String[] args) {
         ProductDao dao = new ProductDao();
         System.out.println(dao.getProductById(2));
-
         System.out.println(dao.getProductById(1));
-
         System.out.println(dao.getProductById(3));
-
         System.out.println(dao.getProductById(4));
         System.out.println(dao.getProductById(5));
         System.out.println(dao.getProductById(6));
